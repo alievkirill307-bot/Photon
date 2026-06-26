@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Футеры — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo">P</span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню">☰</button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link active">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Футеры (Footer)</h1>
+      <p>Photon включает несколько вариантов футеров для разных сценариев: от простого центрированного до многосекционного с соцсетями и стеклянным эффектом.</p>
+
+      <h2>1. Простой футер (Simple)</h2>
+      <p>Минимальный центрированный футер с копирайтом. Класс <code>.footer--simple</code>.</p>
+      <div class="demo-box demo-box--column" style="padding:0;">
+        <footer class="footer footer--simple" style="margin:0; border:0; border-radius:0;">
+          <div class="footer__inner">
+            <span>&copy; 2026 Photon Framework. Все права защищены.</span>
+            <div style="display:flex; gap:1rem;">
+              <a href="#" style="color:var(--pk-text-secondary);">Политика конфиденциальности</a>
+              <a href="#" style="color:var(--pk-text-secondary);">Условия использования</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;footer class="footer footer--simple"&gt;
+  &lt;div class="footer__inner"&gt;
+    &lt;span&gt;&amp;copy; 2026 Photon Framework. Все права защищены.&lt;/span&gt;
+    &lt;div style="display:flex; gap:1rem;"&gt;
+      &lt;a href="#"&gt;Политика конфиденциальности&lt;/a&gt;
+      &lt;a href="#"&gt;Условия использования&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+      </div>
+
+      <h2>2. Многосекционный футер (Columns)</h2>
+      <p>Футер с колонками для ссылок, контактов и информации. Класс <code>.footer--columns</code>.</p>
+      <div class="demo-box demo-box--column" style="padding:0;">
+        <footer class="footer footer--columns" style="margin:0; border:0; border-radius:0;">
+          <div class="footer__inner">
+            <div class="footer__col">
+              <h4>О проекте</h4>
+              <p>Photon — это CSS фреймворк в стиле Apple Liquid Glass, объединяющий лучшие компоненты из пяти популярных фреймворков.</p>
+            </div>
+            <div class="footer__col">
+              <h4>Компоненты</h4>
+              <a href="#">Кнопки</a>
+              <a href="#">Формы</a>
+              <a href="#">Карточки</a>
+              <a href="#">Модальные окна</a>
+            </div>
+            <div class="footer__col">
+              <h4>Ресурсы</h4>
+              <a href="#">Документация</a>
+              <a href="#">SVG иконки</a>
+              <a href="#">Темы оформления</a>
+            </div>
+            <div class="footer__col">
+              <h4>Контакты</h4>
+              <p>Email: hello@photon.dev</p>
+              <p>GitHub: /photon-framework</p>
+            </div>
+          </div>
+          <div class="footer__bottom" style="max-width:var(--pk-grid-max-width); margin-left:auto; margin-right:auto; width:100%; padding-left:0; padding-right:0;">
+            <span>&copy; 2026 Photon</span>
+            <div style="display:flex; gap:1rem;">
+              <a href="#" style="color:var(--pk-text-muted);">Политика</a>
+              <a href="#" style="color:var(--pk-text-muted);">Лицензия</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;footer class="footer footer--columns"&gt;
+  &lt;div class="footer__inner"&gt;
+    &lt;div class="footer__col"&gt;
+      &lt;h4&gt;О проекте&lt;/h4&gt;
+      &lt;p&gt;Описание проекта...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="footer__col"&gt;
+      &lt;h4&gt;Компоненты&lt;/h4&gt;
+      &lt;a href="#"&gt;Кнопки&lt;/a&gt;
+      &lt;a href="#"&gt;Формы&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="footer__col"&gt;
+      &lt;h4&gt;Ресурсы&lt;/h4&gt;
+      &lt;a href="#"&gt;Документация&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="footer__bottom"&gt;
+    &lt;span&gt;&amp;copy; 2026 Photon&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+      </div>
+
+      <h2>3. Футер с брендом и соцсетями (Social)</h2>
+      <p>Футер с логотипом, описанием и иконками социальных сетей. Класс <code>.footer--social</code>.</p>
+      <div class="demo-box demo-box--column" style="padding:0;">
+        <footer class="footer footer--social" style="margin:0; border:0; border-radius:0;">
+          <div class="footer__inner">
+            <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+              <a href="#" class="footer__brand"><span class="footer__brand-logo">P</span>Photon</a>
+              <span class="footer__desc">Современный CSS Framework в стиле Apple Liquid Glass.</span>
+            </div>
+            <div class="footer__social">
+              <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg></a>
+              <a href="#" aria-label="Twitter/X"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              <a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;footer class="footer footer--social"&gt;
+  &lt;div class="footer__inner"&gt;
+    &lt;a href="#" class="footer__brand"&gt;
+      &lt;span class="footer__brand-logo"&gt;P&lt;/span&gt;Photon
+    &lt;/a&gt;
+    &lt;span class="footer__desc"&gt;Описание проекта...&lt;/span&gt;
+    &lt;div class="footer__social"&gt;
+      &lt;a href="#"&gt;&lt;!-- SVG иконки --&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+      </div>
+
+      <h2>4. Стеклянный футер (Glass)</h2>
+      <p>Футер с полупрозрачным стеклянным эффектом. Комбинируется с любым другим вариантом через класс <code>.footer--glass</code>.</p>
+      <div class="demo-box demo-box--column" style="padding:0;">
+        <footer class="footer footer--glass footer--simple" style="margin:0; border:0; border-radius:0;">
+          <div class="footer__inner">
+            <span>&copy; 2026 Photon Framework</span>
+            <div class="footer__social" style="justify-content:center;">
+              <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg></a>
+              <a href="#" aria-label="Twitter/X"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;footer class="footer footer--glass footer--simple"&gt;
+  &lt;div class="footer__inner"&gt;
+    &lt;span&gt;&amp;copy; 2026 Photon Framework&lt;/span&gt;
+    &lt;div class="footer__social"&gt;
+      &lt;a href="#"&gt;&lt;!-- SVG --&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+      </div>
+
+      <h2>5. Кнопка «Наверх» (Back to Top)</h2>
+      <p>Автоматически появляется при прокрутке вниз. Класс <code>.back-to-top</code> с атрибутом <code>data-show-at</code> (порог появления в пикселях, по умолчанию 300).</p>
+      <div class="demo-box" style="justify-content:center;">
+        <p style="margin:0;">Прокрутите страницу вниз, чтобы увидеть кнопку.</p>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;button class="back-to-top" data-show-at="300" type="button"&gt;&amp;uarr;&lt;/button&gt;</code></pre>
+      </div>
+
+      <h2>Классы футеров</h2>
+      <table class="table table--striped" style="margin-top:0.5rem;">
+        <thead><tr><th>Класс</th><th>Описание</th></tr></thead>
+        <tbody>
+          <tr><td><code>.footer</code></td><td>Базовый футер (бордер, паддинги, цвета)</td></tr>
+          <tr><td><code>.footer--simple</code></td><td>Центрированный простой футер</td></tr>
+          <tr><td><code>.footer--columns</code></td><td>Многоколоночный футер с <code>.footer__col</code></td></tr>
+          <tr><td><code>.footer--social</code></td><td>Футер с брендом, описанием и соцсетями</td></tr>
+          <tr><td><code>.footer--sticky</code></td><td>Приклеивается к низу страницы</td></tr>
+          <tr><td><code>.footer--fixed</code></td><td>Фиксируется внизу экрана</td></tr>
+          <tr><td><code>.footer--glass</code></td><td>Стеклянный эффект (backdrop-filter)</td></tr>
+          <tr><td><code>.footer__inner</code></td><td>Обёртка с max-width и flex</td></tr>
+          <tr><td><code>.footer__col</code></td><td>Колонка внутри <code>.footer--columns</code></td></tr>
+          <tr><td><code>.footer__bottom</code></td><td>Нижняя полоса (копирайт, ссылки)</td></tr>
+          <tr><td><code>.footer__brand</code></td><td>Бренд/логотип</td></tr>
+          <tr><td><code>.footer__social</code></td><td>Контейнер для иконок соцсетей</td></tr>
+          <tr><td><code>.back-to-top</code></td><td>Кнопка «Наверх» (JS)</td></tr>
+        </tbody>
+      </table>
+
+    </main>
+  </div>
+
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+
+  <script src="../photon-kit/photon-kit.js"></script>
+  <script src="js/doc.js"></script>
+</body>
+</html>

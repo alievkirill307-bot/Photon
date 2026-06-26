@@ -404,5 +404,46 @@
     render();
   });
 
+  // ========== BACK TO TOP ==========
+  document.querySelectorAll('.back-to-top').forEach(btn => {
+    const showAt = parseInt(btn.dataset.showAt) || 300;
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.scrollY > showAt);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // ========== DRAWER ==========
+  document.querySelectorAll('[data-drawer]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.getAttribute('data-drawer'));
+      if (target) target.classList.toggle('open');
+    });
+  });
+  document.querySelectorAll('[data-drawer-close]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const drawer = btn.closest('.drawer');
+      if (drawer) drawer.classList.remove('open');
+    });
+  });
+  document.querySelectorAll('.drawer-overlay').forEach(overlay => {
+    overlay.addEventListener('click', () => {
+      const drawer = overlay.parentElement.querySelector('.drawer');
+      if (drawer) drawer.classList.remove('open');
+      overlay.classList.remove('open');
+    });
+  });
+  document.querySelectorAll('[data-drawer]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(btn.getAttribute('data-drawer'));
+      if (target) {
+        const overlay = target.parentElement.querySelector('.drawer-overlay');
+        if (overlay) overlay.classList.toggle('open');
+      }
+    });
+  });
+
   console.log('✦ Photon Kit initialized');
 })();
