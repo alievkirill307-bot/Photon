@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Подсказки и выпадающие списки — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo">P</span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню">☰</button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link active">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Подсказки, выпадающие списки и меню</h1>
+      <p>Вспомогательные компоненты для взаимодействия: подсказки (tooltips), поповеры (popovers), выпадающие списки (dropdowns) и меню (menus).</p>
+
+      <h2>Подсказки (Tooltip)</h2>
+      <p>Используйте класс <code>tooltip</code> с атрибутом <code>data-tooltip</code> для отображения подсказки. Позиция задаётся классами <code>tooltip--top</code> (по умолчанию), <code>tooltip--bottom</code>, <code>tooltip--left</code>, <code>tooltip--right</code>.</p>
+
+      <div class="demo-box">
+        <span class="tooltip tooltip--top" data-tooltip="Подсказка сверху">Наведи на меня</span>
+        <span class="tooltip tooltip--bottom" data-tooltip="Подсказка снизу">Снизу</span>
+        <span class="tooltip tooltip--left" data-tooltip="Подсказка слева">Слева</span>
+        <span class="tooltip tooltip--right" data-tooltip="Подсказка справа">Справа</span>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;span class="tooltip tooltip--top" data-tooltip="Подсказка сверху"&gt;Наведи&lt;/span&gt;
+&lt;span class="tooltip tooltip--bottom" data-tooltip="Подсказка снизу"&gt;Снизу&lt;/span&gt;
+&lt;span class="tooltip tooltip--left" data-tooltip="Подсказка слева"&gt;Слева&lt;/span&gt;
+&lt;span class="tooltip tooltip--right" data-tooltip="Подсказка справа"&gt;Справа&lt;/span&gt;</code></pre>
+      </div>
+
+      <p>Подсказки работают на любых элементах: кнопках, ссылках, иконках.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;button class="btn btn--primary tooltip" data-tooltip="Сохранить изменения"&gt;
+  Сохранить
+&lt;/button&gt;
+&lt;a href="#" class="tooltip" data-tooltip="Перейти на главную"&gt;Главная&lt;/a&gt;</code></pre>
+      </div>
+
+      <h2>Поповеры (Popover)</h2>
+      <p>Поповер — расширенная подсказка с заголовком и контентом. Используйте класс <code>popover</code>.</p>
+
+      <div class="demo-box">
+        <div class="popover popover--top">
+          <button class="btn btn--primary">Открыть поповер</button>
+          <div class="popover__content">
+            <div class="popover__header">Заголовок</div>
+            <div class="popover__body">
+              <p style="margin:0;font-size:0.85rem;">Содержимое поповера с дополнительной информацией.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="popover popover--top"&gt;
+  &lt;button class="btn btn--primary"&gt;Открыть поповер&lt;/button&gt;
+  &lt;div class="popover__content"&gt;
+    &lt;div class="popover__header"&gt;Заголовок&lt;/div&gt;
+    &lt;div class="popover__body"&gt;
+      &lt;p&gt;Содержимое поповера.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Выпадающие списки (Dropdown)</h2>
+      <p>Используйте <code>dropdown</code> с <code>dropdown__menu</code> для создания выпадающего списка. По умолчанию открывается при наведении.</p>
+
+      <div class="demo-box">
+        <div class="dropdown">
+          <button class="btn btn--primary">Выпадающий список ▾</button>
+          <div class="dropdown__menu">
+            <a href="#" class="dropdown__item">Профиль</a>
+            <a href="#" class="dropdown__item">Настройки</a>
+            <a href="#" class="dropdown__item">Помощь</a>
+            <hr class="dropdown__divider" />
+            <a href="#" class="dropdown__item" style="color: var(--pk-error);">Выйти</a>
+          </div>
+        </div>
+
+        <div class="dropdown dropdown--right">
+          <button class="btn btn--outline">Выравнивание вправо ▾</button>
+          <div class="dropdown__menu">
+            <a href="#" class="dropdown__item">Действие 1</a>
+            <a href="#" class="dropdown__item">Действие 2</a>
+            <a href="#" class="dropdown__item">Действие 3</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="dropdown"&gt;
+  &lt;button class="btn btn--primary"&gt;Меню ▾&lt;/button&gt;
+  &lt;div class="dropdown__menu"&gt;
+    &lt;a href="#" class="dropdown__item"&gt;Профиль&lt;/a&gt;
+    &lt;a href="#" class="dropdown__item"&gt;Настройки&lt;/a&gt;
+    &lt;a href="#" class="dropdown__item"&gt;Помощь&lt;/a&gt;
+    &lt;hr class="dropdown__divider" /&gt;
+    &lt;a href="#" class="dropdown__item" style="color: var(--pk-error);"&gt;Выйти&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Выравнивание вправо --&gt;
+&lt;div class="dropdown dropdown--right"&gt;
+  &lt;button class="btn btn--outline"&gt;Действия ▾&lt;/button&gt;
+  &lt;div class="dropdown__menu"&gt;
+    &lt;a href="#" class="dropdown__item"&gt;Действие 1&lt;/a&gt;
+    &lt;a href="#" class="dropdown__item"&gt;Действие 2&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Меню (Menu)</h2>
+      <p>Компонент меню для списка действий. Используйте классы <code>menu</code>, <code>menu__item</code>.</p>
+
+      <div class="demo-box demo-box--column">
+        <div class="menu" style="max-width: 200px; border: 1px solid var(--pk-border); border-radius: var(--pk-radius);">
+          <div class="menu__header">Аккаунт</div>
+          <a href="#" class="menu__item active">Профиль</a>
+          <a href="#" class="menu__item">Настройки</a>
+          <a href="#" class="menu__item">Безопасность</a>
+          <div class="menu__divider"></div>
+          <a href="#" class="menu__item">Помощь</a>
+          <a href="#" class="menu__item" style="color: var(--pk-error);">Выйти</a>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="menu" style="max-width: 200px; border: 1px solid var(--pk-border); border-radius: var(--pk-radius);"&gt;
+  &lt;div class="menu__header"&gt;Аккаунт&lt;/div&gt;
+  &lt;a href="#" class="menu__item active"&gt;Профиль&lt;/a&gt;
+  &lt;a href="#" class="menu__item"&gt;Настройки&lt;/a&gt;
+  &lt;a href="#" class="menu__item"&gt;Безопасность&lt;/a&gt;
+  &lt;div class="menu__divider"&gt;&lt;/div&gt;
+  &lt;a href="#" class="menu__item"&gt;Помощь&lt;/a&gt;
+  &lt;a href="#" class="menu__item" style="color: var(--pk-error);"&gt;Выйти&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+</body>
+</html>
