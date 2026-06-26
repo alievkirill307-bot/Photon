@@ -445,5 +445,28 @@
     });
   });
 
+  // ========== THEME SWITCHER ==========
+  document.querySelectorAll('[data-theme-switch]').forEach(el => {
+    const toggle = () => {
+      document.body.classList.toggle('theme-dark');
+      const isDark = document.body.classList.contains('theme-dark');
+      try { localStorage.setItem('photon-theme', isDark ? 'dark' : 'light'); } catch(e) {}
+      document.querySelectorAll('[data-theme-switch]').forEach(e => {
+        const label = e.querySelector('.theme-switch__label');
+        if (label) label.textContent = isDark ? 'Тёмная' : 'Светлая';
+      });
+    };
+    el.addEventListener('click', toggle);
+  });
+  (function initTheme() {
+    const saved = (() => { try { return localStorage.getItem('photon-theme'); } catch(e) { return null; } })();
+    if (saved === 'dark' || (!saved && document.body.classList.contains('theme-dark'))) {
+      document.body.classList.add('theme-dark');
+      document.querySelectorAll('[data-theme-switch] .theme-switch__label').forEach(l => l.textContent = 'Тёмная');
+    } else {
+      document.querySelectorAll('[data-theme-switch] .theme-switch__label').forEach(l => l.textContent = 'Светлая');
+    }
+  })();
+
   console.log('✦ Photon Kit initialized');
 })();

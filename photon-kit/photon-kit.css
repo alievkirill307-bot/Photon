@@ -86,7 +86,7 @@ hr {
   background: var(--pk-border);
   margin: 2rem 0;
 }
-::selection { background: var(--pk-primary); color: #fff; }
+::selection { background: #007aff; color: #fff; }
 
 /* ========== TYPOGRAPHY ========== */
 h1, h2, h3, h4, h5, h6 {
@@ -2065,7 +2065,8 @@ li { margin-bottom: 0.3rem; }
   gap: 1rem;
 }
 .footer__brand { display: flex; align-items: center; gap: 0.6rem; font-size: 1.1rem; font-weight: 700; color: var(--pk-text); text-decoration: none; }
-.footer__brand-logo { width: 1.6rem; height: 1.6rem; background: var(--pk-primary); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.75rem; font-weight: 700; }
+.footer__brand-logo { width: 1.6rem; height: 1.6rem; border-radius: 6px; overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.footer__brand-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .footer__desc { font-size: 0.82rem; color: var(--pk-text-muted); max-width: 300px; }
 .footer__social { display: flex; gap: 0.5rem; }
 .footer__social a {
@@ -2140,3 +2141,50 @@ li { margin-bottom: 0.3rem; }
 .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
 .back-to-top:hover { background: var(--pk-primary-dark); transform: translateY(-2px); }
 .back-to-top:active { transform: translateY(0); }
+
+/* ========== THEME SWITCHER ========== */
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--pk-text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+.theme-switch__track {
+  position: relative;
+  width: 2.75rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  background: var(--pk-border-hover);
+  border: 1px solid var(--pk-border);
+  transition: background 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.theme-switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: var(--pk-surface);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+}
+.theme-dark .theme-switch__thumb {
+  transform: translateX(1.25rem);
+}
+.theme-dark .theme-switch__track {
+  background: var(--pk-primary);
+  border-color: var(--pk-primary);
+}
+.theme-switch__label {
+  font-weight: 500;
+}

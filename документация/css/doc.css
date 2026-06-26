@@ -56,14 +56,18 @@ a:hover { text-decoration: underline; }
 .doc-header__logo {
   width: 1.6rem;
   height: 1.6rem;
-  background: var(--pk-primary, #5755d9);
   border-radius: 6px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
+  flex-shrink: 0;
+}
+.doc-header__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .doc-header__links {
@@ -159,6 +163,19 @@ a:hover { text-decoration: underline; }
   margin-left: var(--doc-sidebar-width);
   padding: 2.5rem 3rem;
   max-width: 960px;
+}
+
+.page-logo {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0 2rem;
+}
+.page-logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(87, 85, 217, 0.15);
 }
 
 .doc-content h1 {
