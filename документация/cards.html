@@ -31,6 +31,7 @@
         <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
         <a href="forms.html" class="doc-sidebar__link">Формы</a>
         <a href="cards.html" class="doc-sidebar__link active">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
         <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
         <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
         <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
@@ -223,6 +224,151 @@
     &lt;h3 style="margin: 0 0 0.5rem;"&gt;Заголовок&lt;/h3&gt;
     &lt;p style="margin: 0 0 0.75rem; font-size: 0.85rem;"&gt;Описание карточки.&lt;/p&gt;
     &lt;button class="btn btn--primary btn--sm btn--block"&gt;Открыть&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Карточки с изображениями — сетка 3 колонки</h2>
+      <p>Адаптивная сетка карточек с изображениями по 3 в ряд. Используйте <code>card-grid</code> для автоматической раскладки.</p>
+
+      <div class="demo-box demo-box--column" style="gap:0;">
+        <div class="card-grid" style="width:100%;">
+          <div class="card" style="overflow:hidden;">
+            <img src="https://picsum.photos/seed/mountains/400/160" alt="Горный пейзаж" style="width:100%;height:160px;object-fit:cover;display:block;">
+            <div class="card__body">
+              <h3 style="margin:0 0 0.35rem;font-size:1rem;">Горный пейзаж</h3>
+              <p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);">Красивые горы, покрытые снегом. Идеальное место для похода.</p>
+            </div>
+            <div class="card__footer">
+              <button class="btn btn--primary btn--sm">Подробнее</button>
+              <button class="btn btn--ghost btn--sm">✕</button>
+            </div>
+          </div>
+          <div class="card" style="overflow:hidden;">
+            <img src="https://picsum.photos/seed/sea/400/160" alt="Морское побережье" style="width:100%;height:160px;object-fit:cover;display:block;">
+            <div class="card__body">
+              <h3 style="margin:0 0 0.35rem;font-size:1rem;">Морское побережье</h3>
+              <p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);">Бирюзовая вода и белый песок. Райский уголок на земле.</p>
+            </div>
+            <div class="card__footer">
+              <button class="btn btn--primary btn--sm">Подробнее</button>
+              <button class="btn btn--ghost btn--sm">✕</button>
+            </div>
+          </div>
+          <div class="card" style="overflow:hidden;">
+            <img src="https://picsum.photos/seed/forest/400/160" alt="Лесная тропа" style="width:100%;height:160px;object-fit:cover;display:block;">
+            <div class="card__body">
+              <h3 style="margin:0 0 0.35rem;font-size:1rem;">Лесная тропа</h3>
+              <p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);">Густой зелёный лес с извилистыми тропами и свежим воздухом.</p>
+            </div>
+            <div class="card__footer">
+              <button class="btn btn--primary btn--sm">Подробнее</button>
+              <button class="btn btn--ghost btn--sm">✕</button>
+            </div>
+          </div>
+          <div class="card" style="overflow:hidden;">
+            <img src="https://picsum.photos/seed/city/400/160" alt="Ночной город" style="width:100%;height:160px;object-fit:cover;display:block;">
+            <div class="card__body">
+              <h3 style="margin:0 0 0.35rem;font-size:1rem;">Ночной город</h3>
+              <p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);">Огни мегаполиса ночью. Город никогда не спит.</p>
+            </div>
+            <div class="card__footer">
+              <button class="btn btn--primary btn--sm">Подробнее</button>
+              <button class="btn btn--ghost btn--sm">✕</button>
+            </div>
+          </div>
+          <div class="card" style="overflow:hidden;">
+            <img src="https://picsum.photos/seed/sunset/400/160" alt="Закат" style="width:100%;height:160px;object-fit:cover;display:block;">
+            <div class="card__body">
+              <h3 style="margin:0 0 0.35rem;font-size:1rem;">Закат</h3>
+              <p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);">Красочный закат солнца над горизонтом. Волшебное зрелище.</p>
+            </div>
+            <div class="card__footer">
+              <button class="btn btn--primary btn--sm">Подробнее</button>
+              <button class="btn btn--ghost btn--sm">✕</button>
+            </div>
+          </div>
+          <div class="card" style="overflow:hidden;">
+            <img src="https://picsum.photos/seed/winter/400/160" alt="Зимняя сказка" style="width:100%;height:160px;object-fit:cover;display:block;">
+            <div class="card__body">
+              <h3 style="margin:0 0 0.35rem;font-size:1rem;">Зимняя сказка</h3>
+              <p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);">Заснеженные поля и леса. Настоящая зимняя сказка.</p>
+            </div>
+            <div class="card__footer">
+              <button class="btn btn--primary btn--sm">Подробнее</button>
+              <button class="btn btn--ghost btn--sm">✕</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="card-grid"&gt;
+  &lt;div class="card" style="overflow:hidden;"&gt;
+    &lt;img src="https://picsum.photos/seed/mountains/400/160" alt="Горный пейзаж" style="width:100%;height:160px;object-fit:cover;display:block;"&gt;
+    &lt;div class="card__body"&gt;
+      &lt;h3 style="margin:0 0 0.35rem;font-size:1rem;"&gt;Горный пейзаж&lt;/h3&gt;
+      &lt;p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);"&gt;Красивые горы, покрытые снегом. Идеальное место для похода.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card__footer"&gt;
+      &lt;button class="btn btn--primary btn--sm"&gt;Подробнее&lt;/button&gt;
+      &lt;button class="btn btn--ghost btn--sm"&gt;✕&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card" style="overflow:hidden;"&gt;
+    &lt;img src="https://picsum.photos/seed/sea/400/160" alt="Морское побережье" style="width:100%;height:160px;object-fit:cover;display:block;"&gt;
+    &lt;div class="card__body"&gt;
+      &lt;h3 style="margin:0 0 0.35rem;font-size:1rem;"&gt;Морское побережье&lt;/h3&gt;
+      &lt;p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);"&gt;Бирюзовая вода и белый песок. Райский уголок на земле.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card__footer"&gt;
+      &lt;button class="btn btn--primary btn--sm"&gt;Подробнее&lt;/button&gt;
+      &lt;button class="btn btn--ghost btn--sm"&gt;✕&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card" style="overflow:hidden;"&gt;
+    &lt;img src="https://picsum.photos/seed/forest/400/160" alt="Лесная тропа" style="width:100%;height:160px;object-fit:cover;display:block;"&gt;
+    &lt;div class="card__body"&gt;
+      &lt;h3 style="margin:0 0 0.35rem;font-size:1rem;"&gt;Лесная тропа&lt;/h3&gt;
+      &lt;p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);"&gt;Густой зелёный лес с извилистыми тропами и свежим воздухом.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card__footer"&gt;
+      &lt;button class="btn btn--primary btn--sm"&gt;Подробнее&lt;/button&gt;
+      &lt;button class="btn btn--ghost btn--sm"&gt;✕&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card" style="overflow:hidden;"&gt;
+    &lt;img src="https://picsum.photos/seed/city/400/160" alt="Ночной город" style="width:100%;height:160px;object-fit:cover;display:block;"&gt;
+    &lt;div class="card__body"&gt;
+      &lt;h3 style="margin:0 0 0.35rem;font-size:1rem;"&gt;Ночной город&lt;/h3&gt;
+      &lt;p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);"&gt;Огни мегаполиса ночью. Город никогда не спит.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card__footer"&gt;
+      &lt;button class="btn btn--primary btn--sm"&gt;Подробнее&lt;/button&gt;
+      &lt;button class="btn btn--ghost btn--sm"&gt;✕&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card" style="overflow:hidden;"&gt;
+    &lt;img src="https://picsum.photos/seed/sunset/400/160" alt="Закат" style="width:100%;height:160px;object-fit:cover;display:block;"&gt;
+    &lt;div class="card__body"&gt;
+      &lt;h3 style="margin:0 0 0.35rem;font-size:1rem;"&gt;Закат&lt;/h3&gt;
+      &lt;p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);"&gt;Красочный закат солнца над горизонтом. Волшебное зрелище.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card__footer"&gt;
+      &lt;button class="btn btn--primary btn--sm"&gt;Подробнее&lt;/button&gt;
+      &lt;button class="btn btn--ghost btn--sm"&gt;✕&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card" style="overflow:hidden;"&gt;
+    &lt;img src="https://picsum.photos/seed/winter/400/160" alt="Зимняя сказка" style="width:100%;height:160px;object-fit:cover;display:block;"&gt;
+    &lt;div class="card__body"&gt;
+      &lt;h3 style="margin:0 0 0.35rem;font-size:1rem;"&gt;Зимняя сказка&lt;/h3&gt;
+      &lt;p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);"&gt;Заснеженные поля и леса. Настоящая зимняя сказка.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card__footer"&gt;
+      &lt;button class="btn btn--primary btn--sm"&gt;Подробнее&lt;/button&gt;
+      &lt;button class="btn btn--ghost btn--sm"&gt;✕&lt;/button&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>

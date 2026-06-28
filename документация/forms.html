@@ -34,6 +34,7 @@
         <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
         <a href="forms.html" class="doc-sidebar__link active">Формы</a>
         <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
         <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
         <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
         <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
@@ -60,8 +61,9 @@
 
       <h1>Формы</h1>
       <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
-      <p>Формы — основа сбора данных от пользователя. Photon предоставляет стилизованные текстовые поля, выпадающие списки, переключатели, чекбоксы, радио-кнопки, ползунки и состояния валидации.</p>
+      <p>Формы — основа сбора данных от пользователя. Photon предоставляет стилизованные текстовые поля, выпадающие списки, переключатели, чекбоксы, радио-кнопки, ползунки, загрузку файлов и состояния валидации.</p>
 
+      <!-- ===== БАЗОВЫЕ ПОЛЯ ===== -->
       <h2>Текстовые поля</h2>
       <p>Базовый <code>&lt;input&gt;</code> и <code>&lt;textarea&gt;</code> автоматически стилизуются при наличии классов <code>input</code> и <code>textarea</code>.</p>
 
@@ -105,12 +107,9 @@
   &lt;option&gt;Выберите опцию&lt;/option&gt;
   &lt;option&gt;Опция 1&lt;/option&gt;
   &lt;option&gt;Опция 2&lt;/option&gt;
-  &lt;option&gt;Опция 3&lt;/option&gt;
 &lt;/select&gt;
 &lt;select class="select" multiple&gt;
   &lt;option&gt;Множественный выбор 1&lt;/option&gt;
-  &lt;option&gt;Множественный выбор 2&lt;/option&gt;
-  &lt;option&gt;Множественный выбор 3&lt;/option&gt;
 &lt;/select&gt;</code></pre>
       </div>
 
@@ -140,13 +139,7 @@
   &lt;input type="checkbox" class="checkbox" checked /&gt; &lt;span&gt;Отмечен&lt;/span&gt;
 &lt;/label&gt;
 &lt;label class="form-check"&gt;
-  &lt;input type="checkbox" class="checkbox" /&gt; &lt;span&gt;Не отмечен&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="form-check"&gt;
   &lt;input type="radio" name="r" class="radio" checked /&gt; &lt;span&gt;Радио 1&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="form-check"&gt;
-  &lt;input type="radio" name="r" class="radio" /&gt; &lt;span&gt;Радио 2&lt;/span&gt;
 &lt;/label&gt;</code></pre>
       </div>
 
@@ -171,9 +164,6 @@
 &lt;/label&gt;
 &lt;label class="form-check"&gt;
   &lt;input type="checkbox" class="switch" /&gt; &lt;span&gt;Выключено&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class="form-check"&gt;
-  &lt;input type="checkbox" class="switch" disabled /&gt; &lt;span&gt;Отключено&lt;/span&gt;
 &lt;/label&gt;</code></pre>
       </div>
 
@@ -182,44 +172,514 @@
 
       <div class="demo-box demo-box--column">
         <input type="range" class="range" min="0" max="100" value="50" />
-        <input type="range" class="range range--success" min="0" max="100" value="75" />
-        <input type="range" class="range range--error" min="0" max="100" value="25" />
+        <input type="range" class="range" min="0" max="100" value="75" />
+        <input type="range" class="range" min="0" max="100" value="25" />
       </div>
 
       <div class="code-block">
         <pre><code>&lt;input type="range" class="range" min="0" max="100" value="50" /&gt;
-&lt;input type="range" class="range range--success" min="0" max="100" value="75" /&gt;
-&lt;input type="range" class="range range--error" min="0" max="100" value="25" /&gt;</code></pre>
+&lt;input type="range" class="range" min="0" max="100" value="75" /&gt;
+&lt;input type="range" class="range" min="0" max="100" value="25" /&gt;</code></pre>
       </div>
 
+      <!-- ===== РЕГИСТРАЦИЯ ===== -->
+      <h2>Регистрация</h2>
+      <p>Несколько вариантов формы регистрации: простая, расширенная и в стеклянной карточке. Все поля с валидацией через JavaScript.</p>
+
+      <!-- Вариант 1: Простая регистрация -->
+      <h3>Вариант 1 — Простая регистрация</h3>
+      <p>Базовая форма: имя, email, пароль, подтверждение пароля и согласие с условиями.</p>
+
+      <div class="demo-box demo-box--column">
+        <form class="pk-form" style="width:100%;max-width:440px;" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label">Имя</label>
+            <input type="text" class="input" placeholder="Иван" data-validate="required" data-validate-length="2" autocomplete="name">
+            <span class="form-hint form-hint--error" style="display:none;"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="input" placeholder="ivan@example.com" data-validate="required email" autocomplete="email">
+            <span class="form-hint form-hint--error" style="display:none;"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Логин</label>
+            <input type="text" class="input" placeholder="ivan1990" data-validate="required" data-validate-length="3" autocomplete="username">
+            <span class="form-hint form-hint--error" style="display:none;"></span>
+          </div>
+          <div class="form-row" style="gap:0.75rem;">
+            <div class="form-group" style="flex:1;">
+              <label class="form-label">Пароль</label>
+              <input type="password" class="input" placeholder="••••••••" data-validate="required" data-validate-length="6" autocomplete="new-password">
+              <span class="form-hint form-hint--error" style="display:none;"></span>
+            </div>
+            <div class="form-group" style="flex:1;">
+              <label class="form-label">Подтверждение</label>
+              <input type="password" class="input" placeholder="••••••••" data-validate="required match" data-match-field="Пароль">
+              <span class="form-hint form-hint--error" style="display:none;"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-check">
+              <input type="checkbox" class="checkbox" data-validate="required">
+              <span>Я принимаю <a href="#">условия использования</a></span>
+            </label>
+            <span class="form-hint form-hint--error" style="display:none;"></span>
+          </div>
+          <div class="form-group" style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+            <button type="submit" class="btn btn--primary pk-form-submit">Создать аккаунт</button>
+            <button type="reset" class="btn btn--outline">Сбросить</button>
+          </div>
+          <div class="pk-form-success alert alert--success" style="display:none;margin-top:0.75rem;">✓ Аккаунт успешно создан!</div>
+        </form>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;form class="pk-form"&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="form-label"&gt;Имя&lt;/label&gt;
+    &lt;input type="text" class="input"
+      data-validate="required"
+      data-validate-length="2" /&gt;
+    &lt;span class="form-hint form-hint--error"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="form-label"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="input"
+      data-validate="required email" /&gt;
+    &lt;span class="form-hint form-hint--error"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="form-label"&gt;Логин&lt;/label&gt;
+    &lt;input type="text" class="input"
+      data-validate="required"
+      data-validate-length="3" /&gt;
+    &lt;span class="form-hint form-hint--error"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label class="form-label"&gt;Пароль&lt;/label&gt;
+      &lt;input type="password" class="input"
+        data-validate="required"
+        data-validate-length="6" /&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label class="form-label"&gt;Подтверждение&lt;/label&gt;
+      &lt;input type="password" class="input"
+        data-validate="required match"
+        data-match-field="Пароль" /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="form-check"&gt;
+      &lt;input type="checkbox" class="checkbox"
+        data-validate="required" /&gt;
+      &lt;span&gt;Я принимаю условия&lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn--primary
+    pk-form-submit"&gt;Создать аккаунт&lt;/button&gt;
+  &lt;div class="pk-form-success alert alert--success"
+    style="display:none;"&gt;✓ Аккаунт создан!&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      <!-- Вариант 2: Расширенная регистрация -->
+      <h3>Вариант 2 — Расширенная регистрация</h3>
+      <p>С полями: телефон, страна, пол, дата рождения, фото профиля.</p>
+
+      <div class="demo-box demo-box--column">
+        <form class="pk-form" style="width:100%;max-width:500px;" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group" style="flex:1;">
+              <label class="form-label">Имя</label>
+              <input type="text" class="input" placeholder="Иван" data-validate="required" autocomplete="given-name">
+              <span class="form-hint form-hint--error" style="display:none;"></span>
+            </div>
+            <div class="form-group" style="flex:1;">
+              <label class="form-label">Фамилия</label>
+              <input type="text" class="input" placeholder="Иванов" data-validate="required" autocomplete="family-name">
+              <span class="form-hint form-hint--error" style="display:none;"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="input" placeholder="ivan@example.com" data-validate="required email" autocomplete="email">
+            <span class="form-hint form-hint--error" style="display:none;"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Телефон</label>
+            <input type="tel" class="input" placeholder="+7 (999) 123-45-67" data-validate="required" autocomplete="tel">
+            <span class="form-hint form-hint--error" style="display:none;"></span>
+          </div>
+          <div class="form-row" style="gap:0.75rem;">
+            <div class="form-group" style="flex:1;">
+              <label class="form-label">Страна</label>
+              <select class="select" data-validate="required">
+                <option value="">Выберите...</option>
+                <option>Россия</option>
+                <option>Казахстан</option>
+                <option>Беларусь</option>
+                <option>Другое</option>
+              </select>
+              <span class="form-hint form-hint--error" style="display:none;"></span>
+            </div>
+            <div class="form-group" style="flex:1;">
+              <label class="form-label">Дата рождения</label>
+              <input type="date" class="input" data-validate="required">
+              <span class="form-hint form-hint--error" style="display:none;"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Пол</label>
+            <div style="display:flex;gap:1rem;">
+              <label class="form-check"><input type="radio" name="gender" class="radio" value="male" data-validate="required"> <span>Мужской</span></label>
+              <label class="form-check"><input type="radio" name="gender" class="radio" value="female"> <span>Женский</span></label>
+              <label class="form-check"><input type="radio" name="gender" class="radio" value="other"> <span>Другой</span></label>
+            </div>
+            <span class="form-hint form-hint--error" style="display:none;"></span>
+          </div>
+          <div class="form-row" style="gap:0.75rem;">
+            <div class="form-group" style="flex:1;">
+              <label class="form-label">Пароль</label>
+              <input type="password" class="input" placeholder="••••••••" data-validate="required" data-validate-length="6" autocomplete="new-password">
+              <span class="form-hint form-hint--error" style="display:none;"></span>
+            </div>
+            <div class="form-group" style="flex:1;">
+              <label class="form-label">Подтверждение</label>
+              <input type="password" class="input" placeholder="••••••••" data-validate="required match" data-match-field="Пароль">
+              <span class="form-hint form-hint--error" style="display:none;"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-check">
+              <input type="checkbox" class="checkbox" data-validate="required">
+              <span>Я согласен на обработку персональных данных</span>
+            </label>
+            <span class="form-hint form-hint--error" style="display:none;"></span>
+          </div>
+          <div class="form-group" style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+            <button type="submit" class="btn btn--primary pk-form-submit">Зарегистрироваться</button>
+            <button type="reset" class="btn btn--outline">Сбросить</button>
+          </div>
+          <div class="pk-form-success alert alert--success" style="display:none;margin-top:0.75rem;">✓ Регистрация прошла успешно!</div>
+        </form>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;form class="pk-form"&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label class="form-label"&gt;Имя&lt;/label&gt;
+      &lt;input type="text" class="input"
+        data-validate="required" /&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label class="form-label"&gt;Фамилия&lt;/label&gt;
+      &lt;input type="text" class="input" /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="form-label"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="input"
+      data-validate="required email" /&gt;
+  &lt;/div&gt;
+  &lt;button type="submit"
+    class="btn btn--primary pk-form-submit"&gt;
+    Зарегистрироваться
+  &lt;/button&gt;
+  &lt;div class="pk-form-success alert alert--success"
+    style="display:none"&gt;✓ Успешно!&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      <!-- Вариант 3: Регистрация в карточке -->
+      <h3>Вариант 3 — Регистрация в стеклянной карточке</h3>
+      <p>Форма регистрации, оформленная в стеклянную карточку с центрированием.</p>
+
+      <div class="demo-box" style="justify-content:center;">
+        <div class="card card--glass" style="max-width:400px;width:100%;padding:2rem;">
+          <div style="text-align:center;margin-bottom:1.5rem;">
+            <div style="width:48px;height:48px;border-radius:12px;background:var(--pk-primary);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;font-weight:700;margin-bottom:0.75rem;">P</div>
+            <h3 style="font-size:1.3rem;font-weight:600;margin:0;">Создать аккаунт</h3>
+            <p style="font-size:0.85rem;color:var(--pk-text-muted);margin:0.25rem 0 0;">Присоединяйтесь к Photon</p>
+          </div>
+          <form class="pk-form" onsubmit="return false;">
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="input" placeholder="you@example.com" data-validate="required email">
+              <span class="form-hint form-hint--error" style="display:none;"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Имя пользователя</label>
+              <input type="text" class="input" placeholder="username" data-validate="required" data-validate-length="3">
+              <span class="form-hint form-hint--error" style="display:none;"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Пароль</label>
+              <input type="password" class="input" placeholder="••••••••" data-validate="required" data-validate-length="6">
+              <span class="form-hint form-hint--error" style="display:none;"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-check" style="justify-content:center;">
+                <input type="checkbox" class="checkbox" data-validate="required">
+                <span style="font-size:0.82rem;">Я согласен с <a href="#">условиями</a></span>
+              </label>
+              <span class="form-hint form-hint--error" style="display:none;text-align:center;"></span>
+            </div>
+            <button type="submit" class="btn btn--primary pk-form-submit" style="width:100%;">Создать аккаунт</button>
+            <div class="pk-form-success alert alert--success" style="display:none;margin-top:0.75rem;text-align:center;">✓ Аккаунт создан! Добро пожаловать!</div>
+            <p style="text-align:center;font-size:0.8rem;color:var(--pk-text-muted);margin-top:1rem;">Уже есть аккаунт? <a href="#">Войти</a></p>
+          </form>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="card card--glass" style="max-width:400px;"&gt;
+  &lt;div style="text-align:center;"&gt;
+    &lt;h3&gt;Создать аккаунт&lt;/h3&gt;
+    &lt;p&gt;Присоединяйтесь к Photon&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;form class="pk-form"&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label class="form-label"&gt;Email&lt;/label&gt;
+      &lt;input type="email" class="input"
+        data-validate="required email" /&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label class="form-label"&gt;Пароль&lt;/label&gt;
+      &lt;input type="password" class="input"
+        data-validate="required"
+        data-validate-length="6" /&gt;
+    &lt;/div&gt;
+    &lt;button type="submit"
+      class="btn btn--primary pk-form-submit"
+      style="width:100%;"&gt;
+      Создать аккаунт
+    &lt;/button&gt;
+    &lt;p&gt;Уже есть аккаунт? &lt;a href="#"&gt;Войти&lt;/a&gt;&lt;/p&gt;
+  &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <!-- ===== ВАЛИДАЦИЯ ЧЕРЕЗ JS ===== -->
+      <h2>JavaScript-валидация форм</h2>
+      <p>Photon имеет встроенную клиентскую валидацию. Добавьте атрибут <code>data-validate</code> к полям и класс <code>pk-form</code> к форме. Доступные правила:</p>
+      <ul>
+        <li><code>required</code> — поле обязательно</li>
+        <li><code>email</code> — проверка формата email</li>
+        <li><code>match</code> — совпадение с другим полем (укажите <code>data-match-field="Название"</code>)</li>
+        <li><code>data-validate-length="N"</code> — минимальная длина</li>
+      </ul>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Активация: просто добавьте класс pk-form к форме --&gt;
+&lt;form class="pk-form"&gt;
+  &lt;input type="text" class="input"
+    data-validate="required"
+    data-validate-length="2" /&gt;
+  &lt;input type="email" class="input"
+    data-validate="required email" /&gt;
+  &lt;input type="password" class="input"
+    data-validate="required match"
+    data-match-field="Пароль" /&gt;
+  &lt;input type="checkbox" class="checkbox"
+    data-validate="required" /&gt;
+  &lt;button type="submit"
+    class="btn btn--primary pk-form-submit"&gt;
+    Отправить
+  &lt;/button&gt;
+  &lt;div class="pk-form-success alert alert--success"
+    style="display:none;"&gt;✓ Успех!&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      <!-- ===== ЗАГРУЗКА ФАЙЛОВ ===== -->
       <h2>Загрузка файлов</h2>
-      <p>Стилизованный input для загрузки файлов.</p>
+      <p>Несколько вариантов загрузки файлов с отображением имени и рабочими кнопками выбора.</p>
+
+      <!-- Вариант 1: Простая загрузка -->
+      <h3>Вариант 1 — Простая загрузка</h3>
+      <p>Стандартный input с отображением имени выбранного файла.</p>
 
       <div class="demo-box demo-box--column">
-        <input type="file" class="input" />
-        <input type="file" class="input" multiple />
+        <div class="pk-upload" style="width:100%;max-width:400px;">
+          <div style="display:flex;gap:0.5rem;align-items:center;">
+            <button type="button" class="btn btn--outline pk-upload-btn">Выбрать файл</button>
+            <span class="pk-upload-name" style="font-size:0.85rem;color:var(--pk-text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Файл не выбран</span>
+          </div>
+          <input type="file" class="pk-upload-input" style="display:none;">
+        </div>
       </div>
 
       <div class="code-block">
-        <pre><code>&lt;input type="file" class="input" /&gt;
-&lt;input type="file" class="input" multiple /&gt;</code></pre>
+        <pre><code>&lt;div class="pk-upload"&gt;
+  &lt;button type="button"
+    class="btn btn--outline pk-upload-btn"&gt;
+    Выбрать файл
+  &lt;/button&gt;
+  &lt;span class="pk-upload-name"&gt;Файл не выбран&lt;/span&gt;
+  &lt;input type="file" class="pk-upload-input"
+    style="display:none;" /&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
-      <h2>Валидация</h2>
-      <p>Добавьте класс <code>input--success</code> или <code>input--error</code> для отображения состояния валидации.</p>
+      <!-- Вариант 2: Загрузка с иконкой и типом -->
+      <h3>Вариант 2 — Загрузка с иконкой и информацией</h3>
+      <p>Кнопка с иконкой, информацией о форматах и статусом.</p>
 
       <div class="demo-box demo-box--column">
-        <input type="text" class="input input--success" placeholder="Успешная валидация" value="Верный Email" />
-        <input type="text" class="input input--error" placeholder="Ошибка валидации" value="неверный-email" />
-        <textarea class="textarea input--success">Всё верно</textarea>
+        <div class="pk-upload" style="width:100%;max-width:450px;">
+          <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;">
+            <button type="button" class="btn btn--primary pk-upload-btn" style="display:flex;align-items:center;gap:0.4rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Загрузить изображение
+            </button>
+            <span style="font-size:0.78rem;color:var(--pk-text-muted);">PNG, JPG до 5MB</span>
+          </div>
+          <div class="pk-upload-preview" style="display:none;margin-top:0.75rem;padding:0.75rem;background:var(--pk-bg-alt);border-radius:var(--pk-radius-sm);border:1px solid var(--pk-border);">
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <div style="width:40px;height:40px;border-radius:6px;background:var(--pk-primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:1.2rem;">🖼</div>
+              <div style="flex:1;min-width:0;">
+                <div class="pk-upload-name" style="font-size:0.85rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></div>
+                <div class="pk-upload-size" style="font-size:0.75rem;color:var(--pk-text-muted);margin-top:0.15rem;"></div>
+              </div>
+              <button type="button" class="pk-upload-clear btn btn--ghost btn--sm" style="color:var(--pk-error);font-size:1.1rem;padding:0.2rem 0.4rem;">✕</button>
+            </div>
+          </div>
+          <input type="file" class="pk-upload-input" accept="image/png,image/jpeg" style="display:none;">
+        </div>
       </div>
 
       <div class="code-block">
-        <pre><code>&lt;input type="text" class="input input--success" placeholder="Успех" value="Верный Email" /&gt;
-&lt;input type="text" class="input input--error" placeholder="Ошибка" value="неверный-email" /&gt;
-&lt;textarea class="textarea input--success"&gt;Всё верно&lt;/textarea&gt;</code></pre>
+        <pre><code>&lt;div class="pk-upload" style="width:100%;max-width:450px;"&gt;
+  &lt;div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;"&gt;
+    &lt;button type="button" class="btn btn--primary pk-upload-btn" style="display:flex;align-items:center;gap:0.4rem;"&gt;
+      &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"&gt;&lt;path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/&gt;&lt;polyline points="17 8 12 3 7 8"/&gt;&lt;line x1="12" y1="3" x2="12" y2="15"/&gt;&lt;/svg&gt;
+      Загрузить изображение
+    &lt;/button&gt;
+    &lt;span style="font-size:0.78rem;color:var(--pk-text-muted);"&gt;PNG, JPG до 5MB&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="pk-upload-preview" style="display:none;margin-top:0.75rem;padding:0.75rem;background:var(--pk-bg-alt);border-radius:var(--pk-radius-sm);border:1px solid var(--pk-border);"&gt;
+    &lt;div style="display:flex;align-items:center;gap:0.75rem;"&gt;
+      &lt;div style="width:40px;height:40px;border-radius:6px;background:var(--pk-primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:1.2rem;"&gt;🖼&lt;/div&gt;
+      &lt;div style="flex:1;min-width:0;"&gt;
+        &lt;div class="pk-upload-name" style="font-size:0.85rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"&gt;&lt;/div&gt;
+        &lt;div class="pk-upload-size" style="font-size:0.75rem;color:var(--pk-text-muted);margin-top:0.15rem;"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;button type="button" class="pk-upload-clear btn btn--ghost btn--sm" style="color:var(--pk-error);font-size:1.1rem;padding:0.2rem 0.4rem;"&gt;✕&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;input type="file" class="pk-upload-input" accept="image/png,image/jpeg" style="display:none;"&gt;
+&lt;/div&gt;</code></pre>
       </div>
 
+      <!-- Вариант 3: Drag & Drop зона -->
+      <h3>Вариант 3 — Drag & Drop зона</h3>
+      <p>Область для перетаскивания файлов с визуальной обратной связью.</p>
+
+      <div class="demo-box demo-box--column">
+        <div class="pk-upload pk-upload--dropzone" style="width:100%;max-width:500px;">
+          <div class="pk-upload-dropzone" style="border:2px dashed var(--pk-border);border-radius:var(--pk-radius);padding:2.5rem 1.5rem;text-align:center;cursor:pointer;transition:var(--pk-transition);background:var(--pk-bg-alt);">
+            <div style="font-size:2.5rem;margin-bottom:0.75rem;opacity:0.4;">📁</div>
+            <p style="font-size:0.95rem;font-weight:500;color:var(--pk-text);margin:0 0 0.25rem;">Перетащите файл сюда</p>
+            <p style="font-size:0.8rem;color:var(--pk-text-muted);margin:0 0 0.75rem;">или нажмите для выбора</p>
+            <button type="button" class="btn btn--outline btn--sm pk-upload-btn">Выбрать файл</button>
+          </div>
+          <div class="pk-upload-preview" style="display:none;margin-top:0.75rem;padding:0.75rem;background:var(--pk-bg-alt);border-radius:var(--pk-radius-sm);border:1px solid var(--pk-border);">
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <div style="width:40px;height:40px;border-radius:6px;background:var(--pk-success);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:1.2rem;">✓</div>
+              <div style="flex:1;min-width:0;">
+                <div class="pk-upload-name" style="font-size:0.85rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"></div>
+                <div class="pk-upload-size" style="font-size:0.75rem;color:var(--pk-text-muted);margin-top:0.15rem;"></div>
+              </div>
+              <button type="button" class="pk-upload-clear btn btn--ghost btn--sm" style="color:var(--pk-error);font-size:1.1rem;padding:0.2rem 0.4rem;">✕</button>
+            </div>
+          </div>
+          <input type="file" class="pk-upload-input" style="display:none;">
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pk-upload pk-upload--dropzone"&gt;
+  &lt;div class="pk-upload-dropzone"&gt;
+    &lt;p&gt;Перетащите файл сюда&lt;/p&gt;
+    &lt;button class="btn btn--outline btn--sm
+      pk-upload-btn"&gt;Выбрать файл&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="pk-upload-preview"&gt;
+    &lt;div class="pk-upload-name"&gt;&lt;/div&gt;
+    &lt;div class="pk-upload-size"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;input type="file" class="pk-upload-input"
+    style="display:none;" /&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <!-- Вариант 4: Множественная загрузка -->
+      <h3>Вариант 4 — Множественная загрузка</h3>
+      <p>Загрузка нескольких файлов с отображением списка.</p>
+
+      <div class="demo-box demo-box--column">
+        <div class="pk-upload pk-upload--multiple" style="width:100%;max-width:500px;">
+          <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
+            <button type="button" class="btn btn--outline pk-upload-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:middle;margin-right:0.3rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Выбрать файлы
+            </button>
+            <span style="font-size:0.8rem;color:var(--pk-text-muted);">Загружено: <span class="pk-upload-count">0</span> файлов</span>
+          </div>
+          <div class="pk-upload-list" style="margin-top:0.75rem;display:flex;flex-direction:column;gap:0.35rem;"></div>
+          <input type="file" class="pk-upload-input" multiple style="display:none;">
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pk-upload pk-upload--multiple"&gt;
+  &lt;button class="btn btn--outline pk-upload-btn"&gt;
+    Выбрать файлы
+  &lt;/button&gt;
+  &lt;span&gt;Загружено:
+    &lt;span class="pk-upload-count"&gt;0&lt;/span&gt; файлов
+  &lt;/span&gt;
+  &lt;div class="pk-upload-list"&gt;&lt;/div&gt;
+  &lt;input type="file" class="pk-upload-input"
+    multiple style="display:none;" /&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <!-- Вариант 5: Загрузка аватара -->
+      <h3>Вариант 5 — Загрузка аватара</h3>
+      <p>Круглая область для загрузки фото профиля с предпросмотром.</p>
+
+      <div class="demo-box" style="justify-content:center;">
+        <div class="pk-upload" style="text-align:center;">
+          <div class="pk-upload-avatar" style="width:100px;height:100px;border-radius:50%;background:var(--pk-bg-alt);border:2px dashed var(--pk-border);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;overflow:hidden;cursor:pointer;transition:var(--pk-transition);position:relative;">
+            <div class="pk-upload-avatar-placeholder" style="font-size:2rem;opacity:0.4;">📷</div>
+            <img class="pk-upload-avatar-img" style="display:none;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+          </div>
+          <button type="button" class="btn btn--outline btn--sm pk-upload-btn">Загрузить фото</button>
+          <div class="pk-upload-name" style="font-size:0.8rem;color:var(--pk-text-muted);margin-top:0.35rem;"></div>
+          <input type="file" class="pk-upload-input" accept="image/*" style="display:none;">
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pk-upload"&gt;
+  &lt;div class="pk-upload-avatar"&gt;
+    &lt;div class="pk-upload-avatar-placeholder"&gt;📷&lt;/div&gt;
+    &lt;img class="pk-upload-avatar-img"
+      style="display:none;" /&gt;
+  &lt;/div&gt;
+  &lt;button class="btn btn--outline btn--sm
+    pk-upload-btn"&gt;Загрузить фото&lt;/button&gt;
+  &lt;div class="pk-upload-name"&gt;&lt;/div&gt;
+  &lt;input type="file" class="pk-upload-input"
+    accept="image/*" style="display:none;" /&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <!-- ===== ГРУППА ФОРМЫ ===== -->
       <h2>Группа формы</h2>
       <p>Объедините метку, поле и подсказку с помощью классов <code>form-group</code> и <code>form-label</code>.</p>
 
@@ -244,11 +704,30 @@
 &lt;/div&gt;
 &lt;div class="form-group"&gt;
   &lt;label class="form-label"&gt;Email&lt;/label&gt;
-  &lt;input type="email" class="input input--error" placeholder="Email" value="некорректный" /&gt;
-  &lt;span class="form-hint form-hint--error"&gt;Введите корректный email&lt;/span&gt;
+  &lt;input type="email" class="input input--error"
+    placeholder="Email" value="некорректный" /&gt;
+  &lt;span class="form-hint form-hint--error"&gt;Ошибка&lt;/span&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
+      <h2>Валидация (статическая)</h2>
+      <p>Добавьте класс <code>input--success</code> или <code>input--error</code> для отображения состояния валидации вручную.</p>
+
+      <div class="demo-box demo-box--column">
+        <input type="text" class="input input--success" placeholder="Успешная валидация" value="Верный Email" />
+        <input type="text" class="input input--error" placeholder="Ошибка валидации" value="неверный-email" />
+        <textarea class="textarea input--success">Всё верно</textarea>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;input type="text" class="input input--success"
+  placeholder="Успех" value="Верный Email" /&gt;
+&lt;input type="text" class="input input--error"
+  placeholder="Ошибка" value="неверный-email" /&gt;
+&lt;textarea class="textarea input--success"&gt;Всё верно&lt;/textarea&gt;</code></pre>
+      </div>
+
+      <!-- ===== ПОЛНАЯ ФОРМА ===== -->
       <h2>Полная форма</h2>
       <p>Пример полноценной формы с различными элементами.</p>
 
@@ -283,10 +762,6 @@
             <label class="form-label">Комментарий</label>
             <textarea class="textarea" placeholder="Ваш комментарий"></textarea>
           </div>
-          <div class="form-group">
-            <label class="form-label">Возраст</label>
-            <input type="range" class="range" min="0" max="100" value="25" />
-          </div>
           <button type="submit" class="btn btn--primary">Отправить</button>
           <button type="reset" class="btn btn--outline">Сбросить</button>
         </form>
@@ -296,35 +771,16 @@
         <pre><code>&lt;form style="width:100%;max-width:500px;"&gt;
   &lt;div class="form-group"&gt;
     &lt;label class="form-label"&gt;Полное имя&lt;/label&gt;
-    &lt;input type="text" class="input" placeholder="Иван Иванов" /&gt;
+    &lt;input type="text" class="input" /&gt;
   &lt;/div&gt;
   &lt;div class="form-group"&gt;
     &lt;label class="form-label"&gt;Email&lt;/label&gt;
-    &lt;input type="email" class="input" placeholder="ivan@example.com" /&gt;
+    &lt;input type="email" class="input" /&gt;
   &lt;/div&gt;
-  &lt;div class="form-group"&gt;
-    &lt;label class="form-label"&gt;Страна&lt;/label&gt;
-    &lt;select class="select"&gt;
-      &lt;option&gt;Россия&lt;/option&gt;
-      &lt;option&gt;Казахстан&lt;/option&gt;
-      &lt;option&gt;Беларусь&lt;/option&gt;
-    &lt;/select&gt;
-  &lt;/div&gt;
-  &lt;div class="form-group"&gt;
-    &lt;label class="form-label"&gt;Подписка&lt;/label&gt;
-    &lt;label class="form-check"&gt;&lt;input type="checkbox" class="checkbox" checked /&gt; &lt;span&gt;Получать новости&lt;/span&gt;&lt;/label&gt;
-    &lt;label class="form-check"&gt;&lt;input type="checkbox" class="checkbox" /&gt; &lt;span&gt;Спецпредложения&lt;/span&gt;&lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class="form-group"&gt;
-    &lt;label class="form-label"&gt;Уведомления&lt;/label&gt;
-    &lt;label class="form-check"&gt;&lt;input type="checkbox" class="switch" checked /&gt; &lt;span&gt;Push-уведомления&lt;/span&gt;&lt;/label&gt;
-  &lt;/div&gt;
-  &lt;div class="form-group"&gt;
-    &lt;label class="form-label"&gt;Комментарий&lt;/label&gt;
-    &lt;textarea class="textarea" placeholder="Ваш комментарий"&gt;&lt;/textarea&gt;
-  &lt;/div&gt;
-  &lt;button type="submit" class="btn btn--primary"&gt;Отправить&lt;/button&gt;
-  &lt;button type="reset" class="btn btn--outline"&gt;Сбросить&lt;/button&gt;
+  &lt;button type="submit"
+    class="btn btn--primary"&gt;Отправить&lt;/button&gt;
+  &lt;button type="reset"
+    class="btn btn--outline"&gt;Сбросить&lt;/button&gt;
 &lt;/form&gt;</code></pre>
       </div>
 

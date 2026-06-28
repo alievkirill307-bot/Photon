@@ -57,37 +57,34 @@
 
       <h1>Навигация</h1>
       <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
-      <p>Photon предоставляет полный набор навигационных компонентов: навбар, вкладки, хлебные крошки, шаги и пагинацию.</p>
+      <p>Photon предоставляет полный набор навигационных компонентов: навбары, вкладки, хлебные крошки, шаги и пагинацию. Навбары доступны в 8 вариантах и полностью адаптивны.</p>
 
-      <h2>Навбар (Navbar)</h2>
-      <p>Стеклянная панель навигации с логотипом, ссылками и адаптивным меню. Используйте классы <code>navbar</code>, <code>navbar__brand</code>, <code>navbar__menu</code> и <code>navbar__toggle</code>.</p>
+      <!-- ============================================================ -->
+      <!-- NAVBAR VARIANTS -->
+      <!-- ============================================================ -->
+
+      <h2>Навбар — стеклянный (по умолчанию)</h2>
+      <p>Классический стеклянный навбар с блюром. Используйте класс <code>.navbar</code>. Адаптивное меню с анимированным бургером автоматически срабатывает на ширине меньше 768px.</p>
 
       <div class="demo-box demo-box--column">
-        <nav class="navbar" style="width:100%; border-radius: 12px;">
+        <nav class="navbar" style="width:100%; border-radius:12px; position:relative;">
           <a href="#" class="navbar__brand">
-            <span class="navbar__brand-icon" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--pk-primary);border-radius:6px;color:#fff;font-size:0.75rem;font-weight:700;">P</span>
+            <span class="navbar__brand-icon" style="background:var(--pk-primary);color:#fff;">P</span>
             Photon
           </a>
+          <button class="navbar__toggle" type="button" aria-label="Меню">
+            <span class="navbar__toggle-icon">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
           <div class="navbar__menu">
             <a href="#" class="navbar__link active">Главная</a>
             <a href="#" class="navbar__link">Компоненты</a>
             <a href="#" class="navbar__link">Документация</a>
             <a href="#" class="navbar__link">Примеры</a>
           </div>
-          <button class="btn btn--primary btn--sm" style="margin-left:auto;">Войти</button>
-        </nav>
-
-        <nav class="navbar" style="width:100%; border-radius: 12px;">
-          <a href="#" class="navbar__brand">
-            <span class="navbar__brand-icon" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--pk-success);border-radius:6px;color:#fff;font-size:0.75rem;font-weight:700;">S</span>
-            Store
-          </a>
-          <button class="navbar__toggle" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
-          <div class="navbar__menu">
-            <a href="#" class="navbar__link">Каталог</a>
-            <a href="#" class="navbar__link">Корзина</a>
-            <a href="#" class="navbar__link">Избранное</a>
-            <a href="#" class="navbar__link">Профиль</a>
+          <div class="navbar__actions">
+            <button class="btn btn--primary btn--sm">Войти</button>
           </div>
         </nav>
       </div>
@@ -95,29 +92,574 @@
       <div class="code-block">
         <pre><code>&lt;nav class="navbar"&gt;
   &lt;a href="#" class="navbar__brand"&gt;
-    &lt;span class="navbar__brand-icon" style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--pk-primary);border-radius:6px;color:#fff;font-size:0.75rem;font-weight:700;"&gt;P&lt;/span&gt;
+    &lt;span class="navbar__brand-icon"&gt;P&lt;/span&gt;
     Photon
   &lt;/a&gt;
+  &lt;button class="navbar__toggle" type="button" aria-label="Меню"&gt;
+    &lt;span class="navbar__toggle-icon"&gt;
+      &lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/button&gt;
   &lt;div class="navbar__menu"&gt;
     &lt;a href="#" class="navbar__link active"&gt;Главная&lt;/a&gt;
     &lt;a href="#" class="navbar__link"&gt;Компоненты&lt;/a&gt;
     &lt;a href="#" class="navbar__link"&gt;Документация&lt;/a&gt;
   &lt;/div&gt;
-  &lt;button class="btn btn--primary btn--sm" style="margin-left:auto;"&gt;Войти&lt;/button&gt;
-&lt;/nav&gt;
-
-&lt;nav class="navbar"&gt;
-  &lt;a href="#" class="navbar__brand"&gt;Store&lt;/a&gt;
-  &lt;button class="navbar__toggle" type="button"&gt;☰&lt;/button&gt;
-  &lt;div class="navbar__menu"&gt;
-    &lt;a href="#" class="navbar__link"&gt;Каталог&lt;/a&gt;
-    &lt;a href="#" class="navbar__link"&gt;Корзина&lt;/a&gt;
+  &lt;div class="navbar__actions"&gt;
+    &lt;button class="btn btn--primary btn--sm"&gt;Войти&lt;/button&gt;
   &lt;/div&gt;
-&lt;/nav&gt;</code></pre>
+&lt;/nav&gt;
+</code></pre>
+      </div>
+
+      <h2>Навбар — сплошной</h2>
+      <p>Сплошной фон без glass-эффекта. Добавьте класс <code>.navbar--solid</code>.</p>
+
+      <div class="demo-box demo-box--column">
+        <nav class="navbar navbar--solid" style="width:100%; border-radius:12px; position:relative;">
+          <a href="#" class="navbar__brand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--pk-primary)" stroke-width="2" style="width:20px;height:20px;"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            Photon
+          </a>
+          <button class="navbar__toggle" type="button" aria-label="Меню">
+            <span class="navbar__toggle-icon">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+          <div class="navbar__menu">
+            <a href="#" class="navbar__link active">Главная</a>
+            <a href="#" class="navbar__link">Блог</a>
+            <a href="#" class="navbar__link">Контакты</a>
+          </div>
+          <div class="navbar__actions">
+            <a href="#" class="btn btn--ghost btn--sm">Регистрация</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav class="navbar navbar--solid" style="width:100%; border-radius:12px; position:relative;"&gt;
+  &lt;a href="#" class="navbar__brand"&gt;
+    &lt;svg viewBox="0 0 24 24" fill="none" stroke="var(--pk-primary)" stroke-width="2" style="width:20px;height:20px;"&gt;&lt;path d="M12 2L2 7l10 5 10-5-10-5z"/&gt;&lt;path d="M2 17l10 5 10-5"/&gt;&lt;path d="M2 12l10 5 10-5"/&gt;&lt;/svg&gt;
+    Photon
+  &lt;/a&gt;
+  &lt;button class="navbar__toggle" type="button" aria-label="Меню"&gt;
+    &lt;span class="navbar__toggle-icon"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div class="navbar__menu"&gt;
+    &lt;a href="#" class="navbar__link active"&gt;Главная&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Блог&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Контакты&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="navbar__actions"&gt;
+    &lt;a href="#" class="btn btn--ghost btn--sm"&gt;Регистрация&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+      </div>
+
+      <h2>Навбар — цветной (primary)</h2>
+      <p>Навбар с фоном основного цвета. Добавьте класс <code>.navbar--primary</code>.</p>
+
+      <div class="demo-box demo-box--column">
+        <nav class="navbar navbar--primary" style="width:100%; border-radius:12px; position:relative;">
+          <a href="#" class="navbar__brand">✦ Photon</a>
+          <button class="navbar__toggle" type="button" aria-label="Меню">
+            <span class="navbar__toggle-icon">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+          <div class="navbar__menu">
+            <a href="#" class="navbar__link active">Главная</a>
+            <a href="#" class="navbar__link">Возможности</a>
+            <a href="#" class="navbar__link">Цены</a>
+            <a href="#" class="navbar__link">О нас</a>
+          </div>
+          <div class="navbar__actions">
+            <button class="btn btn--sm" style="background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.3);color:#fff;">Начать</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav class="navbar navbar--primary" style="width:100%; border-radius:12px; position:relative;"&gt;
+  &lt;a href="#" class="navbar__brand"&gt;✦ Photon&lt;/a&gt;
+  &lt;button class="navbar__toggle" type="button" aria-label="Меню"&gt;
+    &lt;span class="navbar__toggle-icon"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div class="navbar__menu"&gt;
+    &lt;a href="#" class="navbar__link active"&gt;Главная&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Возможности&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Цены&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;О нас&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="navbar__actions"&gt;
+    &lt;button class="btn btn--sm" style="background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.3);color:#fff;"&gt;Начать&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+      </div>
+
+      <h2>Навбар — тёмный</h2>
+      <p>Тёмный сплошной навбар. Класс <code>.navbar--dark</code>.</p>
+
+      <div class="demo-box demo-box--column">
+        <nav class="navbar navbar--dark" style="width:100%; border-radius:12px; position:relative;">
+          <a href="#" class="navbar__brand">◆ DarkKit</a>
+          <button class="navbar__toggle" type="button" aria-label="Меню">
+            <span class="navbar__toggle-icon">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+          <div class="navbar__menu">
+            <a href="#" class="navbar__link active">Главная</a>
+            <a href="#" class="navbar__link">Каталог</a>
+            <a href="#" class="navbar__link">О нас</a>
+          </div>
+          <div class="navbar__actions">
+            <button class="btn btn--sm" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.15);color:#fff;">Войти</button>
+            <button class="btn btn--primary btn--sm">Регистрация</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav class="navbar navbar--dark" style="width:100%; border-radius:12px; position:relative;"&gt;
+  &lt;a href="#" class="navbar__brand"&gt;◆ DarkKit&lt;/a&gt;
+  &lt;button class="navbar__toggle" type="button" aria-label="Меню"&gt;
+    &lt;span class="navbar__toggle-icon"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div class="navbar__menu"&gt;
+    &lt;a href="#" class="navbar__link active"&gt;Главная&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Каталог&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;О нас&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="navbar__actions"&gt;
+    &lt;button class="btn btn--sm" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.15);color:#fff;"&gt;Войти&lt;/button&gt;
+    &lt;button class="btn btn--primary btn--sm"&gt;Регистрация&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+      </div>
+
+      <h2>Навбар — прозрачный</h2>
+      <p>Прозрачный навбар без фона и обводки. Идеально для hero-секций. Класс <code>.navbar--transparent</code>.</p>
+
+      <div class="demo-box demo-box--column">
+        <div style="background:linear-gradient(135deg,var(--pk-primary),#7a78e0);border-radius:12px;width:100%;padding:0;">
+          <nav class="navbar navbar--transparent" style="position:relative;color:#fff;">
+            <a href="#" class="navbar__brand" style="color:#fff;">◈ Photon</a>
+            <button class="navbar__toggle" type="button" aria-label="Меню" style="color:#fff;">
+              <span class="navbar__toggle-icon">
+                <span></span><span></span><span></span>
+              </span>
+            </button>
+            <div class="navbar__menu">
+              <a href="#" class="navbar__link active" style="color:rgba(255,255,255,0.9);">Главная</a>
+              <a href="#" class="navbar__link" style="color:rgba(255,255,255,0.7);">О продукте</a>
+              <a href="#" class="navbar__link" style="color:rgba(255,255,255,0.7);">Контакты</a>
+            </div>
+            <div class="navbar__actions">
+              <button class="btn btn--sm" style="background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.3);color:#fff;">Связаться</button>
+            </div>
+          </nav>
+          <div style="padding:4rem 2rem;text-align:center;color:#fff;">
+            <h2 style="color:#fff;font-size:2rem;">Hero-секция</h2>
+            <p style="color:rgba(255,255,255,0.8);">Прозрачный навбар поверх контента</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div style="background:linear-gradient(135deg,var(--pk-primary),#7a78e0);border-radius:12px;"&gt;
+  &lt;nav class="navbar navbar--transparent" style="position:relative;color:#fff;"&gt;
+    &lt;a href="#" class="navbar__brand" style="color:#fff;"&gt;◈ Photon&lt;/a&gt;
+    &lt;button class="navbar__toggle" type="button" aria-label="Меню" style="color:#fff;"&gt;
+      &lt;span class="navbar__toggle-icon"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="navbar__menu"&gt;
+      &lt;a href="#" class="navbar__link active" style="color:rgba(255,255,255,0.9);"&gt;Главная&lt;/a&gt;
+      &lt;a href="#" class="navbar__link" style="color:rgba(255,255,255,0.7);"&gt;О продукте&lt;/a&gt;
+      &lt;a href="#" class="navbar__link" style="color:rgba(255,255,255,0.7);"&gt;Контакты&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="navbar__actions"&gt;
+      &lt;button class="btn btn--sm" style="background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.3);color:#fff;"&gt;Связаться&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+  &lt;div style="padding:4rem 2rem;text-align:center;color:#fff;"&gt;
+    &lt;h2 style="color:#fff;font-size:2rem;"&gt;Hero-секция&lt;/h2&gt;
+    &lt;p style="color:rgba(255,255,255,0.8);"&gt;Прозрачный навбар поверх контента&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      <h2>Навбар с центрированными ссылками</h2>
+      <p>Бренд слева, ссылки по центру, действия справа. Класс <code>.navbar--center</code>.</p>
+
+      <div class="demo-box demo-box--column">
+        <nav class="navbar navbar--center" style="width:100%; border-radius:12px; position:relative;">
+          <a href="#" class="navbar__brand">
+            <span class="navbar__brand-icon" style="background:var(--pk-primary);color:#fff;">P</span>
+            Photon
+          </a>
+          <button class="navbar__toggle" type="button" aria-label="Меню">
+            <span class="navbar__toggle-icon">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+          <div class="navbar__menu">
+            <a href="#" class="navbar__link active">Главная</a>
+            <a href="#" class="navbar__link">Блог</a>
+            <a href="#" class="navbar__link">Проекты</a>
+            <a href="#" class="navbar__link">Контакты</a>
+          </div>
+          <div class="navbar__actions">
+            <button class="btn btn--primary btn--sm">Подписаться</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav class="navbar navbar--center" style="width:100%; border-radius:12px; position:relative;"&gt;
+  &lt;a href="#" class="navbar__brand"&gt;
+    &lt;span class="navbar__brand-icon" style="background:var(--pk-primary);color:#fff;"&gt;P&lt;/span&gt;
+    Photon
+  &lt;/a&gt;
+  &lt;button class="navbar__toggle" type="button" aria-label="Меню"&gt;
+    &lt;span class="navbar__toggle-icon"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div class="navbar__menu"&gt;
+    &lt;a href="#" class="navbar__link active"&gt;Главная&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Блог&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Проекты&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Контакты&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="navbar__actions"&gt;
+    &lt;button class="btn btn--primary btn--sm"&gt;Подписаться&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+      </div>
+
+      <h2>Навбар с поиском</h2>
+      <p>Навбар с формой поиска. Поиск адаптивно скрывается на мобилках.</p>
+
+      <div class="demo-box demo-box--column">
+        <nav class="navbar" style="width:100%; border-radius:12px; position:relative;">
+          <a href="#" class="navbar__brand">
+            <span class="navbar__brand-icon" style="background:var(--pk-primary);color:#fff;">S</span>
+            SearchKit
+          </a>
+          <button class="navbar__toggle" type="button" aria-label="Меню">
+            <span class="navbar__toggle-icon">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+          <div class="navbar__menu" style="flex:1;max-width:400px;">
+            <div class="form-group" style="margin:0;width:100%;">
+              <input type="search" class="form-input" placeholder="Поиск..." style="margin:0;">
+            </div>
+          </div>
+          <div class="navbar__actions">
+            <button class="btn btn--ghost btn--sm">Найти</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav class="navbar" style="width:100%; border-radius:12px; position:relative;"&gt;
+  &lt;a href="#" class="navbar__brand"&gt;
+    &lt;span class="navbar__brand-icon" style="background:var(--pk-primary);color:#fff;"&gt;S&lt;/span&gt;
+    SearchKit
+  &lt;/a&gt;
+  &lt;button class="navbar__toggle" type="button" aria-label="Меню"&gt;
+    &lt;span class="navbar__toggle-icon"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div class="navbar__menu" style="flex:1;max-width:400px;"&gt;
+    &lt;div class="form-group" style="margin:0;width:100%;"&gt;
+      &lt;input type="search" class="form-input" placeholder="Поиск..." style="margin:0;"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="navbar__actions"&gt;
+    &lt;button class="btn btn--ghost btn--sm"&gt;Найти&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+      </div>
+
+      <h2>Навбар с выпадающим меню (dropdown)</h2>
+      <p>Навбар с дропдауном внутри меню. Используйте компонент <code>.dropdown</code> внутри навбара.</p>
+
+      <div class="demo-box demo-box--column">
+        <nav class="navbar" style="width:100%; border-radius:12px; position:relative;">
+          <a href="#" class="navbar__brand">
+            <span class="navbar__brand-icon" style="background:var(--pk-primary);color:#fff;">M</span>
+            MegaShop
+          </a>
+          <button class="navbar__toggle" type="button" aria-label="Меню">
+            <span class="navbar__toggle-icon">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+          <div class="navbar__menu">
+            <a href="#" class="navbar__link active">Главная</a>
+            <div class="dropdown">
+              <a href="#" class="navbar__link dropdown__toggle">Каталог ▾</a>
+              <div class="dropdown__menu">
+                <a href="#" class="dropdown__item">Электроника</a>
+                <a href="#" class="dropdown__item">Одежда</a>
+                <a href="#" class="dropdown__item">Дом и сад</a>
+                <div class="dropdown__divider"></div>
+                <a href="#" class="dropdown__item">Акции</a>
+              </div>
+            </div>
+            <a href="#" class="navbar__link">Доставка</a>
+            <a href="#" class="navbar__link">Контакты</a>
+          </div>
+          <div class="navbar__actions">
+            <a href="#" class="btn btn--ghost btn--sm" style="position:relative;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              <span class="badge badge--primary badge--sm" style="position:absolute;top:-4px;right:-6px;font-size:0.6rem;padding:0.1em 0.4em;">3</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav class="navbar" style="width:100%; border-radius:12px; position:relative;"&gt;
+  &lt;a href="#" class="navbar__brand"&gt;
+    &lt;span class="navbar__brand-icon" style="background:var(--pk-primary);color:#fff;"&gt;M&lt;/span&gt;
+    MegaShop
+  &lt;/a&gt;
+  &lt;button class="navbar__toggle" type="button" aria-label="Меню"&gt;
+    &lt;span class="navbar__toggle-icon"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div class="navbar__menu"&gt;
+    &lt;a href="#" class="navbar__link active"&gt;Главная&lt;/a&gt;
+    &lt;div class="dropdown"&gt;
+      &lt;a href="#" class="navbar__link dropdown__toggle"&gt;Каталог ▾&lt;/a&gt;
+      &lt;div class="dropdown__menu"&gt;
+        &lt;a href="#" class="dropdown__item"&gt;Электроника&lt;/a&gt;
+        &lt;a href="#" class="dropdown__item"&gt;Одежда&lt;/a&gt;
+        &lt;a href="#" class="dropdown__item"&gt;Дом и сад&lt;/a&gt;
+        &lt;div class="dropdown__divider"&gt;&lt;/div&gt;
+        &lt;a href="#" class="dropdown__item"&gt;Акции&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;a href="#" class="navbar__link"&gt;Доставка&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Контакты&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="navbar__actions"&gt;
+    &lt;a href="#" class="btn btn--ghost btn--sm" style="position:relative;"&gt;
+      &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"&gt;&lt;circle cx="9" cy="21" r="1"/&gt;&lt;circle cx="20" cy="21" r="1"/&gt;&lt;path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/&gt;&lt;/svg&gt;
+      &lt;span class="badge badge--primary badge--sm" style="position:absolute;top:-4px;right:-6px;font-size:0.6rem;padding:0.1em 0.4em;"&gt;3&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+      </div>
+
+      <h2>Навбар с аватаром пользователя</h2>
+      <p>Навбар с профилем пользователя и выпадающим меню.</p>
+
+      <div class="demo-box demo-box--column">
+        <nav class="navbar" style="width:100%; border-radius:12px; position:relative;">
+          <a href="#" class="navbar__brand">
+            <span class="navbar__brand-icon" style="background:var(--pk-primary);color:#fff;">P</span>
+            Photon
+          </a>
+          <button class="navbar__toggle" type="button" aria-label="Меню">
+            <span class="navbar__toggle-icon">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+          <div class="navbar__menu">
+            <a href="#" class="navbar__link active">Главная</a>
+            <a href="#" class="navbar__link">Дашборд</a>
+            <a href="#" class="navbar__link">Проекты</a>
+            <a href="#" class="navbar__link">Настройки</a>
+          </div>
+          <div class="navbar__actions">
+            <div class="dropdown dropdown--right">
+              <button class="btn btn--ghost btn--sm" style="display:flex;align-items:center;gap:0.4rem;padding:0.2rem 0.5rem;">
+                <span class="avatar avatar--sm" style="width:1.6rem;height:1.6rem;font-size:0.65rem;background:var(--pk-primary);">A</span>
+                <span style="font-size:0.8rem;">admin</span>
+              </button>
+              <div class="dropdown__menu">
+                <a href="#" class="dropdown__item">Мой профиль</a>
+                <a href="#" class="dropdown__item">Настройки</a>
+                <div class="dropdown__divider"></div>
+                <a href="#" class="dropdown__item" style="color:var(--pk-error);">Выйти</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav class="navbar" style="width:100%; border-radius:12px; position:relative;"&gt;
+  &lt;a href="#" class="navbar__brand"&gt;
+    &lt;span class="navbar__brand-icon" style="background:var(--pk-primary);color:#fff;"&gt;P&lt;/span&gt;
+    Photon
+  &lt;/a&gt;
+  &lt;button class="navbar__toggle" type="button" aria-label="Меню"&gt;
+    &lt;span class="navbar__toggle-icon"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div class="navbar__menu"&gt;
+    &lt;a href="#" class="navbar__link active"&gt;Главная&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Дашборд&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Проекты&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Настройки&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="navbar__actions"&gt;
+    &lt;div class="dropdown dropdown--right"&gt;
+      &lt;button class="btn btn--ghost btn--sm" style="display:flex;align-items:center;gap:0.4rem;padding:0.2rem 0.5rem;"&gt;
+        &lt;span class="avatar avatar--sm" style="width:1.6rem;height:1.6rem;font-size:0.65rem;background:var(--pk-primary);"&gt;A&lt;/span&gt;
+        &lt;span style="font-size:0.8rem;"&gt;admin&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;div class="dropdown__menu"&gt;
+        &lt;a href="#" class="dropdown__item"&gt;Мой профиль&lt;/a&gt;
+        &lt;a href="#" class="dropdown__item"&gt;Настройки&lt;/a&gt;
+        &lt;div class="dropdown__divider"&gt;&lt;/div&gt;
+        &lt;a href="#" class="dropdown__item" style="color:var(--pk-error);"&gt;Выйти&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+      </div>
+
+      <h2>Навбар с уведомлениями</h2>
+      <p>Навбар с иконкой уведомлений и бейджем.</p>
+
+      <div class="demo-box demo-box--column">
+        <nav class="navbar" style="width:100%; border-radius:12px; position:relative;">
+          <a href="#" class="navbar__brand">
+            <span class="navbar__brand-icon" style="background:var(--pk-success);color:#fff;">N</span>
+            Notify
+          </a>
+          <button class="navbar__toggle" type="button" aria-label="Меню">
+            <span class="navbar__toggle-icon">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+          <div class="navbar__menu">
+            <a href="#" class="navbar__link active">Главная</a>
+            <a href="#" class="navbar__link">Лента</a>
+            <a href="#" class="navbar__link">Сообщения</a>
+          </div>
+          <div class="navbar__actions">
+            <button class="btn btn--ghost btn--sm" style="position:relative;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              <span class="badge badge--error badge--sm" style="position:absolute;top:-4px;right:-6px;font-size:0.6rem;padding:0.1em 0.4em;min-width:16px;">12</span>
+            </button>
+            <div class="dropdown dropdown--right">
+              <button class="btn btn--ghost btn--sm" style="display:flex;align-items:center;gap:0.4rem;padding:0.2rem 0.5rem;">
+                <span class="avatar avatar--sm" style="width:1.6rem;height:1.6rem;font-size:0.65rem;background:var(--pk-warning);color:#000;">U</span>
+              </button>
+              <div class="dropdown__menu">
+                <a href="#" class="dropdown__item">Профиль</a>
+                <a href="#" class="dropdown__item">Выйти</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav class="navbar" style="width:100%; border-radius:12px; position:relative;"&gt;
+  &lt;a href="#" class="navbar__brand"&gt;
+    &lt;span class="navbar__brand-icon" style="background:var(--pk-success);color:#fff;"&gt;N&lt;/span&gt;
+    Notify
+  &lt;/a&gt;
+  &lt;button class="navbar__toggle" type="button" aria-label="Меню"&gt;
+    &lt;span class="navbar__toggle-icon"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div class="navbar__menu"&gt;
+    &lt;a href="#" class="navbar__link active"&gt;Главная&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Лента&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Сообщения&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="navbar__actions"&gt;
+    &lt;button class="btn btn--ghost btn--sm" style="position:relative;"&gt;
+      &lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"&gt;&lt;path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/&gt;&lt;path d="M13.73 21a2 2 0 0 1-3.46 0"/&gt;&lt;/svg&gt;
+      &lt;span class="badge badge--error badge--sm" style="position:absolute;top:-4px;right:-6px;font-size:0.6rem;padding:0.1em 0.4em;min-width:16px;"&gt;12&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="dropdown dropdown--right"&gt;
+      &lt;button class="btn btn--ghost btn--sm" style="display:flex;align-items:center;gap:0.4rem;padding:0.2rem 0.5rem;"&gt;
+        &lt;span class="avatar avatar--sm" style="width:1.6rem;height:1.6rem;font-size:0.65rem;background:var(--pk-warning);color:#000;"&gt;U&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;div class="dropdown__menu"&gt;
+        &lt;a href="#" class="dropdown__item"&gt;Профиль&lt;/a&gt;
+        &lt;a href="#" class="dropdown__item"&gt;Выйти&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+      </div>
+
+      <h2>Навбар с переключателем темы</h2>
+      <p>Навбар со встроенным переключателем тёмной/светлой темы.</p>
+
+      <div class="demo-box demo-box--column">
+        <nav class="navbar" style="width:100%; border-radius:12px; position:relative;">
+          <a href="#" class="navbar__brand">
+            <span class="navbar__brand-icon" style="background:var(--pk-primary);color:#fff;">P</span>
+            Photon
+          </a>
+          <button class="navbar__toggle" type="button" aria-label="Меню">
+            <span class="navbar__toggle-icon">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+          <div class="navbar__menu">
+            <a href="#" class="navbar__link active">Главная</a>
+            <a href="#" class="navbar__link">Документация</a>
+            <a href="#" class="navbar__link">Компоненты</a>
+          </div>
+          <div class="navbar__actions">
+            <div class="theme-switch" data-theme-switch style="cursor:pointer;display:flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--pk-text-secondary);">
+              <span>☀️</span>
+              <div class="theme-switch__track">
+                <div class="theme-switch__thumb"></div>
+              </div>
+              <span>🌙</span>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav class="navbar" style="width:100%; border-radius:12px; position:relative;"&gt;
+  &lt;a href="#" class="navbar__brand"&gt;
+    &lt;span class="navbar__brand-icon" style="background:var(--pk-primary);color:#fff;"&gt;P&lt;/span&gt;
+    Photon
+  &lt;/a&gt;
+  &lt;button class="navbar__toggle" type="button" aria-label="Меню"&gt;
+    &lt;span class="navbar__toggle-icon"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;div class="navbar__menu"&gt;
+    &lt;a href="#" class="navbar__link active"&gt;Главная&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Документация&lt;/a&gt;
+    &lt;a href="#" class="navbar__link"&gt;Компоненты&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="navbar__actions"&gt;
+    &lt;div class="theme-switch" data-theme-switch style="cursor:pointer;display:flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--pk-text-secondary);"&gt;
+      &lt;span&gt;☀️&lt;/span&gt;
+      &lt;div class="theme-switch__track"&gt;
+        &lt;div class="theme-switch__thumb"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;span&gt;🌙&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
       </div>
 
       <h2>Вкладки (Tabs)</h2>
-      <p>Вкладки для переключения между разделами. Используйте классы <code>tabs</code> и <code>tab</code>. Для полной ширины добавьте <code>tabs--full</code>.</p>
+      <p>Вкладки для переключения между разделами. Используйте классы <code>.tabs</code> и <code>.tab</code>. Для полной ширины добавьте <code>.tabs--full</code>.</p>
 
       <div class="demo-box demo-box--column">
         <div class="tabs">
@@ -151,27 +693,36 @@
       </div>
 
       <h2>Хлебные крошки (Breadcrumbs)</h2>
-      <p>Навигационная цепочка с классом <code>breadcrumbs</code>.</p>
+      <p>Навигационная цепочка с классом <code>.breadcrumbs</code>.</p>
 
       <div class="demo-box demo-box--column">
         <div class="breadcrumbs">
-          <a href="#">Главная</a>
-          <a href="#">Компоненты</a>
-          <span>Навигация</span>
+          <a href="#" class="breadcrumbs__link">Главная</a>
+          <span class="breadcrumbs__separator">/</span>
+          <a href="#" class="breadcrumbs__link">Компоненты</a>
+          <span class="breadcrumbs__separator">/</span>
+          <span class="breadcrumbs__item active"><span class="breadcrumbs__link">Навигация</span></span>
         </div>
         <div class="breadcrumbs">
-          <a href="#">Каталог</a>
-          <a href="#">Электроника</a>
-          <a href="#">Смартфоны</a>
-          <span>iPhone 15</span>
+          <a href="#" class="breadcrumbs__link">Каталог</a>
+          <span class="breadcrumbs__separator">/</span>
+          <a href="#" class="breadcrumbs__link">Электроника</a>
+          <span class="breadcrumbs__separator">/</span>
+          <a href="#" class="breadcrumbs__link">Смартфоны</a>
+          <span class="breadcrumbs__separator">/</span>
+          <span class="breadcrumbs__item active"><span class="breadcrumbs__link">iPhone 15</span></span>
         </div>
       </div>
 
       <div class="code-block">
         <pre><code>&lt;div class="breadcrumbs"&gt;
-  &lt;a href="#"&gt;Главная&lt;/a&gt;
-  &lt;a href="#"&gt;Компоненты&lt;/a&gt;
-  &lt;span&gt;Навигация&lt;/span&gt;
+  &lt;a href="#" class="breadcrumbs__link"&gt;Главная&lt;/a&gt;
+  &lt;span class="breadcrumbs__separator"&gt;/&lt;/span&gt;
+  &lt;a href="#" class="breadcrumbs__link"&gt;Компоненты&lt;/a&gt;
+  &lt;span class="breadcrumbs__separator"&gt;/&lt;/span&gt;
+  &lt;span class="breadcrumbs__item active"&gt;
+    &lt;span class="breadcrumbs__link"&gt;Навигация&lt;/span&gt;
+  &lt;/span&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
@@ -180,71 +731,71 @@
 
       <div class="demo-box demo-box--column">
         <div class="steps" style="width:100%;">
-          <div class="step step--active">
-            <span class="step__number">1</span>
-            <span class="step__label">Корзина</span>
+          <div class="step completed">
+            <span class="step__title">Корзина</span>
+          </div>
+          <div class="step active">
+            <span class="step__title">Доставка</span>
           </div>
           <div class="step">
-            <span class="step__number">2</span>
-            <span class="step__label">Доставка</span>
+            <span class="step__title">Оплата</span>
           </div>
           <div class="step">
-            <span class="step__number">3</span>
-            <span class="step__label">Оплата</span>
-          </div>
-          <div class="step">
-            <span class="step__number">4</span>
-            <span class="step__label">Готово</span>
+            <span class="step__title">Готово</span>
           </div>
         </div>
       </div>
 
       <div class="code-block">
         <pre><code>&lt;div class="steps"&gt;
-  &lt;div class="step step--active"&gt;
-    &lt;span class="step__number"&gt;1&lt;/span&gt;
-    &lt;span class="step__label"&gt;Корзина&lt;/span&gt;
+  &lt;div class="step completed"&gt;
+    &lt;span class="step__title"&gt;Корзина&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="step active"&gt;
+    &lt;span class="step__title"&gt;Доставка&lt;/span&gt;
   &lt;/div&gt;
   &lt;div class="step"&gt;
-    &lt;span class="step__number"&gt;2&lt;/span&gt;
-    &lt;span class="step__label"&gt;Доставка&lt;/span&gt;
+    &lt;span class="step__title"&gt;Оплата&lt;/span&gt;
   &lt;/div&gt;
   &lt;div class="step"&gt;
-    &lt;span class="step__number"&gt;3&lt;/span&gt;
-    &lt;span class="step__label"&gt;Оплата&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class="step"&gt;
-    &lt;span class="step__number"&gt;4&lt;/span&gt;
-    &lt;span class="step__label"&gt;Готово&lt;/span&gt;
+    &lt;span class="step__title"&gt;Готово&lt;/span&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
       </div>
 
       <h2>Пагинация (Pagination)</h2>
-      <p>Навигация по страницам с помощью класса <code>pagination</code>.</p>
+      <p>Навигация по страницам с помощью класса <code>.pagination</code>.</p>
 
       <div class="demo-box">
         <div class="pagination">
-          <a href="#" class="page-item page-prev">← Назад</a>
-          <a href="#" class="page-item active">1</a>
-          <a href="#" class="page-item">2</a>
-          <a href="#" class="page-item">3</a>
-          <span class="page-item page-ellipsis">...</span>
-          <a href="#" class="page-item">10</a>
-          <a href="#" class="page-item page-next">Вперед →</a>
+          <a href="#" class="pagination__item pagination__link pagination__prev">← Назад</a>
+          <a href="#" class="pagination__link active">1</a>
+          <a href="#" class="pagination__link">2</a>
+          <a href="#" class="pagination__link">3</a>
+          <span class="pagination__item pagination__ellipsis">...</span>
+          <a href="#" class="pagination__link">10</a>
+          <a href="#" class="pagination__link pagination__next">Вперед →</a>
         </div>
       </div>
 
       <div class="code-block">
         <pre><code>&lt;div class="pagination"&gt;
-  &lt;a href="#" class="page-item page-prev"&gt;← Назад&lt;/a&gt;
-  &lt;a href="#" class="page-item active"&gt;1&lt;/a&gt;
-  &lt;a href="#" class="page-item"&gt;2&lt;/a&gt;
-  &lt;a href="#" class="page-item"&gt;3&lt;/a&gt;
-  &lt;span class="page-item page-ellipsis"&gt;...&lt;/span&gt;
-  &lt;a href="#" class="page-item"&gt;10&lt;/a&gt;
-  &lt;a href="#" class="page-item page-next"&gt;Вперед →&lt;/a&gt;
+  &lt;a href="#" class="pagination__prev"&gt;← Назад&lt;/a&gt;
+  &lt;a href="#" class="active"&gt;1&lt;/a&gt;
+  &lt;a href="#"&gt;2&lt;/a&gt;
+  &lt;a href="#"&gt;3&lt;/a&gt;
+  &lt;span class="pagination__ellipsis"&gt;...&lt;/span&gt;
+  &lt;a href="#"&gt;10&lt;/a&gt;
+  &lt;a href="#" class="pagination__next"&gt;Вперед →&lt;/a&gt;
 &lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>CSS-переменные навбара</h2>
+      <p>Навбар использует CSS-переменные для кастомизации:</p>
+      <div class="code-block">
+        <pre><code>:root {
+  --pk-nav-height: 3.5rem;   /* Высота навбара */
+}</code></pre>
       </div>
 
     </main>

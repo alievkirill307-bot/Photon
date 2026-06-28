@@ -224,6 +224,29 @@ a:hover { text-decoration: underline; }
 .demo-box--column { flex-direction: column; }
 .demo-box--gap-lg { gap: 1.5rem; }
 
+/* ===== SCROLLBAR (Photon style, doc only) ===== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.theme-dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+.theme-dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
 /* ===== CODE BLOCKS ===== */
 .code-block {
   position: relative;
@@ -231,6 +254,7 @@ a:hover { text-decoration: underline; }
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .code-block pre {
@@ -245,9 +269,12 @@ a:hover { text-decoration: underline; }
   tab-size: 2;
 }
 
+.theme-dark .code-block {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
 .theme-dark .code-block pre {
   background: #0a0a0a;
-  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .code-block__copy {
@@ -264,6 +291,8 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   font-family: inherit;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 .code-block__copy:hover {
   background: rgba(255, 255, 255, 0.2);
@@ -272,6 +301,21 @@ a:hover { text-decoration: underline; }
 .code-block__copy.copied {
   background: var(--pk-success, #32b643);
   color: #fff;
+}
+
+/* Inline code in docs */
+.doc-content code:not(pre code) {
+  font-family: 'SF Mono', 'Fira Code', 'Roboto Mono', monospace;
+  font-size: 0.8em;
+  padding: 0.15em 0.45em;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--pk-primary, #5755d9);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+.theme-dark .doc-content code:not(pre code) {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.06);
 }
 
 /* ===== TABS IN DOCS ===== */

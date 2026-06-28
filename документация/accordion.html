@@ -31,6 +31,7 @@
         <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
         <a href="forms.html" class="doc-sidebar__link">Формы</a>
         <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
         <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
         <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
         <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
@@ -105,11 +106,15 @@
       &lt;p&gt;Автоматически через prefers-color-scheme.&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+</code></pre>
       </div>
 
       <h2>Карусель</h2>
       <p>Карусель работает через JavaScript. Используйте класс <code>carousel</code> с <code>carousel__slides</code>, <code>carousel__slide</code>, <code>carousel__control</code> и <code>carousel__dots</code>. Инициализация через <code>data-carousel</code> с опциями.</p>
+
+      <h3>Вариант 1 — Стандартная карусель</h3>
+      <p>Базовая горизонтальная карусель с авто-пролистыванием.</p>
 
       <div class="demo-box demo-box--column">
         <div class="carousel" data-carousel='{"autoplay":true,"interval":3000}' style="width:100%;max-width:500px;border-radius:12px;overflow:hidden;">
@@ -128,35 +133,58 @@
             </div>
           </div>
           <div class="carousel__indicators carousel__dots"></div>
-          <button class="carousel__btn carousel__btn--prev carousel__control--prev" type="button">&lsaquo;</button>
-          <button class="carousel__btn carousel__btn--next carousel__control--next" type="button">&rsaquo;</button>
+          <button class="carousel__btn carousel__btn--prev" type="button">&lsaquo;</button>
+          <button class="carousel__btn carousel__btn--next" type="button">&rsaquo;</button>
         </div>
       </div>
 
       <div class="code-block">
-        <pre><code>&lt;div class="carousel" data-carousel='{"autoplay":true,"interval":3000}' style="max-width:500px;border-radius:12px;overflow:hidden;"&gt;
+        <pre><code>&lt;div class="carousel" data-carousel='{"autoplay":true,"interval":3000}'&gt;
   &lt;div class="carousel__slides"&gt;
     &lt;div class="carousel__slide" style="background:linear-gradient(135deg,#667eea,#764ba2);padding:3rem 2rem;text-align:center;color:#fff;"&gt;
-      &lt;h2 style="margin:0 0 0.5rem;"&gt;Слайд 1&lt;/h2&gt;
-      &lt;p style="margin:0;opacity:0.8;"&gt;Первый слайд&lt;/p&gt;
+      &lt;h2&gt;Слайд 1&lt;/h2&gt;
+      &lt;p&gt;Первый слайд&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class="carousel__slide" style="background:linear-gradient(135deg,#f093fb,#f5576c);padding:3rem 2rem;text-align:center;color:#fff;"&gt;
-      &lt;h2 style="margin:0 0 0.5rem;"&gt;Слайд 2&lt;/h2&gt;
-      &lt;p style="margin:0;opacity:0.8;"&gt;Второй слайд&lt;/p&gt;
+      &lt;h2&gt;Слайд 2&lt;/h2&gt;
+      &lt;p&gt;Второй слайд&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class="carousel__slide" style="background:linear-gradient(135deg,#4facfe,#00f2fe);padding:3rem 2rem;text-align:center;color:#fff;"&gt;
-      &lt;h2 style="margin:0 0 0.5rem;"&gt;Слайд 3&lt;/h2&gt;
-      &lt;p style="margin:0;opacity:0.8;"&gt;Третий слайд&lt;/p&gt;
+      &lt;h2&gt;Слайд 3&lt;/h2&gt;
+      &lt;p&gt;Третий слайд&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="carousel__indicators"&gt;&lt;/div&gt;
-  &lt;button class="carousel__btn carousel__btn--prev" type="button"&gt;&amp;lsaquo;&lt;/button&gt;
-  &lt;button class="carousel__btn carousel__btn--next" type="button"&gt;&amp;rsaquo;&lt;/button&gt;
-&lt;/div&gt;</code></pre>
+    &lt;button class="carousel__btn carousel__btn--prev"&gt;&amp;lsaquo;&lt;/button&gt;
+  &lt;button class="carousel__btn carousel__btn--next"&gt;&amp;rsaquo;&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
       </div>
 
-      <h2>Карусель в режиме Fade</h2>
-      <p>Добавьте <code>carousel--fade</code> для плавного перелистывания через прозрачность.</p>
+      <h3>Вариант 2 — Fade-карусель</h3>
+      <p>Добавьте класс <code>carousel--fade</code> для плавного перелистывания через прозрачность.</p>
+
+      <div class="demo-box demo-box--column">
+        <div class="carousel carousel--fade" data-carousel='{"autoplay":true,"interval":2500}' style="width:100%;max-width:500px;border-radius:12px;overflow:hidden;">
+          <div class="carousel__slides">
+            <div class="carousel__slide" style="background:var(--pk-primary);padding:3rem 2rem;text-align:center;color:#fff;">
+              <h2 style="margin:0;font-size:1.3rem;">Fade-эффект</h2>
+              <p style="margin:0.5rem 0 0;opacity:0.8;">Плавное появление</p>
+            </div>
+            <div class="carousel__slide" style="background:var(--pk-success);padding:3rem 2rem;text-align:center;color:#fff;">
+              <h2 style="margin:0;font-size:1.3rem;">Второй слайд</h2>
+              <p style="margin:0.5rem 0 0;opacity:0.8;">Содержимое слайда</p>
+            </div>
+            <div class="carousel__slide" style="background:var(--pk-warning);padding:3rem 2rem;text-align:center;color:#000;">
+              <h2 style="margin:0;font-size:1.3rem;">Третий слайд</h2>
+              <p style="margin:0.5rem 0 0;opacity:0.7;">Текст слайда</p>
+            </div>
+          </div>
+          <div class="carousel__indicators"></div>
+          <button class="carousel__btn carousel__btn--prev" type="button">&lsaquo;</button>
+          <button class="carousel__btn carousel__btn--next" type="button">&rsaquo;</button>
+        </div>
+      </div>
 
       <div class="code-block">
         <pre><code>&lt;div class="carousel carousel--fade" data-carousel='{"autoplay":true,"interval":2500}'&gt;
@@ -166,9 +194,142 @@
     &lt;div class="carousel__slide" style="background:var(--pk-warning);padding:3rem;text-align:center;color:#000;"&gt;Слайд 3&lt;/div&gt;
   &lt;/div&gt;
   &lt;div class="carousel__indicators"&gt;&lt;/div&gt;
-  &lt;button class="carousel__btn carousel__btn--prev" type="button"&gt;&amp;lsaquo;&lt;/button&gt;
-  &lt;button class="carousel__btn carousel__btn--next" type="button"&gt;&amp;rsaquo;&lt;/button&gt;
-&lt;/div&gt;</code></pre>
+  &lt;button class="carousel__btn carousel__btn--prev"&gt;&amp;lsaquo;&lt;/button&gt;
+  &lt;button class="carousel__btn carousel__btn--next"&gt;&amp;rsaquo;&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      <h3>Вариант 3 — Карусель с изображениями</h3>
+      <p>Карусель с фоновыми изображениями на слайдах.</p>
+
+      <div class="demo-box demo-box--column">
+        <div class="carousel" data-carousel='{"autoplay":false}' style="width:100%;max-width:600px;border-radius:12px;overflow:hidden;">
+          <div class="carousel__slides">
+            <div class="carousel__slide" style="background:linear-gradient(135deg,rgba(0,0,0,0.5),rgba(0,0,0,0.3)),url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22%3E%3Crect fill=%22%23667eea%22 width=%22800%22 height=%22400%22/%3E%3Ctext x=%22400%22 y=%22200%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2232%22 font-family=%22sans-serif%22%3EГоры%3C/text%3E%3C/svg%3E') center/cover;min-height:300px;padding:2rem;display:flex;align-items:flex-end;justify-content:flex-start;color:#fff;">
+              <div>
+                <h2 style="margin:0;font-size:1.5rem;font-weight:600;">Горный пейзаж</h2>
+                <p style="margin:0.25rem 0 0;opacity:0.8;">Красивый вид на горы</p>
+              </div>
+            </div>
+            <div class="carousel__slide" style="background:linear-gradient(135deg,rgba(0,0,0,0.5),rgba(0,0,0,0.3)),url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22%3E%3Crect fill=%22%23f5576c%22 width=%22800%22 height=%22400%22/%3E%3Ctext x=%22400%22 y=%22200%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2232%22 font-family=%22sans-serif%22%3EМоре%3C/text%3E%3C/svg%3E') center/cover;min-height:300px;padding:2rem;display:flex;align-items:flex-end;justify-content:flex-start;color:#fff;">
+              <div>
+                <h2 style="margin:0;font-size:1.5rem;font-weight:600;">Морское побережье</h2>
+                <p style="margin:0.25rem 0 0;opacity:0.8;">Закат на море</p>
+              </div>
+            </div>
+            <div class="carousel__slide" style="background:linear-gradient(135deg,rgba(0,0,0,0.5),rgba(0,0,0,0.3)),url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22400%22%3E%3Crect fill=%22%234facfe%22 width=%22800%22 height=%22400%22/%3E%3Ctext x=%22400%22 y=%22200%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2232%22 font-family=%22sans-serif%22%3EЛес%3C/text%3E%3C/svg%3E') center/cover;min-height:300px;padding:2rem;display:flex;align-items:flex-end;justify-content:flex-start;color:#fff;">
+              <div>
+                <h2 style="margin:0;font-size:1.5rem;font-weight:600;">Лесная тропа</h2>
+                <p style="margin:0.25rem 0 0;opacity:0.8;">Прогулка по лесу</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__indicators"></div>
+          <button class="carousel__btn carousel__btn--prev" type="button">&lsaquo;</button>
+          <button class="carousel__btn carousel__btn--next" type="button">&rsaquo;</button>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="carousel" data-carousel='{"autoplay":false}'&gt;
+  &lt;div class="carousel__slides"&gt;
+    &lt;div class="carousel__slide" style="background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('mountains.jpg') center/cover;min-height:300px;padding:2rem;display:flex;align-items:flex-end;color:#fff;"&gt;
+      &lt;h2&gt;Горный пейзаж&lt;/h2&gt;
+      &lt;p&gt;Красивый вид на горы&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel__slide" style="background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('sea.jpg') center/cover;min-height:300px;padding:2rem;display:flex;align-items:flex-end;color:#fff;"&gt;
+      &lt;h2&gt;Морское побережье&lt;/h2&gt;
+      &lt;p&gt;Закат на море&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel__slide" style="background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('forest.jpg') center/cover;min-height:300px;padding:2rem;display:flex;align-items:flex-end;color:#fff;"&gt;
+      &lt;h2&gt;Лесная тропа&lt;/h2&gt;
+      &lt;p&gt;Прогулка по лесу&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="carousel__indicators"&gt;&lt;/div&gt;
+  &lt;button class="carousel__btn carousel__btn--prev"&gt;&amp;lsaquo;&lt;/button&gt;
+  &lt;button class="carousel__btn carousel__btn--next"&gt;&amp;rsaquo;&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+
+      <h3>Вариант 4 — Карусель с подписями (captions)</h3>
+      <p>Карусель с текстовыми подписями в нижней части слайда.</p>
+
+      <div class="demo-box demo-box--column">
+        <div class="carousel" data-carousel='{"autoplay":true,"interval":3500}' style="width:100%;max-width:550px;border-radius:12px;overflow:hidden;">
+          <div class="carousel__slides">
+            <div class="carousel__slide" style="padding:0;min-height:280px;display:flex;flex-direction:column;">
+              <div style="flex:1;overflow:hidden;">
+                <img src="https://picsum.photos/seed/design/550/200" alt="Креативный дизайн" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+              <div style="padding:1rem 1.25rem;text-align:left;border-top:1px solid var(--pk-border);background:var(--pk-surface);">
+                <h3 style="margin:0 0 0.25rem;font-size:1rem;">Креативный дизайн</h3>
+                <p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);">Современные решения для вашего проекта</p>
+              </div>
+            </div>
+            <div class="carousel__slide" style="padding:0;min-height:280px;display:flex;flex-direction:column;">
+              <div style="flex:1;overflow:hidden;">
+                <img src="https://picsum.photos/seed/fast/550/200" alt="Быстрая разработка" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+              <div style="padding:1rem 1.25rem;text-align:left;border-top:1px solid var(--pk-border);background:var(--pk-surface);">
+                <h3 style="margin:0 0 0.25rem;font-size:1rem;">Быстрая разработка</h3>
+                <p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);">Готовые компоненты для быстрого старта</p>
+              </div>
+            </div>
+            <div class="carousel__slide" style="padding:0;min-height:280px;display:flex;flex-direction:column;">
+              <div style="flex:1;overflow:hidden;">
+                <img src="https://picsum.photos/seed/adaptive/550/200" alt="Адаптивность" style="width:100%;height:100%;object-fit:cover;display:block;">
+              </div>
+              <div style="padding:1rem 1.25rem;text-align:left;border-top:1px solid var(--pk-border);background:var(--pk-surface);">
+                <h3 style="margin:0 0 0.25rem;font-size:1rem;">Адаптивность</h3>
+                <p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);">Работает на всех устройствах</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel__indicators"></div>
+          <button class="carousel__btn carousel__btn--prev" type="button">&lsaquo;</button>
+          <button class="carousel__btn carousel__btn--next" type="button">&rsaquo;</button>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="carousel" data-carousel='{"autoplay":true,"interval":3500}'&gt;
+  &lt;div class="carousel__slides"&gt;
+    &lt;div class="carousel__slide" style="padding:0;min-height:280px;display:flex;flex-direction:column;"&gt;
+      &lt;div style="flex:1;overflow:hidden;"&gt;
+        &lt;img src="https://picsum.photos/seed/design/550/200" alt="Креативный дизайн" style="width:100%;height:100%;object-fit:cover;display:block;"&gt;
+      &lt;/div&gt;
+      &lt;div style="padding:1rem 1.25rem;text-align:left;border-top:1px solid var(--pk-border);background:var(--pk-surface);"&gt;
+        &lt;h3 style="margin:0 0 0.25rem;font-size:1rem;"&gt;Креативный дизайн&lt;/h3&gt;
+        &lt;p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);"&gt;Современные решения для вашего проекта&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel__slide" style="padding:0;min-height:280px;display:flex;flex-direction:column;"&gt;
+      &lt;div style="flex:1;overflow:hidden;"&gt;
+        &lt;img src="https://picsum.photos/seed/fast/550/200" alt="Быстрая разработка" style="width:100%;height:100%;object-fit:cover;display:block;"&gt;
+      &lt;/div&gt;
+      &lt;div style="padding:1rem 1.25rem;text-align:left;border-top:1px solid var(--pk-border);background:var(--pk-surface);"&gt;
+        &lt;h3 style="margin:0 0 0.25rem;font-size:1rem;"&gt;Быстрая разработка&lt;/h3&gt;
+        &lt;p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);"&gt;Готовые компоненты для быстрого старта&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel__slide" style="padding:0;min-height:280px;display:flex;flex-direction:column;"&gt;
+      &lt;div style="flex:1;overflow:hidden;"&gt;
+        &lt;img src="https://picsum.photos/seed/adaptive/550/200" alt="Адаптивность" style="width:100%;height:100%;object-fit:cover;display:block;"&gt;
+      &lt;/div&gt;
+      &lt;div style="padding:1rem 1.25rem;text-align:left;border-top:1px solid var(--pk-border);background:var(--pk-surface);"&gt;
+        &lt;h3 style="margin:0 0 0.25rem;font-size:1rem;"&gt;Адаптивность&lt;/h3&gt;
+        &lt;p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);"&gt;Работает на всех устройствах&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="carousel__indicators"&gt;&lt;/div&gt;
+  &lt;button class="carousel__btn carousel__btn--prev"&gt;&amp;lsaquo;&lt;/button&gt;
+  &lt;button class="carousel__btn carousel__btn--next"&gt;&amp;rsaquo;&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
       </div>
 
       <h2>Таймлайн (Timeline)</h2>

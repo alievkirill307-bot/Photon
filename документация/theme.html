@@ -31,6 +31,7 @@
         <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
         <a href="forms.html" class="doc-sidebar__link">Формы</a>
         <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
         <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
         <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
         <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
@@ -137,6 +138,47 @@
           <tr><td><code>--pk-glass</code></td><td><code>rgba(255,255,255,0.6)</code></td><td><code>rgba(0,0,0,0.6)</code></td><td>Стеклянный фон</td></tr>
         </tbody>
       </table>
+
+      <h2>Переключатель темы (Theme Switch)</h2>
+      <p>Встроенный компонент для переключения между светлой и тёмной темой. Сохраняет выбор в <code>localStorage</code> — при перезагрузке страницы тема запоминается. Просто скопируйте HTML и подключите <code>photon-kit.js</code>.</p>
+
+      <div class="demo-box" style="flex-direction:column;align-items:center;gap:1rem;">
+        <div class="theme-switch" data-theme-switch style="cursor:pointer;display:flex;align-items:center;gap:0.6rem;font-size:0.9rem;color:var(--pk-text-secondary);user-select:none;">
+          <span style="font-size:0.85rem;">☀️</span>
+          <div class="theme-switch__track">
+            <div class="theme-switch__thumb">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </div>
+          </div>
+          <span style="font-size:0.85rem;">🌙</span>
+        </div>
+        <p style="margin:0;font-size:0.82rem;color:var(--pk-text-muted);">Нажмите на переключатель, чтобы сменить тему</p>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="theme-switch" data-theme-switch&gt;
+  &lt;span&gt;☀️&lt;/span&gt;
+  &lt;div class="theme-switch__track"&gt;
+    &lt;div class="theme-switch__thumb"&gt;
+      &lt;svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"
+        style="width:14px;height:14px;"&gt;
+        &lt;circle cx="12" cy="12" r="5"/&gt;
+        &lt;line x1="12" y1="1" x2="12" y2="3"/&gt;
+        &lt;line x1="12" y1="21" x2="12" y2="23"/&gt;
+        &lt;line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/&gt;
+        &lt;line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/&gt;
+        &lt;line x1="1" y1="12" x2="3" y2="12"/&gt;
+        &lt;line x1="21" y1="12" x2="23" y2="12"/&gt;
+        &lt;line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/&gt;
+        &lt;line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span&gt;🌙&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+      </div>
 
       <h2>Создание своей темы</h2>
       <p>Вы можете создать собственную тему, переопределив переменные внутри CSS-класса:</p>

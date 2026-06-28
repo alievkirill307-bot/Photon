@@ -5,30 +5,15 @@
 (function () {
   'use strict';
 
-  // ========== NAVBAR TOGGLE ==========
-  const sidebarToggle = document.getElementById('sidebarToggle');
-  const sidebar = document.getElementById('sidebar');
-  const sidebarOverlay = document.getElementById('sidebarOverlay');
-
-  if (sidebarToggle && sidebar) {
-    sidebarToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      if (sidebarOverlay) sidebarOverlay.classList.toggle('open');
-    });
-    if (sidebarOverlay) {
-      sidebarOverlay.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        sidebarOverlay.classList.remove('open');
-      });
-    }
-  }
-
-  // Responsive navbar toggle
+  // ========== NAVBAR TOGGLE (responsive) ==========
   document.querySelectorAll('.navbar__toggle').forEach(btn => {
     btn.addEventListener('click', () => {
       const menu = btn.nextElementSibling;
-      if (menu && menu.classList.contains('navbar__menu')) {
-        menu.classList.toggle('open');
+      const target = btn.getAttribute('data-navbar-target');
+      const menuEl = target ? document.querySelector(target) : (menu && menu.classList.contains('navbar__menu') ? menu : null);
+      if (menuEl) {
+        menuEl.classList.toggle('open');
+        btn.classList.toggle('open');
       }
     });
   });
@@ -230,9 +215,6 @@
     });
   });
 
-  // ========== COPY CODE BLOCKS ==========
-  // Handled by doc.js in documentation pages
-
   // ========== TABS PURE CSS (Picnic-style) ==========
   document.querySelectorAll('.tabs--css input[type="radio"]').forEach(input => {
     input.addEventListener('change', () => {
@@ -247,15 +229,6 @@
         }
       }
     });
-  });
-
-  // ========== ACTIVE SIDEBAR LINK ==========
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.sidebar__link').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPath) {
-      link.classList.add('active');
-    }
   });
 
   // ========== STOPWATCH ==========
@@ -466,6 +439,305 @@
     } else {
       document.querySelectorAll('[data-theme-switch] .theme-switch__label').forEach(l => l.textContent = 'Светлая');
     }
+  })();
+
+  // ========== FORM VALIDATION ==========
+  document.querySelectorAll('form.pk-form').forEach(form => {
+    const submitBtn = form.querySelector('.pk-form-submit');
+    const successEl = form.querySelector('.pk-form-success');
+    if (!submitBtn) return;
+
+    function validateField(field) {
+      const rules = (field.getAttribute('data-validate') || '').split(/\s+/).filter(Boolean);
+      const errorEl = field.closest('.form-group').querySelector('.form-hint--error');
+      let isValid = true;
+      let msg = '';
+
+      if (rules.includes('required')) {
+        if (field.type === 'checkbox' && !field.checked) {
+          isValid = false; msg = 'Это поле обязательно';
+        } else if (field.tagName === 'SELECT' && !field.value) {
+          isValid = false; msg = 'Выберите значение';
+        } else if (field.type !== 'checkbox' && !field.value.trim()) {
+          isValid = false; msg = 'Заполните это поле';
+        }
+      }
+
+      if (rules.includes('email') && field.value.trim()) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!re.test(field.value.trim())) {
+          isValid = false; msg = 'Введите корректный email';
+        }
+      }
+
+      const minLen = parseInt(field.getAttribute('data-validate-length'));
+      if (!isNaN(minLen) && field.value.trim().length < minLen) {
+        isValid = false; msg = `Минимум ${minLen} символа`;
+      }
+
+      if (rules.includes('match') && field.value.trim()) {
+        const matchName = field.getAttribute('data-match-field');
+        const formGroup = field.closest('.form-group');
+        const allInputs = form.closest('form').querySelectorAll('input');
+        let matchVal = '';
+        allInputs.forEach(inp => {
+          const label = inp.closest('.form-group');
+          if (label && label.querySelector('.form-label') && label.querySelector('.form-label').textContent.trim() === matchName) {
+            matchVal = inp.value;
+          }
+        });
+        if (field.value !== matchVal) {
+          isValid = false; msg = 'Пароли не совпадают';
+        }
+      }
+
+      if (field.type === 'radio' && rules.includes('required')) {
+        const name = field.getAttribute('name');
+        const checked = form.querySelector(`input[name="${name}"]:checked`);
+        if (!checked) {
+          isValid = false; msg = 'Выберите один вариант';
+        }
+      }
+
+      field.classList.toggle('input--success', isValid && field.value.trim());
+      field.classList.toggle('input--error', !isValid);
+      if (errorEl) {
+        errorEl.textContent = msg;
+        errorEl.style.display = msg ? 'block' : 'none';
+      }
+      return isValid;
+    }
+
+    function validateForm() {
+      let allValid = true;
+      form.querySelectorAll('[data-validate]').forEach(field => {
+        if (!validateField(field)) allValid = false;
+      });
+      return allValid;
+    }
+
+    form.querySelectorAll('[data-validate]').forEach(field => {
+      field.addEventListener('blur', () => validateField(field));
+      field.addEventListener('input', () => {
+        if (field.classList.contains('input--error')) validateField(field);
+      });
+      if (field.type === 'radio') {
+        field.addEventListener('change', () => {
+          const name = field.getAttribute('name');
+          form.querySelectorAll(`input[name="${name}"]`).forEach(r => validateField(r));
+        });
+      }
+    });
+
+    submitBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (validateForm()) {
+        if (successEl) {
+          successEl.style.display = 'block';
+          setTimeout(() => { successEl.style.display = 'none'; }, 4000);
+        }
+        form.querySelectorAll('[data-validate]').forEach(f => {
+          f.classList.remove('input--success', 'input--error');
+          const hint = f.closest('.form-group').querySelector('.form-hint--error');
+          if (hint) { hint.textContent = ''; hint.style.display = 'none'; }
+        });
+      }
+    });
+  });
+
+  // ========== FILE UPLOAD ==========
+  function formatSize(bytes) {
+    if (!bytes) return '0 Б';
+    const kb = bytes / 1024;
+    if (kb < 1024) return kb.toFixed(1) + ' КБ';
+    return (kb / 1024).toFixed(1) + ' МБ';
+  }
+
+  document.querySelectorAll('.pk-upload').forEach(upload => {
+    const btn = upload.querySelector('.pk-upload-btn');
+    const input = upload.querySelector('.pk-upload-input');
+    const nameEl = upload.querySelector('.pk-upload-name');
+    const previewEl = upload.querySelector('.pk-upload-preview');
+    const clearBtn = upload.querySelector('.pk-upload-clear');
+    const sizeEl = upload.querySelector('.pk-upload-size');
+    const isMultiple = upload.classList.contains('pk-upload--multiple');
+    const listEl = upload.querySelector('.pk-upload-list');
+    const countEl = upload.querySelector('.pk-upload-count');
+    const avatarBox = upload.querySelector('.pk-upload-avatar');
+    const avatarImg = upload.querySelector('.pk-upload-avatar-img');
+    const avatarPlaceholder = upload.querySelector('.pk-upload-avatar-placeholder');
+    const dropzone = upload.querySelector('.pk-upload-dropzone');
+
+    function handleFiles(files) {
+      if (!files || !files.length) return;
+
+      if (isMultiple && listEl) {
+        listEl.innerHTML = '';
+        Array.from(files).forEach(f => {
+          const item = document.createElement('div');
+          item.className = 'pk-upload-list-item';
+          item.style.cssText = 'display:flex;align-items:center;gap:0.6rem;padding:0.5rem 0.75rem;background:var(--pk-bg-alt);border-radius:var(--pk-radius-xs);border:1px solid var(--pk-border);';
+          const ext = f.name.split('.').pop().toUpperCase();
+          item.innerHTML = `
+            <span style="width:28px;height:28px;border-radius:6px;background:var(--pk-primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:0.65rem;font-weight:600;">${ext}</span>
+            <span style="flex:1;font-size:0.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${f.name}</span>
+            <span style="font-size:0.72rem;color:var(--pk-text-muted);flex-shrink:0;">${formatSize(f.size)}</span>
+            <button type="button" class="pk-upload-list-remove btn btn--ghost btn--sm" style="color:var(--pk-error);font-size:1rem;padding:0.1rem 0.3rem;">✕</button>
+          `;
+          item.querySelector('.pk-upload-list-remove').addEventListener('click', () => item.remove());
+          listEl.appendChild(item);
+        });
+        if (countEl) countEl.textContent = files.length;
+        if (nameEl) nameEl.textContent = `${files.length} файл(ов)`;
+        return;
+      }
+
+      const file = files[0];
+      if (!file) return;
+
+      if (previewEl) previewEl.style.display = 'block';
+      if (nameEl) nameEl.textContent = file.name;
+      if (sizeEl) sizeEl.textContent = formatSize(file.size);
+
+      if (avatarBox && avatarImg && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          avatarImg.src = e.target.result;
+          avatarImg.style.display = 'block';
+          if (avatarPlaceholder) avatarPlaceholder.style.display = 'none';
+          avatarBox.style.borderStyle = 'solid';
+          avatarBox.style.borderColor = 'var(--pk-primary)';
+        };
+        reader.readAsDataURL(file);
+        if (nameEl) nameEl.textContent = file.name;
+      }
+
+      if (dropzone && file) {
+        dropzone.style.borderColor = 'var(--pk-success)';
+        dropzone.style.background = 'rgba(50,182,67,0.05)';
+        setTimeout(() => {
+          dropzone.style.borderColor = '';
+          dropzone.style.background = '';
+        }, 2000);
+      }
+    }
+
+    if (btn && input) {
+      btn.addEventListener('click', () => input.click());
+    }
+
+    if (input) {
+      input.addEventListener('change', () => {
+        handleFiles(input.files);
+        input.value = '';
+      });
+    }
+
+    if (clearBtn && previewEl) {
+      clearBtn.addEventListener('click', () => {
+        previewEl.style.display = 'none';
+        if (nameEl) nameEl.textContent = '';
+        if (sizeEl) sizeEl.textContent = '';
+        if (avatarImg) { avatarImg.style.display = 'none'; avatarImg.src = ''; }
+        if (avatarPlaceholder) avatarPlaceholder.style.display = 'block';
+        if (avatarBox) { avatarBox.style.borderStyle = 'dashed'; avatarBox.style.borderColor = ''; }
+      });
+    }
+
+    if (dropzone) {
+      ['dragenter', 'dragover'].forEach(ev => {
+        dropzone.addEventListener(ev, (e) => {
+          e.preventDefault();
+          dropzone.style.borderColor = 'var(--pk-primary)';
+          dropzone.style.background = 'rgba(87,85,217,0.05)';
+        });
+      });
+      ['dragleave', 'drop'].forEach(ev => {
+        dropzone.addEventListener(ev, (e) => {
+          e.preventDefault();
+          dropzone.style.borderColor = '';
+          dropzone.style.background = '';
+        });
+      });
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        if (e.dataTransfer.files.length) {
+          handleFiles(e.dataTransfer.files);
+        }
+      });
+      dropzone.addEventListener('click', () => {
+        if (input) input.click();
+      });
+    }
+  });
+
+  // ========== LIGHTBOX / GALLERY ==========
+  (function initLightbox() {
+    var lb = document.querySelector('.pk-lightbox');
+    if (!lb) {
+      var div = document.createElement('div');
+      div.className = 'pk-lightbox';
+      div.innerHTML =
+        '<button class="pk-lightbox__close" type="button">✕</button>' +
+        '<div class="pk-lightbox__content">' +
+          '<div class="pk-lightbox__visual"></div>' +
+          '<div class="pk-lightbox__caption">' +
+            '<div class="pk-lightbox__title"></div>' +
+            '<div class="pk-lightbox__desc"></div>' +
+          '</div>' +
+        '</div>' +
+        '<button class="pk-lightbox__nav pk-lightbox__prev" type="button">&lsaquo;</button>' +
+        '<button class="pk-lightbox__nav pk-lightbox__next" type="button">&rsaquo;</button>';
+      document.body.appendChild(div);
+      lb = div;
+    }
+    var lbVis = lb.querySelector('.pk-lightbox__visual');
+    var lbTitle = lb.querySelector('.pk-lightbox__title');
+    var lbDesc = lb.querySelector('.pk-lightbox__desc');
+    var lbClose = lb.querySelector('.pk-lightbox__close');
+    var lbPrev = lb.querySelector('.pk-lightbox__prev');
+    var lbNext = lb.querySelector('.pk-lightbox__next');
+    var items = [], cur = 0;
+
+    document.querySelectorAll('.pk-gallery .pk-gallery-item').forEach(function(el, i) {
+      items.push(el);
+      el.addEventListener('click', function() {
+        cur = items.indexOf(el);
+        var img = el.querySelector('img');
+        lbVis.innerHTML = '';
+        if (img) {
+          var c = img.cloneNode(true);
+          c.style.cssText = 'max-width:70vw;max-height:60vh;object-fit:contain;border-radius:8px;display:block;margin:auto;';
+          lbVis.appendChild(c);
+        } else {
+          var txt = el.innerHTML.replace(/<div[^>]*>.*?<\/div>/g, '').trim();
+          if (txt && txt.length > 2) {
+            lbVis.textContent = txt;
+          } else {
+            lbVis.textContent = '📷';
+          }
+        }
+        lbTitle.textContent = el.getAttribute('data-title') || '';
+        lbDesc.textContent = el.getAttribute('data-desc') || '';
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLB() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+    function prevLB() { cur = (cur - 1 + items.length) % items.length; if (items[cur]) items[cur].click(); }
+    function nextLB() { cur = (cur + 1) % items.length; if (items[cur]) items[cur].click(); }
+
+    if (lbClose) lbClose.addEventListener('click', closeLB);
+    if (lbPrev) lbPrev.addEventListener('click', prevLB);
+    if (lbNext) lbNext.addEventListener('click', nextLB);
+    lb.addEventListener('click', function(e) { if (e.target === lb) closeLB(); });
+    document.addEventListener('keydown', function(e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLB();
+      if (e.key === 'ArrowLeft') prevLB();
+      if (e.key === 'ArrowRight') nextLB();
+    });
   })();
 
   console.log('✦ Photon Kit initialized');
