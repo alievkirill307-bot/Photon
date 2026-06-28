@@ -8,7 +8,7 @@
 </div>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/версия-1.0-5755d9?style=flat-square" alt="Version">
+  <img src="https://img.shields.io/badge/версия-2.0-5755d9?style=flat-square" alt="Version">
   <img src="https://img.shields.io/badge/license-MIT-32b643?style=flat-square" alt="License">
   <img src="https://img.shields.io/badge/CSS-переменные-ffb700?style=flat-square" alt="CSS Variables">
   <img src="https://img.shields.io/badge/JS-зависимости_0-4b9eff?style=flat-square" alt="No deps">
