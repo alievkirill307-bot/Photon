@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Photon — CSS фреймворк с адаптивной тёмной темой и эффектом стекла. Более 40 компонентов." />
+  <meta name="keywords" content="photon, css framework, css фреймворк, glass ui, тёмная тема, dark theme, стеклянный дизайн, веб-компоненты" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Боковая панель — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link active">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Боковая панель</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Боковая панель (off-canvas / drawer) — выдвижная панель, которая появляется с края экрана по нажатию кнопки. Photon поддерживает два варианта: панель слева со стеклянным эффектом и панель справа с классическим фоном.</p>
+
+      <h2>Панель слева (Off-canvas)</h2>
+      <p>Выдвигается слева с эффектом стекла. Используйте атрибут <code>data-offcanvas</code> на кнопке и структуру <code>.off-canvas</code>.</p>
+
+      <div class="demo-box">
+        <button class="btn btn--primary" data-offcanvas="demoLeft">Открыть боковую панель</button>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;button class="btn btn--primary" data-offcanvas="myPanel"&gt;Открыть&lt;/button&gt;
+
+&lt;div class="off-canvas" id="myPanel"&gt;
+  &lt;div class="off-canvas__overlay" data-offcanvas-close&gt;&lt;/div&gt;
+  &lt;div class="off-canvas__sidebar"&gt;
+    &lt;div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--pk-border);"&gt;
+      &lt;h3 style="margin:0;font-size:1.1rem;"&gt;Заголовок&lt;/h3&gt;
+      &lt;button data-offcanvas-close type="button" style="background:none;border:none;color:var(--pk-text);font-size:1.4rem;cursor:pointer;padding:0;line-height:1;"&gt;&amp;times;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Содержимое панели.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Панель справа (Drawer)</h2>
+      <p>Выдвигается справа с поверхностным фоном. Используйте атрибут <code>data-drawer</code> на кнопке и структуру <code>.drawer</code>.</p>
+
+      <div class="demo-box">
+        <button class="btn btn--info" data-drawer="demoRight">Открыть боковую панель</button>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;button class="btn btn--info" data-drawer="myDrawer"&gt;Открыть&lt;/button&gt;
+
+&lt;div class="drawer" id="myDrawer"&gt;
+  &lt;div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--pk-border);"&gt;
+    &lt;h3 style="margin:0;font-size:1.1rem;"&gt;Заголовок&lt;/h3&gt;
+    &lt;button data-drawer-close type="button" style="background:none;border:none;color:var(--pk-text);font-size:1.4rem;cursor:pointer;padding:0;line-height:1;"&gt;&amp;times;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;p&gt;Содержимое панели.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="drawer-overlay"&gt;&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Атрибуты</h2>
+      <table class="table table--striped" style="margin-top:0.5rem;">
+        <thead><tr><th>Атрибут</th><th>Действие</th></tr></thead>
+        <tbody>
+          <tr><td><code>data-offcanvas</code></td><td>Открыть/закрыть панель слева (off-canvas) по ID</td></tr>
+          <tr><td><code>data-offcanvas-close</code></td><td>Закрыть ближайшую off-canvas панель</td></tr>
+          <tr><td><code>data-drawer</code></td><td>Открыть/закрыть панель справа (drawer) по ID</td></tr>
+          <tr><td><code>data-drawer-close</code></td><td>Закрыть ближайшую drawer панель</td></tr>
+        </tbody>
+      </table>
+
+      <!-- Demo: Left panel -->
+      <div class="off-canvas" id="demoLeft">
+        <div class="off-canvas__overlay" data-offcanvas-close></div>
+        <div class="off-canvas__sidebar">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--pk-border);">
+            <h3 style="margin:0;font-size:1.1rem;display:flex;align-items:center;gap:0.5rem;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Профиль
+            </h3>
+            <button data-offcanvas-close type="button" style="background:none;border:none;color:var(--pk-text);font-size:1.4rem;cursor:pointer;padding:0;line-height:1;">&times;</button>
+          </div>
+          <div style="text-align:center;margin-bottom:1.5rem;">
+            <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--pk-primary),#7c7ae0);margin:0 auto 0.75rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;font-weight:600;">A</div>
+            <div style="font-weight:600;">Алексей Смирнов</div>
+            <div style="font-size:0.8rem;color:var(--pk-text-secondary);">alexey@example.com</div>
+          </div>
+          <nav style="display:flex;flex-direction:column;gap:0.25rem;">
+            <a href="#" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 0.75rem;border-radius:8px;color:var(--pk-text);text-decoration:none;transition:var(--pk-transition);" onmouseover="this.style.background='rgba(87,85,217,0.08)'" onmouseout="this.style.background='transparent'">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Главная
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 0.75rem;border-radius:8px;color:var(--pk-text);text-decoration:none;transition:var(--pk-transition);" onmouseover="this.style.background='rgba(87,85,217,0.08)'" onmouseout="this.style.background='transparent'">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+              Закладки
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 0.75rem;border-radius:8px;color:var(--pk-text);text-decoration:none;transition:var(--pk-transition);" onmouseover="this.style.background='rgba(87,85,217,0.08)'" onmouseout="this.style.background='transparent'">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              Уведомления
+            </a>
+            <a href="#" style="display:flex;align-items:center;gap:0.5rem;padding:0.6rem 0.75rem;border-radius:8px;color:var(--pk-text);text-decoration:none;transition:var(--pk-transition);" onmouseover="this.style.background='rgba(87,85,217,0.08)'" onmouseout="this.style.background='transparent'">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              Настройки
+            </a>
+          </nav>
+          <div style="margin-top:1.5rem;padding-top:0.75rem;border-top:1px solid var(--pk-border);">
+            <button data-offcanvas-close type="button" class="btn btn--outline" style="width:100%;">Закрыть</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo: Right panel -->
+      <div class="drawer" id="demoRight">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--pk-border);">
+          <h3 style="margin:0;font-size:1.1rem;display:flex;align-items:center;gap:0.5rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            Информация
+          </h3>
+          <button data-drawer-close type="button" style="background:none;border:none;color:var(--pk-text);font-size:1.4rem;cursor:pointer;padding:0;line-height:1;">&times;</button>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="padding:0.75rem;border-radius:8px;background:var(--pk-bg-alt);">
+            <div style="font-size:0.75rem;color:var(--pk-text-secondary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem;">Статус</div>
+            <div style="display:flex;align-items:center;gap:0.4rem;">
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--pk-success);display:inline-block;"></span>
+              <span style="font-weight:500;">В сети</span>
+            </div>
+          </div>
+          <div style="padding:0.75rem;border-radius:8px;background:var(--pk-bg-alt);">
+            <div style="font-size:0.75rem;color:var(--pk-text-secondary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem;">Версия</div>
+            <div style="font-weight:500;">Photon 2.0</div>
+          </div>
+          <div style="padding:0.75rem;border-radius:8px;background:var(--pk-bg-alt);">
+            <div style="font-size:0.75rem;color:var(--pk-text-secondary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem;">Последние действия</div>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+              <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;">
+                <span style="width:6px;height:6px;border-radius:50%;background:var(--pk-primary);display:inline-block;"></span>
+                Обновление темы оформления
+              </div>
+              <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;">
+                <span style="width:6px;height:6px;border-radius:50%;background:var(--pk-primary);display:inline-block;"></span>
+                Добавлена боковая панель
+              </div>
+              <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;">
+                <span style="width:6px;height:6px;border-radius:50%;background:var(--pk-text-secondary);display:inline-block;"></span>
+                Исправлены баги
+              </div>
+            </div>
+          </div>
+          <button data-drawer-close type="button" class="btn btn--outline" style="width:100%;">Закрыть</button>
+        </div>
+      </div>
+      <div class="drawer-overlay"></div>
+
+    </main>
+  </div>
+
+  <script src="../photon-kit/photon-kit.js"></script>
+  <script src="js/doc.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

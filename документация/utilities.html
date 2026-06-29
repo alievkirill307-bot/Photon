@@ -36,6 +36,7 @@
         <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
         <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
         <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
         <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
         <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
         <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
@@ -194,51 +195,6 @@
 &lt;div class="clearfix"&gt;очистка float&lt;/div&gt;
 &lt;div class="float-right"&gt;float: right&lt;/div&gt;
 &lt;div class="float-left"&gt;float: left&lt;/div&gt;</code></pre>
-      </div>
-
-      <h2>Off-canvas (боковая панель)</h2>
-      <p>Компонент для выдвижной боковой панели. Управляется через атрибут <code>data-offcanvas</code>.</p>
-
-      <div class="demo-box">
-        <button class="btn btn--primary" data-offcanvas="demoOffcanvas">Открыть боковую панель</button>
-      </div>
-
-      <div class="offcanvas" id="demoOffcanvas">
-        <div class="offcanvas__overlay" data-offcanvas-close></div>
-        <div class="offcanvas__panel">
-          <div class="offcanvas__header">
-            <h3 style="margin:0;font-size:1.1rem;">Боковая панель</h3>
-            <button class="offcanvas__close" data-offcanvas-close type="button">&times;</button>
-          </div>
-          <div class="offcanvas__body">
-            <p>Содержимое боковой панели. Закройте крестиком или кликом на фон.</p>
-            <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:1rem;">
-              <a href="#" style="padding:0.5rem;border-radius:8px;background:rgba(87,85,217,0.06);">Ссылка 1</a>
-              <a href="#" style="padding:0.5rem;border-radius:8px;background:rgba(87,85,217,0.06);">Ссылка 2</a>
-              <a href="#" style="padding:0.5rem;border-radius:8px;background:rgba(87,85,217,0.06);">Ссылка 3</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p>HTML-структура Off-canvas:</p>
-
-      <div class="code-block">
-        <pre><code>&lt;button class="btn btn--primary" data-offcanvas="myOffcanvas"&gt;Открыть&lt;/button&gt;
-
-&lt;div class="offcanvas" id="myOffcanvas"&gt;
-  &lt;div class="offcanvas__overlay" data-offcanvas-close&gt;&lt;/div&gt;
-  &lt;div class="offcanvas__panel"&gt;
-    &lt;div class="offcanvas__header"&gt;
-      &lt;h3 style="margin:0;font-size:1.1rem;"&gt;Заголовок&lt;/h3&gt;
-      &lt;button class="offcanvas__close" data-offcanvas-close type="button"&gt;&amp;times;&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class="offcanvas__body"&gt;
-      &lt;p&gt;Содержимое панели.&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
       </div>
 
       <h2>Фильтры</h2>

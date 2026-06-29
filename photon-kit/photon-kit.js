@@ -1,6 +1,9 @@
+/* https://github.com/alievkirill307-bot/Photon */
+/* https://github.com/alievkirill307-bot/Photon/blob/master/LICENSE */
 /* ==============================================
-   PHOTON KIT — Unified JavaScript
-   Apple Liquid Glass · Black/White Adaptive Theme
+   PHOTON KIT — Unified CSS Framework
+   Adaptive Dark/Light Theme · Glass UI
+   Inspired by: Chota, Picnic, Siimple, Spectre, Wing,Bootstrap
    ============================================== */
 (function () {
   'use strict';
