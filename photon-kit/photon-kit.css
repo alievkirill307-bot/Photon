@@ -2238,6 +2238,11 @@ li { margin-bottom: 0.3rem; }
 /* Footer --columns bottom bar spans full width */
 .footer--columns .footer__bottom { grid-column: 1 / -1; }
 
+.footer--complete { padding: 3rem 0 0; }
+.footer--complete .footer__inner { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 2rem; }
+.footer--complete .footer__col--brand { max-width: 320px; }
+.footer--complete .footer__bottom { margin-top: 2rem; }
+
 /* Back-to-top button */
 .back-to-top {
   position: fixed;

@@ -1,4 +1,7 @@
 <div align="center">
+  <p align="center" style="margin-bottom:1rem;">
+    <a href="README.en.md" style="display:inline-block;padding:0.35rem 1rem;border-radius:999px;background:#5755d9;color:#fff;text-decoration:none;font-size:0.85rem;font-weight:500;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">English</a>
+  </p>
   <img src="photo_2026-06-26_12-29-15.jpg" alt="Photon Logo" width="120" style="border-radius:24px;box-shadow:0 8px 32px rgba(87,85,217,0.2);">
   <h1 align="center" style="font-size:3rem;font-weight:700;letter-spacing:-0.03em;margin:0.5rem 0 0.25rem;">Photon</h1>
   <p align="center" style="font-size:1.15rem;color:#6e6e73;max-width:500px;margin:0 auto;">

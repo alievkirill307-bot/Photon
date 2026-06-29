@@ -225,6 +225,13 @@ a:hover { text-decoration: underline; }
 .demo-box--gap-lg { gap: 1.5rem; }
 
 /* ===== SCROLLBAR (Photon style, doc only) ===== */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.12) transparent;
+}
+.theme-dark html {
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;

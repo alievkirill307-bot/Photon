@@ -60,6 +60,79 @@
       <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
       <p>Галерея с полноэкранным просмотром (lightbox). Кликните на изображение, чтобы открыть его в увеличенном виде. Используйте класс <code>pk-gallery</code> для контейнера и <code>pk-gallery-item</code> для элементов.</p>
 
+      <h2>Простые изображения</h2>
+      <p>Изображениям можно задавать обтекание, выравнивание и оформление с помощью встроенных утилит.</p>
+
+      <h3>Слева</h3>
+      <div class="demo-box clearfix">
+        <img src="https://picsum.photos/seed/landscape1/280/200" alt="Пейзаж" class="float-left shadow rounded" style="margin:0 1rem 0.5rem 0;">
+        <p style="text-align:left;">Горный пейзаж с обтеканием слева. Класс <code>.float-left</code> прижимает изображение к левому краю, а текст обтекает его справа и снизу. Для отступа добавлен <code>margin</code> справа и снизу. Тень задаётся классом <code>.shadow</code>, скругление — <code>.rounded</code>. Это простой и надёжный способ разместить изображение в текстовом контексте.</p>
+      </div>
+
+      <h3>По центру</h3>
+      <div class="demo-box" style="text-align:center;">
+        <img src="https://picsum.photos/seed/landscape2/360/200" alt="Пейзаж" class="rounded shadow" style="display:block;margin:0 auto 0.75rem;">
+        <p>Центрированное изображение с классом <code>.mx-auto</code> (или <code>margin:0 auto</code>). Тень и скругление заданы теми же классами <code>.shadow</code> и <code>.rounded</code>. Подходит для акцентных иллюстраций между текстовыми блоками.</p>
+      </div>
+
+      <h3>Справа</h3>
+      <div class="demo-box clearfix">
+        <img src="https://picsum.photos/seed/landscape3/280/200" alt="Пейзаж" class="float-right shadow rounded" style="margin:0 0 0.5rem 1rem;">
+        <p style="text-align:left;">Горный пейзаж с обтеканием справа. Класс <code>.float-right</code> прижимает изображение к правому краю, текст обтекает его слева. Для отступа используется <code>margin</code> слева и снизу. Такой вариант удобен для цитат, фактов или дополнительных материалов, которые не должны разрывать основной поток текста.</p>
+      </div>
+
+      <h3>Стили оформления</h3>
+      <div class="demo-box" style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;">
+        <div style="text-align:center;">
+          <img src="https://picsum.photos/seed/styletrees/160/160" alt="trees" class="rounded-circle shadow" style="width:140px;height:140px;object-fit:cover;margin:0 auto 0.5rem;">
+          <div><code>.rounded-circle .shadow</code></div>
+        </div>
+        <div style="text-align:center;">
+          <img src="https://picsum.photos/seed/stylelac/160/160" alt="lac" class="rounded shadow-lg" style="width:140px;height:140px;object-fit:cover;margin:0 auto 0.5rem;">
+          <div><code>.rounded .shadow-lg</code></div>
+        </div>
+        <div style="text-align:center;">
+          <img src="https://picsum.photos/seed/styleriver/160/160" alt="river" class="rounded-0 shadow" style="width:140px;height:140px;object-fit:cover;margin:0 auto 0.5rem;border:2px solid var(--pk-border);">
+          <div><code>.rounded-0 .border</code></div>
+        </div>
+        <div style="text-align:center;">
+          <img src="https://picsum.photos/seed/stylesky/160/160" alt="sky" class="rounded-pill shadow" style="width:140px;height:140px;object-fit:cover;margin:0 auto 0.5rem;">
+          <div><code>.rounded-pill .shadow</code></div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Слева --&gt;
+&lt;div class="clearfix"&gt;
+  &lt;img src="..." alt="..." class="float-left shadow rounded" style="margin:0 1rem 0.5rem 0;"&gt;
+  &lt;p&gt;Текст обтекает изображение справа&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- По центру --&gt;
+&lt;div style="text-align:center;"&gt;
+  &lt;img src="..." alt="..." class="rounded shadow" style="display:block;margin:0 auto 0.75rem;"&gt;
+  &lt;p&gt;Текст под изображением&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Справа --&gt;
+&lt;div class="clearfix"&gt;
+  &lt;img src="..." alt="..." class="float-right shadow rounded" style="margin:0 0 0.5rem 1rem;"&gt;
+  &lt;p&gt;Текст обтекает изображение слева&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Круглая аватарка --&gt;
+&lt;img src="..." alt="..." class="rounded-circle shadow" style="width:140px;height:140px;object-fit:cover;"&gt;
+
+&lt;!-- Прямоугольник с большой тенью --&gt;
+&lt;img src="..." alt="..." class="rounded shadow-lg" style="width:140px;height:140px;object-fit:cover;"&gt;
+
+&lt;!-- Без скругления с рамкой --&gt;
+&lt;img src="..." alt="..." class="rounded-0 shadow" style="width:140px;height:140px;object-fit:cover;border:2px solid var(--pk-border);"&gt;
+
+&lt;!-- Скруглённые торцы (пилюля) --&gt;
+&lt;img src="..." alt="..." class="rounded-pill shadow" style="width:140px;height:140px;object-fit:cover;"&gt;</code></pre>
+      </div>
+
       <h2>Демо</h2>
       <p>Нажмите на любое изображение, чтобы открыть lightbox. Навигация стрелками, закрытие по Escape или клику вне изображения.</p>
 
