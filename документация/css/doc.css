@@ -469,3 +469,51 @@ html {
 .feature-card p { font-size: 0.85rem; margin: 0; }
 
 .theme-dark .feature-card { background: rgba(30, 30, 30, 0.3); }
+
+/* ===== IMAGE PLACEHOLDERS (doc only) ===== */
+.doc-content img {
+  background: linear-gradient(135deg, rgba(87,85,217,0.08), rgba(50,182,67,0.08));
+  color: #6e6e73;
+  font-size: 0.75rem;
+  text-align: center;
+  position: relative;
+}
+.theme-dark .doc-content img {
+  background: linear-gradient(135deg, rgba(87,85,217,0.12), rgba(50,182,67,0.12));
+  color: #a1a1a6;
+}
+.doc-content img[src$=".jpg"],
+.doc-content img[src*="picsum"] {
+  min-height: 80px;
+}
+.doc-content .pk-gallery-item img {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: auto;
+}
+.doc-content img[src*="photo_2026"] {
+  background: none;
+  min-height: auto;
+}
+.doc-content .page-logo img {
+  background: none;
+}
+
+/* ===== CAROUSEL PLACEHOLDERS (doc only) ===== */
+.doc-content .carousel__slide {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doc-content .carousel__slide[style*="flex-end"] {
+  align-items: flex-end;
+}
+.doc-content .carousel__slide .carousel__placeholder {
+  font-size: 2.5rem;
+  font-weight: 200;
+  letter-spacing: 0.4em;
+  opacity: 0.6;
+  color: #fff;
+  text-align: center;
+  user-select: none;
+}
