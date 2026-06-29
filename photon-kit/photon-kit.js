@@ -432,13 +432,8 @@
     el.addEventListener('click', toggle);
   });
   (function initTheme() {
-    const saved = (() => { try { return localStorage.getItem('photon-theme'); } catch(e) { return null; } })();
-    if (saved === 'dark' || (!saved && document.body.classList.contains('theme-dark'))) {
-      document.body.classList.add('theme-dark');
-      document.querySelectorAll('[data-theme-switch] .theme-switch__label').forEach(l => l.textContent = 'Тёмная');
-    } else {
-      document.querySelectorAll('[data-theme-switch] .theme-switch__label').forEach(l => l.textContent = 'Светлая');
-    }
+    const isDark = document.body.classList.contains('theme-dark');
+    document.querySelectorAll('[data-theme-switch] .theme-switch__label').forEach(l => l.textContent = isDark ? 'Тёмная' : 'Светлая');
   })();
 
   // ========== FORM VALIDATION ==========
