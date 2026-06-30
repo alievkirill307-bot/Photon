@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Полное руководство по созданию breadcrumbs (хлебных крошек) в Photon Framework: структура, разделители, иконки, адаптивность, Schema.org." />
+  <meta name="keywords" content="photon, breadcrumbs, хлебные крошки, навигация, breadcrumb list, schema.org, json-ld, ui компоненты" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Breadcrumbs [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link active">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Breadcrumbs (хлебные крошки) [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Breadcrumbs (хлебные крошки) — это элемент навигации, показывающий путь от главной страницы до текущей. Они помогают пользователям понимать своё местоположение и быстро переходить на уровень выше. Photon предоставляет все необходимые утилиты для создания семантически правильных и стильных breadcrumbs.</p>
+
+      <h2>Структура breadcrumbs</h2>
+      <p>Семантически правильная структура breadcrumbs строится на тегах <code>&lt;nav&gt;</code>, <code>&lt;ol&gt;</code> и <code>&lt;li&gt;</code> со ссылками внутри. Это обеспечивает доступность и правильную индексацию поисковиками.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;nav aria-label="Breadcrumb"&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href="/"&gt;Главная&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/category"&gt;Категория&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;Текущая страница&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h2>Базовая реализация</h2>
+      <p>Используйте утилиты Photon-tw для стилизации: <code>pt-flex</code>, <code>pt-items-center</code>, <code>pt-gap-2</code>, <code>pt-text-sm</code>, <code>pt-text-gray-400</code> и <code>pt-hover:text-white</code>.</p>
+
+      <div class="demo-box">
+        <nav aria-label="Breadcrumb">
+          <ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400">
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Главная</a></li>
+            <li class="pt-text-gray-500">/</li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Компоненты</a></li>
+            <li class="pt-text-gray-500">/</li>
+            <li class="pt-text-white pt-font-medium">Кнопки</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav aria-label="Breadcrumb"&gt;
+  &lt;ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400"&gt;
+    &lt;li&gt;&lt;a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition"&gt;Главная&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="pt-text-gray-500"&gt;/&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition"&gt;Компоненты&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="pt-text-gray-500"&gt;/&lt;/li&gt;
+    &lt;li class="pt-text-white pt-font-medium"&gt;Кнопки&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h2>Разделители</h2>
+      <p>В качестве разделителей между элементами можно использовать разные символы: слэш, уголок, стрелку, точку. Выбор разделителя влияет на визуальное восприятие навигации.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Разделитель</th><th>Код</th><th>Применение</th></tr></thead>
+          <tbody>
+            <tr><td>Слэш /</td><td><code>/</code></td><td>Классический, подходит для большинства сайтов</td></tr>
+            <tr><td>Уголок &gt;</td><td><code>&amp;gt;</code></td><td>Современный, часто в админ-панелях</td></tr>
+            <tr><td>Стрелка →</td><td><code>&amp;rarr;</code></td><td>Акцент на направлении</td></tr>
+            <tr><td>Треугольник ▸</td><td><code>&amp;blacktriangleright;</code></td><td>Визуально выделяется</td></tr>
+            <tr><td>Точка ·</td><td><code>&amp;middot;</code></td><td>Минималистичный стиль</td></tr>
+            <tr><td>Черта |</td><td><code>&amp;#124;</code></td><td>Вертикальный разделитель</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <nav aria-label="Breadcrumb slash">
+          <ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400 pt-mb-3">
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline">Главная</a></li>
+            <li class="pt-text-gray-500">&gt;</li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline">Блог</a></li>
+            <li class="pt-text-gray-500">&gt;</li>
+            <li class="pt-text-white pt-font-medium">Статья</li>
+          </ol>
+        </nav>
+        <nav aria-label="Breadcrumb rarr">
+          <ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400">
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline">Главная</a></li>
+            <li class="pt-text-gray-500">&rarr;</li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline">Каталог</a></li>
+            <li class="pt-text-gray-500">&rarr;</li>
+            <li class="pt-text-white pt-font-medium">Товар</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Разделитель &gt; --&gt;
+&lt;li class="pt-text-gray-500"&gt;&amp;gt;&lt;/li&gt;
+
+&lt;!-- Разделитель → --&gt;
+&lt;li class="pt-text-gray-500"&gt;&amp;rarr;&lt;/li&gt;</code></pre>
+      </div>
+
+      <h2>Активный элемент</h2>
+      <p>Текущая страница должна быть не ссылкой, а обычным текстом. Выделите её с помощью <code>pt-font-semibold</code> и <code>pt-text-primary</code> (или <code>pt-text-white</code> для тёмной темы).</p>
+
+      <div class="demo-box">
+        <nav aria-label="Breadcrumb active">
+          <ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400">
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Главная</a></li>
+            <li class="pt-text-gray-500">/</li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Профиль</a></li>
+            <li class="pt-text-gray-500">/</li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Настройки</a></li>
+            <li class="pt-text-gray-500">/</li>
+            <li class="pt-font-semibold pt-text-primary">Безопасность</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;li class="pt-font-semibold pt-text-primary"&gt;Безопасность&lt;/li&gt;</code></pre>
+      </div>
+
+      <h2>Иконки в breadcrumbs</h2>
+      <p>Можно добавить иконку домика перед первым элементом или стрелочки между ссылками. Используйте inline SVG для поддержки тёмной темы.</p>
+
+      <div class="demo-box">
+        <nav aria-label="Breadcrumb with icons">
+          <ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400">
+            <li>
+              <a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-flex pt-items-center pt-gap-1 pt-transition">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 0 0 1 1h3v-5h6v5h3a1 1 0 0 0 1-1V10"/></svg>
+                Главная
+              </a>
+            </li>
+            <li class="pt-text-gray-500">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Категория</a></li>
+            <li class="pt-text-gray-500">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </li>
+            <li class="pt-text-white pt-font-medium">Страница</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Иконка домика --&gt;
+&lt;a href="#" class="pt-flex pt-items-center pt-gap-1"&gt;
+  &lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+    &lt;path d="M3 12l9-9 9 9"/&gt;
+    &lt;path d="M5 10v10a1 1 0 0 0 1 1h3v-5h6v5h3a1 1 0 0 0 1-1V10"/&gt;
+  &lt;/svg&gt;
+  Главная
+&lt;/a&gt;
+
+&lt;!-- Иконка-стрелка между элементами --&gt;
+&lt;li class="pt-text-gray-500"&gt;
+  &lt;svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+    &lt;path d="M9 18l6-6-6-6"/&gt;
+  &lt;/svg&gt;
+&lt;/li&gt;</code></pre>
+      </div>
+
+      <h2>Адаптивные breadcrumbs</h2>
+      <p>На мобильных устройствах можно скрыть часть элементов, оставив только первый и последний. Используйте <code>pt-hidden</code> и <code>pt-sm:flex</code> для контроля видимости.</p>
+
+      <div class="demo-box">
+        <nav aria-label="Breadcrumb responsive">
+          <ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400">
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline">Главная</a></li>
+            <li class="pt-text-gray-500 pt-hidden pt-sm:inline">/</li>
+            <li class="pt-hidden pt-sm:inline"><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline">Раздел</a></li>
+            <li class="pt-text-gray-500 pt-hidden pt-sm:inline">/</li>
+            <li class="pt-hidden pt-sm:inline"><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline">Подраздел</a></li>
+            <li class="pt-text-gray-500 pt-hidden pt-md:inline">/</li>
+            <li class="pt-hidden pt-md:inline"><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline">Категория</a></li>
+            <li class="pt-text-gray-500 pt-hidden pt-md:inline">/</li>
+            <li class="pt-text-white pt-font-medium">Текущая</li>
+          </ol>
+        </nav>
+        <p class="pt-text-xs pt-text-gray-500 pt-mt-2 pt-italic">На мобильных устройствах отображаются только первый и последний элементы</p>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Элемент скрыт на мобильных, показан на sm+ --&gt;
+&lt;li class="pt-hidden pt-sm:inline"&gt;
+  &lt;a href="#"&gt;Подраздел&lt;/a&gt;
+&lt;/li&gt;
+
+&lt;!-- Элемент скрыт на sm, показан на md+ --&gt;
+&lt;li class="pt-hidden pt-md:inline"&gt;
+  &lt;a href="#"&gt;Категория&lt;/a&gt;
+&lt;/li&gt;</code></pre>
+      </div>
+
+      <h2>Schema.org разметка</h2>
+      <p>Для SEO добавьте JSON-LD разметку BreadcrumbList. Это улучшает отображение в поисковых результатах в виде расширенных сниппетов.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://example.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Категория",
+      "item": "https://example.com/category"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Текущая страница",
+      "item": "https://example.com/category/page"
+    }
+  ]
+}
+&lt;/script&gt;</code></pre>
+      </div>
+
+      <p>Параметры JSON-LD разметки:</p>
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Поле</th><th>Тип</th><th>Описание</th></tr></thead>
+          <tbody>
+            <tr><td><code>@context</code></td><td>URL</td><td>Всегда <code>https://schema.org</code></td></tr>
+            <tr><td><code>@type</code></td><td>String</td><td><code>BreadcrumbList</code></td></tr>
+            <tr><td><code>itemListElement</code></td><td>Array</td><td>Массив элементов, каждый с <code>@type: ListItem</code></td></tr>
+            <tr><td><code>position</code></td><td>Number</td><td>Позиция элемента, начиная с 1</td></tr>
+            <tr><td><code>name</code></td><td>String</td><td>Название элемента</td></tr>
+            <tr><td><code>item</code></td><td>URL</td><td>Полный URL страницы (необязательно для последнего)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Примеры</h2>
+
+      <h3>Пример 1: Breadcrumbs для сайта</h3>
+
+      <div class="demo-box">
+        <nav aria-label="Breadcrumb site">
+          <ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400">
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition pt-flex pt-items-center pt-gap-1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 0 0 1 1h3v-5h6v5h3a1 1 0 0 0 1-1V10"/></svg>
+              Главная
+            </a></li>
+            <li class="pt-text-gray-500">/</li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Блог</a></li>
+            <li class="pt-text-gray-500">/</li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Веб-разработка</a></li>
+            <li class="pt-text-gray-500">/</li>
+            <li class="pt-font-semibold pt-text-primary">Как создать breadcrumbs</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav aria-label="Breadcrumb"&gt;
+  &lt;ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400"&gt;
+    &lt;li&gt;
+      &lt;a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition pt-flex pt-items-center pt-gap-1"&gt;
+        &lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+          &lt;path d="M3 12l9-9 9 9"/&gt;
+          &lt;path d="M5 10v10a1 1 0 0 0 1 1h3v-5h6v5h3a1 1 0 0 0 1-1V10"/&gt;
+        &lt;/svg&gt;
+        Главная
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="pt-text-gray-500"&gt;/&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition"&gt;Блог&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="pt-text-gray-500"&gt;/&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition"&gt;Веб-разработка&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="pt-text-gray-500"&gt;/&lt;/li&gt;
+    &lt;li class="pt-font-semibold pt-text-primary"&gt;Как создать breadcrumbs&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h3>Пример 2: Breadcrumbs в админ-панели</h3>
+
+      <div class="demo-box">
+        <nav aria-label="Breadcrumb admin" style="background:var(--pk-surface);padding:12px 16px;border-radius:8px;border:1px solid var(--pk-border);">
+          <ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400">
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition pt-flex pt-items-center pt-gap-1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+              Панель
+            </a></li>
+            <li class="pt-text-gray-500">&gt;</li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Пользователи</a></li>
+            <li class="pt-text-gray-500">&gt;</li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Роли</a></li>
+            <li class="pt-text-gray-500">&gt;</li>
+            <li class="pt-font-semibold pt-text-primary">Редактирование</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div style="background:var(--pk-surface);padding:12px 16px;border-radius:8px;border:1px solid var(--pk-border);"&gt;
+  &lt;ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400"&gt;
+    &lt;li&gt;&lt;a href="#" class="..."&gt;Панель&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="pt-text-gray-500"&gt;&amp;gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="..."&gt;Пользователи&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="pt-text-gray-500"&gt;&amp;gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="..."&gt;Роли&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="pt-text-gray-500"&gt;&amp;gt;&lt;/li&gt;
+    &lt;li class="pt-font-semibold pt-text-primary"&gt;Редактирование&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 3: Breadcrumbs в интернет-магазине</h3>
+
+      <div class="demo-box">
+        <nav aria-label="Breadcrumb ecommerce">
+          <ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400 pt-flex-wrap">
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Главная</a></li>
+            <li class="pt-text-gray-500">/</li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Каталог</a></li>
+            <li class="pt-text-gray-500">/</li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Электроника</a></li>
+            <li class="pt-text-gray-500">/</li>
+            <li><a href="#" class="pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Смартфоны</a></li>
+            <li class="pt-text-gray-500">/</li>
+            <li class="pt-font-semibold pt-text-primary">iPhone 16 Pro</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav aria-label="Breadcrumb"&gt;
+  &lt;ol class="pt-flex pt-items-center pt-gap-2 pt-list-none pt-p-0 pt-m-0 pt-text-sm pt-text-gray-400 pt-flex-wrap"&gt;
+    &lt;li&gt;&lt;a href="#" class="..."&gt;Главная&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="pt-text-gray-500"&gt;/&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="..."&gt;Каталог&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="pt-text-gray-500"&gt;/&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="..."&gt;Электроника&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="pt-text-gray-500"&gt;/&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="..."&gt;Смартфоны&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="pt-text-gray-500"&gt;/&lt;/li&gt;
+    &lt;li class="pt-font-semibold pt-text-primary"&gt;iPhone 16 Pro&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

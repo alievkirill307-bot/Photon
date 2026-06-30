@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Полное руководство по CSS blend modes в Photon Framework: mix-blend-mode, background-blend-mode, isolation, практические примеры." />
+  <meta name="keywords" content="photon, css blend modes, mix-blend-mode, background-blend-mode, isolation, css effects, наложения, смешивание" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Blend modes [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link active">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Blend modes [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>CSS blend modes позволяют управлять тем, как цвета элементов смешиваются с фоном или друг с другом. Photon предоставляет утилиты <code>pt-mix-blend-*</code> и <code>pt-bg-blend-*</code> для всех стандартных режимов смешивания, а также <code>pt-isolation-auto</code> и <code>pt-isolate</code> для управления контекстом наложения.</p>
+
+      <h2>mix-blend-mode</h2>
+      <p>Свойство <code>mix-blend-mode</code> определяет, как содержимое элемента смешивается с содержимым родительского элемента и его фоном. Используйте классы <code>pt-mix-blend-*</code> для быстрого применения.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Значение</th><th>Описание</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-mix-blend-normal</code></td><td>normal</td><td>Обычное наложение, никакого смешивания</td></tr>
+            <tr><td><code>.pt-mix-blend-multiply</code></td><td>multiply</td><td>Умножение цветов — результат всегда темнее</td></tr>
+            <tr><td><code>.pt-mix-blend-screen</code></td><td>screen</td><td>Обратное умножению — результат всегда светлее</td></tr>
+            <tr><td><code>.pt-mix-blend-overlay</code></td><td>overlay</td><td>Комбинация multiply и screen в зависимости от базового цвета</td></tr>
+            <tr><td><code>.pt-mix-blend-darken</code></td><td>darken</td><td>Выбирает более тёмный цвет из двух</td></tr>
+            <tr><td><code>.pt-mix-blend-lighten</code></td><td>lighten</td><td>Выбирает более светлый цвет из двух</td></tr>
+            <tr><td><code>.pt-mix-blend-color-dodge</code></td><td>color-dodge</td><td>Осветляет базовый цвет, уменьшая контраст</td></tr>
+            <tr><td><code>.pt-mix-blend-color-burn</code></td><td>color-burn</td><td>Затемняет базовый цвет, увеличивая контраст</td></tr>
+            <tr><td><code>.pt-mix-blend-hard-light</code></td><td>hard-light</td><td>Жёсткий свет — работает как overlay, но roles swapped</td></tr>
+            <tr><td><code>.pt-mix-blend-soft-light</code></td><td>soft-light</td><td>Мягкий свет — более щадящая версия hard-light</td></tr>
+            <tr><td><code>.pt-mix-blend-difference</code></td><td>difference</td><td>Разница — вычитает тёмный цвет из светлого</td></tr>
+            <tr><td><code>.pt-mix-blend-exclusion</code></td><td>exclusion</td><td>Похоже на difference, но с меньшим контрастом</td></tr>
+            <tr><td><code>.pt-mix-blend-hue</code></td><td>hue</td><td>Применяет оттенок исходного цвета к насыщенности и яркости базового</td></tr>
+            <tr><td><code>.pt-mix-blend-saturation</code></td><td>saturation</td><td>Применяет насыщенность исходного цвета</td></tr>
+            <tr><td><code>.pt-mix-blend-color</code></td><td>color</td><td>Применяет оттенок и насыщенность исходного цвета к яркости базового</td></tr>
+            <tr><td><code>.pt-mix-blend-luminosity</code></td><td>luminosity</td><td>Применяет яркость исходного цвета к оттенку и насыщенности базового</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Демонстрация mix-blend-mode</h3>
+      <p>Пример наложения текста на изображение с разными режимами смешивания:</p>
+
+      <div class="demo-box demo-box--column">
+        <div style="position:relative;width:100%;height:200px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:8px;overflow:hidden;">
+          <div class="pt-mix-blend-multiply" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#fff;background:rgba(255,100,50,0.6);">MULTIPLY</div>
+        </div>
+        <div style="position:relative;width:100%;height:200px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:8px;overflow:hidden;">
+          <div class="pt-mix-blend-screen" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#000;background:rgba(255,255,100,0.6);">SCREEN</div>
+        </div>
+        <div style="position:relative;width:100%;height:200px;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:8px;overflow:hidden;">
+          <div class="pt-mix-blend-overlay" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#fff;background:rgba(100,255,100,0.5);">OVERLAY</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Multiply --&gt;
+&lt;div style="position:relative;background:linear-gradient(135deg,#667eea,#764ba2);"&gt;
+  &lt;div class="pt-mix-blend-multiply" style="background:rgba(255,100,50,0.6);"&gt;MULTIPLY&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Screen --&gt;
+&lt;div style="position:relative;background:linear-gradient(135deg,#667eea,#764ba2);"&gt;
+  &lt;div class="pt-mix-blend-screen" style="background:rgba(255,255,100,0.6);"&gt;SCREEN&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Overlay --&gt;
+&lt;div style="position:relative;background:linear-gradient(135deg,#667eea,#764ba2);"&gt;
+  &lt;div class="pt-mix-blend-overlay" style="background:rgba(100,255,100,0.5);"&gt;OVERLAY&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>background-blend-mode</h2>
+      <p>Свойство <code>background-blend-mode</code> управляет смешиванием фоновых изображений и градиентов одного элемента. Photon предоставляет классы <code>pt-bg-blend-*</code> с теми же значениями, что и для mix-blend-mode.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-bg-blend-normal</code></td><td>normal</td></tr>
+            <tr><td><code>.pt-bg-blend-multiply</code></td><td>multiply</td></tr>
+            <tr><td><code>.pt-bg-blend-screen</code></td><td>screen</td></tr>
+            <tr><td><code>.pt-bg-blend-overlay</code></td><td>overlay</td></tr>
+            <tr><td><code>.pt-bg-blend-darken</code></td><td>darken</td></tr>
+            <tr><td><code>.pt-bg-blend-lighten</code></td><td>lighten</td></tr>
+            <tr><td><code>.pt-bg-blend-color-dodge</code></td><td>color-dodge</td></tr>
+            <tr><td><code>.pt-bg-blend-color-burn</code></td><td>color-burn</td></tr>
+            <tr><td><code>.pt-bg-blend-hard-light</code></td><td>hard-light</td></tr>
+            <tr><td><code>.pt-bg-blend-soft-light</code></td><td>soft-light</td></tr>
+            <tr><td><code>.pt-bg-blend-difference</code></td><td>difference</td></tr>
+            <tr><td><code>.pt-bg-blend-exclusion</code></td><td>exclusion</td></tr>
+            <tr><td><code>.pt-bg-blend-hue</code></td><td>hue</td></tr>
+            <tr><td><code>.pt-bg-blend-saturation</code></td><td>saturation</td></tr>
+            <tr><td><code>.pt-bg-blend-color</code></td><td>color</td></tr>
+            <tr><td><code>.pt-bg-blend-luminosity</code></td><td>luminosity</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Демонстрация background-blend-mode</h3>
+      <p>Смешивание градиента с изображением с помощью background-blend-mode:</p>
+
+      <div class="demo-box demo-box--column">
+        <div class="pt-bg-blend-multiply" style="width:100%;height:200px;background:linear-gradient(135deg,rgba(87,85,217,0.8),rgba(50,182,67,0.8)),url(https://picsum.photos/800/400?random=1);background-size:cover;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#fff;">MULTIPLY</div>
+        <div class="pt-bg-blend-screen" style="width:100%;height:200px;background:linear-gradient(135deg,rgba(87,85,217,0.6),rgba(50,182,67,0.6)),url(https://picsum.photos/800/400?random=2);background-size:cover;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#000;">SCREEN</div>
+        <div class="pt-bg-blend-overlay" style="width:100%;height:200px;background:linear-gradient(135deg,rgba(255,100,50,0.5),rgba(100,50,255,0.5)),url(https://picsum.photos/800/400?random=3);background-size:cover;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:#fff;">OVERLAY</div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Multiply --&gt;
+&lt;div class="pt-bg-blend-multiply"
+     style="background:linear-gradient(135deg,rgba(87,85,217,0.8),rgba(50,182,67,0.8)),url(image.jpg);background-size:cover;"&gt;
+  MULTIPLY
+&lt;/div&gt;
+
+&lt;!-- Screen --&gt;
+&lt;div class="pt-bg-blend-screen"
+     style="background:linear-gradient(135deg,rgba(87,85,217,0.6),rgba(50,182,67,0.6)),url(image.jpg);background-size:cover;"&gt;
+  SCREEN
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Таблица blend modes</h2>
+      <p>Полная таблица всех режимов смешивания с визуальным описанием и типичным применением:</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Режим</th><th>Тип</th><th>Эффект</th><th>Применение</th></tr></thead>
+          <tbody>
+            <tr><td><code>normal</code></td><td>Базовый</td><td>Никакого смешивания</td><td>Обычное отображение</td></tr>
+            <tr><td><code>multiply</code></td><td>Затемняющий</td><td>Перемножает цвета — результат темнее</td><td>Тени, наложение текста на светлый фон</td></tr>
+            <tr><td><code>screen</code></td><td>Осветляющий</td><td>Обратный multiply — результат светлее</td><td>Подсветка, блики, наложение на тёмный фон</td></tr>
+            <tr><td><code>overlay</code></td><td>Контрастный</td><td>Комбинирует multiply/screen</td><td>Усиление контраста, текстуры</td></tr>
+            <tr><td><code>darken</code></td><td>Затемняющий</td><td>Берёт тёмный цвет каждого канала</td><td>Замена светлых участков</td></tr>
+            <tr><td><code>lighten</code></td><td>Осветляющий</td><td>Берёт светлый цвет каждого канала</td><td>Замена тёмных участков</td></tr>
+            <tr><td><code>color-dodge</code></td><td>Осветляющий</td><td>Осветляет базовый цвет</td><td>Свечение, яркие эффекты</td></tr>
+            <tr><td><code>color-burn</code></td><td>Затемняющий</td><td>Затемняет базовый цвет</td><td>Глубокие тени, насыщенные цвета</td></tr>
+            <tr><td><code>hard-light</code></td><td>Контрастный</td><td>Жёсткий свет — multiply или screen</td><td>Резкие световые эффекты</td></tr>
+            <tr><td><code>soft-light</code></td><td>Контрастный</td><td>Мягкий свет — burn или dodge</td><td>Мягкое освещение, текстуры</td></tr>
+            <tr><td><code>difference</code></td><td>Инвертирующий</td><td>Разница абсолютных значений</td><td>Инверсия, художественные эффекты</td></tr>
+            <tr><td><code>exclusion</code></td><td>Инвертирующий</td><td>Похоже на difference, мягче</td><td>Цветокоррекция, эффекты плёнки</td></tr>
+            <tr><td><code>hue</code></td><td>Цветовой</td><td>Берёт оттенок исходного цвета</td><td>Перекрашивание с сохранением яркости</td></tr>
+            <tr><td><code>saturation</code></td><td>Цветовой</td><td>Берёт насыщенность исходного цвета</td><td>Регулировка насыщенности</td></tr>
+            <tr><td><code>color</code></td><td>Цветовой</td><td>Берёт оттенок + насыщенность</td><td>Окрашивание чёрно-белых фото</td></tr>
+            <tr><td><code>luminosity</code></td><td>Цветовой</td><td>Берёт яркость исходного цвета</td><td>Сохранение яркости при смене цвета</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Практические примеры</h2>
+
+      <h3>Текст поверх изображения</h3>
+      <p>Используйте <code>pt-mix-blend-overlay</code> или <code>pt-mix-blend-soft-light</code> для создания читаемого текста на изображениях:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;div style="position:relative;"&gt;
+  &lt;img src="hero.jpg" alt="Hero" style="width:100%;display:block;"&gt;
+  &lt;div class="pt-mix-blend-overlay"
+       style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+              background:rgba(0,0,0,0.3);color:#fff;font-size:3rem;font-weight:800;"&gt;
+    Заголовок
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Duotone эффект</h3>
+      <p>Эффект двухцветного изображения (duotone) легко достигается комбинацией градиента и <code>pt-bg-blend-multiply</code>:</p>
+
+      <div class="code-block">
+        <pre><code>.duotone {
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4), url(photo.jpg);
+  background-blend-mode: multiply;
+  background-size: cover;
+}</code></pre>
+      </div>
+
+      <h3>Цветовые наложения</h3>
+      <p>Цветные оверлеи с разными режимами смешивания позволяют создавать уникальные визуальные стили:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-blend-color" style="background:linear-gradient(135deg,hsl(0,100%,50%),hsl(120,100%,50%)),url(photo.jpg);background-size:cover;"&gt;
+  Цветной оверлей
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Изоляция</h2>
+      <p>Свойство <code>isolation</code> предотвращает смешивание элемента с его фоном. Photon предоставляет два класса: <code>pt-isolation-auto</code> (стандартное поведение) и <code>pt-isolate</code> (создаёт новый контекст наложения).</p>
+
+      <div class="code-block">
+        <pre><code>/* Изоляция — элемент не смешивается с фоном */
+.isolated {
+  isolation: isolate;
+}
+
+/* Photon-классы */
+.pt-isolation-auto { isolation: auto; }
+.pt-isolate { isolation: isolate; }</code></pre>
+      </div>
+
+      <p>Изоляция полезна, когда нужно ограничить область действия blend mode, чтобы он не распространялся на фоновые элементы.</p>
+
+      <h2>Примеры</h2>
+
+      <h3>Пример 1: Hero-изображение с оверлеем</h3>
+
+      <div class="demo-box demo-box--column">
+        <div class="pt-bg-blend-overlay" style="width:100%;height:300px;background:linear-gradient(135deg,rgba(87,85,217,0.7),rgba(232,86,0,0.7)),url(https://picsum.photos/900/400?random=4);background-size:cover;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:2rem;">
+          <h3 style="font-size:2.5rem;font-weight:800;margin-bottom:0.5rem;color:#fff;">Hero Title</h3>
+          <p style="font-size:1.1rem;color:rgba(255,255,255,0.85);">Смешивание градиента и изображения создаёт глубину</p>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-blend-overlay"
+     style="background:linear-gradient(135deg,rgba(87,85,217,0.7),rgba(232,86,0,0.7)),url(hero.jpg);background-size:cover;height:300px;display:flex;align-items:center;justify-content:center;color:#fff;"&gt;
+  &lt;h3&gt;Hero Title&lt;/h3&gt;
+  &lt;p&gt;Смешивание градиента и изображения создаёт глубину&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 2: Градиент + изображение</h3>
+
+      <div class="demo-box demo-box--column">
+        <div class="pt-bg-blend-multiply" style="width:100%;height:250px;background:linear-gradient(45deg,#0f0c29,#302b63,#24243e),url(https://picsum.photos/900/300?random=5);background-size:cover;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700;color:rgba(255,255,255,0.9);">Тёмный драматичный эффект</div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-blend-multiply"
+     style="background:linear-gradient(45deg,#0f0c29,#302b63,#24243e),url(photo.jpg);background-size:cover;height:250px;display:flex;align-items:center;justify-content:center;color:#fff;"&gt;
+  Тёмный драматичный эффект
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 3: Hover-эффекты с blend mode</h3>
+      <p>При наведении меняйте режим смешивания для создания интерактивных карточек:</p>
+
+      <div class="demo-box">
+        <div class="pt-transition pt-duration-300 pt-bg-blend-normal" style="width:200px;height:200px;background:linear-gradient(135deg,#667eea,#764ba2),url(https://picsum.photos/200/200?random=6);background-size:cover;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;text-align:center;cursor:pointer;" onmouseover="this.className='pt-transition pt-duration-300 pt-bg-blend-overlay'" onmouseout="this.className='pt-transition pt-duration-300 pt-bg-blend-normal'">Наведи на меня</div>
+        <div class="pt-transition pt-duration-300 pt-bg-blend-normal" style="width:200px;height:200px;background:linear-gradient(135deg,#f093fb,#f5576c),url(https://picsum.photos/200/200?random=7);background-size:cover;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;text-align:center;cursor:pointer;" onmouseover="this.className='pt-transition pt-duration-300 pt-bg-blend-screen'" onmouseout="this.className='pt-transition pt-duration-300 pt-bg-blend-normal'">Screen на hover</div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-transition pt-duration-300 pt-bg-blend-normal"
+     onmouseover="this.className='pt-transition pt-duration-300 pt-bg-blend-overlay'"
+     onmouseout="this.className='pt-transition pt-duration-300 pt-bg-blend-normal'"
+     style="background:linear-gradient(135deg,#667eea,#764ba2),url(photo.jpg);background-size:cover;width:200px;height:200px;"&gt;
+  Наведи на меня
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 4: Duotone галерея</h3>
+
+      <div class="demo-box demo-box--column">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;width:100%;">
+          <div class="pt-bg-blend-multiply" style="height:150px;background:linear-gradient(135deg,#ff6b6b,#ee5a24),url(https://picsum.photos/200/200?random=8);background-size:cover;border-radius:8px;"></div>
+          <div class="pt-bg-blend-multiply" style="height:150px;background:linear-gradient(135deg,#0abde3,#48dbfb),url(https://picsum.photos/200/200?random=9);background-size:cover;border-radius:8px;"></div>
+          <div class="pt-bg-blend-multiply" style="height:150px;background:linear-gradient(135deg,#a29bfe,#6c5ce7),url(https://picsum.photos/200/200?random=10);background-size:cover;border-radius:8px;"></div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-blend-multiply"
+     style="background:linear-gradient(135deg,#ff6b6b,#ee5a24),url(photo.jpg);background-size:cover;height:150px;border-radius:8px;"&gt;&lt;/div&gt;
+
+&lt;div class="pt-bg-blend-multiply"
+     style="background:linear-gradient(135deg,#0abde3,#48dbfb),url(photo.jpg);background-size:cover;height:150px;border-radius:8px;"&gt;&lt;/div&gt;
+
+&lt;div class="pt-bg-blend-multiply"
+     style="background:linear-gradient(135deg,#a29bfe,#6c5ce7),url(photo.jpg);background-size:cover;height:150px;border-radius:8px;"&gt;&lt;/div&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

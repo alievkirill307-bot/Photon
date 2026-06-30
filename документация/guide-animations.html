@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Полное руководство по CSS-анимациям и переходам в Photon Framework: transitions, keyframes, transform, производительность." />
+  <meta name="keywords" content="photon, css animations, css transitions, keyframes, transform, веб-анимации, плавные переходы, gpu acceleration" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Анимации [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link active">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Анимации [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Анимации делают интерфейс живым и отзывчивым. Photon предоставляет набор утилит для CSS-переходов (transitions) и ключевых кадров (keyframes), а также рекомендации по оптимизации производительности.</p>
+
+      <h2>CSS Transitions</h2>
+      <p>CSS-переходы позволяют плавно изменять значения свойств при смене состояния элемента. Основные параметры: <code>transition-property</code>, <code>transition-duration</code>, <code>transition-timing-function</code>, <code>transition-delay</code>.</p>
+
+      <h3>Классы Photon для переходов</h3>
+      <p>Используйте <code>pt-transition</code> для базового перехода (all 0.2s ease) и модификаторы для точной настройки.</p>
+
+      <div class="code-block">
+        <pre><code>/* Базовый переход */
+.pt-transition {
+  transition: all 0.2s ease;
+}
+
+/* Покомпонентные классы */
+.pt-transition--colors {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.pt-transition--transform {
+  transition: transform 0.2s ease;
+}
+.pt-transition--opacity {
+  transition: opacity 0.2s ease;
+}
+.pt-transition--shadow {
+  transition: box-shadow 0.2s ease;
+}</code></pre>
+      </div>
+
+      <h3>Длительность (duration)</h3>
+      <p>Классы для управления скоростью перехода:</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-duration-75</code></td><td>75ms</td></tr>
+            <tr><td><code>.pt-duration-100</code></td><td>100ms</td></tr>
+            <tr><td><code>.pt-duration-150</code></td><td>150ms</td></tr>
+            <tr><td><code>.pt-duration-200</code></td><td>200ms</td></tr>
+            <tr><td><code>.pt-duration-300</code></td><td>300ms</td></tr>
+            <tr><td><code>.pt-duration-500</code></td><td>500ms</td></tr>
+            <tr><td><code>.pt-duration-700</code></td><td>700ms</td></tr>
+            <tr><td><code>.pt-duration-1000</code></td><td>1000ms</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Функции времени (timing function)</h3>
+      <p>Классы для кривых ускорения:</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-ease-linear</code></td><td>linear</td></tr>
+            <tr><td><code>.pt-ease-in</code></td><td>ease-in</td></tr>
+            <tr><td><code>.pt-ease-out</code></td><td>ease-out</td></tr>
+            <tr><td><code>.pt-ease-in-out</code></td><td>ease-in-out</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Примеры переходов</h3>
+
+      <div class="demo-box">
+        <div class="pt-transition pt-duration-300 pt-ease-out" style="display:inline-block;padding:12px 24px;background:var(--pk-primary);color:#fff;border-radius:8px;cursor:pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+          Наведи на меня
+        </div>
+        <div class="pt-transition--colors pt-duration-300" style="display:inline-block;padding:12px 24px;background:var(--pk-surface);color:var(--pk-text);border:1px solid var(--pk-border);border-radius:8px;cursor:pointer;" onmouseover="this.style.background='var(--pk-primary)';this.style.color='#fff'" onmouseout="this.style.background='var(--pk-surface)';this.style.color='var(--pk-text)'">
+          Цвета
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-transition pt-duration-300 pt-ease-out"
+     onmouseover="this.style.transform='scale(1.1)'"
+     onmouseout="this.style.transform='scale(1)'"&gt;
+  Наведи на меня
+&lt;/div&gt;
+
+&lt;div class="pt-transition--colors pt-duration-300"
+     onmouseover="this.style.background='var(--pk-primary)';this.style.color='#fff'"
+     onmouseout="this.style.background='var(--pk-surface)';this.style.color='var(--pk-text)'"&gt;
+  Цвета
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>CSS Animations (keyframes)</h2>
+      <p>Для более сложных анимаций используйте правило <code>@keyframes</code>. Оно определяет последовательность состояний элемента во времени.</p>
+
+      <div class="code-block">
+        <pre><code>@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes ping {
+  0%   { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-25%); }
+}</code></pre>
+      </div>
+
+      <h3>Классы Photon для анимаций</h3>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Анимация</th><th>Параметры</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-animate-spin</code></td><td>Вращение</td><td>spin 1s linear infinite</td></tr>
+            <tr><td><code>.pt-animate-ping</code></td><td>Пульсация с исчезновением</td><td>ping 1s cubic-bezier(0,0,0.2,1) infinite</td></tr>
+            <tr><td><code>.pt-animate-pulse</code></td><td>Мерцание</td><td>pulse 2s cubic-bezier(0.4,0,0.6,1) infinite</td></tr>
+            <tr><td><code>.pt-animate-bounce</code></td><td>Подпрыгивание</td><td>bounce 1s infinite</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Демонстрация анимаций</h3>
+
+      <div class="demo-box">
+        <div class="pt-animate-spin" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:3px solid var(--pk-primary);border-top-color:transparent;border-radius:50%;"></div>
+        <div class="pt-animate-ping" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--pk-success);border-radius:50%;"></div>
+        <div class="pt-animate-pulse" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--pk-warning);border-radius:8px;">Pulse</div>
+        <div class="pt-animate-bounce" style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--pk-info);border-radius:8px;">Bounce</div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Спиннер --&gt;
+&lt;div class="pt-animate-spin" style="width:40px;height:40px;border:3px solid var(--pk-primary);border-top-color:transparent;border-radius:50%;"&gt;&lt;/div&gt;
+
+&lt;!-- Пинг --&gt;
+&lt;div class="pt-animate-ping" style="width:40px;height:40px;background:var(--pk-success);border-radius:50%;"&gt;&lt;/div&gt;
+
+&lt;!-- Пульс --&gt;
+&lt;div class="pt-animate-pulse" style="width:40px;height:40px;background:var(--pk-warning);border-radius:8px;"&gt;Pulse&lt;/div&gt;
+
+&lt;!-- Подпрыгивание --&gt;
+&lt;div class="pt-animate-bounce" style="width:40px;height:40px;background:var(--pk-info);border-radius:8px;"&gt;Bounce&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Transform в анимациях</h2>
+      <p>Свойство <code>transform</code> идеально подходит для анимаций, так как его изменение не вызывает перекомпоновку (reflow) страницы. Комбинируйте transform с transition для плавных эффектов.</p>
+
+      <h3>Hover-эффекты</h3>
+
+      <div class="demo-box">
+        <div class="pt-transition pt-duration-200" style="display:inline-block;padding:16px 32px;background:var(--pk-primary);color:#fff;border-radius:8px;cursor:pointer;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">Scale</div>
+        <div class="pt-transition pt-duration-200" style="display:inline-block;padding:16px 32px;background:var(--pk-success);color:#fff;border-radius:8px;cursor:pointer;" onmouseover="this.style.transform='rotate(10deg)'" onmouseout="this.style.transform='rotate(0deg)'">Rotate</div>
+        <div class="pt-transition pt-duration-200" style="display:inline-block;padding:16px 32px;background:var(--pk-warning);color:#000;border-radius:8px;cursor:pointer;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">Translate</div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-transition pt-duration-200"
+     onmouseover="this.style.transform='scale(1.15)'"
+     onmouseout="this.style.transform='scale(1)'"&gt;Scale&lt;/div&gt;
+
+&lt;div class="pt-transition pt-duration-200"
+     onmouseover="this.style.transform='rotate(10deg)'"
+     onmouseout="this.style.transform='rotate(0deg)'"&gt;Rotate&lt;/div&gt;
+
+&lt;div class="pt-transition pt-duration-200"
+     onmouseover="this.style.transform='translateY(-8px)'"
+     onmouseout="this.style.transform='translateY(0)'"&gt;Translate&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Производительность анимаций</h2>
+      <p>Чтобы анимации работали плавно (60 fps), следуйте этим рекомендациям:</p>
+
+      <h3>will-change</h3>
+      <p>Подскажите браузеру, какие свойства будут анимироваться, с помощью <code>will-change</code>:</p>
+
+      <div class="code-block">
+        <pre><code>.animated-element {
+  will-change: transform, opacity;
+}</code></pre>
+      </div>
+
+      <h3>transform vs position</h3>
+      <p>Анимация <code>transform</code> и <code>opacity</code> обрабатывается на GPU и не вызывает reflow. Анимация <code>top</code>, <code>left</code>, <code>width</code>, <code>height</code> вызывает перекомпоновку:</p>
+
+      <div class="code-block">
+        <pre><code>/* Хорошо — GPU-ускорение */
+.element {
+  transition: transform 0.3s ease;
+}
+.element:hover {
+  transform: translateX(20px);
+}
+
+/* Плохо — reflow */
+.element {
+  transition: left 0.3s ease;
+  position: relative;
+}
+.element:hover {
+  left: 20px;
+}</code></pre>
+      </div>
+
+      <h3>GPU-ускорение</h3>
+      <p>Для принудительного GPU-ускорения используйте <code>translateZ(0)</code> или <code>will-change: transform</code>:</p>
+
+      <div class="code-block">
+        <pre><code>.gpu-accelerated {
+  transform: translateZ(0);
+  /* или */
+  will-change: transform;
+}</code></pre>
+      </div>
+
+      <h2>Примеры</h2>
+
+      <h3>Пример 1: Пульсирующая кнопка</h3>
+
+      <div class="demo-box">
+        <button class="btn btn--primary pt-animate-pulse">Нажми меня</button>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;button class="btn btn--primary pt-animate-pulse"&gt;Нажми меня&lt;/button&gt;</code></pre>
+      </div>
+
+      <h3>Пример 2: Карточка с эффектом подъёма</h3>
+
+      <div class="demo-box">
+        <div class="card pt-transition pt-duration-300" style="max-width:280px;cursor:pointer;" onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 12px 40px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''">
+          <div class="card__header">Заголовок</div>
+          <div class="card__body">При наведении карточка поднимается и тень становится глубже.</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="card pt-transition pt-duration-300"
+     onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 12px 40px rgba(0,0,0,0.3)'"
+     onmouseout="this.style.transform='translateY(0)';this.style.boxShadow=''"&gt;
+  &lt;div class="card__header"&gt;Заголовок&lt;/div&gt;
+  &lt;div class="card__body"&gt;При наведении карточка поднимается.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 3: Появление с fade-in</h3>
+
+      <div class="demo-box">
+        <button class="btn btn--primary" onclick="const e=this.nextElementSibling;e.style.display='block';setTimeout(()=>e.style.opacity='1',10)">Показать блок</button>
+        <div style="display:none;opacity:0;transition:opacity 0.5s ease;padding:16px;margin-top:12px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">Я появился плавно!</div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;button class="btn btn--primary"
+  onclick="const e=this.nextElementSibling;e.style.display='block';setTimeout(()=>e.style.opacity='1',10)"&gt;
+  Показать блок
+&lt;/button&gt;
+&lt;div style="display:none;opacity:0;transition:opacity 0.5s ease;padding:16px;margin-top:12px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;"&gt;
+  Я появился плавно!
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 4: Спиннер загрузки</h3>
+
+      <div class="demo-box">
+        <div class="pt-animate-spin" style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:4px solid var(--pk-border);border-top-color:var(--pk-primary);border-radius:50%;"></div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-animate-spin"
+     style="width:48px;height:48px;border:4px solid var(--pk-border);border-top-color:var(--pk-primary);border-radius:50%;"&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

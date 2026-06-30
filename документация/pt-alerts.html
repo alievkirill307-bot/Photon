@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Уведомления и бейджи через Photon-tw утилиты. pt-bg-*, pt-text-*, pt-rounded, бейджи, тосты — всё на pt-* классах." />
+  <meta name="keywords" content="photon, css framework, photon-tw, alerts, badges, уведомления, бейджи, pt-alerts, тосты" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Уведомления и бейджи [pt] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link active">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+      <h1>Уведомления и бейджи [pt]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Уведомления (alerts), бейджи (badges), тосты (toasts) и баннеры, построенные исключительно на <code>pt-*</code> утилитах — без единой кастомной строчки CSS. Комбинируйте <code>pt-bg-*</code>, <code>pt-text-*</code>, <code>pt-rounded-*</code>, <code>pt-p-*</code> и другие классы для создания любых вариантов.</p>
+
+      <h2>Alert по цвету</h2>
+      <p>Цветные плашки-уведомления с фоновым цветом из палитры (<code>pt-bg-{color}-100</code>) и контрастным текстом (<code>pt-text-{color}-800</code>). Базовые классы: <code>pt-p-4</code> (внутренний отступ), <code>pt-rounded-lg</code> (скругление):</p>
+      <div class="pt-demo pt-demo--col">
+        <div class="pt-p-4 pt-rounded-lg pt-bg-primary-100 pt-text-primary-800 pt-dark:bg-primary-900 pt-dark:text-primary-200 pt-w-full">Primary alert — основное информационное уведомление</div>
+        <div class="pt-p-4 pt-rounded-lg pt-bg-success-100 pt-text-success-800 pt-dark:bg-success-900 pt-dark:text-success-200 pt-w-full">Success alert — уведомление об успешной операции</div>
+        <div class="pt-p-4 pt-rounded-lg pt-bg-warning-100 pt-text-warning-800 pt-dark:bg-warning-900 pt-dark:text-warning-200 pt-w-full">Warning alert — предупреждение о потенциальной проблеме</div>
+        <div class="pt-p-4 pt-rounded-lg pt-bg-error-100 pt-text-error-800 pt-dark:bg-error-900 pt-dark:text-error-200 pt-w-full">Error alert — сообщение об ошибке или критической ситуации</div>
+        <div class="pt-p-4 pt-rounded-lg pt-bg-info-100 pt-text-info-800 pt-dark:bg-info-900 pt-dark:text-info-200 pt-w-full">Info alert — информационное уведомление общего характера</div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-p-4 pt-rounded-lg pt-bg-primary-100 pt-text-primary-800 pt-dark:bg-primary-900 pt-dark:text-primary-200"&gt;Primary alert&lt;/div&gt;
+&lt;div class="pt-p-4 pt-rounded-lg pt-bg-success-100 pt-text-success-800 pt-dark:bg-success-900 pt-dark:text-success-200"&gt;Success alert&lt;/div&gt;
+&lt;div class="pt-p-4 pt-rounded-lg pt-bg-warning-100 pt-text-warning-800 pt-dark:bg-warning-900 pt-dark:text-warning-200"&gt;Warning alert&lt;/div&gt;
+&lt;div class="pt-p-4 pt-rounded-lg pt-bg-error-100 pt-text-error-800 pt-dark:bg-error-900 pt-dark:text-error-200"&gt;Error alert&lt;/div&gt;
+&lt;div class="pt-p-4 pt-rounded-lg pt-bg-info-100 pt-text-info-800 pt-dark:bg-info-900 pt-dark:text-info-200"&gt;Info alert&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Таблица цветовых вариаций alert</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Тип</th>
+            <th>Фоновый класс</th>
+            <th>Текстовый класс</th>
+            <th>Тёмная тема (фон)</th>
+            <th>Тёмная тема (текст)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Primary</td><td><code>pt-bg-primary-100</code></td><td><code>pt-text-primary-800</code></td><td><code>pt-dark:bg-primary-900</code></td><td><code>pt-dark:text-primary-200</code></td></tr>
+          <tr><td>Success</td><td><code>pt-bg-success-100</code></td><td><code>pt-text-success-800</code></td><td><code>pt-dark:bg-success-900</code></td><td><code>pt-dark:text-success-200</code></td></tr>
+          <tr><td>Warning</td><td><code>pt-bg-warning-100</code></td><td><code>pt-text-warning-800</code></td><td><code>pt-dark:bg-warning-900</code></td><td><code>pt-dark:text-warning-200</code></td></tr>
+          <tr><td>Error</td><td><code>pt-bg-error-100</code></td><td><code>pt-text-error-800</code></td><td><code>pt-dark:bg-error-900</code></td><td><code>pt-dark:text-error-200</code></td></tr>
+          <tr><td>Info</td><td><code>pt-bg-info-100</code></td><td><code>pt-text-info-800</code></td><td><code>pt-dark:bg-info-900</code></td><td><code>pt-dark:text-info-200</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Alert с иконкой</h2>
+      <p>Уведомление с иконкой статуса слева. Используется <code>pt-flex</code>, <code>pt-items-center</code> и <code>pt-gap-2</code> для выравнивания иконки и текста:</p>
+      <div class="pt-demo">
+        <div class="pt-flex pt-items-center pt-gap-2 pt-p-4 pt-rounded-lg pt-bg-success-100 pt-text-success-800 pt-dark:bg-success-900 pt-dark:text-success-200 pt-w-full">
+          <span class="pt-text-lg pt-font-bold">✓</span>
+          <span>Данные успешно сохранены. Все изменения применены.</span>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-center pt-gap-2 pt-p-4 pt-rounded-lg pt-bg-success-100 pt-text-success-800 pt-dark:bg-success-900 pt-dark:text-success-200"&gt;
+  &lt;span class="pt-text-lg pt-font-bold"&gt;✓&lt;/span&gt;
+  &lt;span&gt;Данные успешно сохранены.&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Alert с крестиком (закрытие)</h2>
+      <p>Уведомление с иконкой слева и кнопкой закрытия справа. Кнопка использует <code>pt-opacity-60</code> и <code>pt-hover:opacity-100</code> для эффекта появления при наведении:</p>
+      <div class="pt-demo pt-demo--col">
+        <div class="pt-flex pt-items-center pt-justify-between pt-p-4 pt-rounded-lg pt-bg-primary-100 pt-text-primary-800 pt-dark:bg-primary-900 pt-dark:text-primary-200 pt-w-full">
+          <div class="pt-flex pt-items-center pt-gap-2">
+            <span class="pt-text-lg">ℹ</span>
+            <span>Добро пожаловать в Photon Framework! Начните с изучения документации.</span>
+          </div>
+          <button class="pt-text-primary-800 pt-dark:text-primary-200 pt-opacity-60 pt-hover:opacity-100 pt-cursor-pointer pt-bg-transparent pt-border-none pt-text-xl pt-leading-none">&times;</button>
+        </div>
+        <div class="pt-flex pt-items-center pt-justify-between pt-p-4 pt-rounded-lg pt-bg-warning-100 pt-text-warning-800 pt-dark:bg-warning-900 pt-dark:text-warning-200 pt-w-full">
+          <div class="pt-flex pt-items-center pt-gap-2">
+            <span class="pt-text-lg pt-font-bold">!</span>
+            <span>Ваша сессия истекает через 5 минут. Сохраните изменения.</span>
+          </div>
+          <button class="pt-text-warning-800 pt-dark:text-warning-200 pt-opacity-60 pt-hover:opacity-100 pt-cursor-pointer pt-bg-transparent pt-border-none pt-text-xl pt-leading-none">&times;</button>
+        </div>
+        <div class="pt-flex pt-items-center pt-justify-between pt-p-4 pt-rounded-lg pt-bg-error-100 pt-text-error-800 pt-dark:bg-error-900 pt-dark:text-error-200 pt-w-full">
+          <div class="pt-flex pt-items-center pt-gap-2">
+            <span class="pt-text-lg pt-font-bold">✕</span>
+            <span>Ошибка подключения к серверу. Проверьте сетевое соединение.</span>
+          </div>
+          <button class="pt-text-error-800 pt-dark:text-error-200 pt-opacity-60 pt-hover:opacity-100 pt-cursor-pointer pt-bg-transparent pt-border-none pt-text-xl pt-leading-none">&times;</button>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-center pt-justify-between pt-p-4 pt-rounded-lg pt-bg-primary-100 pt-text-primary-800"&gt;
+  &lt;div class="pt-flex pt-items-center pt-gap-2"&gt;
+    &lt;span&gt;ℹ&lt;/span&gt;
+    &lt;span&gt;Текст уведомления&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;button class="pt-opacity-60 pt-hover:opacity-100 pt-cursor-pointer pt-bg-transparent pt-border-none pt-text-xl"&gt;&amp;times;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Бейджи</h2>
+      <p>Маленькие цветные метки для статусов, категорий и счётчиков. Базовая структура: <code>pt-bg-{color}</code> + <code>pt-text-white</code> + <code>pt-text-xs</code> + <code>pt-px-2 pt-py-0.5</code> + <code>pt-rounded-full</code>:</p>
+      <div class="pt-demo">
+        <span class="pt-bg-primary pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full">Primary</span>
+        <span class="pt-bg-success pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full">Success</span>
+        <span class="pt-bg-warning pt-text-dark pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full">Warning</span>
+        <span class="pt-bg-error pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full">Error</span>
+        <span class="pt-bg-info pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full">Info</span>
+        <span class="pt-bg-gray-200 pt-text-gray-700 pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full">Gray</span>
+        <span class="pt-bg-blue-500 pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full">Blue</span>
+        <span class="pt-bg-red-500 pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full">Red</span>
+        <span class="pt-bg-green-500 pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full">Green</span>
+        <span class="pt-bg-purple-500 pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full">Purple</span>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;span class="pt-bg-primary pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full"&gt;Primary&lt;/span&gt;
+&lt;span class="pt-bg-success pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full"&gt;Success&lt;/span&gt;
+&lt;span class="pt-bg-warning pt-text-dark pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full"&gt;Warning&lt;/span&gt;
+&lt;span class="pt-bg-error pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full"&gt;Error&lt;/span&gt;
+&lt;span class="pt-bg-info pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full"&gt;Info&lt;/span&gt;
+&lt;span class="pt-bg-gray-200 pt-text-gray-700 pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full"&gt;Gray&lt;/span&gt;</code></pre>
+      </div>
+
+      <h3>Таблица цветовых вариаций бейджей</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Цвет</th>
+            <th>Класс фона</th>
+            <th>Класс текста</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Primary</td><td><code>pt-bg-primary</code></td><td><code>pt-text-white</code></td></tr>
+          <tr><td>Success</td><td><code>pt-bg-success</code></td><td><code>pt-text-white</code></td></tr>
+          <tr><td>Warning</td><td><code>pt-bg-warning</code></td><td><code>pt-text-dark</code></td></tr>
+          <tr><td>Error</td><td><code>pt-bg-error</code></td><td><code>pt-text-white</code></td></tr>
+          <tr><td>Info</td><td><code>pt-bg-info</code></td><td><code>pt-text-white</code></td></tr>
+          <tr><td>Gray</td><td><code>pt-bg-gray-200</code></td><td><code>pt-text-gray-700</code></td></tr>
+          <tr><td>Blue</td><td><code>pt-bg-blue-500</code></td><td><code>pt-text-white</code></td></tr>
+          <tr><td>Red</td><td><code>pt-bg-red-500</code></td><td><code>pt-text-white</code></td></tr>
+          <tr><td>Green</td><td><code>pt-bg-green-500</code></td><td><code>pt-text-white</code></td></tr>
+          <tr><td>Purple</td><td><code>pt-bg-purple-500</code></td><td><code>pt-text-white</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Бейджи разных размеров</h2>
+      <p>Изменяйте размер бейджа через классы <code>pt-text-*</code>. Маленькие бейджи для компактных интерфейсов, крупные — для акцентных меток:</p>
+      <div class="pt-demo">
+        <span class="pt-bg-primary pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full">pt-text-xs (маленький)</span>
+        <span class="pt-bg-primary pt-text-white pt-text-sm pt-px-3 pt-py-1 pt-rounded-full">pt-text-sm (средний)</span>
+        <span class="pt-bg-primary pt-text-white pt-text-base pt-px-4 pt-py-1.5 pt-rounded-full">pt-text-base (крупный)</span>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;span class="pt-bg-primary pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full"&gt;xs&lt;/span&gt;
+&lt;span class="pt-bg-primary pt-text-white pt-text-sm pt-px-3 pt-py-1 pt-rounded-full"&gt;sm&lt;/span&gt;
+&lt;span class="pt-bg-primary pt-text-white pt-text-base pt-px-4 pt-py-1.5 pt-rounded-full"&gt;base&lt;/span&gt;</code></pre>
+      </div>
+
+      <h3>Таблица размеров бейджей</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Размер</th>
+            <th>Класс текста</th>
+            <th>Паддинги</th>
+            <th>Применение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>xs (маленький)</td><td><code>pt-text-xs</code></td><td><code>pt-px-2 pt-py-0.5</code></td><td>Компактные метки, счётчики</td></tr>
+          <tr><td>sm (средний)</td><td><code>pt-text-sm</code></td><td><code>pt-px-3 pt-py-1</code></td><td>Стандартные бейджи</td></tr>
+          <tr><td>base (крупный)</td><td><code>pt-text-base</code></td><td><code>pt-px-4 pt-py-1.5</code></td><td>Акцентные метки, версии</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Бейджи на кнопках</h2>
+      <p>Счётчик уведомлений на кнопке с помощью абсолютного позиционирования. Кнопка получает <code>pt-relative</code>, а бейдж — <code>pt-absolute</code> с отрицательными отступами <code>-pt-top-2 -pt-right-2</code>:</p>
+      <div class="pt-demo">
+        <div class="pt-flex pt-gap-4 pt-items-center">
+          <button class="pt-relative pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded pt-cursor-pointer pt-border-none pt-font-medium">
+            Уведомления
+            <span class="pt-absolute -pt-top-2 -pt-right-2 pt-bg-error pt-text-white pt-text-xs pt-w-5 pt-h-5 pt-flex pt-items-center pt-justify-center pt-rounded-full">3</span>
+          </button>
+          <button class="pt-relative pt-bg-gray-200 pt-text-gray-700 pt-px-4 pt-py-2 pt-rounded pt-cursor-pointer pt-border-none pt-font-medium pt-dark:bg-gray-700 pt-dark:text-gray-200">
+            Сообщения
+            <span class="pt-absolute -pt-top-2 -pt-right-2 pt-bg-success pt-text-white pt-text-xs pt-w-5 pt-h-5 pt-flex pt-items-center pt-justify-center pt-rounded-full">5</span>
+          </button>
+          <button class="pt-relative pt-bg-transparent pt-text-primary pt-border pt-border-primary pt-px-4 pt-py-2 pt-rounded pt-cursor-pointer pt-font-medium">
+            Задачи
+            <span class="pt-absolute -pt-top-2 -pt-right-2 pt-bg-warning pt-text-dark pt-text-xs pt-w-5 pt-h-5 pt-flex pt-items-center pt-justify-center pt-rounded-full">12</span>
+          </button>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;button class="pt-relative pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded"&gt;
+  Уведомления
+  &lt;span class="pt-absolute -pt-top-2 -pt-right-2 pt-bg-error pt-text-white pt-text-xs pt-w-5 pt-h-5 pt-flex pt-items-center pt-justify-center pt-rounded-full"&gt;3&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+      </div>
+
+      <h2>Toast-уведомление</h2>
+      <p>Всплывающий тост с иконкой, заголовком и описанием. Использует <code>pt-shadow-lg</code> для тени, <code>pt-border-l-4</code> для цветной полосы слева и <code>pt-rounded-lg</code> для скругления:</p>
+      <div class="pt-demo pt-demo--col">
+        <div class="pt-flex pt-items-center pt-gap-3 pt-p-4 pt-rounded-lg pt-shadow-lg pt-bg-white pt-dark:bg-gray-800 pt-max-w-sm pt-border-l-4 pt-border-success pt-w-full">
+          <div class="pt-w-8 pt-h-8 pt-bg-success pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-font-bold pt-flex-shrink-0">✓</div>
+          <div class="pt-flex-1">
+            <div class="pt-font-semibold pt-text-sm pt-text-gray-900 pt-dark:text-gray-100">Готово!</div>
+            <div class="pt-text-gray-500 pt-text-xs pt-dark:text-gray-400">Операция выполнена успешно. Все изменения сохранены.</div>
+          </div>
+          <button class="pt-text-gray-400 pt-hover:text-gray-600 pt-dark:text-gray-500 pt-dark:hover:text-gray-300 pt-transition pt-cursor-pointer pt-bg-transparent pt-border-none pt-text-xl pt-leading-none">&times;</button>
+        </div>
+        <div class="pt-flex pt-items-center pt-gap-3 pt-p-4 pt-rounded-lg pt-shadow-lg pt-bg-white pt-dark:bg-gray-800 pt-max-w-sm pt-border-l-4 pt-border-error pt-w-full">
+          <div class="pt-w-8 pt-h-8 pt-bg-error pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-font-bold pt-flex-shrink-0">✕</div>
+          <div class="pt-flex-1">
+            <div class="pt-font-semibold pt-text-sm pt-text-gray-900 pt-dark:text-gray-100">Ошибка</div>
+            <div class="pt-text-gray-500 pt-text-xs pt-dark:text-gray-400">Не удалось подключиться к серверу. Попробуйте позже.</div>
+          </div>
+          <button class="pt-text-gray-400 pt-hover:text-gray-600 pt-dark:text-gray-500 pt-dark:hover:text-gray-300 pt-transition pt-cursor-pointer pt-bg-transparent pt-border-none pt-text-xl pt-leading-none">&times;</button>
+        </div>
+        <div class="pt-flex pt-items-center pt-gap-3 pt-p-4 pt-rounded-lg pt-shadow-lg pt-bg-white pt-dark:bg-gray-800 pt-max-w-sm pt-border-l-4 pt-border-warning pt-w-full">
+          <div class="pt-w-8 pt-h-8 pt-bg-warning pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-dark pt-font-bold pt-flex-shrink-0">!</div>
+          <div class="pt-flex-1">
+            <div class="pt-font-semibold pt-text-sm pt-text-gray-900 pt-dark:text-gray-100">Внимание</div>
+            <div class="pt-text-gray-500 pt-text-xs pt-dark:text-gray-400">Ваша подписка истекает через 3 дня. Продлите сейчас.</div>
+          </div>
+          <button class="pt-text-gray-400 pt-hover:text-gray-600 pt-dark:text-gray-500 pt-dark:hover:text-gray-300 pt-transition pt-cursor-pointer pt-bg-transparent pt-border-none pt-text-xl pt-leading-none">&times;</button>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-center pt-gap-3 pt-p-4 pt-rounded-lg pt-shadow-lg pt-bg-white pt-dark:bg-gray-800 pt-max-w-sm pt-border-l-4 pt-border-success"&gt;
+  &lt;div class="pt-w-8 pt-h-8 pt-bg-success pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-font-bold pt-flex-shrink-0"&gt;✓&lt;/div&gt;
+  &lt;div class="pt-flex-1"&gt;
+    &lt;div class="pt-font-semibold pt-text-sm"&gt;Готово!&lt;/div&gt;
+    &lt;div class="pt-text-gray-500 pt-text-xs"&gt;Операция выполнена.&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="pt-text-gray-400 pt-hover:text-gray-600 pt-transition pt-cursor-pointer"&gt;&amp;times;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Баннер (растянутый alert)</h2>
+      <p>Полноширинный баннер на всю ширину родительского контейнера. Используется для системных уведомлений, cookie-согласий и важных объявлений. Ключевые классы: <code>pt-w-full</code>, <code>pt-text-center</code>, <code>pt-py-3</code>:</p>
+      <div class="pt-demo pt-demo--col">
+        <div class="pt-w-full pt-text-center pt-py-3 pt-bg-primary pt-text-white pt-dark:bg-primary-700">
+          <span class="pt-font-semibold">Добро пожаловать!</span> — Photon Framework v2.0 теперь доступен. <a href="#" class="pt-underline pt-text-white">Узнать больше</a>
+        </div>
+        <div class="pt-w-full pt-text-center pt-py-3 pt-bg-warning pt-text-dark pt-mt-2">
+          <span class="pt-font-semibold">Cookie:</span> мы используем файлы cookie для улучшения работы. <a href="#" class="pt-underline pt-text-dark">Принять</a>
+        </div>
+        <div class="pt-w-full pt-text-center pt-py-3 pt-bg-error pt-text-white pt-mt-2">
+          <span class="pt-font-semibold">Системное уведомление:</span> сервер будет перезагружен в 03:00 по МСК.
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-w-full pt-text-center pt-py-3 pt-bg-primary pt-text-white"&gt;
+  &lt;span class="pt-font-semibold"&gt;Заголовок&lt;/span&gt; — текст баннера
+&lt;/div&gt;
+&lt;div class="pt-w-full pt-text-center pt-py-3 pt-bg-warning pt-text-dark"&gt;
+  &lt;span class="pt-font-semibold"&gt;Предупреждение&lt;/span&gt; — текст
+&lt;/div&gt;
+&lt;div class="pt-w-full pt-text-center pt-py-3 pt-bg-error pt-text-white"&gt;
+  &lt;span class="pt-font-semibold"&gt;Ошибка&lt;/span&gt; — текст
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Тёмная тема</h2>
+      <p>Все компоненты уведомлений и бейджей поддерживают тёмную тему через префикс <code>pt-dark:</code>. Это позволяет адаптировать цвета фона, текста и границ под тёмную тему без дублирования кода:</p>
+
+      <h3>Alert в тёмной теме</h3>
+      <div class="pt-demo pt-demo--col pt-dark:bg-gray-900 pt-dark:border-gray-700">
+        <div class="pt-p-4 pt-rounded-lg pt-bg-primary-100 pt-text-primary-800 pt-dark:bg-primary-900 pt-dark:text-primary-200 pt-w-full">Primary alert — тёмная тема: <code>pt-dark:bg-primary-900 pt-dark:text-primary-200</code></div>
+        <div class="pt-p-4 pt-rounded-lg pt-bg-success-100 pt-text-success-800 pt-dark:bg-success-900 pt-dark:text-success-200 pt-w-full">Success alert — фон становится темнее, текст светлее</div>
+        <div class="pt-p-4 pt-rounded-lg pt-bg-error-100 pt-text-error-800 pt-dark:bg-error-900 pt-dark:text-error-200 pt-w-full">Error alert — автоматическая адаптация контраста</div>
+      </div>
+
+      <h3>Бейджи в тёмной теме</h3>
+      <div class="pt-demo pt-dark:bg-gray-900 pt-dark:border-gray-700">
+        <span class="pt-bg-primary pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full pt-dark:bg-primary-600">Primary</span>
+        <span class="pt-bg-success pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full pt-dark:bg-success-600">Success</span>
+        <span class="pt-bg-error pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full pt-dark:bg-error-600">Error</span>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;!-- Alert с тёмной темой --&gt;
+&lt;div class="pt-p-4 pt-rounded-lg pt-bg-primary-100 pt-text-primary-800 pt-dark:bg-primary-900 pt-dark:text-primary-200"&gt;
+  Primary alert
+&lt;/div&gt;
+
+&lt;!-- Бейдж с тёмной темой --&gt;
+&lt;span class="pt-bg-primary pt-text-white pt-text-xs pt-px-2 pt-py-0.5 pt-rounded-full pt-dark:bg-primary-600"&gt;
+  Primary
+&lt;/span&gt;</code></pre>
+      </div>
+
+      <h2>Полная таблица классов</h2>
+      <p>Сводная таблица всех классов, используемых для создания уведомлений, бейджей, тостов и баннеров:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Категория</th>
+            <th>Классы</th>
+            <th>Назначение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Фон alert</td><td><code>pt-bg-{color}-100</code></td><td>Светлый фон для alert-уведомлений</td></tr>
+          <tr><td>Текст alert</td><td><code>pt-text-{color}-800</code></td><td>Тёмный контрастный текст для alert</td></tr>
+          <tr><td>Фон badge</td><td><code>pt-bg-{color}</code> / <code>pt-bg-{color}-{shade}</code></td><td>Цветной фон для бейджей</td></tr>
+          <tr><td>Текст badge</td><td><code>pt-text-white</code> / <code>pt-text-dark</code></td><td>Контрастный текст для бейджей</td></tr>
+          <tr><td>Скругление</td><td><code>pt-rounded</code> / <code>pt-rounded-lg</code> / <code>pt-rounded-full</code></td><td>Скругление углов</td></tr>
+          <tr><td>Отступы внутри</td><td><code>pt-p-2</code> / <code>pt-p-3</code> / <code>pt-p-4</code> / <code>pt-px-*</code> / <code>pt-py-*</code></td><td>Внутренние отступы (padding)</td></tr>
+          <tr><td>Размер текста</td><td><code>pt-text-xs</code> / <code>pt-text-sm</code> / <code>pt-text-base</code></td><td>Размер шрифта</td></tr>
+          <tr><td>Flex-контейнер</td><td><code>pt-flex</code> / <code>pt-inline-flex</code></td><td>Flexbox-раскладка</td></tr>
+          <tr><td>Выравнивание flex</td><td><code>pt-items-center</code> / <code>pt-justify-between</code></td><td>Выравнивание по осям flex</td></tr>
+          <tr><td>Зазоры flex</td><td><code>pt-gap-2</code> / <code>pt-gap-3</code> / <code>pt-gap-4</code></td><td>Расстояние между flex-элементами</td></tr>
+          <tr><td>Позиционирование</td><td><code>pt-relative</code> / <code>pt-absolute</code></td><td>Относительное/абсолютное позиционирование</td></tr>
+          <tr><td>Смещение</td><td><code>-pt-top-2</code> / <code>-pt-right-2</code></td><td>Отрицательные отступы для badge на кнопке</td></tr>
+          <tr><td>Размеры badge</td><td><code>pt-w-5</code> / <code>pt-h-5</code> / <code>pt-w-8</code> / <code>pt-h-8</code></td><td>Фиксированные размеры</td></tr>
+          <tr><td>Тень</td><td><code>pt-shadow</code> / <code>pt-shadow-lg</code></td><td>Тень для тостов и карточек</td></tr>
+          <tr><td>Граница слева</td><td><code>pt-border-l-4</code> / <code>pt-border-{color}</code></td><td>Цветная полоса слева для тостов</td></tr>
+          <tr><td>Прозрачность</td><td><code>pt-opacity-60</code> / <code>pt-hover:opacity-100</code></td><td>Эффект при наведении для кнопки закрытия</td></tr>
+          <tr><td>Переход</td><td><code>pt-transition</code></td><td>Плавные анимации при наведении</td></tr>
+          <tr><td>Ширина</td><td><code>pt-w-full</code></td><td>Полная ширина для баннеров</td></tr>
+          <tr><td>Тёмная тема</td><td><code>pt-dark:bg-{color}-{shade}</code> / <code>pt-dark:text-{color}-{shade}</code></td><td>Адаптация под тёмную тему</td></tr>
+        </tbody>
+      </table>
+
+    </main>
+  </div>
+
+  <script src="../photon-kit/photon-kit.js"></script>
+  <script src="js/doc.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

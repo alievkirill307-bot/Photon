@@ -1,0 +1,867 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Полный справочник pt-* утилит Photon-tw — цвета, размеры, типографика, flexbox, grid, границы, эффекты, display, позиционирование, градиенты и модификаторы." />
+  <meta name="keywords" content="photon, css framework, photon-tw, utility classes, справочник, pt-utilities, pt-классы, утилиты" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Справочник утилит [pt] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link active">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+      <h1>Справочник утилит [pt]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Полный справочник всех <code>pt-*</code> утилитарных классов Photon-tw. Эта страница содержит исчерпывающую информацию о каждом классе, его CSS-свойствах и возможных значениях. Используйте таблицы для быстрого поиска нужной утилиты.</p>
+      <p>Photon-tw — это JavaScript-движок, который сканирует DOM, находит элементы с классами <code>pt-*</code>, парсит их и генерирует соответствующие CSS-правила прямо в <code>&lt;head&gt;</code>. Все классы документированы ниже.</p>
+
+      <h2>Цветовая палитра</h2>
+      <p>Photon-tw использует CSS-переменные (<code>--pk-{color}</code>) для управления цветами. Доступны следующие цвета и их оттенки. Каждый цвет имеет шкалу от 50 до 950 с шагами 50 и 100.</p>
+      <p>Применение: <code>pt-text-{color}</code> / <code>pt-text-{color}-{shade}</code>, <code>pt-bg-{color}</code> / <code>pt-bg-{color}-{shade}</code>, <code>pt-border-{color}</code> / <code>pt-border-{color}-{shade}</code>, <code>pt-from-{color}</code>, <code>pt-via-{color}</code>, <code>pt-to-{color}</code>.</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Цвет</th>
+            <th class="pt-p-2 pt-text-left">CSS-переменная</th>
+            <th class="pt-p-2 pt-text-left">50</th>
+            <th class="pt-p-2 pt-text-left">100</th>
+            <th class="pt-p-2 pt-text-left">200</th>
+            <th class="pt-p-2 pt-text-left">300</th>
+            <th class="pt-p-2 pt-text-left">400</th>
+            <th class="pt-p-2 pt-text-left">500</th>
+            <th class="pt-p-2 pt-text-left">600</th>
+            <th class="pt-p-2 pt-text-left">700</th>
+            <th class="pt-p-2 pt-text-left">800</th>
+            <th class="pt-p-2 pt-text-left">900</th>
+            <th class="pt-p-2 pt-text-left">950</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">primary</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-primary</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-primary-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">success</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-success</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-success-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">warning</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-warning</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-warning-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">error</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-error</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-error-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">gray</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-gray</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-gray-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">slate</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-slate</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-slate-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">red</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-red</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-red-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">orange</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-orange</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-orange-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">yellow</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-yellow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-yellow-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">green</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-green</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-green-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">teal</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-teal</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-teal-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">cyan</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-cyan</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-cyan-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">sky</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-sky</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-sky-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">blue</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-blue</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-blue-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">indigo</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-indigo</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-indigo-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">purple</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-purple</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-purple-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">pink</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-pink</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-pink-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">rose</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--pk-rose</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">10 оттенков в формате <code>--pk-rose-{shade}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">white</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>white</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">—</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">black</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>black</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">—</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">transparent</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>transparent</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">—</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">current</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>currentColor</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2" colspan="11">—</td></tr>
+        </tbody>
+      </table>
+      <p class="pt-mt-2 pt-text-sm pt-text-gray-500">Примечание: цвета <code>transparent</code>, <code>current</code>, <code>white</code>, <code>black</code> не имеют оттенков. Все остальные цвета имеют 10 оттенков: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950. Каждый оттенок доступен как <code>pt-bg-{color}-{shade}</code>, <code>pt-text-{color}-{shade}</code>, <code>pt-border-{color}-{shade}</code>.</p>
+
+      <h2>Display</h2>
+      <p>Классы для управления CSS-свойством <code>display</code> и видимостью элемента.</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-block</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>block</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-inline-block</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>inline-block</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-inline</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>inline</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-inline-flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>inline-flex</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-inline-grid</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>inline-grid</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-hidden</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-visible</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>visibility</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>visible</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-invisible</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>visibility</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>hidden</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Position</h2>
+      <p>Классы для CSS-свойства <code>position</code>.</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-static</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>position</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>static</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-fixed</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>position</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>fixed</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-absolute</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>position</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>absolute</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-relative</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>position</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>relative</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-sticky</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>position</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>sticky</code></td></tr>
+        </tbody>
+      </table>
+      <p>Для смещения используйте <code>pt-inset-*</code>, <code>pt-top-*</code>, <code>pt-bottom-*</code>, <code>pt-left-*</code>, <code>pt-right-*</code> со значениями по шкале размеров (0, 0.5, 1, ..., 96) или <code>auto</code>, <code>full</code>, <code>1/2</code>, <code>1/3</code> и т.д.</p>
+
+      <h2>Flexbox</h2>
+      <p>Полный набор классов для работы с flex-контейнерами и flex-элементами.</p>
+
+      <h3>Flex-контейнер</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-inline-flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>inline-flex</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Направление (flex-direction)</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-row</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-direction</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>row</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-row-reverse</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-direction</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>row-reverse</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-col</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-direction</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>column</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-col-reverse</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-direction</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>column-reverse</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Перенос (flex-wrap)</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-wrap</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-wrap</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>wrap</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-nowrap</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-wrap</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>nowrap</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-wrap-reverse</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-wrap</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>wrap-reverse</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Выравнивание по поперечной оси (align-items)</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-items-start</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-items</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-start</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-items-end</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-items</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-end</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-items-center</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-items</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>center</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-items-baseline</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-items</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>baseline</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-items-stretch</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-items</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>stretch</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Выравнивание по главной оси (justify-content)</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-justify-start</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>justify-content</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-start</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-justify-end</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>justify-content</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-end</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-justify-center</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>justify-content</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>center</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-justify-between</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>justify-content</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>space-between</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-justify-around</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>justify-content</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>space-around</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-justify-evenly</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>justify-content</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>space-evenly</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Выравнивание по поперечной оси контейнера (align-content)</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-content-start</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-content</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-start</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-content-end</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-content</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-end</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-content-center</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-content</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>center</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-content-between</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-content</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>space-between</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-content-around</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-content</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>space-around</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-content-stretch</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-content</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>stretch</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Выравнивание элемента (align-self)</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-self-start</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-self</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-start</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-self-end</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-self</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-end</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-self-center</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-self</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>center</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-self-baseline</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-self</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>baseline</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-self-stretch</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-self</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>stretch</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-self-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>align-self</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>auto</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Растяжение (flex)</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-1</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1 1 0%</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1 1 auto</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-initial</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0 1 auto</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Рост и сжатие (grow / shrink)</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-grow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-grow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-grow-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-grow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-shrink</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-shrink</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-shrink-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-shrink</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Порядок (order)</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-first</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>-9999</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-last</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>9999</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-1</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-2</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>2</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-3</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>3</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-4</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>4</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-5</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>5</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-6</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>6</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-7</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>7</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-8</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>8</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-9</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>9</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-10</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>10</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-11</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>11</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-order-12</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>order</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>12</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Grid</h2>
+      <p>Классы для работы с CSS Grid Layout.</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-inline-grid</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>inline-grid</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-1</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(1, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-2</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(2, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-3</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(3, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-4</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(4, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-5</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(5, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-6</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(6, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-7</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(7, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-8</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(8, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-9</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(9, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-10</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(10, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-11</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(11, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-12</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(12, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-rows-1</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-rows</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(1, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-rows-2</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-rows</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(2, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-rows-3</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-rows</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(3, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-rows-4</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-rows</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(4, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-rows-5</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-rows</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(5, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-rows-6</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-rows</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(6, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-1</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 1 / span 1</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-2</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 2 / span 2</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-3</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 3 / span 3</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-4</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 4 / span 4</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-5</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 5 / span 5</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-6</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 6 / span 6</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-7</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 7 / span 7</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-8</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 8 / span 8</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-9</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 9 / span 9</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-10</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 10 / span 10</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-11</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 11 / span 11</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-12</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 12 / span 12</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-full</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-column</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1 / -1</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-row-span-1</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-row</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 1 / span 1</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-row-span-2</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-row</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 2 / span 2</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-row-span-3</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-row</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 3 / span 3</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-row-span-4</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-row</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 4 / span 4</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-row-span-5</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-row</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 5 / span 5</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-row-span-6</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-row</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>span 6 / span 6</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-row-span-full</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-row</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1 / -1</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-gap-{size}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>gap</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">По шкале spacing</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-gap-x-{size}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>column-gap</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">По шкале spacing</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-gap-y-{size}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>row-gap</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">По шкале spacing</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Padding &amp; Margin</h2>
+      <p>Единая шкала отступов используется для всех <code>pt-p-*</code>, <code>pt-m-*</code>, <code>pt-px-*</code>, <code>pt-py-*</code>, <code>pt-pl-*</code>, <code>pt-pr-*</code>, <code>pt-pt-*</code>, <code>pt-pb-*</code>, <code>pt-mx-*</code>, <code>pt-my-*</code>, <code>pt-ml-*</code>, <code>pt-mr-*</code>, <code>pt-mt-*</code>, <code>pt-mb-*</code>, <code>pt-gap-*</code>, <code>pt-gap-x-*</code>, <code>pt-gap-y-*</code>.</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">px</th>
+            <th class="pt-p-2 pt-text-left">rem (при 16px base)</th>
+            <th class="pt-p-2 pt-text-left">Пример CSS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">0px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">0rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 0px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-0.5</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">2px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">0.125rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 2px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-1</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">4px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">0.25rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 4px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-1.5</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">6px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">0.375rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 6px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-2</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">8px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">0.5rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 8px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-2.5</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">10px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">0.625rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 10px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-3</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">12px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">0.75rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 12px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-3.5</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">14px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">0.875rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 14px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-4</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">16px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">1rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 16px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-5</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">20px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">1.25rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 20px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-6</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">24px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">1.5rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 24px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-7</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">28px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">1.75rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 28px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-8</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">32px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">2rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 32px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-9</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">36px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">2.25rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 36px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-10</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">40px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">2.5rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 40px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-11</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">44px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">2.75rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 44px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-12</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">48px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">3rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 48px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-14</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">56px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">3.5rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 56px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-16</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">64px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">4rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 64px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-20</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">80px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">5rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 80px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-24</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">96px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">6rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 96px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-28</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">112px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">7rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 112px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-32</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">128px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">8rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 128px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-36</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">144px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">9rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 144px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-40</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">160px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">10rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 160px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-44</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">176px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">11rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 176px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-48</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">192px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">12rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 192px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-52</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">208px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">13rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 208px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-56</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">224px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">14rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 224px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-60</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">240px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">15rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 240px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-64</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">256px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">16rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 256px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-72</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">288px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">18rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 288px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-80</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">320px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">20rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 320px</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-96</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">384px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">24rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding: 384px</code></td></tr>
+        </tbody>
+      </table>
+      <p class="pt-mt-2 pt-text-sm pt-text-gray-500">Та же шкала применяется к <code>pt-m-*</code> (margin), <code>pt-px-*</code> (padding-x), <code>pt-py-*</code> (padding-y), <code>pt-pl-*</code> (padding-left), <code>pt-pr-*</code> (padding-right), <code>pt-pt-*</code> (padding-top), <code>pt-pb-*</code> (padding-bottom), <code>pt-mx-*</code> (margin-x), <code>pt-my-*</code> (margin-y), <code>pt-ml-*</code> (margin-left), <code>pt-mr-*</code> (margin-right), <code>pt-mt-*</code> (margin-top), <code>pt-mb-*</code> (margin-bottom), <code>pt-gap-*</code>, <code>pt-gap-x-*</code>, <code>pt-gap-y-*</code>, и для числовых <code>pt-w-*</code> / <code>pt-h-*</code>.</p>
+      <p>Также доступны <code>pt-px</code>, <code>pt-py</code> без числа — они дают padding по оси X/Y соответственно. Для margin — <code>pt-mx-auto</code> для центрирования.</p>
+
+      <h2>Width / Height</h2>
+      <p>Классы для управления шириной и высотой элементов.</p>
+
+      <h3>Ширина (width)</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>auto</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-full</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100%</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-screen</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100vw</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-min</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-content</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-max</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-content</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-fit</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>fit-content</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-{size}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">По шкале spacing (px / rem)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Высота (height)</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-h-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>auto</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-h-full</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100%</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-h-screen</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100vh</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-h-min</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-content</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-h-max</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-content</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-h-fit</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>fit-content</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-h-{size}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">По шкале spacing (px / rem)</td></tr>
+        </tbody>
+      </table>
+<h2>Min / Max Width / Height</h2>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-w-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-w-full</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100%</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-w-min</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-content</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-w-max</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-content</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-w-fit</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>fit-content</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-h-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-h-full</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100%</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-h-screen</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100vh</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-h-min</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-content</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-h-max</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-content</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-h-fit</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>fit-content</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-xs</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>20rem (320px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-sm</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>24rem (384px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-md</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>28rem (448px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-lg</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>32rem (512px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>36rem (576px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-2xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>42rem (672px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-3xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>48rem (768px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-4xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>56rem (896px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-5xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>64rem (1024px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-6xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>72rem (1152px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-7xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>80rem (1280px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-full</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100%</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-screen</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100vw</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-min</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-content</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-max</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-content</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-fit</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>fit-content</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-h-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-h-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-h-full</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100%</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-h-screen</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100vh</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-h-min</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-content</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-h-max</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-content</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-h-fit</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>fit-content</code></td></tr>
+</tbody></table>
+
+<h2>Типографика</h2>
+<p>Полный набор классов для работы с текстом.</p>
+<h3>Размер шрифта (font-size)</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-xs</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.75rem (12px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-sm</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.875rem (14px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-base</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1rem (16px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-lg</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1.125rem (18px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1.25rem (20px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-2xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1.5rem (24px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-3xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1.875rem (30px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-4xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>2.25rem (36px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-5xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>3rem (48px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-6xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>3.75rem (60px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-7xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>4.5rem (72px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-8xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>6rem (96px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-9xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-size</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>8rem (128px)</code></td></tr>
+</tbody></table>
+
+<h3>Насыщенность (font-weight)</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-font-thin</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-weight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-font-extralight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-weight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>200</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-font-light</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-weight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>300</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-font-normal</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-weight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>400</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-font-medium</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-weight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>500</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-font-semibold</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-weight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>600</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-font-bold</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-weight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>700</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-font-extrabold</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-weight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>800</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-font-black</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-weight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>900</code></td></tr>
+</tbody></table>
+
+<h3>Межстрочный интервал (line-height)</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-3</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>.75rem (12px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-4</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1rem (16px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-5</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1.25rem (20px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-6</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1.5rem (24px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-7</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1.75rem (28px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-8</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>2rem (32px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-9</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>2.25rem (36px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-10</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>2.5rem (40px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-tight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1.25</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-snug</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1.375</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-normal</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1.5</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-relaxed</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1.625</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-leading-loose</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>2</code></td></tr>
+</tbody></table>
+
+<h3>Межбуквенный интервал (letter-spacing)</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-tracking-tighter</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>letter-spacing</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>-0.05em</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-tracking-tight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>letter-spacing</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>-0.025em</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-tracking-normal</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>letter-spacing</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0em</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-tracking-wide</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>letter-spacing</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.025em</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-tracking-wider</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>letter-spacing</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.05em</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-tracking-widest</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>letter-spacing</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.1em</code></td></tr>
+</tbody></table>
+
+<h3>Выравнивание (text-align)</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-left</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text-align</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>left</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-center</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text-align</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>center</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-right</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text-align</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>right</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-justify</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text-align</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>justify</code></td></tr>
+</tbody></table>
+
+<h3>Регистр (text-transform)</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-uppercase</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text-transform</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>uppercase</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-lowercase</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text-transform</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>lowercase</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-capitalize</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text-transform</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>capitalize</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-normal-case</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text-transform</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+</tbody></table>
+
+<h3>Оформление (text-decoration)</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-underline</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text-decoration</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>underline</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-line-through</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text-decoration</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>line-through</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-no-underline</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text-decoration</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+</tbody></table>
+
+<h3>Стиль шрифта (font-style)</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-italic</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-style</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>italic</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-not-italic</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>font-style</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>normal</code></td></tr>
+</tbody></table>
+
+<h2>Background</h2>
+<p>Классы для управления фоном элемента. Используйте <code>pt-bg-{color}</code> для базового цвета и <code>pt-bg-{color}-{shade}</code> для конкретного оттенка.</p>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-{color}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>background-color</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Значение CSS-переменной <code>--pk-{color}</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-{color}-{shade}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>background-color</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Значение <code>--pk-{color}-{shade}</code></td></tr>
+</tbody></table>
+<p>Доступные цвета: primary, success, warning, error, gray, slate, red, orange, yellow, green, teal, cyan, sky, blue, indigo, purple, pink, rose, white, black, transparent, current.</p>
+
+<h2>Border</h2>
+<p>Классы для управления границами элементов.</p>
+<h3>Толщина границы</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-2</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>2px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-4</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>4px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-8</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>8px</code></td></tr>
+</tbody></table>
+
+<h3>Стороны границы</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-t</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-top-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-b</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-bottom-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-l</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-left-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-r</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-right-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-x</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-left-width + border-right-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-y</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-top-width + border-bottom-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1px</code></td></tr>
+</tbody></table>
+
+<h3>Цвет границы</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-{color}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-color</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">По CSS-переменной <code>--pk-{color}</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-{color}-{shade}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-color</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">По <code>--pk-{color}-{shade}</code></td></tr>
+</tbody></table>
+
+<h2>Border-radius</h2>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0px</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-sm</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.125rem (2px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.25rem (4px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-md</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.375rem (6px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-lg</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.5rem (8px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.75rem (12px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-2xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1rem (16px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-3xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1.5rem (24px)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-full</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>9999px</code></td></tr>
+</tbody></table>
+
+<h3>Скругление по сторонам</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-t</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.25rem (top-left + top-right)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-b</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.25rem (bottom-left + bottom-right)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-l</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.25rem (top-left + bottom-left)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-r</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.25rem (top-right + bottom-right)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-tl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-top-left-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.25rem</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-tr</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-top-right-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.25rem</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-br</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-bottom-right-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.25rem</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-bl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>border-bottom-left-radius</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.25rem</code></td></tr>
+</tbody></table>
+<p>Также доступны <code>pt-rounded-t-{sm,md,lg,xl,2xl,3xl,full}</code> и аналоги для <code>-b-</code>, <code>-l-</code>, <code>-r-</code>, <code>-tl-</code>, <code>-tr-</code>, <code>-br-</code>, <code>-bl-</code>.</p>
+
+<h2>Shadow</h2>
+<p>Классы для добавления тени элементу.</p>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение box-shadow</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shadow-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>box-shadow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shadow-sm</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>box-shadow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0 1px 2px 0 rgba(0,0,0,0.05)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shadow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>box-shadow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shadow-md</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>box-shadow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shadow-lg</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>box-shadow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shadow-xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>box-shadow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shadow-2xl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>box-shadow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0 25px 50px rgba(0,0,0,0.25)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shadow-inner</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>box-shadow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>inset 0 2px 4px rgba(0,0,0,0.05)</code></td></tr>
+</tbody></table>
+
+<h2>Opacity</h2>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>opacity</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-10</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>opacity</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.1</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-20</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>opacity</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.2</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-30</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>opacity</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.3</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-40</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>opacity</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.4</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-50</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>opacity</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.5</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-60</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>opacity</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.6</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-70</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>opacity</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.7</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-80</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>opacity</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.8</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-90</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>opacity</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0.9</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-100</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>opacity</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1</code></td></tr>
+</tbody></table>
+
+<h2>Z-index</h2>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>z-index</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-10</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>z-index</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>10</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-20</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>z-index</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>20</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-30</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>z-index</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>30</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-40</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>z-index</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>40</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-50</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>z-index</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>50</code></td></tr>
+</tbody></table>
+
+<h2>Overflow</h2>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>auto</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-hidden</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>hidden</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-visible</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>visible</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-scroll</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>scroll</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-x-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow-x</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>auto</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-x-hidden</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow-x</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>hidden</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-x-visible</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow-x</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>visible</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-x-scroll</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow-x</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>scroll</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-y-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow-y</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>auto</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-y-hidden</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow-y</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>hidden</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-y-visible</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow-y</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>visible</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-y-scroll</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow-y</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>scroll</code></td></tr>
+</tbody></table>
+
+<h2>Cursor</h2>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-cursor-default</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cursor</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>default</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-cursor-pointer</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cursor</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pointer</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-cursor-wait</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cursor</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>wait</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-cursor-text</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cursor</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-cursor-move</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cursor</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>move</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-cursor-not-allowed</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cursor</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>not-allowed</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-cursor-grab</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cursor</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grab</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-cursor-help</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cursor</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>help</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-cursor-zoom-in</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cursor</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>zoom-in</code></td></tr>
+</tbody></table>
+
+<h2>Object-fit / Object-position</h2>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-object-contain</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>object-fit</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>contain</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-object-cover</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>object-fit</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cover</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-object-fill</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>object-fit</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>fill</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-object-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>object-fit</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-object-scale-down</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>object-fit</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>scale-down</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-object-bottom</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>object-position</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>bottom</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-object-center</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>object-position</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>center</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-object-left</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>object-position</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>left</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-object-right</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>object-position</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>right</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-object-top</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>object-position</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>top</code></td></tr>
+</tbody></table>
+
+<h2>Transition &amp; Animation</h2>
+<h3>Базовые transition</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-transition</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>transition-property</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>background-color, border-color, color, fill, stroke, opacity, box-shadow, transform</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-transition-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>transition-property</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-transition-all</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>transition-property</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>all</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-transition-colors</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>transition-property</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>background-color, border-color, color, fill, stroke</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-transition-opacity</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>transition-property</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>opacity</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-transition-shadow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>transition-property</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>box-shadow</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-transition-transform</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>transition-property</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>transform</code></td></tr>
+</tbody></table>
+
+<h3>Длительность (transition-duration)</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-duration-75</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>75ms</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-duration-100</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100ms</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-duration-150</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>150ms</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-duration-200</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>200ms</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-duration-300</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>300ms</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-duration-500</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>500ms</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-duration-700</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>700ms</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-duration-1000</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1000ms</code></td></tr>
+</tbody></table>
+
+<h3>Функция времени (transition-timing-function)</h3>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-ease-linear</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>linear</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-ease-in</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cubic-bezier(0.4, 0, 1, 1)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-ease-out</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cubic-bezier(0, 0, 0.2, 1)</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-ease-in-out</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>cubic-bezier(0.4, 0, 0.2, 1)</code></td></tr>
+</tbody></table>
+
+<h2>Gradients</h2>
+<p>Для создания градиента используйте <code>pt-bg-gradient-to-{direction}</code> вместе с <code>pt-from-{color}</code>, <code>pt-via-{color}</code> (опционально) и <code>pt-to-{color}</code>.</p>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-gradient-to-t</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--tw-gradient-to</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>to top</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-gradient-to-tr</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--tw-gradient-to</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>to top right</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-gradient-to-r</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--tw-gradient-to</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>to right</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-gradient-to-br</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--tw-gradient-to</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>to bottom right</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-gradient-to-b</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--tw-gradient-to</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>to bottom</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-gradient-to-bl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--tw-gradient-to</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>to bottom left</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-gradient-to-l</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--tw-gradient-to</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>to left</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-gradient-to-tl</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>--tw-gradient-to</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>to top left</code></td></tr>
+</tbody></table>
+<p>Дополнительно: <code>pt-from-{color}</code> / <code>pt-from-{color}-{shade}</code>, <code>pt-via-{color}</code> / <code>pt-via-{color}-{shade}</code>, <code>pt-to-{color}</code> / <code>pt-to-{color}-{shade}</code>.</p>
+
+<h2>Модификаторы (префиксы)</h2>
+<p>Модификаторы позволяют применять стили условно — при наведении, в тёмной теме, на определённой ширине экрана и т.д. Синтаксис: <code>pt-{модификатор}:{класс}</code>.</p>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Модификатор</th><th class="pt-p-2 pt-text-left">CSS-эффект</th><th class="pt-p-2 pt-text-left">Брейкпоинт</th><th class="pt-p-2 pt-text-left">Описание</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-hover:*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>:hover</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">—</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">При наведении курсора</td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-focus:*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>:focus</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">—</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">При фокусе элемента</td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-active:*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>:active</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">—</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">При активном нажатии</td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-dark:*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>.theme-dark .class</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">—</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">В тёмной теме</td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-sm:*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>@media (min-width: 576px)</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">≥ 576px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Планшеты и выше</td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-md:*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>@media (min-width: 768px)</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">≥ 768px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Небольшие десктопы</td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-lg:*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>@media (min-width: 992px)</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">≥ 992px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Широкие десктопы</td></tr>
+</tbody></table>
+
+<h2>Прочие утилиты</h2>
+<table class="pt-table-auto pt-w-full pt-text-sm"><thead class="pt-bg-gray-100 pt-dark:bg-gray-800"><tr><th class="pt-p-2 pt-text-left">Класс</th><th class="pt-p-2 pt-text-left">CSS-свойство</th><th class="pt-p-2 pt-text-left">Значение</th></tr></thead><tbody>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-appearance-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>appearance</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-pointer-events-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pointer-events</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-pointer-events-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pointer-events</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>auto</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-select-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>user-select</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-select-text</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>user-select</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>text</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-select-all</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>user-select</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>all</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-select-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>user-select</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>auto</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-sr-only</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>position + width + height + overflow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Только для скринридеров</td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-float-left</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>float</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>left</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-float-right</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>float</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>right</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-float-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>float</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-truncate</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow + text-overflow + white-space</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Обрезка текста с многоточием</td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-whitespace-normal</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>white-space</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>normal</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-whitespace-nowrap</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>white-space</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>nowrap</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-whitespace-pre</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>white-space</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pre</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-list-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>list-style</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-list-disc</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>list-style</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>disc</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-list-decimal</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>list-style</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>decimal</code></td></tr>
+<tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-clearfix</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>::after</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Очистка float</td></tr>
+</tbody></table>
+
+    </main>
+  </div>
+
+  <script src="../photon-kit/photon-kit.js"></script>
+  <script src="js/doc.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

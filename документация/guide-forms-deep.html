@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Продвинутый гайд по формам в Photon Framework: группировка полей, валидация, кастомные селекты, чекбоксы, toggle, file input, range slider." />
+  <meta name="keywords" content="photon, формы, валидация, кастомные селекты, чекбоксы, toggle, file input, range slider, иконки, адаптивная форма" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Формы: продвинутый уровень [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Формы: продвинутый уровень [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Формы — ключевой элемент взаимодействия пользователя с интерфейсом. Photon предоставляет гибкие утилиты для стилизации полей, валидации, кастомных селектов, чекбоксов, переключателей и других элементов форм.</p>
+
+      <h2>Группировка полей</h2>
+      <p>Используйте <code>fieldset</code> и <code>legend</code> для логической группировки полей. Photon-утилиты помогают управлять отступами.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;fieldset class="pt-border pt-border-gray-200 pt-dark:pt-border-gray-700 pt-rounded-lg pt-p-4 pt-mb-4"&gt;
+  &lt;legend class="pt-text-sm pt-font-semibold pt-px-2 pt-text-gray-700 pt-dark:pt-text-gray-300"&gt;
+    Персональные данные
+  &lt;/legend&gt;
+
+  &lt;div class="pt-mb-3"&gt;
+    &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1 pt-text-gray-700 pt-dark:pt-text-gray-300"&gt;Имя&lt;/label&gt;
+    &lt;input type="text" class="pt-w-full pt-px-3 pt-py-2 pt-border pt-border-gray-300 pt-dark:pt-border-gray-600 pt-rounded-lg pt-bg-white pt-dark:pt-bg-gray-800 pt-text-gray-900 pt-dark:pt-text-gray-100 pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-border-primary pt-outline-none pt-transition pt-duration-200" placeholder="Введите имя"&gt;
+  &lt;/div&gt;
+
+  &lt;div class="pt-mb-3"&gt;
+    &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1 pt-text-gray-700 pt-dark:pt-text-gray-300"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="pt-w-full pt-px-3 pt-py-2 pt-border pt-border-gray-300 pt-dark:pt-border-gray-600 pt-rounded-lg pt-bg-white pt-dark:pt-bg-gray-800 pt-text-gray-900 pt-dark:pt-text-gray-100 pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-border-primary pt-outline-none pt-transition pt-duration-200" placeholder="email@example.com"&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+      </div>
+
+      <h2>Валидация</h2>
+      <p>Используйте псевдоклассы <code>:valid</code>, <code>:invalid</code> для стилизации полей в зависимости от их состояния. Photon предоставляет утилиты для этих состояний.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;input type="email" required
+       class="pt-w-full pt-px-3 pt-py-2 pt-border pt-border-gray-300 pt-rounded-lg
+              pt-valid:pt-border-success pt-valid:pt-ring-success
+              pt-invalid:pt-border-error pt-invalid:pt-ring-error
+              pt-focus:pt-ring-2 pt-outline-none pt-transition pt-duration-200"
+       placeholder="email@example.com"&gt;
+
+&lt;!-- Сообщение об ошибке --&gt;
+&lt;p class="pt-text-xs pt-text-error pt-mt-1 pt-hidden pt-peer-invalid:pt-block"&gt;
+  Пожалуйста, введите корректный email
+&lt;/p&gt;</code></pre>
+      </div>
+
+      <h3>Стили для состояний валидации</h3>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Состояние</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-valid:pt-border-success</code></td><td>Зелёная рамка при валидном значении</td></tr>
+            <tr><td><code>.pt-valid:pt-ring-success</code></td><td>Зелёное свечение при валидном значении</td></tr>
+            <tr><td><code>.pt-invalid:pt-border-error</code></td><td>Красная рамка при невалидном значении</td></tr>
+            <tr><td><code>.pt-invalid:pt-ring-error</code></td><td>Красное свечение при невалидном значении</td></tr>
+            <tr><td><code>.pt-peer-invalid:pt-block</code></td><td>Показать сообщение об ошибке</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Кастомные селекты</h2>
+      <p>Стилизованный select с помощью Photon-утилит и кастомной стрелки:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-relative"&gt;
+  &lt;select class="pt-appearance-none pt-w-full pt-px-3 pt-py-2 pt-pr-10 pt-border pt-border-gray-300 pt-dark:pt-border-gray-600 pt-rounded-lg pt-bg-white pt-dark:pt-bg-gray-800 pt-text-gray-900 pt-dark:pt-text-gray-100 pt-text-sm pt-cursor-pointer pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-border-primary pt-outline-none pt-transition pt-duration-200"&gt;
+    &lt;option&gt;Опция 1&lt;/option&gt;
+    &lt;option&gt;Опция 2&lt;/option&gt;
+    &lt;option&gt;Опция 3&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;!-- Кастомная стрелка --&gt;
+  &lt;div class="pt-absolute pt-inset-y-0 pt-right-0 pt-flex pt-items-center pt-pr-3 pt-pointer-events-none"&gt;
+    &lt;svg class="pt-w-4 pt-h-4 pt-text-gray-400" viewBox="0 0 20 20" fill="currentColor"&gt;
+      &lt;path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Чекбоксы и радио</h2>
+      <p>Кастомные чекбоксы и радио-кнопки с помощью Photon-утилит и псевдоэлементов:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Кастомный чекбокс --&gt;
+&lt;label class="pt-inline-flex pt-items-center pt-gap-2 pt-cursor-pointer"&gt;
+  &lt;input type="checkbox" class="pt-sr-only pt-peer"&gt;
+  &lt;span class="pt-w-4 pt-h-4 pt-border pt-border-gray-300 pt-dark:pt-border-gray-600 pt-rounded pt-bg-white pt-dark:pt-bg-gray-800 pt-flex pt-items-center pt-justify-center pt-peer-checked:pt-bg-primary pt-peer-checked:pt-border-primary pt-transition pt-duration-200"&gt;
+    &lt;svg class="pt-w-3 pt-h-3 pt-text-white pt-hidden pt-peer-checked:pt-block" viewBox="0 0 12 12" fill="currentColor"&gt;
+      &lt;path d="M3.5 6.5L5 8l4-4" stroke="white" stroke-width="1.5" fill="none"/&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+  &lt;span class="pt-text-sm pt-text-gray-700 pt-dark:pt-text-gray-300"&gt;Запомнить меня&lt;/span&gt;
+&lt;/label&gt;
+
+&lt;!-- Кастомная радио-кнопка --&gt;
+&lt;label class="pt-inline-flex pt-items-center pt-gap-2 pt-cursor-pointer"&gt;
+  &lt;input type="radio" name="option" class="pt-sr-only pt-peer"&gt;
+  &lt;span class="pt-w-4 pt-h-4 pt-border pt-border-gray-300 pt-dark:pt-border-gray-600 pt-rounded-full pt-bg-white pt-dark:pt-bg-gray-800 pt-flex pt-items-center pt-justify-center pt-peer-checked:pt-border-primary pt-transition pt-duration-200"&gt;
+    &lt;span class="pt-w-2 pt-h-2 pt-rounded-full pt-bg-primary pt-hidden pt-peer-checked:pt-block"&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;span class="pt-text-sm pt-text-gray-700 pt-dark:pt-text-gray-300"&gt;Вариант 1&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+      </div>
+
+      <h2>Переключатели (toggle)</h2>
+      <p>CSS-переключатель (toggle switch) с помощью Photon-утилит:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;label class="pt-inline-flex pt-items-center pt-gap-2 pt-cursor-pointer"&gt;
+  &lt;input type="checkbox" class="pt-sr-only pt-peer"&gt;
+  &lt;span class="pt-relative pt-w-10 pt-h-5 pt-bg-gray-300 pt-dark:pt-bg-gray-600 pt-rounded-full pt-peer-checked:pt-bg-primary pt-transition pt-duration-200"&gt;
+    &lt;span class="pt-absolute pt-top-0.5 pt-left-0.5 pt-w-4 pt-h-4 pt-bg-white pt-rounded-full pt-shadow pt-peer-checked:pt-translate-x-5 pt-transition pt-duration-200"&gt;&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;span class="pt-text-sm pt-text-gray-700 pt-dark:pt-text-gray-300"&gt;Уведомления&lt;/span&gt;
+&lt;/label&gt;</code></pre>
+      </div>
+
+      <h2>File input</h2>
+      <p>Кастомная кнопка загрузки файла с помощью скрытого input и стилизованной метки:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-center pt-gap-3"&gt;
+  &lt;input type="file" id="fileInput" class="pt-sr-only" onchange="document.getElementById('fileName').textContent = this.files[0]?.name || 'Файл не выбран'"&gt;
+  &lt;label for="fileInput" class="pt-inline-flex pt-items-center pt-gap-2 pt-px-4 pt-py-2 pt-bg-white pt-dark:pt-bg-gray-800 pt-border pt-border-gray-300 pt-dark:pt-border-gray-600 pt-rounded-lg pt-text-sm pt-font-medium pt-text-gray-700 pt-dark:pt-text-gray-300 pt-cursor-pointer pt-hover:pt-bg-gray-50 pt-dark:pt-hover:pt-bg-gray-700 pt-transition pt-duration-200"&gt;
+    &lt;svg class="pt-w-4 pt-h-4" viewBox="0 0 20 20" fill="currentColor"&gt;
+      &lt;path d="M10 2a1 1 0 011 1v6h6a1 1 0 110 2h-6v6a1 1 0 11-2 0v-6H3a1 1 0 110-2h6V3a1 1 0 011-1z"/&gt;
+    &lt;/svg&gt;
+    Выбрать файл
+  &lt;/label&gt;
+  &lt;span id="fileName" class="pt-text-sm pt-text-gray-500"&gt;Файл не выбран&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Range slider</h2>
+      <p>Стилизованный range input с помощью Photon-утилит:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-space-y-2"&gt;
+  &lt;label class="pt-block pt-text-sm pt-font-medium pt-text-gray-700 pt-dark:pt-text-gray-300"&gt;
+    Громкость: &lt;span id="rangeValue"&gt;50&lt;/span&gt;%
+  &lt;/label&gt;
+  &lt;input type="range" min="0" max="100" value="50"
+         class="pt-w-full pt-h-2 pt-bg-gray-200 pt-dark:pt-bg-gray-700 pt-rounded-lg pt-appearance-none pt-cursor-pointer pt-accent-primary
+                [&::-webkit-slider-thumb]:pt-appearance-none [&::-webkit-slider-thumb]:pt-w-4 [&::-webkit-slider-thumb]:pt-h-4
+                [&::-webkit-slider-thumb]:pt-bg-primary [&::-webkit-slider-thumb]:pt-rounded-full [&::-webkit-slider-thumb]:pt-cursor-pointer
+                [&::-webkit-slider-thumb]:pt-shadow-md"
+         oninput="document.getElementById('rangeValue').textContent = this.value"&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Форма с иконками</h2>
+      <p>Input с иконкой внутри — распространённый паттерн для поиска, email, телефона:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-relative pt-mb-4"&gt;
+  &lt;div class="pt-absolute pt-inset-y-0 pt-left-0 pt-flex pt-items-center pt-pl-3 pt-pointer-events-none"&gt;
+    &lt;svg class="pt-w-5 pt-h-5 pt-text-gray-400" viewBox="0 0 20 20" fill="currentColor"&gt;
+      &lt;path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;input type="search" class="pt-w-full pt-pl-10 pt-pr-3 pt-py-2 pt-border pt-border-gray-300 pt-dark:pt-border-gray-600 pt-rounded-lg pt-bg-white pt-dark:pt-bg-gray-800 pt-text-gray-900 pt-dark:pt-text-gray-100 pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-border-primary pt-outline-none pt-transition pt-duration-200" placeholder="Поиск..."&gt;
+&lt;/div&gt;
+
+&lt;!-- Input с иконкой справа --&gt;
+&lt;div class="pt-relative pt-mb-4"&gt;
+  &lt;input type="email" class="pt-w-full pt-pl-3 pt-pr-10 pt-py-2 pt-border pt-border-gray-300 pt-dark:pt-border-gray-600 pt-rounded-lg pt-bg-white pt-dark:pt-bg-gray-800 pt-text-gray-900 pt-dark:pt-text-gray-100 pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-border-primary pt-outline-none pt-transition pt-duration-200" placeholder="email@example.com"&gt;
+  &lt;div class="pt-absolute pt-inset-y-0 pt-right-0 pt-flex pt-items-center pt-pr-3"&gt;
+    &lt;svg class="pt-w-5 pt-h-5 pt-text-gray-400" viewBox="0 0 20 20" fill="currentColor"&gt;
+      &lt;path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/&gt;
+      &lt;path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Адаптивная форма</h2>
+      <p>Форма, переходящая от одноколоночной на мобильных к многоколоночной на десктопе:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;form class="pt-max-w-2xl pt-mx-auto pt-p-6 pt-bg-white pt-dark:pt-bg-gray-900 pt-rounded-xl pt-shadow-sm pt-border pt-border-gray-200 pt-dark:pt-border-gray-800"&gt;
+  &lt;h2 class="pt-text-2xl pt-font-semibold pt-mb-6 pt-text-gray-900 pt-dark:pt-text-gray-100"&gt;Контактная форма&lt;/h2&gt;
+
+  &lt;!-- Две колонки на десктопе --&gt;
+  &lt;div class="pt-grid pt-grid-cols-1 pt-md:pt-grid-cols-2 pt-gap-4 pt-mb-4"&gt;
+    &lt;div&gt;
+      &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1 pt-text-gray-700 pt-dark:pt-text-gray-300"&gt;Имя&lt;/label&gt;
+      &lt;input type="text" class="pt-w-full pt-px-3 pt-py-2 pt-border pt-border-gray-300 pt-dark:pt-border-gray-600 pt-rounded-lg pt-bg-white pt-dark:pt-bg-gray-800 pt-text-gray-900 pt-dark:pt-text-gray-100 pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-border-primary pt-outline-none pt-transition pt-duration-200"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1 pt-text-gray-700 pt-dark:pt-text-gray-300"&gt;Фамилия&lt;/label&gt;
+      &lt;input type="text" class="pt-w-full pt-px-3 pt-py-2 pt-border pt-border-gray-300 pt-dark:pt-border-gray-600 pt-rounded-lg pt-bg-white pt-dark:pt-bg-gray-800 pt-text-gray-900 pt-dark:pt-text-gray-100 pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-border-primary pt-outline-none pt-transition pt-duration-200"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Полная ширина --&gt;
+  &lt;div class="pt-mb-4"&gt;
+    &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1 pt-text-gray-700 pt-dark:pt-text-gray-300"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="pt-w-full pt-px-3 pt-py-2 pt-border pt-border-gray-300 pt-dark:pt-border-gray-600 pt-rounded-lg pt-bg-white pt-dark:pt-bg-gray-800 pt-text-gray-900 pt-dark:pt-text-gray-100 pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-border-primary pt-outline-none pt-transition pt-duration-200"&gt;
+  &lt;/div&gt;
+
+  &lt;div class="pt-mb-6"&gt;
+    &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1 pt-text-gray-700 pt-dark:pt-text-gray-300"&gt;Сообщение&lt;/label&gt;
+    &lt;textarea rows="4" class="pt-w-full pt-px-3 pt-py-2 pt-border pt-border-gray-300 pt-dark:pt-border-gray-600 pt-rounded-lg pt-bg-white pt-dark:pt-bg-gray-800 pt-text-gray-900 pt-dark:pt-text-gray-100 pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-border-primary pt-outline-none pt-transition pt-duration-200 pt-resize-y"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+
+  &lt;button type="submit" class="pt-w-full pt-md:pt-w-auto pt-px-6 pt-py-2 pt-bg-primary pt-text-white pt-rounded-lg pt-font-medium pt-hover:pt-bg-primary-dark pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-ring-offset-2 pt-dark:pt-focus:pt-ring-offset-gray-900 pt-transition pt-duration-200"&gt;
+    Отправить
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      <h2>Примеры</h2>
+
+      <h3>Пример 1: Форма входа</h3>
+
+      <div class="demo-box demo-box--column">
+        <form style="width:100%;max-width:380px;margin:0 auto;padding:1.5rem;background:var(--pk-surface);border-radius:12px;border:1px solid var(--pk-border);">
+          <h3 style="font-size:1.25rem;font-weight:600;margin-bottom:1.5rem;text-align:center;">Вход</h3>
+          <div class="pt-mb-3">
+            <label class="pt-block pt-text-sm pt-font-medium pt-mb-1" style="color:var(--pk-text-secondary);">Email</label>
+            <input type="email" class="pt-w-full pt-px-3 pt-py-2 pt-border pt-rounded-lg pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-outline-none pt-transition pt-duration-200" style="border-color:var(--pk-border);background:var(--pk-bg);color:var(--pk-text);" placeholder="email@example.com">
+          </div>
+          <div class="pt-mb-4">
+            <label class="pt-block pt-text-sm pt-font-medium pt-mb-1" style="color:var(--pk-text-secondary);">Пароль</label>
+            <input type="password" class="pt-w-full pt-px-3 pt-py-2 pt-border pt-rounded-lg pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-outline-none pt-transition pt-duration-200" style="border-color:var(--pk-border);background:var(--pk-bg);color:var(--pk-text);" placeholder="••••••••">
+          </div>
+          <button type="submit" class="pt-w-full pt-px-4 pt-py-2 pt-bg-primary pt-text-white pt-rounded-lg pt-font-medium pt-hover:pt-bg-primary-dark pt-transition pt-duration-200" style="background:var(--pk-primary);">Войти</button>
+        </form>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;form style="max-width:380px;padding:1.5rem;background:var(--pk-surface);border-radius:12px;border:1px solid var(--pk-border);"&gt;
+  &lt;h3 style="font-size:1.25rem;font-weight:600;margin-bottom:1.5rem;text-align:center;"&gt;Вход&lt;/h3&gt;
+  &lt;div class="pt-mb-3"&gt;
+    &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1" style="color:var(--pk-text-secondary);"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="pt-w-full pt-px-3 pt-py-2 pt-border pt-rounded-lg pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-outline-none pt-transition pt-duration-200" style="border-color:var(--pk-border);background:var(--pk-bg);color:var(--pk-text);" placeholder="email@example.com"&gt;
+  &lt;/div&gt;
+  &lt;div class="pt-mb-4"&gt;
+    &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1" style="color:var(--pk-text-secondary);"&gt;Пароль&lt;/label&gt;
+    &lt;input type="password" class="pt-w-full pt-px-3 pt-py-2 pt-border pt-rounded-lg pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-outline-none pt-transition pt-duration-200" style="border-color:var(--pk-border);background:var(--pk-bg);color:var(--pk-text);" placeholder="••••••••"&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="pt-w-full pt-px-4 pt-py-2 pt-bg-primary pt-text-white pt-rounded-lg pt-font-medium pt-hover:pt-bg-primary-dark pt-transition pt-duration-200" style="background:var(--pk-primary);"&gt;Войти&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      <h3>Пример 2: Форма регистрации</h3>
+
+      <div class="code-block">
+        <pre><code>&lt;form class="pt-max-w-lg pt-mx-auto pt-p-6 pt-bg-white pt-dark:pt-bg-gray-900 pt-rounded-xl pt-shadow-sm pt-border pt-border-gray-200 pt-dark:pt-border-gray-800"&gt;
+  &lt;h2 class="pt-text-2xl pt-font-semibold pt-mb-6 pt-text-center"&gt;Регистрация&lt;/h2&gt;
+
+  &lt;div class="pt-grid pt-grid-cols-1 pt-md:pt-grid-cols-2 pt-gap-4 pt-mb-4"&gt;
+    &lt;div&gt;
+      &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1"&gt;Имя&lt;/label&gt;
+      &lt;input type="text" required class="pt-w-full pt-px-3 pt-py-2 pt-border pt-rounded-lg pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-outline-none"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1"&gt;Фамилия&lt;/label&gt;
+      &lt;input type="text" required class="pt-w-full pt-px-3 pt-py-2 pt-border pt-rounded-lg pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-outline-none"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="pt-mb-4"&gt;
+    &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1"&gt;Email&lt;/label&gt;
+    &lt;input type="email" required class="pt-w-full pt-px-3 pt-py-2 pt-border pt-rounded-lg pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-outline-none"&gt;
+  &lt;/div&gt;
+
+  &lt;div class="pt-grid pt-grid-cols-1 pt-md:pt-grid-cols-2 pt-gap-4 pt-mb-4"&gt;
+    &lt;div&gt;
+      &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1"&gt;Пароль&lt;/label&gt;
+      &lt;input type="password" required class="pt-w-full pt-px-3 pt-py-2 pt-border pt-rounded-lg pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-outline-none"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1"&gt;Подтверждение&lt;/label&gt;
+      &lt;input type="password" required class="pt-w-full pt-px-3 pt-py-2 pt-border pt-rounded-lg pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-outline-none"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="pt-mb-6"&gt;
+    &lt;label class="pt-inline-flex pt-items-center pt-gap-2 pt-cursor-pointer"&gt;
+      &lt;input type="checkbox" class="pt-sr-only pt-peer"&gt;
+      &lt;span class="pt-w-4 pt-h-4 pt-border pt-border-gray-300 pt-rounded pt-bg-white pt-flex pt-items-center pt-justify-center pt-peer-checked:pt-bg-primary pt-peer-checked:pt-border-primary pt-transition pt-duration-200"&gt;
+        &lt;svg class="pt-w-3 pt-h-3 pt-text-white pt-hidden pt-peer-checked:pt-block" viewBox="0 0 12 12" fill="currentColor"&gt;
+          &lt;path d="M3.5 6.5L5 8l4-4" stroke="white" stroke-width="1.5" fill="none"/&gt;
+        &lt;/svg&gt;
+      &lt;/span&gt;
+      &lt;span class="pt-text-sm"&gt;Я принимаю условия использования&lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;button type="submit" class="pt-w-full pt-px-6 pt-py-2 pt-bg-primary pt-text-white pt-rounded-lg pt-font-medium pt-hover:pt-bg-primary-dark pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-ring-offset-2 pt-transition pt-duration-200"&gt;
+    Зарегистрироваться
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      <h3>Пример 3: Поиск</h3>
+
+      <div class="demo-box">
+        <div class="pt-relative" style="width:100%;max-width:400px;">
+          <div class="pt-absolute pt-inset-y-0 pt-left-0 pt-flex pt-items-center pt-pl-3 pt-pointer-events-none">
+            <svg class="pt-w-5 pt-h-5" viewBox="0 0 20 20" fill="currentColor" style="color:var(--pk-text-secondary);"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg>
+          </div>
+          <input type="search" class="pt-w-full pt-pl-10 pt-pr-3 pt-py-2 pt-border pt-rounded-lg pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-outline-none pt-transition pt-duration-200" style="border-color:var(--pk-border);background:var(--pk-bg);color:var(--pk-text);" placeholder="Поиск по сайту...">
+        </div>
+      </div>
+
+      <h3>Пример 4: Контактная форма</h3>
+
+      <div class="code-block">
+        <pre><code>&lt;form class="pt-max-w-xl pt-mx-auto pt-p-6 pt-bg-white pt-dark:pt-bg-gray-900 pt-rounded-xl pt-shadow-sm"&gt;
+  &lt;h2 class="pt-text-xl pt-font-semibold pt-mb-6"&gt;Связаться с нами&lt;/h2&gt;
+
+  &lt;div class="pt-mb-4"&gt;
+    &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1"&gt;Тема&lt;/label&gt;
+    &lt;div class="pt-relative"&gt;
+      &lt;select class="pt-appearance-none pt-w-full pt-px-3 pt-py-2 pt-pr-10 pt-border pt-border-gray-300 pt-rounded-lg pt-bg-white pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-border-primary pt-outline-none pt-cursor-pointer"&gt;
+        &lt;option&gt;Общий вопрос&lt;/option&gt;
+        &lt;option&gt;Техническая поддержка&lt;/option&gt;
+        &lt;option&gt;Партнёрство&lt;/option&gt;
+      &lt;/select&gt;
+      &lt;div class="pt-absolute pt-inset-y-0 pt-right-0 pt-flex pt-items-center pt-pr-3 pt-pointer-events-none"&gt;
+        &lt;svg class="pt-w-4 pt-h-4 pt-text-gray-400" viewBox="0 0 20 20" fill="currentColor"&gt;
+          &lt;path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/&gt;
+        &lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="pt-mb-4"&gt;
+    &lt;label class="pt-block pt-text-sm pt-font-medium pt-mb-1"&gt;Сообщение&lt;/label&gt;
+    &lt;textarea rows="5" class="pt-w-full pt-px-3 pt-py-2 pt-border pt-border-gray-300 pt-rounded-lg pt-bg-white pt-text-sm pt-focus:pt-ring-2 pt-focus:pt-ring-primary pt-focus:pt-border-primary pt-outline-none pt-resize-y"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+
+  &lt;button type="submit" class="pt-px-6 pt-py-2 pt-bg-primary pt-text-white pt-rounded-lg pt-font-medium pt-hover:pt-bg-primary-dark pt-transition pt-duration-200"&gt;
+    Отправить
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

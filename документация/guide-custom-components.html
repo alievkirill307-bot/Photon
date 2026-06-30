@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Руководство по созданию кастомных компонентов из утилитарных классов Photon Framework: композиция, переиспользование, best practices." />
+  <meta name="keywords" content="photon, custom components, css composition, utility classes, кастомные компоненты, переиспользование, css naming" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Кастомные компоненты [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link active">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Кастомные компоненты [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Утилитарные классы Photon позволяют создавать уникальные компоненты без написания собственного CSS. Комбинируйте pt-* классы для получения нужного результата.</p>
+
+      <h2>Принцип композиции</h2>
+      <p>Каждый pt-класс отвечает за одно CSS-свойство. Комбинируя их на одном элементе, вы строите сложный визуальный компонент без единой строчки кастомного CSS.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Пример композиции --&gt;
+&lt;div class="pt-flex pt-items-center pt-justify-center pt-w-32 pt-h-32 pt-bg-primary pt-rounded-lg pt-shadow-lg"&gt;
+  Компонент из утилит
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Создание кнопок</h2>
+      <p>Базовые стили кнопок можно расширять с помощью pt-утилит.</p>
+
+      <h3>Кнопка с иконкой</h3>
+
+      <div class="demo-box">
+        <button class="btn btn--primary pt-flex pt-items-center pt-gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span>Отправить</span>
+        </button>
+        <button class="btn btn--success pt-flex pt-items-center pt-gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Сохранить</span>
+        </button>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;button class="btn btn--primary pt-flex pt-items-center pt-gap-2"&gt;
+  &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+    &lt;path d="M5 12h14M12 5l7 7-7 7"/&gt;
+  &lt;/svg&gt;
+  &lt;span&gt;Отправить&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+      </div>
+
+      <h3>Группа кнопок</h3>
+
+      <div class="demo-box">
+        <div class="pt-flex">
+          <button class="btn btn--primary" style="border-radius:8px 0 0 8px;">Левый</button>
+          <button class="btn btn--primary" style="border-radius:0;border-left:1px solid rgba(0,0,0,0.2);">Центр</button>
+          <button class="btn btn--primary" style="border-radius:0 8px 8px 0;border-left:1px solid rgba(0,0,0,0.2);">Правый</button>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex"&gt;
+  &lt;button class="btn btn--primary" style="border-radius:8px 0 0 8px;"&gt;Левый&lt;/button&gt;
+  &lt;button class="btn btn--primary" style="border-radius:0;border-left:1px solid rgba(0,0,0,0.2);"&gt;Центр&lt;/button&gt;
+  &lt;button class="btn btn--primary" style="border-radius:0 8px 8px 0;border-left:1px solid rgba(0,0,0,0.2);"&gt;Правый&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Outline-кнопка с кастомным цветом</h3>
+
+      <div class="demo-box">
+        <button class="btn pt-border-2 pt-border-accent pt-text-accent pt-bg-transparent pt-rounded-lg pt-px-4 pt-py-2 pt-font-medium pt-hover-bg-accent pt-hover-text-white pt-transition">Кастомная</button>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;button class="btn pt-border-2 pt-border-accent pt-text-accent pt-bg-transparent pt-rounded-lg pt-px-4 pt-py-2 pt-font-medium pt-transition"&gt;
+  Кастомная
+&lt;/button&gt;</code></pre>
+      </div>
+
+      <h2>Создание карточек</h2>
+
+      <h3>Карточка информации</h3>
+
+      <div class="demo-box">
+        <div class="pt-bg-surface pt-rounded-xl pt-shadow-md pt-p-6 pt-max-w-sm">
+          <div class="pt-flex pt-items-center pt-gap-3 pt-mb-4">
+            <div class="pt-w-10 pt-h-10 pt-rounded-lg pt-bg-primary pt-flex pt-items-center pt-justify-center" style="color:#fff;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            </div>
+            <div>
+              <div class="pt-text-lg pt-font-semibold">Информация</div>
+              <div class="pt-text-sm pt-text-muted">Обновлено 2 часа назад</div>
+            </div>
+          </div>
+          <p class="pt-text-base pt-text-secondary pt-mb-4">Здесь может быть краткое описание или содержимое карточки.</p>
+          <button class="btn btn--primary pt-w-full">Подробнее</button>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-md pt-p-6 pt-max-w-sm"&gt;
+  &lt;div class="pt-flex pt-items-center pt-gap-3 pt-mb-4"&gt;
+    &lt;div class="pt-w-10 pt-h-10 pt-rounded-lg pt-bg-primary pt-flex pt-items-center pt-justify-center" style="color:#fff;"&gt;
+      &lt;svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+        &lt;circle cx="12" cy="12" r="10"/&gt;
+        &lt;path d="M12 16v-4M12 8h.01"/&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;div class="pt-text-lg pt-font-semibold"&gt;Информация&lt;/div&gt;
+      &lt;div class="pt-text-sm pt-text-muted"&gt;Обновлено 2 часа назад&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p class="pt-text-base pt-text-secondary pt-mb-4"&gt;Описание.&lt;/p&gt;
+  &lt;button class="btn btn--primary pt-w-full"&gt;Подробнее&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Карточка товара</h3>
+
+      <div class="demo-box">
+        <div class="pt-bg-surface pt-rounded-xl pt-shadow-md pt-overflow-hidden pt-max-w-xs">
+          <div class="pt-h-40 pt-bg-gradient-to-br pt-from-primary pt-to-info pt-flex pt-items-center pt-justify-center" style="color:#fff;font-size:2rem;">Photo</div>
+          <div class="pt-p-4">
+            <div class="pt-text-lg pt-font-semibold pt-mb-1">Товар</div>
+            <div class="pt-text-sm pt-text-muted pt-mb-3">Описание товара в пару строк для демонстрации.</div>
+            <div class="pt-flex pt-items-center pt-justify-between">
+              <span class="pt-text-xl pt-font-bold pt-text-accent">1 299 ₽</span>
+              <button class="btn btn--primary pt-text-sm">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-md pt-overflow-hidden pt-max-w-xs"&gt;
+  &lt;div class="pt-h-40 pt-bg-gradient-to-br pt-from-primary pt-to-info pt-flex pt-items-center pt-justify-center" style="color:#fff;font-size:2rem;"&gt;Photo&lt;/div&gt;
+  &lt;div class="pt-p-4"&gt;
+    &lt;div class="pt-text-lg pt-font-semibold pt-mb-1"&gt;Товар&lt;/div&gt;
+    &lt;div class="pt-text-sm pt-text-muted pt-mb-3"&gt;Описание.&lt;/div&gt;
+    &lt;div class="pt-flex pt-items-center pt-justify-between"&gt;
+      &lt;span class="pt-text-xl pt-font-bold pt-text-accent"&gt;1 299 ₽&lt;/span&gt;
+      &lt;button class="btn btn--primary pt-text-sm"&gt;В корзину&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Создание навигации</h2>
+
+      <h3>Горизонтальная навигация (navbar)</h3>
+
+      <div class="demo-box">
+        <nav class="pt-flex pt-items-center pt-gap-6 pt-bg-surface pt-px-6 pt-py-3 pt-rounded-xl pt-shadow-sm">
+          <a href="#" class="pt-font-bold pt-text-lg" style="color:var(--pk-primary);">Logo</a>
+          <a href="#" class="pt-text-sm pt-text-secondary pt-hover-text-primary pt-transition">Главная</a>
+          <a href="#" class="pt-text-sm pt-text-secondary pt-hover-text-primary pt-transition">О нас</a>
+          <a href="#" class="pt-text-sm pt-text-secondary pt-hover-text-primary pt-transition">Услуги</a>
+          <a href="#" class="pt-text-sm pt-text-secondary pt-hover-text-primary pt-transition">Контакты</a>
+          <div class="pt-ml-auto">
+            <button class="btn btn--primary pt-text-sm">Войти</button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav class="pt-flex pt-items-center pt-gap-6 pt-bg-surface pt-px-6 pt-py-3 pt-rounded-xl pt-shadow-sm"&gt;
+  &lt;a href="#" class="pt-font-bold pt-text-lg" style="color:var(--pk-primary);"&gt;Logo&lt;/a&gt;
+  &lt;a href="#" class="pt-text-sm pt-text-secondary pt-hover-text-primary pt-transition"&gt;Главная&lt;/a&gt;
+  &lt;a href="#" class="pt-text-sm pt-text-secondary pt-hover-text-primary pt-transition"&gt;О нас&lt;/a&gt;
+  &lt;a href="#" class="pt-text-sm pt-text-secondary pt-hover-text-primary pt-transition"&gt;Услуги&lt;/a&gt;
+  &lt;a href="#" class="pt-text-sm pt-text-secondary pt-hover-text-primary pt-transition"&gt;Контакты&lt;/a&gt;
+  &lt;div class="pt-ml-auto"&gt;
+    &lt;button class="btn btn--primary pt-text-sm"&gt;Войти&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h2>Создание форм</h2>
+
+      <h3>Поле поиска</h3>
+
+      <div class="demo-box">
+        <div class="pt-flex pt-items-center pt-bg-surface pt-rounded-lg pt-border pt-border-default pt-px-3 pt-py-2 pt-max-w-sm">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--pk-muted);flex-shrink:0;"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" placeholder="Поиск..." class="pt-border-none pt-bg-transparent pt-flex-1 pt-outline-none pt-px-2 pt-py-1" style="color:var(--pk-text);" />
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-center pt-bg-surface pt-rounded-lg pt-border pt-border-default pt-px-3 pt-py-2 pt-max-w-sm"&gt;
+  &lt;svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--pk-muted);"&gt;
+    &lt;circle cx="11" cy="11" r="8"/&gt;
+    &lt;path d="M21 21l-4.35-4.35"/&gt;
+  &lt;/svg&gt;
+  &lt;input type="text" placeholder="Поиск..." class="pt-border-none pt-bg-transparent pt-flex-1 pt-outline-none pt-px-2 pt-py-1" style="color:var(--pk-text);" /&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Форма логина</h3>
+
+      <div class="demo-box">
+        <div class="pt-bg-surface pt-rounded-xl pt-shadow-lg pt-p-8 pt-max-w-sm pt-mx-auto">
+          <h3 class="pt-text-2xl pt-font-bold pt-mb-6 pt-text-center">Вход</h3>
+          <div class="pt-mb-4">
+            <label class="pt-text-sm pt-font-medium pt-mb-1 pt-block">Email</label>
+            <input type="email" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-border pt-border-default pt-bg-transparent" style="color:var(--pk-text);" placeholder="mail@example.com" />
+          </div>
+          <div class="pt-mb-6">
+            <label class="pt-text-sm pt-font-medium pt-mb-1 pt-block">Пароль</label>
+            <input type="password" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-border pt-border-default pt-bg-transparent" style="color:var(--pk-text);" placeholder="••••••••" />
+          </div>
+          <button class="btn btn--primary pt-w-full pt-text-base">Войти</button>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-lg pt-p-8 pt-max-w-sm pt-mx-auto"&gt;
+  &lt;h3 class="pt-text-2xl pt-font-bold pt-mb-6 pt-text-center"&gt;Вход&lt;/h3&gt;
+  &lt;div class="pt-mb-4"&gt;
+    &lt;label class="pt-text-sm pt-font-medium pt-mb-1 pt-block"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-border pt-border-default pt-bg-transparent" placeholder="mail@example.com"/&gt;
+  &lt;/div&gt;
+  &lt;div class="pt-mb-6"&gt;
+    &lt;label class="pt-text-sm pt-font-medium pt-mb-1 pt-block"&gt;Пароль&lt;/label&gt;
+    &lt;input type="password" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-border pt-border-default pt-bg-transparent" placeholder="••••••••"/&gt;
+  &lt;/div&gt;
+  &lt;button class="btn btn--primary pt-w-full pt-text-base"&gt;Войти&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Создание модалок</h2>
+
+      <div class="demo-box">
+        <button class="btn btn--primary" onclick="this.nextElementSibling.style.display='flex'">Открыть модалку</button>
+        <div style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
+          <div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-6 pt-max-w-md pt-w-full" style="margin:16px;" onclick="event.stopPropagation()">
+            <div class="pt-flex pt-items-center pt-justify-between pt-mb-4">
+              <h2 class="pt-text-xl pt-font-bold">Заголовок</h2>
+              <button class="pt-bg-transparent pt-border-none pt-text-2xl pt-cursor-pointer" style="color:var(--pk-muted);" onclick="this.closest('div[style]').parentElement.style.display='none'">&times;</button>
+            </div>
+            <p class="pt-text-secondary pt-mb-6">Содержимое модального окна. Нажмите на фон или крестик, чтобы закрыть.</p>
+            <div class="pt-flex pt-justify-end pt-gap-3">
+              <button class="btn" onclick="this.closest('div[style]').parentElement.style.display='none'">Отмена</button>
+              <button class="btn btn--primary">Подтвердить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'"&gt;
+  &lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-6 pt-max-w-md pt-w-full" onclick="event.stopPropagation()"&gt;
+    &lt;div class="pt-flex pt-items-center pt-justify-between pt-mb-4"&gt;
+      &lt;h2 class="pt-text-xl pt-font-bold"&gt;Заголовок&lt;/h2&gt;
+      &lt;button class="pt-bg-transparent pt-border-none pt-text-2xl pt-cursor-pointer" style="color:var(--pk-muted);" onclick="this.closest('div[style]').parentElement.style.display='none'"&gt;&amp;times;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;p class="pt-text-secondary pt-mb-6"&gt;Содержимое.&lt;/p&gt;
+    &lt;div class="pt-flex pt-justify-end pt-gap-3"&gt;
+      &lt;button class="btn" onclick="this.closest('div[style]').parentElement.style.display='none'"&gt;Отмена&lt;/button&gt;
+      &lt;button class="btn btn--primary"&gt;Подтвердить&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Best practices</h2>
+
+      <h3>DRY — Don't Repeat Yourself</h3>
+      <p>Если вы используете одну и ту же комбинацию pt-классов в нескольких местах, создайте кастомный CSS-класс:</p>
+
+      <div class="code-block">
+        <pre><code>/* Вместо повторения утилит */
+.my-card {
+  background: var(--pk-surface);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Использование в HTML */
+&lt;div class="my-card"&gt;...&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Именование классов</h3>
+      <p>Используйте осмысленные имена на английском (или на русском, если проект внутренний). Придерживайтесь БЭМ или аналогичной методологии для сложных компонентов.</p>
+
+      <div class="code-block">
+        <pre><code>/* Хорошо */
+.profile-card { }
+.profile-card__avatar { }
+.profile-card__name { }
+.profile-card--highlighted { }
+
+/* Плохо */
+.block1 { }
+.my-custom { }
+.card-style-01 { }</code></pre>
+      </div>
+
+      <h3>Извлечение в CSS</h3>
+      <p>Когда прототип готов, извлеките повторяющиеся комбинации утилит в отдельные CSS-классы. Это улучшит читаемость HTML и упростит поддержку.</p>
+
+      <div class="code-block">
+        <pre><code>/* Этап 1: HTML с утилитами (прототип) */
+&lt;button class="pt-bg-primary pt-text-white pt-px-6 pt-py-2 pt-rounded-lg pt-font-semibold pt-transition pt-hover-bg-primary-dark"&gt;
+  Кнопка
+&lt;/button&gt;
+
+/* Этап 2: Извлечение в CSS */
+.btn-custom {
+  background: var(--pk-primary);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+.btn-custom:hover {
+  background: var(--pk-primary-dark);
+}
+
+/* Этап 3: HTML с кастомным классом */
+&lt;button class="btn-custom"&gt;Кнопка&lt;/button&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

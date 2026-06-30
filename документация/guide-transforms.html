@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Полное руководство по CSS-трансформациям в Photon Framework: scale, rotate, translate, skew, 3D-трансформации." />
+  <meta name="keywords" content="photon, css transforms, scale, rotate, translate, skew, transform-origin, 3d transforms, perspective" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Трансформации [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link active">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Трансформации [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>CSS-трансформации позволяют изменять форму, размер и положение элементов без влияния на соседние объекты. Photon предоставляет утилитарные классы на все случаи.</p>
+
+      <h2>Scale</h2>
+      <p>Масштабирование элемента. Используйте <code>pt-scale-{value}</code> для равномерного масштаба, <code>pt-scale-x-{value}</code> и <code>pt-scale-y-{value}</code> для отдельных осей.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-scale-50</code></td><td><code>transform: scale(0.5)</code></td></tr>
+            <tr><td><code>.pt-scale-75</code></td><td><code>transform: scale(0.75)</code></td></tr>
+            <tr><td><code>.pt-scale-90</code></td><td><code>transform: scale(0.9)</code></td></tr>
+            <tr><td><code>.pt-scale-100</code></td><td><code>transform: scale(1)</code></td></tr>
+            <tr><td><code>.pt-scale-110</code></td><td><code>transform: scale(1.1)</code></td></tr>
+            <tr><td><code>.pt-scale-125</code></td><td><code>transform: scale(1.25)</code></td></tr>
+            <tr><td><code>.pt-scale-150</code></td><td><code>transform: scale(1.5)</code></td></tr>
+            <tr><td><code>.pt-scale-x-150</code></td><td><code>transform: scaleX(1.5)</code></td></tr>
+            <tr><td><code>.pt-scale-y-150</code></td><td><code>transform: scaleY(1.5)</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-scale-75 pt-transition" style="display:inline-block;width:80px;height:80px;background:var(--pk-primary);border-radius:8px;margin:8px;" onmouseover="this.classList.replace('pt-scale-75','pt-scale-110')" onmouseout="this.classList.replace('pt-scale-110','pt-scale-75')"></div>
+        <div class="pt-scale-100 pt-transition" style="display:inline-block;width:80px;height:80px;background:var(--pk-success);border-radius:8px;margin:8px;" onmouseover="this.classList.replace('pt-scale-100','pt-scale-150')" onmouseout="this.classList.replace('pt-scale-150','pt-scale-100')"></div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-scale-75 pt-transition"
+     onmouseover="this.classList.replace('pt-scale-75','pt-scale-110')"
+     onmouseout="this.classList.replace('pt-scale-110','pt-scale-75')"&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Rotate</h2>
+      <p>Поворот элемента. Используйте <code>pt-rotate-{degrees}</code>.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-rotate-0</code></td><td><code>transform: rotate(0deg)</code></td></tr>
+            <tr><td><code>.pt-rotate-45</code></td><td><code>transform: rotate(45deg)</code></td></tr>
+            <tr><td><code>.pt-rotate-90</code></td><td><code>transform: rotate(90deg)</code></td></tr>
+            <tr><td><code>.pt-rotate-180</code></td><td><code>transform: rotate(180deg)</code></td></tr>
+            <tr><td><code>.pt-rotate-270</code></td><td><code>transform: rotate(270deg)</code></td></tr>
+            <tr><td><code>.pt-rotate-360</code></td><td><code>transform: rotate(360deg)</code></td></tr>
+            <tr><td><code>.pt-rotate-neg-45</code></td><td><code>transform: rotate(-45deg)</code></td></tr>
+            <tr><td><code>.pt-rotate-neg-90</code></td><td><code>transform: rotate(-90deg)</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-rotate-0 pt-transition" style="display:inline-flex;align-items:center;justify-content:center;width:80px;height:80px;background:var(--pk-warning);border-radius:8px;margin:8px;cursor:pointer;color:#000;" onmouseover="this.classList.replace('pt-rotate-0','pt-rotate-45')" onmouseout="this.classList.replace('pt-rotate-45','pt-rotate-0')">45&deg;</div>
+        <div class="pt-rotate-0 pt-transition" style="display:inline-flex;align-items:center;justify-content:center;width:80px;height:80px;background:var(--pk-info);border-radius:8px;margin:8px;cursor:pointer;color:#fff;" onmouseover="this.classList.replace('pt-rotate-0','pt-rotate-180')" onmouseout="this.classList.replace('pt-rotate-180','pt-rotate-0')">180&deg;</div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-rotate-0 pt-transition"
+     onmouseover="this.classList.replace('pt-rotate-0','pt-rotate-45')"
+     onmouseout="this.classList.replace('pt-rotate-45','pt-rotate-0')"&gt;45&amp;deg;&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Translate</h2>
+      <p>Смещение элемента. Используйте <code>pt-translate-x-{size}</code> и <code>pt-translate-y-{size}</code>.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-translate-x-0</code></td><td><code>transform: translateX(0)</code></td></tr>
+            <tr><td><code>.pt-translate-x-1</code></td><td><code>transform: translateX(4px)</code></td></tr>
+            <tr><td><code>.pt-translate-x-2</code></td><td><code>transform: translateX(8px)</code></td></tr>
+            <tr><td><code>.pt-translate-x-4</code></td><td><code>transform: translateX(16px)</code></td></tr>
+            <tr><td><code>.pt-translate-x-8</code></td><td><code>transform: translateX(32px)</code></td></tr>
+            <tr><td><code>.pt-translate-x-16</code></td><td><code>transform: translateX(64px)</code></td></tr>
+            <tr><td><code>.pt-translate-y-1</code></td><td><code>transform: translateY(4px)</code></td></tr>
+            <tr><td><code>.pt-translate-y-2</code></td><td><code>transform: translateY(8px)</code></td></tr>
+            <tr><td><code>.pt-translate-y-4</code></td><td><code>transform: translateY(16px)</code></td></tr>
+            <tr><td><code>.pt-translate-y-8</code></td><td><code>transform: translateY(32px)</code></td></tr>
+            <tr><td><code>.pt-translate-y-neg-4</code></td><td><code>transform: translateY(-16px)</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-translate-y-0 pt-transition" style="display:inline-block;padding:16px 32px;background:var(--pk-success);color:#fff;border-radius:8px;cursor:pointer;" onmouseover="this.classList.replace('pt-translate-y-0','pt-translate-y-neg-4')" onmouseout="this.classList.replace('pt-translate-y-neg-4','pt-translate-y-0')">
+          Наведи — поднимется
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-translate-y-0 pt-transition"
+     onmouseover="this.classList.replace('pt-translate-y-0','pt-translate-y-neg-4')"
+     onmouseout="this.classList.replace('pt-translate-y-neg-4','pt-translate-y-0')"&gt;
+  Наведи — поднимется
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Skew</h2>
+      <p>Наклон элемента. Используйте <code>pt-skew-x-{degrees}</code> и <code>pt-skew-y-{degrees}</code>.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-skew-x-0</code></td><td><code>transform: skewX(0deg)</code></td></tr>
+            <tr><td><code>.pt-skew-x-6</code></td><td><code>transform: skewX(6deg)</code></td></tr>
+            <tr><td><code>.pt-skew-x-12</code></td><td><code>transform: skewX(12deg)</code></td></tr>
+            <tr><td><code>.pt-skew-x-neg-6</code></td><td><code>transform: skewX(-6deg)</code></td></tr>
+            <tr><td><code>.pt-skew-y-6</code></td><td><code>transform: skewY(6deg)</code></td></tr>
+            <tr><td><code>.pt-skew-y-12</code></td><td><code>transform: skewY(12deg)</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-skew-x-0 pt-transition" style="display:inline-block;padding:16px 32px;background:var(--pk-primary);color:#fff;border-radius:8px;cursor:pointer;" onmouseover="this.classList.replace('pt-skew-x-0','pt-skew-x-12')" onmouseout="this.classList.replace('pt-skew-x-12','pt-skew-x-0')">SkewX 12&deg;</div>
+        <div class="pt-skew-x-0 pt-transition" style="display:inline-block;padding:16px 32px;margin-left:16px;background:var(--pk-error);color:#fff;border-radius:8px;cursor:pointer;" onmouseover="this.classList.replace('pt-skew-x-0','pt-skew-x-neg-6')" onmouseout="this.classList.replace('pt-skew-x-neg-6','pt-skew-x-0')">SkewX -6&deg;</div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-skew-x-0 pt-transition"
+     onmouseover="this.classList.replace('pt-skew-x-0','pt-skew-x-12')"
+     onmouseout="this.classList.replace('pt-skew-x-12','pt-skew-x-0')"&gt;
+  SkewX 12&amp;deg;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Transform-origin</h2>
+      <p>Задаёт точку, относительно которой применяется трансформация. Используйте <code>pt-origin-{position}</code>.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-origin-center</code></td><td><code>transform-origin: center</code></td></tr>
+            <tr><td><code>.pt-origin-top</code></td><td><code>transform-origin: top</code></td></tr>
+            <tr><td><code>.pt-origin-top-right</code></td><td><code>transform-origin: top right</code></td></tr>
+            <tr><td><code>.pt-origin-right</code></td><td><code>transform-origin: right</code></td></tr>
+            <tr><td><code>.pt-origin-bottom-right</code></td><td><code>transform-origin: bottom right</code></td></tr>
+            <tr><td><code>.pt-origin-bottom</code></td><td><code>transform-origin: bottom</code></td></tr>
+            <tr><td><code>.pt-origin-bottom-left</code></td><td><code>transform-origin: bottom left</code></td></tr>
+            <tr><td><code>.pt-origin-left</code></td><td><code>transform-origin: left</code></td></tr>
+            <tr><td><code>.pt-origin-top-left</code></td><td><code>transform-origin: top left</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-origin-top-left pt-rotate-0 pt-transition" style="display:inline-block;width:80px;height:80px;background:var(--pk-primary);border-radius:8px;margin:16px;cursor:pointer;" onmouseover="this.classList.replace('pt-rotate-0','pt-rotate-45')" onmouseout="this.classList.replace('pt-rotate-45','pt-rotate-0')"></div>
+        <div class="pt-origin-bottom-right pt-rotate-0 pt-transition" style="display:inline-block;width:80px;height:80px;background:var(--pk-success);border-radius:8px;margin:16px;cursor:pointer;" onmouseover="this.classList.replace('pt-rotate-0','pt-rotate-45')" onmouseout="this.classList.replace('pt-rotate-45','pt-rotate-0')"></div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-origin-top-left pt-rotate-0 pt-transition"
+     onmouseover="this.classList.replace('pt-rotate-0','pt-rotate-45')"
+     onmouseout="this.classList.replace('pt-rotate-45','pt-rotate-0')"&gt;&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Комбинирование трансформаций</h2>
+      <p>Несколько трансформаций можно комбинировать в одном классе через пробел. Photon поддерживает множественные трансформации через составные утилиты.</p>
+
+      <div class="code-block">
+        <pre><code>.pt-scale-125-rotate-45 {
+  transform: scale(1.25) rotate(45deg);
+}
+
+.pt-translate-x-4-rotate-90 {
+  transform: translateX(16px) rotate(90deg);
+}</code></pre>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-transition" style="display:inline-block;width:80px;height:80px;background:linear-gradient(135deg,var(--pk-primary),var(--pk-info));border-radius:8px;cursor:pointer;" onmouseover="this.style.transform='scale(1.25) rotate(45deg)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'">
+          Scale + Rotate
+        </div>
+        <div class="pt-transition" style="display:inline-block;width:80px;height:80px;background:linear-gradient(135deg,var(--pk-success),var(--pk-warning));border-radius:8px;margin-left:32px;cursor:pointer;" onmouseover="this.style.transform='translateX(16px) scale(1.1)'" onmouseout="this.style.transform='translateX(0) scale(1)'">
+          Translate + Scale
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-transition"
+     onmouseover="this.style.transform='scale(1.25) rotate(45deg)'"
+     onmouseout="this.style.transform='scale(1) rotate(0deg)'"&gt;
+  Scale + Rotate
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>3D трансформации</h2>
+      <p>Для 3D-эффектов используйте <code>perspective</code> на родителе и <code>rotateX</code>, <code>rotateY</code>, <code>translateZ</code> на потомках.</p>
+
+      <h3>Perspective</h3>
+      <p>Задаёт глубину сцены. Добавьте <code>style="perspective: 600px"</code> к контейнеру.</p>
+
+      <div class="code-block">
+        <pre><code>.scene {
+  perspective: 600px;
+}
+
+.card-3d {
+  transition: transform 0.4s ease;
+}
+
+.card-3d:hover {
+  transform: rotateY(45deg);
+}</code></pre>
+      </div>
+
+      <h3>3D Flip Card</h3>
+
+      <div class="demo-box">
+        <div style="perspective:600px;width:200px;height:260px;margin:0 auto;">
+          <div class="pt-transition pt-duration-500" style="width:100%;height:100%;position:relative;transform-style:preserve-3d;cursor:pointer;" onmouseover="this.style.transform='rotateY(180deg)'" onmouseout="this.style.transform='rotateY(0deg)'">
+            <div style="position:absolute;inset:0;background:var(--pk-primary);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;backface-visibility:hidden;">Лицевая сторона</div>
+            <div style="position:absolute;inset:0;background:var(--pk-success);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;backface-visibility:hidden;transform:rotateY(180deg);">Обратная сторона</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div style="perspective:600px;width:200px;height:260px;"&gt;
+  &lt;div class="pt-transition pt-duration-500"
+       style="transform-style:preserve-3d;width:100%;height:100%;"
+       onmouseover="this.style.transform='rotateY(180deg)'"
+       onmouseout="this.style.transform='rotateY(0deg)'"&gt;
+    &lt;div style="backface-visibility:hidden;position:absolute;inset:0;background:var(--pk-primary);border-radius:12px;display:flex;align-items:center;justify-content:center;"&gt;
+      Лицевая сторона
+    &lt;/div&gt;
+    &lt;div style="backface-visibility:hidden;position:absolute;inset:0;background:var(--pk-success);border-radius:12px;display:flex;align-items:center;justify-content:center;transform:rotateY(180deg);"&gt;
+      Обратная сторона
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Примеры</h2>
+
+      <h3>Пример 1: Интерактивные hover-карточки</h3>
+
+      <div class="demo-box">
+        <div class="pt-transition pt-duration-300" style="display:inline-block;width:160px;padding:24px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:12px;text-align:center;cursor:pointer;margin:8px;" onmouseover="this.style.transform='scale(1.05) translateY(-6px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1) translateY(0)';this.style.boxShadow=''">
+          <div style="width:48px;height:48px;background:var(--pk-primary);border-radius:50%;margin:0 auto 12px;"></div>
+          <div style="font-weight:600;">Дизайн</div>
+        </div>
+        <div class="pt-transition pt-duration-300" style="display:inline-block;width:160px;padding:24px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:12px;text-align:center;cursor:pointer;margin:8px;" onmouseover="this.style.transform='scale(1.05) translateY(-6px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1) translateY(0)';this.style.boxShadow=''">
+          <div style="width:48px;height:48px;background:var(--pk-success);border-radius:50%;margin:0 auto 12px;"></div>
+          <div style="font-weight:600;">Разработка</div>
+        </div>
+        <div class="pt-transition pt-duration-300" style="display:inline-block;width:160px;padding:24px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:12px;text-align:center;cursor:pointer;margin:8px;" onmouseover="this.style.transform='scale(1.05) translateY(-6px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,0.3)'" onmouseout="this.style.transform='scale(1) translateY(0)';this.style.boxShadow=''">
+          <div style="width:48px;height:48px;background:var(--pk-warning);border-radius:50%;margin:0 auto 12px;"></div>
+          <div style="font-weight:600;">Маркетинг</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-transition pt-duration-300"
+     onmouseover="this.style.transform='scale(1.05) translateY(-6px)';this.style.boxShadow='0 12px 32px rgba(0,0,0,0.3)'"
+     onmouseout="this.style.transform='scale(1) translateY(0)';this.style.boxShadow=''"&gt;
+  &lt;div style="width:48px;height:48px;background:var(--pk-primary);border-radius:50%;margin:0 auto 12px;"&gt;&lt;/div&gt;
+  &lt;div style="font-weight:600;"&gt;Дизайн&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 2: Кнопка с 3D-эффектом нажатия</h3>
+
+      <div class="demo-box">
+        <button class="btn btn--primary pt-transition" style="font-size:1.1rem;padding:14px 36px;" onmousedown="this.style.transform='scale(0.95)'" onmouseup="this.style.transform='scale(1)'" onmouseleave="this.style.transform='scale(1)'">Нажми меня</button>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;button class="btn btn--primary pt-transition"
+     onmousedown="this.style.transform='scale(0.95)'"
+     onmouseup="this.style.transform='scale(1)'"
+     onmouseleave="this.style.transform='scale(1)'"&gt;
+  Нажми меня
+&lt;/button&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

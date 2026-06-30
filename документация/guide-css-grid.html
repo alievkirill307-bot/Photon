@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Полное руководство по CSS Grid в Photon Framework: pt-grid, pt-grid-cols, pt-gap, pt-col-span, выравнивание, адаптивная сетка." />
+  <meta name="keywords" content="photon, css grid, grid layout, pt-grid, grid-template-columns, grid-template-rows, gap, span, responsive grid" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>CSS Grid [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link active">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>CSS Grid [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>CSS Grid — мощный инструмент для создания двумерных макетов. Photon предоставляет полный набор утилитарных классов для работы с Grid, включая <code>pt-grid</code>, <code>pt-grid-cols-*</code>, <code>pt-grid-rows-*</code>, <code>pt-gap-*</code> и <code>pt-col-span-*</code>. Эти классы позволяют строить сложные адаптивные сетки без написания CSS.</p>
+
+      <h2>Основы Grid</h2>
+      <p>Чтобы создать Grid-контейнер, добавьте класс <code>pt-grid</code> к любому элементу. Он устанавливает <code>display: grid</code>. Для управления количеством колонок используйте <code>pt-grid-cols-{n}</code>, где n — число от 1 до 12. Класс <code>pt-grid</code> автоматически включает <code>grid-template-columns: repeat(1, 1fr)</code> как базовое значение.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-3"&gt;
+  &lt;div&gt;Колонка 1&lt;/div&gt;
+  &lt;div&gt;Колонка 2&lt;/div&gt;
+  &lt;div&gt;Колонка 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-3" style="gap:8px;">
+          <div style="padding:16px;background:var(--pk-primary);border-radius:8px;text-align:center;">1</div>
+          <div style="padding:16px;background:var(--pk-success);border-radius:8px;text-align:center;">2</div>
+          <div style="padding:16px;background:var(--pk-warning);border-radius:8px;text-align:center;color:#000;">3</div>
+        </div>
+      </div>
+
+      <h2>Колонки (pt-grid-cols-*)</h2>
+      <p>Класс <code>pt-grid-cols-{n}</code> устанавливает <code>grid-template-columns: repeat(n, 1fr)</code>. Поддерживаются значения от 1 до 12, а также класс <code>pt-grid-cols-none</code> для сброса.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-grid-cols-1</code></td><td><code>grid-template-columns: repeat(1, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-cols-2</code></td><td><code>grid-template-columns: repeat(2, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-cols-3</code></td><td><code>grid-template-columns: repeat(3, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-cols-4</code></td><td><code>grid-template-columns: repeat(4, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-cols-5</code></td><td><code>grid-template-columns: repeat(5, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-cols-6</code></td><td><code>grid-template-columns: repeat(6, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-cols-7</code></td><td><code>grid-template-columns: repeat(7, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-cols-8</code></td><td><code>grid-template-columns: repeat(8, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-cols-9</code></td><td><code>grid-template-columns: repeat(9, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-cols-10</code></td><td><code>grid-template-columns: repeat(10, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-cols-11</code></td><td><code>grid-template-columns: repeat(11, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-cols-12</code></td><td><code>grid-template-columns: repeat(12, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-cols-none</code></td><td><code>grid-template-columns: none</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-6" style="gap:4px;">
+          <div style="padding:8px;background:var(--pk-primary);border-radius:4px;text-align:center;font-size:0.8rem;">1</div>
+          <div style="padding:8px;background:var(--pk-success);border-radius:4px;text-align:center;font-size:0.8rem;">2</div>
+          <div style="padding:8px;background:var(--pk-warning);border-radius:4px;text-align:center;font-size:0.8rem;color:#000;">3</div>
+          <div style="padding:8px;background:var(--pk-info);border-radius:4px;text-align:center;font-size:0.8rem;">4</div>
+          <div style="padding:8px;background:var(--pk-error);border-radius:4px;text-align:center;font-size:0.8rem;">5</div>
+          <div style="padding:8px;background:var(--pk-primary);border-radius:4px;text-align:center;font-size:0.8rem;">6</div>
+        </div>
+      </div>
+
+      <h2>Строки (pt-grid-rows-*)</h2>
+      <p>Класс <code>pt-grid-rows-{n}</code> устанавливает <code>grid-template-rows: repeat(n, 1fr)</code>. Поддерживаются значения от 1 до 6.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-grid-rows-1</code></td><td><code>grid-template-rows: repeat(1, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-rows-2</code></td><td><code>grid-template-rows: repeat(2, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-rows-3</code></td><td><code>grid-template-rows: repeat(3, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-rows-4</code></td><td><code>grid-template-rows: repeat(4, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-rows-5</code></td><td><code>grid-template-rows: repeat(5, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-rows-6</code></td><td><code>grid-template-rows: repeat(6, 1fr)</code></td></tr>
+            <tr><td><code>.pt-grid-rows-none</code></td><td><code>grid-template-rows: none</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Промежутки (pt-gap-*)</h2>
+      <p>Классы для управления расстоянием между Grid-ячейками. Используйте <code>pt-gap-{size}</code> для одинакового отступа по обеим осям, <code>pt-gap-x-{size}</code> для колонок и <code>pt-gap-y-{size}</code> для строк. Значения size соответствуют шкале отступов Photon: 0 (0px), 0.5 (2px), 1 (4px), 2 (8px), 3 (12px), 4 (16px), 5 (20px), 6 (24px), 8 (32px), 10 (40px), 12 (48px), 16 (64px).</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-gap-0</code></td><td><code>gap: 0</code></td></tr>
+            <tr><td><code>.pt-gap-0.5</code></td><td><code>gap: 2px</code></td></tr>
+            <tr><td><code>.pt-gap-1</code></td><td><code>gap: 4px</code></td></tr>
+            <tr><td><code>.pt-gap-2</code></td><td><code>gap: 8px</code></td></tr>
+            <tr><td><code>.pt-gap-4</code></td><td><code>gap: 16px</code></td></tr>
+            <tr><td><code>.pt-gap-6</code></td><td><code>gap: 24px</code></td></tr>
+            <tr><td><code>.pt-gap-8</code></td><td><code>gap: 32px</code></td></tr>
+            <tr><td><code>.pt-gap-x-4</code></td><td><code>column-gap: 16px</code></td></tr>
+            <tr><td><code>.pt-gap-y-4</code></td><td><code>row-gap: 16px</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Span колонок (pt-col-span-*)</h2>
+      <p>Класс <code>pt-col-span-{n}</code> заставляет элемент занимать указанное количество колонок. Используйте <code>pt-col-span-full</code> для растягивания на всю ширину.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-col-span-1</code></td><td><code>grid-column: span 1 / span 1</code></td></tr>
+            <tr><td><code>.pt-col-span-2</code></td><td><code>grid-column: span 2 / span 2</code></td></tr>
+            <tr><td><code>.pt-col-span-3</code></td><td><code>grid-column: span 3 / span 3</code></td></tr>
+            <tr><td><code>.pt-col-span-4</code></td><td><code>grid-column: span 4 / span 4</code></td></tr>
+            <tr><td><code>.pt-col-span-5</code></td><td><code>grid-column: span 5 / span 5</code></td></tr>
+            <tr><td><code>.pt-col-span-6</code></td><td><code>grid-column: span 6 / span 6</code></td></tr>
+            <tr><td><code>.pt-col-span-7</code></td><td><code>grid-column: span 7 / span 7</code></td></tr>
+            <tr><td><code>.pt-col-span-8</code></td><td><code>grid-column: span 8 / span 8</code></td></tr>
+            <tr><td><code>.pt-col-span-9</code></td><td><code>grid-column: span 9 / span 9</code></td></tr>
+            <tr><td><code>.pt-col-span-10</code></td><td><code>grid-column: span 10 / span 10</code></td></tr>
+            <tr><td><code>.pt-col-span-11</code></td><td><code>grid-column: span 11 / span 11</code></td></tr>
+            <tr><td><code>.pt-col-span-12</code></td><td><code>grid-column: span 12 / span 12</code></td></tr>
+            <tr><td><code>.pt-col-span-full</code></td><td><code>grid-column: 1 / -1</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-3" style="gap:8px;">
+          <div style="padding:16px;background:var(--pk-primary);border-radius:8px;text-align:center;">1</div>
+          <div class="pt-col-span-2" style="padding:16px;background:var(--pk-success);border-radius:8px;text-align:center;">col-span-2</div>
+          <div class="pt-col-span-full" style="padding:16px;background:var(--pk-warning);border-radius:8px;text-align:center;color:#000;">col-span-full</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-3" style="gap:8px;"&gt;
+  &lt;div&gt;1&lt;/div&gt;
+  &lt;div class="pt-col-span-2"&gt;col-span-2&lt;/div&gt;
+  &lt;div class="pt-col-span-full"&gt;col-span-full&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Span строк (pt-row-span-*)</h2>
+      <p>Класс <code>pt-row-span-{n}</code> заставляет элемент занимать указанное количество строк. Значения от 1 до 6, а также <code>pt-row-span-full</code>.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-row-span-1</code></td><td><code>grid-row: span 1 / span 1</code></td></tr>
+            <tr><td><code>.pt-row-span-2</code></td><td><code>grid-row: span 2 / span 2</code></td></tr>
+            <tr><td><code>.pt-row-span-3</code></td><td><code>grid-row: span 3 / span 3</code></td></tr>
+            <tr><td><code>.pt-row-span-4</code></td><td><code>grid-row: span 4 / span 4</code></td></tr>
+            <tr><td><code>.pt-row-span-5</code></td><td><code>grid-row: span 5 / span 5</code></td></tr>
+            <tr><td><code>.pt-row-span-6</code></td><td><code>grid-row: span 6 / span 6</code></td></tr>
+            <tr><td><code>.pt-row-span-full</code></td><td><code>grid-row: 1 / -1</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Выравнивание в Grid</h2>
+      <p>Photon предоставляет классы для выравнивания содержимого внутри Grid-контейнера.</p>
+
+      <h3>justify-items</h3>
+      <p>Выравнивание элементов по горизонтальной оси внутри ячеек:</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-justify-items-start</code></td><td><code>justify-items: start</code></td></tr>
+            <tr><td><code>.pt-justify-items-end</code></td><td><code>justify-items: end</code></td></tr>
+            <tr><td><code>.pt-justify-items-center</code></td><td><code>justify-items: center</code></td></tr>
+            <tr><td><code>.pt-justify-items-stretch</code></td><td><code>justify-items: stretch</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>align-items</h3>
+      <p>Выравнивание элементов по вертикальной оси внутри ячеек:</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-items-start</code></td><td><code>align-items: start</code></td></tr>
+            <tr><td><code>.pt-items-end</code></td><td><code>align-items: end</code></td></tr>
+            <tr><td><code>.pt-items-center</code></td><td><code>align-items: center</code></td></tr>
+            <tr><td><code>.pt-items-baseline</code></td><td><code>align-items: baseline</code></td></tr>
+            <tr><td><code>.pt-items-stretch</code></td><td><code>align-items: stretch</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>justify-content</h3>
+      <p>Выравнивание всей сетки по горизонтальной оси:</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-justify-start</code></td><td><code>justify-content: start</code></td></tr>
+            <tr><td><code>.pt-justify-end</code></td><td><code>justify-content: end</code></td></tr>
+            <tr><td><code>.pt-justify-center</code></td><td><code>justify-content: center</code></td></tr>
+            <tr><td><code>.pt-justify-between</code></td><td><code>justify-content: space-between</code></td></tr>
+            <tr><td><code>.pt-justify-around</code></td><td><code>justify-content: space-around</code></td></tr>
+            <tr><td><code>.pt-justify-evenly</code></td><td><code>justify-content: space-evenly</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>align-content</h3>
+      <p>Выравнивание всей сетки по вертикальной оси:</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-content-start</code></td><td><code>align-content: start</code></td></tr>
+            <tr><td><code>.pt-content-end</code></td><td><code>align-content: end</code></td></tr>
+            <tr><td><code>.pt-content-center</code></td><td><code>align-content: center</code></td></tr>
+            <tr><td><code>.pt-content-between</code></td><td><code>align-content: space-between</code></td></tr>
+            <tr><td><code>.pt-content-around</code></td><td><code>align-content: space-around</code></td></tr>
+            <tr><td><code>.pt-content-stretch</code></td><td><code>align-content: stretch</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Адаптивная сетка</h2>
+      <p>Используйте брейкпоинты Photon для создания адаптивных сеток. Например, <code>pt-grid-cols-1 pt-md:grid-cols-2 pt-lg:grid-cols-3</code> создаёт одну колонку на мобильных, две на планшетах и три на десктопах.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-2 pt-lg:grid-cols-3 pt-gap-4"&gt;
+  &lt;div&gt;Элемент 1&lt;/div&gt;
+  &lt;div&gt;Элемент 2&lt;/div&gt;
+  &lt;div&gt;Элемент 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-2 pt-lg:grid-cols-3 pt-gap-3">
+          <div style="padding:16px;background:var(--pk-primary);border-radius:8px;text-align:center;">xs: 1 колонка</div>
+          <div style="padding:16px;background:var(--pk-success);border-radius:8px;text-align:center;">md: 2 колонки</div>
+          <div style="padding:16px;background:var(--pk-warning);border-radius:8px;text-align:center;color:#000;">lg: 3 колонки</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Адаптивные брейкпоинты --&gt;
+.pt-grid-cols-1        { grid-template-columns: repeat(1, 1fr); }
+.pt-md:grid-cols-2     { grid-template-columns: repeat(2, 1fr); }
+.pt-lg:grid-cols-3     { grid-template-columns: repeat(3, 1fr); }
+.pt-xl:grid-cols-4     { grid-template-columns: repeat(4, 1fr); }
+
+&lt;!-- Доступные брейкпоинты: sm (640px), md (768px), lg (1024px), xl (1280px), 2xl (1536px) --&gt;</code></pre>
+      </div>
+
+      <h2>Примеры</h2>
+
+      <h3>Пример 1: Галерея изображений</h3>
+      <p>Адаптивная галерея с равномерным распределением карточек:</p>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-2 pt-md:grid-cols-3 pt-lg:grid-cols-4 pt-gap-3">
+          <div style="height:120px;background:linear-gradient(135deg,var(--pk-primary),var(--pk-info));border-radius:8px;"></div>
+          <div style="height:120px;background:linear-gradient(135deg,var(--pk-success),var(--pk-primary));border-radius:8px;"></div>
+          <div style="height:120px;background:linear-gradient(135deg,var(--pk-warning),var(--pk-error));border-radius:8px;"></div>
+          <div style="height:120px;background:linear-gradient(135deg,var(--pk-info),var(--pk-success));border-radius:8px;"></div>
+          <div style="height:120px;background:linear-gradient(135deg,var(--pk-error),var(--pk-warning));border-radius:8px;"></div>
+          <div style="height:120px;background:linear-gradient(135deg,var(--pk-primary),var(--pk-success));border-radius:8px;"></div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-2 pt-md:grid-cols-3 pt-lg:grid-cols-4 pt-gap-3"&gt;
+  &lt;div style="height:120px;background:...;border-radius:8px;"&gt;&lt;/div&gt;
+  &lt;!-- Повторите для всех элементов галереи --&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 2: Макет Dashboard</h3>
+      <p>Панель управления с основным контентом и сайдбаром:</p>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-4 pt-gap-4">
+          <div class="pt-col-span-1 pt-md:col-span-3" style="padding:16px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">
+            <div style="font-weight:600;margin-bottom:8px;">Основной контент</div>
+            <div style="height:100px;background:var(--pk-bg);border-radius:4px;"></div>
+          </div>
+          <div class="pt-col-span-1" style="padding:16px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">
+            <div style="font-weight:600;margin-bottom:8px;">Сайдбар</div>
+            <div style="padding:8px;background:var(--pk-bg);border-radius:4px;margin-bottom:4px;">Меню 1</div>
+            <div style="padding:8px;background:var(--pk-bg);border-radius:4px;margin-bottom:4px;">Меню 2</div>
+            <div style="padding:8px;background:var(--pk-bg);border-radius:4px;">Меню 3</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-4 pt-gap-4"&gt;
+  &lt;div class="pt-col-span-1 pt-md:col-span-3"&gt;
+    &lt;!-- Основной контент --&gt;
+  &lt;/div&gt;
+  &lt;div class="pt-col-span-1"&gt;
+    &lt;!-- Сайдбар --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 3: Сетка карточек с featured элементом</h3>
+      <p>Одна карточка занимает 2 колонки и привлекает внимание:</p>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-3 pt-gap-3">
+          <div class="pt-col-span-1 pt-md:col-span-2" style="padding:24px;background:linear-gradient(135deg,var(--pk-primary),var(--pk-info));border-radius:12px;">
+            <div style="font-weight:700;font-size:1.2rem;">Featured статья</div>
+            <div style="margin-top:8px;">Этот элемент занимает 2 колонки.</div>
+          </div>
+          <div style="padding:16px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">
+            <div style="font-weight:600;">Боковая заметка</div>
+          </div>
+          <div style="padding:16px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">Карточка 1</div>
+          <div style="padding:16px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">Карточка 2</div>
+          <div style="padding:16px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">Карточка 3</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-3 pt-gap-3"&gt;
+  &lt;div class="pt-col-span-1 pt-md:col-span-2" style="..."&gt;
+    Featured статья (2 колонки)
+  &lt;/div&gt;
+  &lt;div&gt;Боковая заметка&lt;/div&gt;
+  &lt;div&gt;Карточка 1&lt;/div&gt;
+  &lt;div&gt;Карточка 2&lt;/div&gt;
+  &lt;div&gt;Карточка 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 4: Holy Grail Layout</h3>
+      <p>Классический "Святой Грааль" — шапка, футер, три колонки между ними:</p>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-3 pt-gap-2" style="background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:12px;padding:8px;">
+          <div class="pt-col-span-full" style="padding:12px;background:var(--pk-primary);border-radius:8px;text-align:center;font-weight:600;">Шапка (header)</div>
+          <div style="padding:12px;background:var(--pk-info);border-radius:8px;text-align:center;">Левая панель (nav)</div>
+          <div style="padding:40px 12px;background:var(--pk-bg);border:1px solid var(--pk-border);border-radius:8px;text-align:center;">Основной контент (main)</div>
+          <div style="padding:12px;background:var(--pk-success);border-radius:8px;text-align:center;">Правая панель (aside)</div>
+          <div class="pt-col-span-full" style="padding:12px;background:var(--pk-warning);border-radius:8px;text-align:center;font-weight:600;color:#000;">Футер (footer)</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-3 pt-gap-2"&gt;
+  &lt;div class="pt-col-span-full"&gt;Шапка&lt;/div&gt;
+  &lt;div&gt;Левая панель&lt;/div&gt;
+  &lt;div&gt;Основной контент&lt;/div&gt;
+  &lt;div&gt;Правая панель&lt;/div&gt;
+  &lt;div class="pt-col-span-full"&gt;Футер&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 5: Masonry-подобная сетка</h3>
+      <p>Grid с разной высотой элементов для визуального интереса:</p>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-3 pt-gap-3">
+          <div style="padding:16px;background:var(--pk-primary);border-radius:8px;height:80px;display:flex;align-items:center;justify-content:center;">Элемент 1</div>
+          <div class="pt-row-span-2" style="padding:16px;background:var(--pk-success);border-radius:8px;height:180px;display:flex;align-items:center;justify-content:center;">row-span-2</div>
+          <div style="padding:16px;background:var(--pk-warning);border-radius:8px;height:80px;display:flex;align-items:center;justify-content:center;color:#000;">Элемент 3</div>
+          <div style="padding:16px;background:var(--pk-info);border-radius:8px;height:80px;display:flex;align-items:center;justify-content:center;">Элемент 4</div>
+          <div style="padding:16px;background:var(--pk-error);border-radius:8px;height:80px;display:flex;align-items:center;justify-content:center;">Элемент 5</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-3 pt-gap-3"&gt;
+  &lt;div&gt;Элемент 1&lt;/div&gt;
+  &lt;div class="pt-row-span-2"&gt;row-span-2 (высокий)&lt;/div&gt;
+  &lt;div&gt;Элемент 3&lt;/div&gt;
+  &lt;div&gt;Элемент 4&lt;/div&gt;
+  &lt;div&gt;Элемент 5&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 6: Адаптивная форма</h3>
+      <p>Форма с адаптивным расположением полей:</p>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-2 pt-gap-4">
+          <div>
+            <label style="display:block;margin-bottom:4px;font-size:0.9rem;">Имя</label>
+            <input type="text" placeholder="Ваше имя" style="width:100%;padding:10px 12px;background:var(--pk-bg);border:1px solid var(--pk-border);border-radius:6px;color:var(--pk-text);" />
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:4px;font-size:0.9rem;">Email</label>
+            <input type="email" placeholder="email@example.com" style="width:100%;padding:10px 12px;background:var(--pk-bg);border:1px solid var(--pk-border);border-radius:6px;color:var(--pk-text);" />
+          </div>
+          <div class="pt-col-span-full">
+            <label style="display:block;margin-bottom:4px;font-size:0.9rem;">Сообщение</label>
+            <textarea placeholder="Ваше сообщение..." style="width:100%;padding:10px 12px;background:var(--pk-bg);border:1px solid var(--pk-border);border-radius:6px;color:var(--pk-text);min-height:80px;"></textarea>
+          </div>
+          <div class="pt-col-span-full">
+            <button class="btn btn--primary">Отправить</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-2 pt-gap-4"&gt;
+  &lt;div&gt;
+    &lt;label&gt;Имя&lt;/label&gt;
+    &lt;input type="text" placeholder="Ваше имя" /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label&gt;Email&lt;/label&gt;
+    &lt;input type="email" placeholder="email@example.com" /&gt;
+  &lt;/div&gt;
+  &lt;div class="pt-col-span-full"&gt;
+    &lt;label&gt;Сообщение&lt;/label&gt;
+    &lt;textarea&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div class="pt-col-span-full"&gt;
+    &lt;button class="btn btn--primary"&gt;Отправить&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

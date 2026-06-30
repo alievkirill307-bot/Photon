@@ -1,0 +1,495 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Типографические утилиты Photon-tw — размеры, насыщенность, цвета, выравнивание, межстрочный интервал, оформление текста через pt-* классы." />
+  <meta name="keywords" content="photon, css framework, photon-tw, typography, типографика, текст, pt-text, pt-font, утилиты" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Типографика [pt] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link active">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+      <h1>Типографика [pt]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Утилитарные классы <code>pt-*</code> для типографики — размеры, насыщенность (font-weight), цвета, межстрочный интервал (line-height), межбуквенное расстояние (letter-spacing), выравнивание и оформление текста. Все классы работают независимо и комбинируются друг с другом без ограничений.</p>
+
+      <h2>Размеры текста</h2>
+      <p>Управляйте размером шрифта через классы <code>pt-text-{size}</code>. Доступны 8 размеров от xs до 4xl:</p>
+      <div class="pt-demo pt-demo--col">
+        <span class="pt-text-xs pt-mb-2">pt-text-xs (0.75rem) — экстра-маленький текст для подписей и меток</span>
+        <span class="pt-text-sm pt-mb-2">pt-text-sm (0.875rem) — маленький текст для вспомогательной информации</span>
+        <span class="pt-text-base pt-mb-2">pt-text-base (1rem) — базовый размер основного текста</span>
+        <span class="pt-text-lg pt-mb-2">pt-text-lg (1.125rem) — крупный текст для акцентов</span>
+        <span class="pt-text-xl pt-mb-2">pt-text-xl (1.25rem) — очень крупный текст для подзаголовков</span>
+        <span class="pt-text-2xl pt-mb-2">pt-text-2xl (1.5rem) — заголовочный размер h3/h4</span>
+        <span class="pt-text-3xl pt-mb-2">pt-text-3xl (1.875rem) — заголовочный размер h2</span>
+        <span class="pt-text-4xl pt-mb-2">pt-text-4xl (2.25rem) — крупный заголовок h1</span>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;span class="pt-text-xs"&gt;pt-text-xs (0.75rem)&lt;/span&gt;
+&lt;span class="pt-text-sm"&gt;pt-text-sm (0.875rem)&lt;/span&gt;
+&lt;span class="pt-text-base"&gt;pt-text-base (1rem)&lt;/span&gt;
+&lt;span class="pt-text-lg"&gt;pt-text-lg (1.125rem)&lt;/span&gt;
+&lt;span class="pt-text-xl"&gt;pt-text-xl (1.25rem)&lt;/span&gt;
+&lt;span class="pt-text-2xl"&gt;pt-text-2xl (1.5rem)&lt;/span&gt;
+&lt;span class="pt-text-3xl"&gt;pt-text-3xl (1.875rem)&lt;/span&gt;
+&lt;span class="pt-text-4xl"&gt;pt-text-4xl (2.25rem)&lt;/span&gt;</code></pre>
+      </div>
+
+      <h3>Справочная таблица размеров</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>font-size</th>
+            <th>px (при 16px)</th>
+            <th>Применение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-text-xs</code></td><td>0.75rem</td><td>12px</td><td>Метки, бейджи, подписи</td></tr>
+          <tr><td><code>pt-text-sm</code></td><td>0.875rem</td><td>14px</td><td>Вспомогательный текст</td></tr>
+          <tr><td><code>pt-text-base</code></td><td>1rem</td><td>16px</td><td>Основной текст</td></tr>
+          <tr><td><code>pt-text-lg</code></td><td>1.125rem</td><td>18px</td><td>Акцентный текст</td></tr>
+          <tr><td><code>pt-text-xl</code></td><td>1.25rem</td><td>20px</td><td>Подзаголовки</td></tr>
+          <tr><td><code>pt-text-2xl</code></td><td>1.5rem</td><td>24px</td><td>Заголовки h3/h4</td></tr>
+          <tr><td><code>pt-text-3xl</code></td><td>1.875rem</td><td>30px</td><td>Заголовки h2</td></tr>
+          <tr><td><code>pt-text-4xl</code></td><td>2.25rem</td><td>36px</td><td>Заголовки h1</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Насыщенность (font-weight)</h2>
+      <p>Классы <code>pt-font-{weight}</code> меняют жирность шрифта. Доступны все 9 значений от 100 до 900:</p>
+      <div class="pt-demo pt-demo--col">
+        <span class="pt-font-thin pt-mb-2">pt-font-thin (100) — тонкое начертание, почти невидимое</span>
+        <span class="pt-font-extralight pt-mb-2">pt-font-extralight (200) — экстра-лёгкое начертание</span>
+        <span class="pt-font-light pt-mb-2">pt-font-light (300) — лёгкое начертание</span>
+        <span class="pt-font-normal pt-mb-2">pt-font-normal (400) — нормальное начертание по умолчанию</span>
+        <span class="pt-font-medium pt-mb-2">pt-font-medium (500) — среднее начертание</span>
+        <span class="pt-font-semibold pt-mb-2">pt-font-semibold (600) — полужирное начертание</span>
+        <span class="pt-font-bold pt-mb-2">pt-font-bold (700) — жирное начертание</span>
+        <span class="pt-font-extrabold pt-mb-2">pt-font-extrabold (800) — экстра-жирное начертание</span>
+        <span class="pt-font-black pt-mb-2">pt-font-black (900) — максимально жирное, самая толстая насыщенность</span>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;span class="pt-font-thin"&gt;Тонкий (100)&lt;/span&gt;
+&lt;span class="pt-font-extralight"&gt;Экстра-лёгкий (200)&lt;/span&gt;
+&lt;span class="pt-font-light"&gt;Лёгкий (300)&lt;/span&gt;
+&lt;span class="pt-font-normal"&gt;Нормальный (400)&lt;/span&gt;
+&lt;span class="pt-font-medium"&gt;Средний (500)&lt;/span&gt;
+&lt;span class="pt-font-semibold"&gt;Полужирный (600)&lt;/span&gt;
+&lt;span class="pt-font-bold"&gt;Жирный (700)&lt;/span&gt;
+&lt;span class="pt-font-extrabold"&gt;Экстра-жирный (800)&lt;/span&gt;
+&lt;span class="pt-font-black"&gt;Максимальный (900)&lt;/span&gt;</code></pre>
+      </div>
+
+      <h3>Справочная таблица насыщенности</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>font-weight</th>
+            <th>Числовое значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-font-thin</code></td><td>thin</td><td>100</td></tr>
+          <tr><td><code>pt-font-extralight</code></td><td>extralight</td><td>200</td></tr>
+          <tr><td><code>pt-font-light</code></td><td>light</td><td>300</td></tr>
+          <tr><td><code>pt-font-normal</code></td><td>normal</td><td>400</td></tr>
+          <tr><td><code>pt-font-medium</code></td><td>medium</td><td>500</td></tr>
+          <tr><td><code>pt-font-semibold</code></td><td>semibold</td><td>600</td></tr>
+          <tr><td><code>pt-font-bold</code></td><td>bold</td><td>700</td></tr>
+          <tr><td><code>pt-font-extrabold</code></td><td>extrabold</td><td>800</td></tr>
+          <tr><td><code>pt-font-black</code></td><td>black</td><td>900</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Цвета текста</h2>
+      <p>Окрашивайте текст через классы <code>pt-text-{color}</code>. Доступны семантические цвета, нейтральные оттенки серого и акцентные цвета:</p>
+      <div class="pt-demo pt-demo--col">
+        <span class="pt-text-primary pt-mb-2">pt-text-primary — основной акцентный цвет</span>
+        <span class="pt-text-success pt-mb-2">pt-text-success — цвет успеха (зелёный)</span>
+        <span class="pt-text-warning pt-mb-2">pt-text-warning — цвет предупреждения (жёлтый)</span>
+        <span class="pt-text-error pt-mb-2">pt-text-error — цвет ошибки (красный)</span>
+        <span class="pt-text-info pt-mb-2">pt-text-info — информационный цвет (голубой)</span>
+        <span class="pt-text-white pt-mb-2">pt-text-white — белый текст</span>
+        <span class="pt-text-black pt-mb-2">pt-text-black — чёрный текст</span>
+        <span class="pt-text-gray-500 pt-mb-2">pt-text-gray-500 — серый (500)</span>
+        <span class="pt-text-gray-700 pt-mb-2">pt-text-gray-700 — серый (700)</span>
+        <span class="pt-text-gray-900 pt-mb-2">pt-text-gray-900 — серый (900, почти чёрный)</span>
+        <span class="pt-text-blue-500 pt-mb-2">pt-text-blue-500 — синий (500)</span>
+        <span class="pt-text-red-500 pt-mb-2">pt-text-red-500 — красный (500)</span>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;span class="pt-text-primary"&gt;Основной&lt;/span&gt;
+&lt;span class="pt-text-success"&gt;Успех&lt;/span&gt;
+&lt;span class="pt-text-warning"&gt;Предупреждение&lt;/span&gt;
+&lt;span class="pt-text-error"&gt;Ошибка&lt;/span&gt;
+&lt;span class="pt-text-info"&gt;Инфо&lt;/span&gt;
+&lt;span class="pt-text-white"&gt;Белый&lt;/span&gt;
+&lt;span class="pt-text-black"&gt;Чёрный&lt;/span&gt;
+&lt;span class="pt-text-gray-500"&gt;Серый 500&lt;/span&gt;
+&lt;span class="pt-text-gray-700"&gt;Серый 700&lt;/span&gt;
+&lt;span class="pt-text-gray-900"&gt;Серый 900&lt;/span&gt;
+&lt;span class="pt-text-blue-500"&gt;Синий 500&lt;/span&gt;
+&lt;span class="pt-text-red-500"&gt;Красный 500&lt;/span&gt;</code></pre>
+      </div>
+
+      <h3>Справочная таблица цветов текста</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>Описание</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-text-primary</code></td><td>Основной цвет бренда/темы</td></tr>
+          <tr><td><code>pt-text-success</code></td><td>Цвет успеха (зелёный)</td></tr>
+          <tr><td><code>pt-text-warning</code></td><td>Цвет предупреждения (жёлтый)</td></tr>
+          <tr><td><code>pt-text-error</code></td><td>Цвет ошибки (красный)</td></tr>
+          <tr><td><code>pt-text-info</code></td><td>Информационный (голубой)</td></tr>
+          <tr><td><code>pt-text-white</code></td><td>Белый (#ffffff)</td></tr>
+          <tr><td><code>pt-text-black</code></td><td>Чёрный (#000000)</td></tr>
+          <tr><td><code>pt-text-gray-500</code></td><td>Серый оттенок 500</td></tr>
+          <tr><td><code>pt-text-gray-700</code></td><td>Серый оттенок 700</td></tr>
+          <tr><td><code>pt-text-gray-900</code></td><td>Серый оттенок 900</td></tr>
+          <tr><td><code>pt-text-blue-500</code></td><td>Синий оттенок 500</td></tr>
+          <tr><td><code>pt-text-red-500</code></td><td>Красный оттенок 500</td></tr>
+          <tr><td><code>pt-text-green-500</code></td><td>Зелёный оттенок 500</td></tr>
+          <tr><td><code>pt-text-yellow-500</code></td><td>Жёлтый оттенок 500</td></tr>
+          <tr><td><code>pt-text-indigo-500</code></td><td>Индиго оттенок 500</td></tr>
+          <tr><td><code>pt-text-purple-500</code></td><td>Фиолетовый оттенок 500</td></tr>
+          <tr><td><code>pt-text-pink-500</code></td><td>Розовый оттенок 500</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Цвета с оттенками (shades)</h2>
+      <p>Каждый цвет поддерживает шкалу оттенков от 50 (самый светлый) до 950 (самый тёмный). Формат: <code>pt-text-{color}-{shade}</code>. Ниже пример для <code>primary</code>:</p>
+      <div class="pt-demo pt-demo--col">
+        <span class="pt-text-primary-50 pt-mb-1">pt-text-primary-50 — самый светлый оттенок</span>
+        <span class="pt-text-primary-100 pt-mb-1">pt-text-primary-100 — светлый оттенок</span>
+        <span class="pt-text-primary-200 pt-mb-1">pt-text-primary-200</span>
+        <span class="pt-text-primary-300 pt-mb-1">pt-text-primary-300</span>
+        <span class="pt-text-primary-400 pt-mb-1">pt-text-primary-400</span>
+        <span class="pt-text-primary-500 pt-mb-1">pt-text-primary-500 — базовый оттенок</span>
+        <span class="pt-text-primary-600 pt-mb-1">pt-text-primary-600</span>
+        <span class="pt-text-primary-700 pt-mb-1">pt-text-primary-700</span>
+        <span class="pt-text-primary-800 pt-mb-1">pt-text-primary-800</span>
+        <span class="pt-text-primary-900 pt-mb-1">pt-text-primary-900 — тёмный оттенок</span>
+        <span class="pt-text-primary-950 pt-mb-1">pt-text-primary-950 — самый тёмный оттенок</span>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;span class="pt-text-primary-100"&gt;Светлый&lt;/span&gt;
+&lt;span class="pt-text-primary-300"&gt;Средне-светлый&lt;/span&gt;
+&lt;span class="pt-text-primary-500"&gt;Базовый&lt;/span&gt;
+&lt;span class="pt-text-primary-700"&gt;Средне-тёмный&lt;/span&gt;
+&lt;span class="pt-text-primary-900"&gt;Тёмный&lt;/span&gt;</code></pre>
+      </div>
+
+      <h3>Шкала оттенков для primary</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>Оттенок</th>
+            <th>Пример</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-text-primary-50</code></td><td>50</td><td class="pt-text-primary-50">Самый светлый</td></tr>
+          <tr><td><code>pt-text-primary-100</code></td><td>100</td><td class="pt-text-primary-100">Очень светлый</td></tr>
+          <tr><td><code>pt-text-primary-200</code></td><td>200</td><td class="pt-text-primary-200">Светлый</td></tr>
+          <tr><td><code>pt-text-primary-300</code></td><td>300</td><td class="pt-text-primary-300">Умеренно-светлый</td></tr>
+          <tr><td><code>pt-text-primary-400</code></td><td>400</td><td class="pt-text-primary-400">Нейтрально-светлый</td></tr>
+          <tr><td><code>pt-text-primary-500</code></td><td>500</td><td class="pt-text-primary-500">Базовый</td></tr>
+          <tr><td><code>pt-text-primary-600</code></td><td>600</td><td class="pt-text-primary-600">Нейтрально-тёмный</td></tr>
+          <tr><td><code>pt-text-primary-700</code></td><td>700</td><td class="pt-text-primary-700">Тёмный</td></tr>
+          <tr><td><code>pt-text-primary-800</code></td><td>800</td><td class="pt-text-primary-800">Очень тёмный</td></tr>
+          <tr><td><code>pt-text-primary-900</code></td><td>900</td><td class="pt-text-primary-900">Максимально тёмный</td></tr>
+          <tr><td><code>pt-text-primary-950</code></td><td>950</td><td class="pt-text-primary-950">Почти чёрный</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Межстрочный интервал (line-height)</h2>
+      <p>Классы <code>pt-leading-*</code> управляют расстоянием между строками текста. Полезно для улучшения читаемости длинных текстов:</p>
+      <div class="pt-demo pt-demo--col">
+        <div class="pt-leading-none pt-mb-3">
+          <strong>pt-leading-none (1)</strong><br>Строка первая с минимальным межстрочным интервалом.<br>Вторая строка почти вплотную прилегает к первой.<br>Подходит для заголовков и коротких надписей.
+        </div>
+        <div class="pt-leading-tight pt-mb-3">
+          <strong>pt-leading-tight (1.25)</strong><br>Компактный межстрочный интервал.<br>Используется для заголовков и плотных блоков текста.<br>Строки расположены близко, но не слипаются.
+        </div>
+        <div class="pt-leading-snug pt-mb-3">
+          <strong>pt-leading-snug (1.375)</strong><br>Умеренно-компактный интервал.<br>Золотая середина между tight и normal.<br>Хорошо смотрится в карточках и компактных списках.
+        </div>
+        <div class="pt-leading-normal pt-mb-3">
+          <strong>pt-leading-normal (1.5)</strong><br>Стандартный межстрочный интервал.<br>Используется в большинстве текстов по умолчанию.<br>Обеспечивает комфортное чтение основного контента.
+        </div>
+        <div class="pt-leading-relaxed pt-mb-3">
+          <strong>pt-leading-relaxed (1.625)</strong><br>Расслабленный межстрочный интервал.<br>Хорошо читается в длинных статьях и документации.<br>Даёт глазу больше пространства между строками.
+        </div>
+        <div class="pt-leading-loose pt-mb-3">
+          <strong>pt-leading-loose (2)</strong><br>Свободный межстрочный интервал.<br>Максимальное расстояние между строками.<br>Используется в поэзии или для визуального выделения.
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;p class="pt-leading-none"&gt;line-height: 1&lt;/p&gt;
+&lt;p class="pt-leading-tight"&gt;line-height: 1.25&lt;/p&gt;
+&lt;p class="pt-leading-snug"&gt;line-height: 1.375&lt;/p&gt;
+&lt;p class="pt-leading-normal"&gt;line-height: 1.5&lt;/p&gt;
+&lt;p class="pt-leading-relaxed"&gt;line-height: 1.625&lt;/p&gt;
+&lt;p class="pt-leading-loose"&gt;line-height: 2&lt;/p&gt;</code></pre>
+      </div>
+
+      <h3>Справочная таблица line-height</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>line-height</th>
+            <th>Применение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-leading-none</code></td><td>1</td><td>Заголовки, короткие надписи</td></tr>
+          <tr><td><code>pt-leading-tight</code></td><td>1.25</td><td>Компактные блоки, подзаголовки</td></tr>
+          <tr><td><code>pt-leading-snug</code></td><td>1.375</td><td>Карточки, компактные списки</td></tr>
+          <tr><td><code>pt-leading-normal</code></td><td>1.5</td><td>Основной текст (значение по умолчанию)</td></tr>
+          <tr><td><code>pt-leading-relaxed</code></td><td>1.625</td><td>Длинные статьи, документация</td></tr>
+          <tr><td><code>pt-leading-loose</code></td><td>2</td><td>Поэзия, визуальное выделение</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Межбуквенное расстояние (letter-spacing)</h2>
+      <p>Классы <code>pt-tracking-*</code> управляют расстоянием между символами (трекингом). Полезно для заголовков и акцентного текста:</p>
+      <div class="pt-demo pt-demo--col">
+        <span class="pt-tracking-tighter pt-mb-2">pt-tracking-tighter — очень плотный трекинг, буквы сжаты</span>
+        <span class="pt-tracking-tight pt-mb-2">pt-tracking-tight — плотный трекинг, компактное расположение</span>
+        <span class="pt-tracking-normal pt-mb-2">pt-tracking-normal — стандартный трекинг (по умолчанию)</span>
+        <span class="pt-tracking-wide pt-mb-2">pt-tracking-wide — широкий трекинг, буквы разнесены</span>
+        <span class="pt-tracking-wider pt-mb-2">pt-tracking-wider — ещё шире, заметное расстояние</span>
+        <span class="pt-tracking-widest pt-mb-2">pt-tracking-widest — максимальный трекинг, буквы далеко друг от друга</span>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;span class="pt-tracking-tighter"&gt;Очень плотно&lt;/span&gt;
+&lt;span class="pt-tracking-tight"&gt;Плотно&lt;/span&gt;
+&lt;span class="pt-tracking-normal"&gt;Нормально&lt;/span&gt;
+&lt;span class="pt-tracking-wide"&gt;Широко&lt;/span&gt;
+&lt;span class="pt-tracking-wider"&gt;Ещё шире&lt;/span&gt;
+&lt;span class="pt-tracking-widest"&gt;Максимально&lt;/span&gt;</code></pre>
+      </div>
+
+      <h2>Выравнивание текста</h2>
+      <p>Классы <code>pt-text-{align}</code> для горизонтального выравнивания текста внутри блока:</p>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-text-left pt-mb-2"><strong>pt-text-left</strong> — Текст прижат к левому краю. Используется по умолчанию для большинства языков с письмом слева направо. Обеспечивает естественное чтение.</p>
+        <p class="pt-text-center pt-mb-2"><strong>pt-text-center</strong> — Текст выровнен по центру. Подходит для заголовков, коротких фраз, призывов к действию и подписей под изображениями.</p>
+        <p class="pt-text-right pt-mb-2"><strong>pt-text-right</strong> — Текст прижат к правому краю. Удобно для подписей, дат, авторства и интерфейсов с письмом справа налево.</p>
+        <p class="pt-text-justify pt-mb-0"><strong>pt-text-justify</strong> — Текст выровнен по ширине. Обе стороны абзаца образуют ровные края за счёт автоматического изменения межсловных пробелов. Используется в книгах и газетах.</p>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;p class="pt-text-left"&gt;Слева&lt;/p&gt;
+&lt;p class="pt-text-center"&gt;По центру&lt;/p&gt;
+&lt;p class="pt-text-right"&gt;Справа&lt;/p&gt;
+&lt;p class="pt-text-justify"&gt;По ширине&lt;/p&gt;</code></pre>
+      </div>
+
+      <h2>Оформление текста</h2>
+      <p>Классы для подчёркивания, зачёркивания, регистра и наклона текста:</p>
+      <div class="pt-demo pt-demo--col">
+        <span class="pt-underline pt-mb-2">pt-underline — подчёркнутый текст (text-decoration: underline)</span>
+        <span class="pt-line-through pt-mb-2">pt-line-through — зачёркнутый текст (text-decoration: line-through)</span>
+        <span class="pt-uppercase pt-mb-2">pt-uppercase — все буквы ЗАГЛАВНЫЕ (text-transform: uppercase)</span>
+        <span class="pt-lowercase pt-mb-2">pt-lowercase — все буквы строчные (text-transform: lowercase)</span>
+        <span class="pt-capitalize pt-mb-2">pt-capitalize — Каждое Слово С Большой Буквы (text-transform: capitalize)</span>
+        <span class="pt-italic pt-mb-2">pt-italic — курсивный текст (font-style: italic)</span>
+        <span class="pt-not-italic pt-mb-0">pt-not-italic — отмена курсива (font-style: normal)</span>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;span class="pt-underline"&gt;Подчёркнутый&lt;/span&gt;
+&lt;span class="pt-line-through"&gt;Зачёркнутый&lt;/span&gt;
+&lt;span class="pt-uppercase"&gt;ВЕРХНИЙ РЕГИСТР&lt;/span&gt;
+&lt;span class="pt-lowercase"&gt;нижний регистр&lt;/span&gt;
+&lt;span class="pt-capitalize"&gt;Каждое Слово&lt;/span&gt;
+&lt;span class="pt-italic"&gt;Курсив&lt;/span&gt;
+&lt;span class="pt-not-italic"&gt;Обычный стиль&lt;/span&gt;</code></pre>
+      </div>
+
+      <h2>Truncate (обрезка текста)</h2>
+      <p>Класс <code>pt-truncate</code> обрезает текст, выходящий за границы блока, добавляя многоточие в конце. Сочетает <code>overflow: hidden</code>, <code>text-overflow: ellipsis</code> и <code>white-space: nowrap</code>:</p>
+      <div class="pt-demo pt-demo--col">
+        <div style="max-width: 300px;" class="pt-truncate pt-p-2 pt-bg-gray-100 pt-rounded pt-dark:bg-gray-800">
+          pt-truncate — это очень длинный текст, который не помещается в одну строку и будет обрезан с многоточием в конце строки
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-truncate" style="max-width: 300px;"&gt;
+  Очень длинный текст, который будет обрезан с многоточием...
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Стили списков</h2>
+      <p>Классы <code>pt-list-*</code> управляют маркерами списков:</p>
+      <div class="pt-demo pt-demo--col pt-demo--gap-lg">
+        <div>
+          <strong>pt-list-none</strong> — маркеры отсутствуют
+          <ul class="pt-list-none pt-mt-1">
+            <li>Элемент списка без маркера</li>
+            <li>Удобно для навигационных меню</li>
+            <li>Чистый внешний вид</li>
+          </ul>
+        </div>
+        <div>
+          <strong>pt-list-disc</strong> — маркеры в виде точек
+          <ul class="pt-list-disc pt-mt-1">
+            <li>Первый элемент с точкой</li>
+            <li>Второй элемент с точкой</li>
+            <li>Третий элемент с точкой</li>
+          </ul>
+        </div>
+        <div>
+          <strong>pt-list-decimal</strong> — нумерованный список
+          <ol class="pt-list-decimal pt-mt-1">
+            <li>Первый шаг инструкции</li>
+            <li>Второй шаг инструкции</li>
+            <li>Третий шаг инструкции</li>
+          </ol>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;ul class="pt-list-none"&gt;&lt;li&gt;Без маркера&lt;/li&gt;&lt;/ul&gt;
+&lt;ul class="pt-list-disc"&gt;&lt;li&gt;С точкой&lt;/li&gt;&lt;/ul&gt;
+&lt;ol class="pt-list-decimal"&gt;&lt;li&gt;Нумерованный&lt;/li&gt;&lt;/ol&gt;</code></pre>
+      </div>
+
+      <h2>Пример статьи</h2>
+      <p>Комбинация типографических утилит для создания реалистичного превью статьи:</p>
+      <div class="pt-demo pt-demo--col">
+        <article class="pt-max-w-2xl pt-mx-auto">
+          <h1 class="pt-text-3xl pt-font-bold pt-tracking-tight pt-mb-2">Заголовок статьи с использованием pt-утилит</h1>
+          <p class="pt-text-gray-500 pt-text-sm pt-mb-1 pt-font-medium">Автор: Иван Петров · <span class="pt-italic">12 июня 2026</span> · <span class="pt-text-primary">pt-текст</span></p>
+          <p class="pt-text-gray-700 pt-leading-relaxed pt-mb-4">Первый абзац статьи с демонстрацией комфортного межстрочного интервала <code>pt-leading-relaxed</code>, который делает чтение длинных текстов приятным и ненапряжным. Все утилиты <code>pt-*</code> работают в комбинации друг с другом, позволяя гибко настраивать внешний вид без единой строчки кастомного CSS.</p>
+          <p class="pt-text-gray-700 pt-leading-relaxed pt-mb-4">Второй абзац продолжает тему и показывает, как утилиты <code>pt-text-gray-700</code> для цвета, <code>pt-leading-relaxed</code> для интервала и <code>pt-mb-4</code> для отступов работают вместе, создавая целостную и читаемую типографическую систему.</p>
+          <blockquote class="pt-border-l-4 pt-border-primary pt-pl-4 pt-text-gray-500 pt-italic pt-leading-normal">«Хорошая типографика — это 95% хорошего дизайна. С pt-классами она становится доступной каждому»</blockquote>
+        </article>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;article class="pt-max-w-2xl pt-mx-auto"&gt;
+  &lt;h1 class="pt-text-3xl pt-font-bold pt-tracking-tight pt-mb-2"&gt;Заголовок статьи&lt;/h1&gt;
+  &lt;p class="pt-text-gray-500 pt-text-sm pt-mb-1 pt-font-medium"&gt;Автор ...&lt;/p&gt;
+  &lt;p class="pt-text-gray-700 pt-leading-relaxed pt-mb-4"&gt;Первый абзац...&lt;/p&gt;
+  &lt;blockquote class="pt-border-l-4 pt-border-primary pt-pl-4 pt-text-gray-500 pt-italic"&gt;Цитата&lt;/blockquote&gt;
+&lt;/article&gt;</code></pre>
+      </div>
+
+      <h2>Тёмная тема</h2>
+      <p>Все типографические классы поддерживают тёмную тему через префикс <code>pt-dark:</code>. Например, <code>pt-dark:text-white</code> сделает текст белым в тёмной теме. Это позволяет создавать адаптивные интерфейсы без медиа-запросов:</p>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-text-gray-700 pt-dark:text-gray-300 pt-mb-2">Этот текст — серый в светлой теме и светло-серый в тёмной (<code>pt-dark:text-gray-300</code>)</p>
+        <p class="pt-text-primary pt-dark:text-primary-300 pt-mb-2">Акцентный цвет с адаптацией под тёмную тему</p>
+        <p class="pt-text-gray-900 pt-dark:text-gray-100 pt-mb-0">Основной текст, тёмный в светлой теме и белый в тёмной</p>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;p class="pt-text-gray-700 pt-dark:text-gray-300"&gt;Адаптивный серый&lt;/p&gt;
+&lt;p class="pt-text-primary pt-dark:text-primary-300"&gt;Адаптивный акцент&lt;/p&gt;
+&lt;p class="pt-text-gray-900 pt-dark:text-gray-100"&gt;Адаптивный основной&lt;/p&gt;</code></pre>
+      </div>
+
+      <h2>Полная таблица классов типографики</h2>
+      <p>Сводная таблица всех типографических классов Photon-tw:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Категория</th>
+            <th>Классы</th>
+            <th>CSS свойство</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Размер текста</td><td><code>pt-text-xs / sm / base / lg / xl / 2xl / 3xl / 4xl</code></td><td>font-size</td></tr>
+          <tr><td>Насыщенность</td><td><code>pt-font-thin / extralight / light / normal / medium / semibold / bold / extrabold / black</code></td><td>font-weight</td></tr>
+          <tr><td>Цвет (семантические)</td><td><code>pt-text-primary / success / warning / error / info / white / black</code></td><td>color</td></tr>
+          <tr><td>Цвет (серые)</td><td><code>pt-text-gray-{50..950}</code></td><td>color</td></tr>
+          <tr><td>Цвет (акцентные)</td><td><code>pt-text-{red|blue|green|yellow|indigo|purple|pink}-{50..950}</code></td><td>color</td></tr>
+          <tr><td>Цвет (primary shades)</td><td><code>pt-text-primary-{50..950}</code></td><td>color</td></tr>
+          <tr><td>Межстрочный интервал</td><td><code>pt-leading-none / tight / snug / normal / relaxed / loose</code></td><td>line-height</td></tr>
+          <tr><td>Межбуквенное расстояние</td><td><code>pt-tracking-tighter / tight / normal / wide / wider / widest</code></td><td>letter-spacing</td></tr>
+          <tr><td>Выравнивание</td><td><code>pt-text-left / center / right / justify</code></td><td>text-align</td></tr>
+          <tr><td>Оформление</td><td><code>pt-underline / line-through / uppercase / lowercase / capitalize / italic / not-italic</code></td><td>text-decoration / transform / font-style</td></tr>
+          <tr><td>Обрезка</td><td><code>pt-truncate</code></td><td>text-overflow + overflow + white-space</td></tr>
+          <tr><td>Стили списков</td><td><code>pt-list-none / disc / decimal</code></td><td>list-style</td></tr>
+          <tr><td>Тёмная тема</td><td><code>pt-dark:text-{color}</code></td><td>color (в dark mode)</td></tr>
+        </tbody>
+      </table>
+
+    </main>
+  </div>
+
+  <script src="../photon-kit/photon-kit.js"></script>
+  <script src="js/doc.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

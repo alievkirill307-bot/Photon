@@ -1,0 +1,747 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Сетка и разметка Photon-tw — flex, grid, отступы, позиционирование, адаптивность через pt-* классы." />
+  <meta name="keywords" content="photon, photon-tw, layout, сетка, grid, flexbox, отступы, адаптивность" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Сетка и разметка [pt] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link active">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+      <h1>Сетка и разметка [pt]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Утилитарные классы <code>pt-*</code> для построения сеток, раскладок и управления позиционированием элементов. Все классы работают по единой шкале отступов 0–96px и не требуют кастомного CSS.</p>
+
+      <h2>Flex-контейнер</h2>
+      <p>Классы <code>pt-flex</code> и <code>pt-inline-flex</code> создают flex-контейнер. Элементы внутри выстраиваются в ряд (по умолчанию <code>flex-direction: row</code>).</p>
+      <div class="pt-demo">
+        <div class="pt-flex pt-gap-4">
+          <div class="pt-bg-primary pt-text-white pt-p-4 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-4 pt-rounded">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-4 pt-rounded">3</div>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-gap-4"&gt;
+  &lt;div class="pt-bg-primary pt-text-white pt-p-4 pt-rounded"&gt;1&lt;/div&gt;
+  &lt;div class="pt-bg-success pt-text-white pt-p-4 pt-rounded"&gt;2&lt;/div&gt;
+  &lt;div class="pt-bg-warning pt-text-dark pt-p-4 pt-rounded"&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-inline-flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>inline-flex</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Направление Flex</h2>
+      <p>Управляйте направлением оси через <code>pt-flex-row</code> (по умолчанию), <code>pt-flex-col</code> (колонка), <code>pt-flex-row-reverse</code> и <code>pt-flex-col-reverse</code>.</p>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-flex-row (по умолчанию):</p>
+        <div class="pt-flex pt-flex-row pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-3 pt-rounded">3</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-flex-col:</p>
+        <div class="pt-flex pt-flex-col pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded" style="max-width:300px;">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-3 pt-rounded">3</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-flex-row-reverse:</p>
+        <div class="pt-flex pt-flex-row-reverse pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-3 pt-rounded">3</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-flex-col-reverse:</p>
+        <div class="pt-flex pt-flex-col-reverse pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded" style="max-width:300px;">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-3 pt-rounded">3</div>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-flex-row"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-flex-col"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-flex-row-reverse"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-flex-col-reverse"&gt;...&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Выравнивание по оси (align-items)</h2>
+      <p>Классы <code>pt-items-*</code> выравнивают дочерние элементы по поперечной оси (cross axis). Используйте высокий контейнер для наглядности.</p>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-items-start:</p>
+        <div class="pt-flex pt-items-start pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded" style="height:100px;">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">A</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">B</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-items-center:</p>
+        <div class="pt-flex pt-items-center pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded" style="height:100px;">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">A</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">B</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-items-end:</p>
+        <div class="pt-flex pt-items-end pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded" style="height:100px;">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">A</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">B</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-items-baseline:</p>
+        <div class="pt-flex pt-items-baseline pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded" style="height:100px;">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded pt-text-lg">A</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded pt-text-sm">B</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-items-stretch (по умолчанию):</p>
+        <div class="pt-flex pt-items-stretch pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded" style="height:100px;">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">A</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">B</div>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-start"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-items-center"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-items-end"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-items-baseline"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-items-stretch"&gt;...&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Выравнивание поперёк (justify-content)</h2>
+      <p>Классы <code>pt-justify-*</code> управляют распределением места по главной оси (main axis).</p>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-justify-start:</p>
+        <div class="pt-flex pt-justify-start pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-justify-center:</p>
+        <div class="pt-flex pt-justify-center pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-justify-end:</p>
+        <div class="pt-flex pt-justify-end pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-justify-between:</p>
+        <div class="pt-flex pt-justify-between pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-3 pt-rounded">3</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-justify-around:</p>
+        <div class="pt-flex pt-justify-around pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-3 pt-rounded">3</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-justify-evenly:</p>
+        <div class="pt-flex pt-justify-evenly pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-3 pt-rounded">3</div>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-justify-start"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-justify-center"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-justify-end"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-justify-between"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-justify-around"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-justify-evenly"&gt;...&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Flex-wrap</h2>
+      <p>Управляйте переносом элементов внутри flex-контейнера. <code>pt-flex-wrap</code> разрешает перенос, <code>pt-flex-nowrap</code> запрещает, <code>pt-flex-wrap-reverse</code> переносит в обратном направлении.</p>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-flex-wrap:</p>
+        <div class="pt-flex pt-flex-wrap pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded" style="max-width:220px;">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-3 pt-rounded">3</div>
+          <div class="pt-bg-error pt-text-white pt-p-3 pt-rounded">4</div>
+          <div class="pt-bg-sky-500 pt-text-white pt-p-3 pt-rounded">5</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-flex-nowrap (переполнение):</p>
+        <div class="pt-flex pt-flex-nowrap pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded" style="max-width:220px;">
+          <div class="pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-3 pt-rounded">3</div>
+          <div class="pt-bg-error pt-text-white pt-p-3 pt-rounded">4</div>
+          <div class="pt-bg-sky-500 pt-text-white pt-p-3 pt-rounded">5</div>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-flex-wrap"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-flex-nowrap"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-flex-wrap-reverse"&gt;...&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Flex-grow / Flex-shrink</h2>
+      <p>Классы для управления растяжением и сжатием flex-элементов. <code>pt-flex-1</code> задаёт <code>flex: 1 1 0%</code>, <code>pt-flex-auto</code> — <code>flex: 1 1 auto</code>, <code>pt-flex-none</code> — <code>flex: none</code>.</p>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-flex-1 (все элементы равны):</p>
+        <div class="pt-flex pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded">
+          <div class="pt-flex-1 pt-bg-primary pt-text-white pt-p-3 pt-rounded">1</div>
+          <div class="pt-flex-1 pt-bg-success pt-text-white pt-p-3 pt-rounded">2</div>
+          <div class="pt-flex-1 pt-bg-warning pt-text-dark pt-p-3 pt-rounded">3</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-flex-1 + pt-flex-none:</p>
+        <div class="pt-flex pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded">
+          <div class="pt-flex-1 pt-bg-primary pt-text-white pt-p-3 pt-rounded">flex-1</div>
+          <div class="pt-flex-none pt-bg-success pt-text-white pt-p-3 pt-rounded">flex-none</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-grow / pt-shrink:</p>
+        <div class="pt-flex pt-gap-2 pt-p-2 pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded">
+          <div class="pt-grow pt-bg-primary pt-text-white pt-p-3 pt-rounded">grow</div>
+          <div class="pt-shrink pt-bg-success pt-text-white pt-p-3 pt-rounded">shrink</div>
+        </div>
+      </div>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-1</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1 1 0%</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1 1 auto</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-none</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-grow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grow-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-grow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shrink</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-shrink</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>1</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shrink-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>flex-shrink</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>0</code></td></tr>
+        </tbody>
+      </table>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex-1"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex-auto"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex-none"&gt;...&lt;/div&gt;
+&lt;div class="pt-grow"&gt;...&lt;/div&gt;
+&lt;div class="pt-shrink"&gt;...&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Grid сетка</h2>
+      <p>Используйте <code>pt-grid</code> вместе с <code>pt-grid-cols-{n}</code> для создания CSS Grid раскладки. Доступно от 1 до 12 колонок.</p>
+      <p class="pt-font-bold pt-mt-4 pt-mb-2">2 колонки (<code>pt-grid-cols-2</code>):</p>
+      <div class="pt-demo">
+        <div class="pt-grid pt-grid-cols-2 pt-gap-4">
+          <div class="pt-bg-primary pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">3</div>
+          <div class="pt-bg-purple-500 pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">4</div>
+        </div>
+      </div>
+      <p class="pt-font-bold pt-mt-4 pt-mb-2">3 колонки (<code>pt-grid-cols-3</code>):</p>
+      <div class="pt-demo">
+        <div class="pt-grid pt-grid-cols-3 pt-gap-4">
+          <div class="pt-bg-primary pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">3</div>
+          <div class="pt-bg-error pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">4</div>
+          <div class="pt-bg-sky-500 pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">5</div>
+          <div class="pt-bg-purple-500 pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">6</div>
+        </div>
+      </div>
+      <p class="pt-font-bold pt-mt-4 pt-mb-2">4 колонки (<code>pt-grid-cols-4</code>):</p>
+      <div class="pt-demo">
+        <div class="pt-grid pt-grid-cols-4 pt-gap-4">
+          <div class="pt-bg-primary pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">3</div>
+          <div class="pt-bg-sky-500 pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">4</div>
+          <div class="pt-bg-error pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">5</div>
+          <div class="pt-bg-purple-500 pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">6</div>
+          <div class="pt-bg-primary pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">7</div>
+          <div class="pt-bg-success pt-text-white pt-p-6 pt-rounded-lg pt-text-center pt-font-bold">8</div>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-2 pt-gap-4"&gt;...&lt;/div&gt;
+&lt;div class="pt-grid pt-grid-cols-3 pt-gap-4"&gt;...&lt;/div&gt;
+&lt;div class="pt-grid pt-grid-cols-4 pt-gap-4"&gt;...&lt;/div&gt;</code></pre>
+      </div>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-2</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(2, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-3</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(3, minmax(0, 1fr))</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-4</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>grid-template-columns</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>repeat(4, minmax(0, 1fr))</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Column span</h2>
+      <p>Классы <code>pt-col-span-{n}</code> позволяют элементу занимать несколько колонок сетки. Полезно для создания макетов «контент + сайдбар».</p>
+      <div class="pt-demo">
+        <div class="pt-grid pt-grid-cols-3 pt-gap-4">
+          <div class="pt-col-span-2 pt-bg-primary pt-text-white pt-p-4 pt-rounded">col-span-2 (контент)</div>
+          <div class="pt-bg-gray-200 pt-dark:bg-gray-700 pt-p-4 pt-rounded">sidebar</div>
+        </div>
+      </div>
+      <div class="pt-demo">
+        <div class="pt-grid pt-grid-cols-4 pt-gap-4">
+          <div class="pt-col-span-3 pt-bg-success pt-text-white pt-p-4 pt-rounded">col-span-3</div>
+          <div class="pt-bg-gray-200 pt-dark:bg-gray-700 pt-p-4 pt-rounded">col</div>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-3 pt-gap-4"&gt;
+  &lt;div class="pt-col-span-2 pt-bg-primary pt-text-white pt-p-4 pt-rounded"&gt;col-span-2&lt;/div&gt;
+  &lt;div class="pt-bg-gray-200 pt-dark:bg-gray-700 pt-p-4 pt-rounded"&gt;sidebar&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Gap (промежутки)</h2>
+      <p>Классы <code>pt-gap-{n}</code> задают расстояние между flex/grid-элементами. Работают по единой шкале отступов. Также доступны <code>pt-gap-x-*</code> и <code>pt-gap-y-*</code> для раздельного управления по осям.</p>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-gap-1 (4px):</p>
+        <div class="pt-flex pt-gap-1">
+          <div class="pt-bg-primary pt-text-white pt-p-2 pt-rounded pt-text-sm">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-2 pt-rounded pt-text-sm">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-2 pt-rounded pt-text-sm">3</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-gap-3 (12px):</p>
+        <div class="pt-flex pt-gap-3">
+          <div class="pt-bg-primary pt-text-white pt-p-2 pt-rounded pt-text-sm">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-2 pt-rounded pt-text-sm">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-2 pt-rounded pt-text-sm">3</div>
+        </div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <p class="pt-font-medium pt-mb-2">pt-gap-6 (24px):</p>
+        <div class="pt-flex pt-gap-6">
+          <div class="pt-bg-primary pt-text-white pt-p-2 pt-rounded pt-text-sm">1</div>
+          <div class="pt-bg-success pt-text-white pt-p-2 pt-rounded pt-text-sm">2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-2 pt-rounded pt-text-sm">3</div>
+        </div>
+      </div>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+            <th class="pt-p-2 pt-text-left">В px</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-gap-1</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">0.25rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">4px</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-gap-2</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">0.5rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">8px</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-gap-3</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">0.75rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">12px</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-gap-4</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">1rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">16px</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-gap-5</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">1.25rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">20px</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-gap-6</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">1.5rem</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">24px</td></tr>
+        </tbody>
+      </table>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-gap-2"&gt;...&lt;/div&gt;
+&lt;div class="pt-grid pt-grid-cols-3 pt-gap-4"&gt;...&lt;/div&gt;
+&lt;div class="pt-flex pt-gap-x-4 pt-gap-y-2"&gt;...&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Отступы (Padding)</h2>
+      <p>Padding-классы по единой шкале 0–96px. <code>pt-p-*</code> для всех сторон, <code>pt-px-*</code> для горизонтальных, <code>pt-py-*</code> для вертикальных, <code>pt-pt-*</code>, <code>pt-pr-*</code>, <code>pt-pb-*</code>, <code>pt-pl-*</code> для отдельных сторон.</p>
+      <div class="pt-demo pt-demo--col">
+        <div class="pt-flex pt-items-center pt-gap-4 pt-flex-wrap">
+          <div class="pt-bg-primary pt-text-white pt-p-2 pt-rounded pt-text-sm">pt-p-2</div>
+          <div class="pt-bg-success pt-text-white pt-p-4 pt-rounded pt-text-sm">pt-p-4</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-6 pt-rounded pt-text-sm">pt-p-6</div>
+          <div class="pt-bg-error pt-text-white pt-p-8 pt-rounded pt-text-sm">pt-p-8</div>
+        </div>
+      </div>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">все стороны</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-px-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding-left + padding-right</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">горизонтальные</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-py-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding-top + padding-bottom</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">вертикальные</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-pt-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding-top</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">сверху</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-pr-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding-right</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">справа</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-pb-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding-bottom</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">снизу</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-pl-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>padding-left</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">слева</td></tr>
+        </tbody>
+      </table>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-p-4"&gt;со всех сторон 1rem&lt;/div&gt;
+&lt;div class="pt-px-6 pt-py-2"&gt;по бокам 1.5rem, сверху/снизу 0.5rem&lt;/div&gt;
+&lt;div class="pt-pt-8"&gt;только сверху 2rem&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Отступы (Margin)</h2>
+      <p>Аналогичная шкала для внешних отступов: <code>pt-m-*</code> (все стороны), <code>pt-mx-*</code> (горизонтальные), <code>pt-my-*</code> (вертикальные), <code>pt-mt-*</code>, <code>pt-mr-*</code>, <code>pt-mb-*</code>, <code>pt-ml-*</code>. Центрирование блока по горизонтали — <code>pt-mx-auto</code>.</p>
+      <div class="pt-demo pt-demo--col">
+        <div class="pt-w-48 pt-mx-auto pt-bg-primary pt-text-white pt-p-3 pt-rounded pt-text-center">pt-mx-auto (центрирован)</div>
+      </div>
+      <div class="pt-demo pt-demo--col">
+        <div class="pt-flex pt-gap-2 pt-flex-wrap">
+          <div class="pt-bg-primary pt-text-white pt-p-2 pt-rounded pt-text-sm pt-mt-4">pt-mt-4</div>
+          <div class="pt-bg-success pt-text-white pt-p-2 pt-rounded pt-text-sm pt-mb-2">pt-mb-2</div>
+          <div class="pt-bg-warning pt-text-dark pt-p-2 pt-rounded pt-text-sm pt-ml-6">pt-ml-6</div>
+        </div>
+      </div>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Описание</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-m-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>margin</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">все стороны</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-mx-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>margin-left/right: auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">центрирование по горизонтали</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-mx-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>margin-left + margin-right</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">горизонтальные</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-my-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>margin-top + margin-bottom</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">вертикальные</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-mt-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>margin-top</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">сверху</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-mr-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>margin-right</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">справа</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-mb-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>margin-bottom</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">снизу</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-ml-{n}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>margin-left</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">слева</td></tr>
+        </tbody>
+      </table>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-mx-auto"&gt;центрированный блок&lt;/div&gt;
+&lt;div class="pt-mt-4"&gt;отступ сверху 1rem&lt;/div&gt;
+&lt;div class="pt-mb-2"&gt;отступ снизу 0.5rem&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Ширина и высота</h2>
+      <p>Утилиты <code>pt-w-*</code> и <code>pt-h-*</code> для управления размерами элементов. Поддерживаются фиксированные значения по шкале spacing, проценты, <code>screen</code>, <code>full</code>, а также <code>pt-max-w-*</code>, <code>pt-min-h-*</code> и другие.</p>
+      <div class="pt-demo pt-demo--col">
+        <div class="pt-w-full pt-max-w-sm pt-bg-primary pt-text-white pt-p-3 pt-rounded pt-text-center">pt-w-full pt-max-w-sm</div>
+        <div class="pt-w-1/2 pt-bg-success pt-text-white pt-p-3 pt-rounded pt-text-center pt-mt-3">pt-w-1/2 (50%)</div>
+        <div class="pt-w-64 pt-bg-warning pt-text-dark pt-p-3 pt-rounded pt-text-center pt-mt-3">pt-w-64 (16rem)</div>
+        <div class="pt-flex pt-items-center pt-justify-center pt-h-32 pt-w-64 pt-bg-purple-500 pt-text-white pt-p-3 pt-rounded pt-text-center pt-mt-3">pt-h-32</div>
+        <div class="pt-min-h-screen pt-bg-gray-100 pt-dark:bg-gray-700 pt-rounded pt-mt-3 pt-flex pt-items-center pt-justify-center pt-text-gray-500" style="min-height:100px;">pt-min-h-screen (демо)</div>
+      </div>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-full</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100%</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-1/2</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>50%</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-screen</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100vw</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-64</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>16rem</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-h-32</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>8rem</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-h-screen</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100vh</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-sm</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>max-width</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>24rem</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-h-screen</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>min-height</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>100vh</code></td></tr>
+        </tbody>
+      </table>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-w-full"&gt;100% ширины&lt;/div&gt;
+&lt;div class="pt-w-1/2"&gt;50% ширины&lt;/div&gt;
+&lt;div class="pt-w-64 pt-h-32"&gt;фиксированный размер&lt;/div&gt;
+&lt;div class="pt-max-w-sm pt-mx-auto"&gt;центрированный контейнер&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Позиционирование</h2>
+      <p>Классы <code>pt-relative</code>, <code>pt-absolute</code>, <code>pt-fixed</code>, <code>pt-sticky</code> устанавливают тип позиционирования. <code>pt-inset-0</code> (или <code>pt-top-0</code>, <code>pt-right-0</code>, etc.) задают смещение.</p>
+      <div class="pt-demo">
+        <div class="pt-relative pt-w-full pt-h-32 pt-bg-gray-200 pt-dark:bg-gray-700 pt-rounded-lg pt-flex pt-items-center pt-justify-center pt-text-gray-500" style="background:var(--pk-bg-alt);">
+          <span>pt-relative контейнер</span>
+          <div class="pt-absolute pt-top-2 pt-right-2 pt-bg-error pt-text-white pt-text-xs pt-px-2 pt-py-1 pt-rounded-full">pt-absolute</div>
+          <div class="pt-absolute pt-bottom-2 pt-left-2 pt-bg-primary pt-text-white pt-text-xs pt-px-2 pt-py-1 pt-rounded-full">нижний левый</div>
+        </div>
+      </div>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Описание</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-relative</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>position: relative</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">точка отсчёта для absolute</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-absolute</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>position: absolute</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">абсолютное позиционирование</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-fixed</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>position: fixed</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">фиксировано относительно окна</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-sticky</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>position: sticky</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">прилипает при скролле</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-inset-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>inset: 0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">растянуть на весь родитель</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-top-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>top: 0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">прижат к верху</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-right-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>right: 0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">прижат к правому краю</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bottom-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>bottom: 0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">прижат к низу</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-left-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>left: 0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">прижат к левому краю</td></tr>
+        </tbody>
+      </table>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-relative"&gt;
+  &lt;div class="pt-absolute pt-inset-0"&gt;на весь родитель&lt;/div&gt;
+  &lt;div class="pt-absolute pt-top-0 pt-right-0"&gt;правый верхний угол&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Z-index</h2>
+      <p>Управление слоями наложения через <code>pt-z-{0,10,20,30,40,50}</code>. Чем больше число, тем выше элемент на оси Z.</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>z-index: 0</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-10</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>z-index: 10</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-20</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>z-index: 20</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-30</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>z-index: 30</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-40</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>z-index: 40</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-50</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>z-index: 50</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Display utilities</h2>
+      <p>Классы для управления отображением элемента: <code>pt-block</code>, <code>pt-inline-block</code>, <code>pt-inline</code>, <code>pt-hidden</code> (<code>display: none</code>), <code>pt-visible</code> (<code>visibility: visible</code>), <code>pt-invisible</code> (<code>visibility: hidden</code>).</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-block</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>block</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-inline-block</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>inline-block</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-inline</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>inline</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-hidden</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>display</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>none</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-visible</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>visibility</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>visible</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-invisible</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>visibility</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>hidden</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Overflow</h2>
+      <p>Управление переполнением контента: <code>pt-overflow-hidden</code> (скрыть), <code>pt-overflow-auto</code> (автоскролл), <code>pt-overflow-scroll</code> (принудительный скролл). По осям: <code>pt-overflow-x-auto</code>, <code>pt-overflow-y-auto</code> и т.д.</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-text-left">CSS-свойство</th>
+            <th class="pt-p-2 pt-text-left">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-hidden</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>hidden</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>auto</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-scroll</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>scroll</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-x-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow-x</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>auto</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-y-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>overflow-y</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>auto</code></td></tr>
+        </tbody>
+      </table>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-overflow-hidden"&gt;скрыть переполнение&lt;/div&gt;
+&lt;div class="pt-overflow-auto"&gt;скролл при необходимости&lt;/div&gt;
+&lt;div class="pt-overflow-x-auto"&gt;горизонтальный скролл&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Адаптивность</h2>
+      <p>Модификаторы <code>pt-sm:*</code>, <code>pt-md:*</code>, <code>pt-lg:*</code>, <code>pt-xl:*</code> позволяют менять раскладку в зависимости от ширины экрана. Например, вертикальный стек на мобильных и горизонтальный ряд на планшетах.</p>
+      <div class="pt-demo">
+        <div class="pt-flex pt-flex-col pt-md:flex-row pt-gap-4 pt-p-4 pt-bg-surface pt-rounded" style="background:var(--pk-bg-alt);">
+          <div class="pt-flex-1 pt-bg-primary pt-text-white pt-p-4 pt-rounded">Колонка 1</div>
+          <div class="pt-flex-1 pt-bg-success pt-text-white pt-p-4 pt-rounded">Колонка 2</div>
+          <div class="pt-flex-1 pt-bg-warning pt-text-dark pt-p-4 pt-rounded">Колонка 3</div>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-flex-col pt-md:flex-row pt-gap-4"&gt;
+  &lt;div class="pt-flex-1 pt-bg-primary pt-text-white pt-p-4 pt-rounded"&gt;Колонка 1&lt;/div&gt;
+  &lt;div class="pt-flex-1 pt-bg-success pt-text-white pt-p-4 pt-rounded"&gt;Колонка 2&lt;/div&gt;
+  &lt;div class="pt-flex-1 pt-bg-warning pt-text-dark pt-p-4 pt-rounded"&gt;Колонка 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+      <p>Пример с модификатором <code>pt-sm:flex-row</code> — мобильные как колонка, с 640px как ряд:</p>
+      <div class="pt-demo">
+        <div class="pt-flex pt-flex-col pt-sm:flex-row pt-gap-3">
+          <div class="pt-flex-1 pt-bg-primary pt-text-white pt-p-3 pt-rounded">sm:flex-row</div>
+          <div class="pt-flex-1 pt-bg-success pt-text-white pt-p-3 pt-rounded">элемент 2</div>
+          <div class="pt-flex-1 pt-bg-warning pt-text-dark pt-p-3 pt-rounded">элемент 3</div>
+        </div>
+      </div>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Модификатор</th>
+            <th class="pt-p-2 pt-text-left">Min-width</th>
+            <th class="pt-p-2 pt-text-left">Описание</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-sm:*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">640px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">планшеты (альбом)</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-md:*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">768px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">планшеты (landscape)</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-lg:*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">1024px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">десктоп</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-xl:*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">1280px</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">большой десктоп</td></tr>
+        </tbody>
+      </table>
+      <div class="code-block">
+        <pre><code>&lt;!-- мобильные: колонка, с 768px: ряд --&gt;
+&lt;div class="pt-flex pt-flex-col pt-md:flex-row pt-gap-4"&gt;...&lt;/div&gt;
+
+&lt;!-- с 1024px: 4 колонки --&gt;
+&lt;div class="pt-grid pt-grid-cols-2 pt-lg:grid-cols-4 pt-gap-4"&gt;...&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Полная таблица классов</h2>
+      <p>Сводная таблица всех утилит раскладки и позиционирования, доступных в Photon-tw.</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Группа</th>
+            <th class="pt-p-2 pt-text-left">Классы</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Flex-контейнер</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex</code>, <code>pt-inline-flex</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Направление Flex</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-row</code>, <code>pt-flex-col</code>, <code>pt-flex-row-reverse</code>, <code>pt-flex-col-reverse</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Flex-wrap</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-wrap</code>, <code>pt-flex-nowrap</code>, <code>pt-flex-wrap-reverse</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Flex-grow/shrink</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex-1</code>, <code>pt-flex-auto</code>, <code>pt-flex-none</code>, <code>pt-grow</code>, <code>pt-grow-0</code>, <code>pt-shrink</code>, <code>pt-shrink-0</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Align-items</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-items-start</code>, <code>pt-items-end</code>, <code>pt-items-center</code>, <code>pt-items-baseline</code>, <code>pt-items-stretch</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Justify-content</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-justify-start</code>, <code>pt-justify-end</code>, <code>pt-justify-center</code>, <code>pt-justify-between</code>, <code>pt-justify-around</code>, <code>pt-justify-evenly</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Grid контейнер</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid</code>, <code>pt-inline-grid</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Колонки Grid</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid-cols-1</code> … <code>pt-grid-cols-12</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Охват колонок</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-col-span-1</code> … <code>pt-col-span-12</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Gap</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-gap-*</code>, <code>pt-gap-x-*</code>, <code>pt-gap-y-*</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Padding</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-*</code>, <code>pt-px-*</code>, <code>pt-py-*</code>, <code>pt-pt-*</code>, <code>pt-pr-*</code>, <code>pt-pb-*</code>, <code>pt-pl-*</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Margin</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-m-*</code>, <code>pt-mx-auto</code>, <code>pt-mx-*</code>, <code>pt-my-*</code>, <code>pt-mt-*</code>, <code>pt-mr-*</code>, <code>pt-mb-*</code>, <code>pt-ml-*</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Ширина</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-full</code>, <code>pt-w-1/2</code>, <code>pt-w-screen</code>, <code>pt-w-auto</code>, <code>pt-w-fit</code>, <code>pt-w-*</code> (spacing)</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Высота</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-h-full</code>, <code>pt-h-screen</code>, <code>pt-h-auto</code>, <code>pt-h-fit</code>, <code>pt-h-*</code> (spacing)</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Max-width</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-max-w-{xs,sm,md,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl}</code>, <code>pt-max-w-full</code>, <code>pt-max-w-screen</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Min-height</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-min-h-0</code>, <code>pt-min-h-full</code>, <code>pt-min-h-screen</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Позиционирование</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-relative</code>, <code>pt-absolute</code>, <code>pt-fixed</code>, <code>pt-sticky</code>, <code>pt-static</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Смещение</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-inset-0</code>, <code>pt-top-*</code>, <code>pt-right-*</code>, <code>pt-bottom-*</code>, <code>pt-left-*</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Z-index</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-z-{0,10,20,30,40,50}</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Display</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-block</code>, <code>pt-inline-block</code>, <code>pt-inline</code>, <code>pt-hidden</code>, <code>pt-visible</code>, <code>pt-invisible</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Overflow</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-overflow-hidden</code>, <code>pt-overflow-auto</code>, <code>pt-overflow-scroll</code>, <code>pt-overflow-x-auto</code>, <code>pt-overflow-y-auto</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Адаптивность</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-sm:*</code>, <code>pt-md:*</code>, <code>pt-lg:*</code>, <code>pt-xl:*</code></td></tr>
+        </tbody>
+      </table>
+      <p class="pt-mt-2 pt-text-sm pt-text-gray-500">Полный справочник всех <code>pt-*</code> классов смотрите на странице <a href="pt-utilities.html">Справочник [pt]</a>.</p>
+
+    </main>
+  </div>
+
+  <script src="../photon-kit/photon-kit.js"></script>
+  <script src="js/doc.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

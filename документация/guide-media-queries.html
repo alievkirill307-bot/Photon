@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Полное руководство по медиа-запросам в Photon Framework: брейкпоинты, mobile-first, адаптивная сетка, типографика, отступы, display." />
+  <meta name="keywords" content="photon, media queries, responsive, адаптивность, брейкпоинты, mobile-first, responsive design, rwd" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Медиа-запросы [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link active">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Медиа-запросы [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Медиа-запросы — основа адаптивного дизайна. Photon-tw использует префиксную систему для применения стилей на разных разрешениях. Это позволяет писать mobile-first код без написания <code>@media</code> вручную.</p>
+
+      <h2>Брейкпоинты Photon-tw</h2>
+      <p>Photon-tw использует три брейкпоинта, основанных на <code>min-width</code> (mobile-first). Каждый брейкпоинт имеет префикс, который добавляется к любому утилитарному классу.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Брейкпоинт</th><th>Префикс</th><th>min-width</th><th>Типичные устройства</th></tr></thead>
+          <tbody>
+            <tr><td>Small (sm)</td><td><code>pt-sm:</code></td><td>576px</td><td>Телефоны в landscape, большие телефоны</td></tr>
+            <tr><td>Medium (md)</td><td><code>pt-md:</code></td><td>768px</td><td>Планшеты, маленькие ноутбуки</td></tr>
+            <tr><td>Large (lg)</td><td><code>pt-lg:</code></td><td>992px</td><td>Десктопы, большие экраны</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="code-block">
+        <pre><code>/* Пример: CSS-эквивалент классов Photon-tw */
+@screen sm (min-width: 576px)  { .pt-sm\:... { ... } }
+@screen md (min-width: 768px)  { .pt-md\:... { ... } }
+@screen lg (min-width: 992px)  { .pt-lg\:... { ... } }</code></pre>
+      </div>
+
+      <h2>Mobile-first подход</h2>
+      <p>В mobile-first подходе базовые стили пишутся для мобильных устройств, а затем переопределяются для больших экранов. Пример: колонка на мобильных занимает 100%, на планшетах — 50%, на десктопах — 33%.</p>
+
+      <div class="code-block">
+        <pre><code>/* Base (mobile): 100% ширины */
+.element {
+  width: 100%;
+}
+
+/* sm (>= 576px): 50% */
+@media (min-width: 576px) {
+  .element { width: 50%; }
+}
+
+/* lg (>= 992px): 33.333% */
+@media (min-width: 992px) {
+  .element { width: 33.333%; }
+}</code></pre>
+      </div>
+
+      <p>В Photon-tw то же самое одной строкой:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-w-full pt-sm:w-1/2 pt-lg:w-1/3"&gt;
+  Адаптивный элемент
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Адаптивная сетка</h2>
+      <p>Используйте <code>pt-grid-cols-{n}</code> для мобильных и переопределяйте на больших экранах через префиксы. Это самый частый паттерн для адаптивных макетов.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Результат</th><th>Экран</th></tr></thead>
+          <tbody>
+            <tr><td><code>pt-grid-cols-1</code></td><td>1 колонка</td><td>Mobile (базовый)</td></tr>
+            <tr><td><code>pt-sm:grid-cols-2</code></td><td>2 колонки</td><td>sm+ (576px)</td></tr>
+            <tr><td><code>pt-md:grid-cols-3</code></td><td>3 колонки</td><td>md+ (768px)</td></tr>
+            <tr><td><code>pt-lg:grid-cols-4</code></td><td>4 колонки</td><td>lg+ (992px)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-1 pt-sm:grid-cols-2 pt-md:grid-cols-3 pt-lg:grid-cols-4 pt-gap-3">
+          <div class="pt-p-4 pt-rounded-lg pt-bg-primary pt-text-white pt-text-center pt-text-sm">1</div>
+          <div class="pt-p-4 pt-rounded-lg pt-bg-success pt-text-white pt-text-center pt-text-sm">2</div>
+          <div class="pt-p-4 pt-rounded-lg pt-bg-info pt-text-white pt-text-center pt-text-sm">3</div>
+          <div class="pt-p-4 pt-rounded-lg pt-bg-warning pt-text-black pt-text-center pt-text-sm">4</div>
+          <div class="pt-p-4 pt-rounded-lg pt-bg-error pt-text-white pt-text-center pt-text-sm">5</div>
+          <div class="pt-p-4 pt-rounded-lg pt-bg-primary pt-text-white pt-text-center pt-text-sm">6</div>
+          <div class="pt-p-4 pt-rounded-lg pt-bg-success pt-text-white pt-text-center pt-text-sm">7</div>
+          <div class="pt-p-4 pt-rounded-lg pt-bg-info pt-text-white pt-text-center pt-text-sm">8</div>
+        </div>
+        <p class="pt-text-xs pt-text-gray-500 pt-mt-2 pt-italic">1 колонка → 2 → 3 → 4 на разных разрешениях</p>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-1 pt-sm:grid-cols-2 pt-md:grid-cols-3 pt-lg:grid-cols-4 pt-gap-3"&gt;
+  &lt;div class="pt-p-4 pt-rounded-lg pt-bg-primary pt-text-white pt-text-center"&gt;1&lt;/div&gt;
+  &lt;div class="pt-p-4 pt-rounded-lg pt-bg-success pt-text-white pt-text-center"&gt;2&lt;/div&gt;
+  &lt;div class="pt-p-4 pt-rounded-lg pt-bg-info pt-text-white pt-text-center"&gt;3&lt;/div&gt;
+  &lt;div class="pt-p-4 pt-rounded-lg pt-bg-warning pt-text-black pt-text-center"&gt;4&lt;/div&gt;
+  &lt;div class="pt-p-4 pt-rounded-lg pt-bg-error pt-text-white pt-text-center"&gt;5&lt;/div&gt;
+  &lt;div class="pt-p-4 pt-rounded-lg pt-bg-primary pt-text-white pt-text-center"&gt;6&lt;/div&gt;
+  &lt;div class="pt-p-4 pt-rounded-lg pt-bg-success pt-text-white pt-text-center"&gt;7&lt;/div&gt;
+  &lt;div class="pt-p-4 pt-rounded-lg pt-bg-info pt-text-white pt-text-center"&gt;8&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Адаптивная типографика</h2>
+      <p>Изменяйте размер текста в зависимости от экрана. Базовый размер задаётся для мобильных, на больших экранах увеличивается.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Размер</th><th>Применение</th></tr></thead>
+          <tbody>
+            <tr><td><code>pt-text-sm pt-md:text-base pt-lg:text-lg</code></td><td>14px → 16px → 18px</td><td>Основной текст</td></tr>
+            <tr><td><code>pt-text-lg pt-md:text-xl pt-lg:text-2xl</code></td><td>18px → 20px → 24px</td><td>Подзаголовки</td></tr>
+            <tr><td><code>pt-text-2xl pt-md:text-3xl pt-lg:text-4xl</code></td><td>24px → 30px → 36px</td><td>Заголовки h2</td></tr>
+            <tr><td><code>pt-text-3xl pt-md:text-4xl pt-lg:text-5xl</code></td><td>30px → 36px → 48px</td><td>Заголовки h1</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div>
+          <h2 class="pt-text-2xl pt-md:text-3xl pt-lg:text-4xl pt-font-bold pt-m-0 pt-mb-2">Адаптивный заголовок</h2>
+          <p class="pt-text-sm pt-md:text-base pt-lg:text-lg pt-text-gray-400 pt-m-0">Этот текст меняет размер в зависимости от ширины экрана. Уменьшите окно браузера и увидите разницу.</p>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;h2 class="pt-text-2xl pt-md:text-3xl pt-lg:text-4xl pt-font-bold"&gt;
+  Адаптивный заголовок
+&lt;/h2&gt;
+&lt;p class="pt-text-sm pt-md:text-base pt-lg:text-lg pt-text-gray-400"&gt;
+  Этот текст меняет размер в зависимости от ширины экрана.
+&lt;/p&gt;</code></pre>
+      </div>
+
+      <h2>Адаптивные отступы</h2>
+      <p>Отступы также могут быть адаптивными: на мобильных меньше, на десктопах больше. Это улучшает читаемость на больших экранах.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Mobile</th><th>md+</th><th>lg+</th></tr></thead>
+          <tbody>
+            <tr><td><code>pt-p-4 pt-md:p-6 pt-lg:p-8</code></td><td>16px</td><td>24px</td><td>32px</td></tr>
+            <tr><td><code>pt-m-2 pt-md:m-4</code></td><td>8px</td><td>16px</td><td>16px</td></tr>
+            <tr><td><code>pt-gap-2 pt-md:gap-4 pt-lg:gap-6</code></td><td>8px</td><td>16px</td><td>24px</td></tr>
+            <tr><td><code>pt-px-4 pt-lg:px-8</code></td><td>16px</td><td>16px</td><td>32px</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-p-4 pt-md:p-6 pt-lg:p-8 pt-bg-surface pt-rounded-xl pt-border pt-border-default">
+          <p class="pt-text-sm pt-text-gray-400 pt-m-0">Этот блок имеет отступы <code>p-4</code> на мобильных, <code>p-6</code> на md и <code>p-8</code> на lg.</p>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-p-4 pt-md:p-6 pt-lg:p-8 pt-bg-surface pt-rounded-xl pt-border pt-border-default"&gt;
+  &lt;p&gt;Адаптивные отступы&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Адаптивный display</h2>
+      <p>Скрывайте и показывайте элементы на разных экранах. Это удобно для мобильной навигации, сайдбаров, дополнительной информации.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Эффект</th></tr></thead>
+          <tbody>
+            <tr><td><code>pt-hidden pt-md:flex</code></td><td>Скрыт на mobile, показан как flex на md+</td></tr>
+            <tr><td><code>pt-block pt-lg:inline</code></td><td>Блочный на mobile, строчный на lg+</td></tr>
+            <tr><td><code>pt-flex pt-md:hidden</code></td><td>Показан как flex на mobile, скрыт на md+</td></tr>
+            <tr><td><code>pt-hidden pt-sm:block</code></td><td>Скрыт до sm, показан как блок на sm+</td></tr>
+            <tr><td><code>pt-inline-block pt-md:hidden</code></td><td>Виден на mobile, скрыт на планшетах+</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-flex pt-gap-3 pt-items-center">
+          <span class="pt-px-3 pt-py-1 pt-rounded pt-text-xs pt-bg-primary pt-text-white pt-block pt-md:hidden">Только mobile</span>
+          <span class="pt-px-3 pt-py-1 pt-rounded pt-text-xs pt-bg-success pt-text-white pt-hidden pt-md:inline-block">Только md+</span>
+          <span class="pt-px-3 pt-py-1 pt-rounded pt-text-xs pt-bg-info pt-text-white pt-hidden pt-lg:inline-block">Только lg+</span>
+        </div>
+        <p class="pt-text-xs pt-text-gray-500 pt-mt-2 pt-italic">Меняйте размер окна — разные элементы появляются/исчезают</p>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Только на мобильных --&gt;
+&lt;span class="pt-px-3 pt-py-1 pt-rounded pt-text-xs pt-bg-primary pt-text-white pt-block pt-md:hidden"&gt;
+  Только mobile
+&lt;/span&gt;
+
+&lt;!-- Только на планшетах и выше --&gt;
+&lt;span class="pt-px-3 pt-py-1 pt-rounded pt-text-xs pt-bg-success pt-text-white pt-hidden pt-md:inline-block"&gt;
+  Только md+
+&lt;/span&gt;
+
+&lt;!-- Только на десктопах --&gt;
+&lt;span class="pt-px-3 pt-py-1 pt-rounded pt-text-xs pt-bg-info pt-text-white pt-hidden pt-lg:inline-block"&gt;
+  Только lg+
+&lt;/span&gt;</code></pre>
+      </div>
+
+      <h2>Комбинирование модификаторов</h2>
+      <p>Префиксы можно комбинировать с другими модификаторами, например <code>pt-hover</code>. Это позволяет менять стили при наведении только на определённых разрешениях.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Комбинация</th><th>Результат</th></tr></thead>
+          <tbody>
+            <tr><td><code>pt-md:pt-hover:bg-primary</code></td><td>Фон primary при наведении, только на md+</td></tr>
+            <tr><td><code>pt-lg:pt-hover:scale-110</code></td><td>Увеличение при наведении, только на lg+</td></tr>
+            <tr><td><code>pt-sm:pt-focus:ring-2</code></td><td>Кольцо при фокусе, только на sm+</td></tr>
+            <tr><td><code>pt-md:pt-active:scale-95</code></td><td>Уменьшение при нажатии, только на md+</td></tr>
+            <tr><td><code>pt-lg:pt-group-hover:opacity-100</code></td><td>Показать при наведении на группу, lg+</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <button class="pt-px-4 pt-py-2 pt-rounded-lg pt-text-sm pt-bg-surface pt-border pt-border-default pt-text-gray-300 pt-cursor-pointer pt-transition pt-md:pt-hover:bg-primary pt-md:pt-hover:text-white pt-md:pt-hover:border-primary">
+          Наведи (только на md+)
+        </button>
+        <p class="pt-text-xs pt-text-gray-500 pt-mt-2 pt-italic">На md+ при наведении меняет цвет. На mobile — без изменений (touch-устройства)</p>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;button class="pt-px-4 pt-py-2 pt-rounded-lg pt-text-sm pt-bg-surface pt-border pt-border-default pt-text-gray-300 pt-cursor-pointer pt-transition pt-md:pt-hover:bg-primary pt-md:pt-hover:text-white pt-md:pt-hover:border-primary"&gt;
+  Наведи (только на md+)
+&lt;/button&gt;</code></pre>
+      </div>
+
+      <h2>Примеры</h2>
+
+      <h3>Пример 1: Адаптивная навигация (navbar)</h3>
+
+      <div class="demo-box" style="background:var(--pk-surface);border-radius:12px;border:1px solid var(--pk-border);overflow:hidden;">
+        <div class="pt-flex pt-items-center pt-justify-between pt-px-4 pt-py-3 pt-border-b pt-border-default">
+          <div class="pt-font-bold pt-text-primary">Logo</div>
+          <button class="pt-p-2 pt-rounded pt-bg-surface-hover pt-border-none pt-cursor-pointer pt-flex pt-items-center pt-md:hidden">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <nav class="pt-hidden pt-md:flex pt-items-center pt-gap-4">
+            <a href="#" class="pt-text-sm pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Главная</a>
+            <a href="#" class="pt-text-sm pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">О нас</a>
+            <a href="#" class="pt-text-sm pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Услуги</a>
+            <a href="#" class="pt-text-sm pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition">Контакты</a>
+          </nav>
+        </div>
+        <div class="pt-p-4 pt-text-sm pt-text-gray-400">Адаптивная навигация: на mobile — иконка бургер, на md+ — горизонтальное меню.</div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-center pt-justify-between pt-px-4 pt-py-3"&gt;
+  &lt;div class="pt-font-bold pt-text-primary"&gt;Logo&lt;/div&gt;
+
+  &lt;!-- Кнопка бургер — только на mobile --&gt;
+  &lt;button class="pt-p-2 pt-rounded pt-bg-surface-hover pt-border-none pt-cursor-pointer pt-flex pt-items-center pt-md:hidden"&gt;
+    &lt;svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+      &lt;line x1="3" y1="6" x2="21" y2="6"/&gt;
+      &lt;line x1="3" y1="12" x2="21" y2="12"/&gt;
+      &lt;line x1="3" y1="18" x2="21" y2="18"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+
+  &lt;!-- Навигация — скрыта на mobile, показана на md+ --&gt;
+  &lt;nav class="pt-hidden pt-md:flex pt-items-center pt-gap-4"&gt;
+    &lt;a href="#" class="pt-text-sm pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition"&gt;Главная&lt;/a&gt;
+    &lt;a href="#" class="pt-text-sm pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition"&gt;О нас&lt;/a&gt;
+    &lt;a href="#" class="pt-text-sm pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition"&gt;Услуги&lt;/a&gt;
+    &lt;a href="#" class="pt-text-sm pt-text-gray-400 pt-hover:text-white pt-no-underline pt-transition"&gt;Контакты&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 2: Адаптивные карточки товаров</h3>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-1 pt-sm:grid-cols-2 pt-md:grid-cols-3 pt-lg:grid-cols-4 pt-gap-4">
+          <div class="pt-p-4 pt-rounded-xl pt-bg-surface pt-border pt-border-default pt-text-center">
+            <div class="pt-w-full pt-h-32 pt-rounded-lg pt-bg-surface-hover pt-mb-3 pt-flex pt-items-center pt-justify-center pt-text-gray-500 pt-text-xs">Изображение</div>
+            <h4 class="pt-text-sm pt-font-semibold pt-m-0 pt-mb-1">Товар 1</h4>
+            <p class="pt-text-xs pt-text-gray-500 pt-m-0 pt-mb-3">1 990 руб.</p>
+            <button class="btn btn--primary btn--sm pt-w-full">В корзину</button>
+          </div>
+          <div class="pt-p-4 pt-rounded-xl pt-bg-surface pt-border pt-border-default pt-text-center">
+            <div class="pt-w-full pt-h-32 pt-rounded-lg pt-bg-surface-hover pt-mb-3 pt-flex pt-items-center pt-justify-center pt-text-gray-500 pt-text-xs">Изображение</div>
+            <h4 class="pt-text-sm pt-font-semibold pt-m-0 pt-mb-1">Товар 2</h4>
+            <p class="pt-text-xs pt-text-gray-500 pt-m-0 pt-mb-3">2 490 руб.</p>
+            <button class="btn btn--primary btn--sm pt-w-full">В корзину</button>
+          </div>
+          <div class="pt-p-4 pt-rounded-xl pt-bg-surface pt-border pt-border-default pt-text-center">
+            <div class="pt-w-full pt-h-32 pt-rounded-lg pt-bg-surface-hover pt-mb-3 pt-flex pt-items-center pt-justify-center pt-text-gray-500 pt-text-xs">Изображение</div>
+            <h4 class="pt-text-sm pt-font-semibold pt-m-0 pt-mb-1">Товар 3</h4>
+            <p class="pt-text-xs pt-text-gray-500 pt-m-0 pt-mb-3">3 290 руб.</p>
+            <button class="btn btn--primary btn--sm pt-w-full">В корзину</button>
+          </div>
+          <div class="pt-p-4 pt-rounded-xl pt-bg-surface pt-border pt-border-default pt-text-center">
+            <div class="pt-w-full pt-h-32 pt-rounded-lg pt-bg-surface-hover pt-mb-3 pt-flex pt-items-center pt-justify-center pt-text-gray-500 pt-text-xs">Изображение</div>
+            <h4 class="pt-text-sm pt-font-semibold pt-m-0 pt-mb-1">Товар 4</h4>
+            <p class="pt-text-xs pt-text-gray-500 pt-m-0 pt-mb-3">4 990 руб.</p>
+            <button class="btn btn--primary btn--sm pt-w-full">В корзину</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-1 pt-sm:grid-cols-2 pt-md:grid-cols-3 pt-lg:grid-cols-4 pt-gap-4"&gt;
+  &lt;div class="pt-p-4 pt-rounded-xl pt-bg-surface pt-border pt-border-default pt-text-center"&gt;
+    &lt;div class="pt-w-full pt-h-32 pt-rounded-lg pt-bg-surface-hover pt-mb-3 pt-flex pt-items-center pt-justify-center pt-text-gray-500 pt-text-xs"&gt;
+      Изображение
+    &lt;/div&gt;
+    &lt;h4 class="pt-text-sm pt-font-semibold pt-m-0 pt-mb-1"&gt;Товар 1&lt;/h4&gt;
+    &lt;p class="pt-text-xs pt-text-gray-500 pt-m-0 pt-mb-3"&gt;1 990 руб.&lt;/p&gt;
+    &lt;button class="btn btn--primary btn--sm pt-w-full"&gt;В корзину&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;!-- Остальные карточки --&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 3: Адаптивная форма</h3>
+
+      <div class="demo-box">
+        <form class="pt-p-6 pt-rounded-xl pt-bg-surface pt-border pt-border-default">
+          <div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-2 pt-gap-4 pt-mb-4">
+            <div>
+              <label class="pt-text-xs pt-font-medium pt-text-gray-400 pt-mb-1 pt-block">Имя</label>
+              <input type="text" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-text-sm pt-bg-transparent pt-border pt-border-default" style="color:var(--pk-text);" placeholder="Иван">
+            </div>
+            <div>
+              <label class="pt-text-xs pt-font-medium pt-text-gray-400 pt-mb-1 pt-block">Фамилия</label>
+              <input type="text" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-text-sm pt-bg-transparent pt-border pt-border-default" style="color:var(--pk-text);" placeholder="Петров">
+            </div>
+          </div>
+          <div class="pt-mb-4">
+            <label class="pt-text-xs pt-font-medium pt-text-gray-400 pt-mb-1 pt-block">Email</label>
+            <input type="email" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-text-sm pt-bg-transparent pt-border pt-border-default" style="color:var(--pk-text);" placeholder="ivan@example.com">
+          </div>
+          <div class="pt-mb-4">
+            <label class="pt-text-xs pt-font-medium pt-text-gray-400 pt-mb-1 pt-block">Сообщение</label>
+            <textarea rows="4" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-text-sm pt-bg-transparent pt-border pt-border-default" style="color:var(--pk-text);" placeholder="Ваше сообщение"></textarea>
+          </div>
+          <div class="pt-flex pt-flex-col pt-sm:flex-row pt-gap-3 pt-justify-end">
+            <button class="btn pt-w-full pt-sm:w-auto" type="reset">Очистить</button>
+            <button class="btn btn--primary pt-w-full pt-sm:w-auto" type="submit">Отправить</button>
+          </div>
+        </form>
+        <p class="pt-text-xs pt-text-gray-500 pt-mt-2 pt-italic">На mobile поля ввода и кнопки — в столбик, на sm+ — в строку</p>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;form class="pt-p-6 pt-rounded-xl pt-bg-surface pt-border pt-border-default"&gt;
+  &lt;!-- Имя + Фамилия: на mobile в столбик, на md+ в строку --&gt;
+  &lt;div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-2 pt-gap-4 pt-mb-4"&gt;
+    &lt;div&gt;
+      &lt;label class="pt-text-xs pt-font-medium pt-text-gray-400 pt-mb-1 pt-block"&gt;Имя&lt;/label&gt;
+      &lt;input type="text" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-text-sm pt-bg-transparent pt-border pt-border-default" placeholder="Иван"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label class="pt-text-xs pt-font-medium pt-text-gray-400 pt-mb-1 pt-block"&gt;Фамилия&lt;/label&gt;
+      &lt;input type="text" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-text-sm pt-bg-transparent pt-border pt-border-default" placeholder="Петров"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- Email --&gt;
+  &lt;div class="pt-mb-4"&gt;
+    &lt;label class="pt-text-xs pt-font-medium pt-text-gray-400 pt-mb-1 pt-block"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-text-sm pt-bg-transparent pt-border pt-border-default" placeholder="ivan@example.com"&gt;
+  &lt;/div&gt;
+  &lt;!-- Сообщение --&gt;
+  &lt;div class="pt-mb-4"&gt;
+    &lt;label class="pt-text-xs pt-font-medium pt-text-gray-400 pt-mb-1 pt-block"&gt;Сообщение&lt;/label&gt;
+    &lt;textarea rows="4" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-text-sm pt-bg-transparent pt-border pt-border-default" placeholder="Ваше сообщение"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;!-- Кнопки: на mobile в столбик, на sm+ в строку --&gt;
+  &lt;div class="pt-flex pt-flex-col pt-sm:flex-row pt-gap-3 pt-justify-end"&gt;
+    &lt;button class="btn pt-w-full pt-sm:w-auto" type="reset"&gt;Очистить&lt;/button&gt;
+    &lt;button class="btn btn--primary pt-w-full pt-sm:w-auto" type="submit"&gt;Отправить&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Продвинутый гайд по типографике в Photon Framework: font-size scale, font-feature-settings, vertical rhythm, адаптивная и тёмная тема." />
+  <meta name="keywords" content="photon, типографика, font-size, font-feature-settings, vertical rhythm, адаптивная типографика, тёмная тема, цитаты, ссылки" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Типографика: продвинутый уровень [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Типографика: продвинутый уровень [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Типографика — основа любого интерфейса. Photon предоставляет гибкую систему управления шрифтами: шкалу font-size от xs до 9xl, утилиты для font-feature-settings, управления вертикальным ритмом, адаптивной типографики и полной поддержки тёмной темы.</p>
+
+      <h2>Система типографики</h2>
+      <p>Photon использует шкалу размеров шрифта от <code>pt-text-xs</code> до <code>pt-text-9xl</code>. Каждый класс можно скомбинировать с утилитами для line-height.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Размер</th><th>Line-height (по умолчанию)</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-text-xs</code></td><td>0.75rem (12px)</td><td>1rem (16px)</td></tr>
+            <tr><td><code>.pt-text-sm</code></td><td>0.875rem (14px)</td><td>1.25rem (20px)</td></tr>
+            <tr><td><code>.pt-text-base</code></td><td>1rem (16px)</td><td>1.5rem (24px)</td></tr>
+            <tr><td><code>.pt-text-lg</code></td><td>1.125rem (18px)</td><td>1.75rem (28px)</td></tr>
+            <tr><td><code>.pt-text-xl</code></td><td>1.25rem (20px)</td><td>1.75rem (28px)</td></tr>
+            <tr><td><code>.pt-text-2xl</code></td><td>1.5rem (24px)</td><td>2rem (32px)</td></tr>
+            <tr><td><code>.pt-text-3xl</code></td><td>1.875rem (30px)</td><td>2.25rem (36px)</td></tr>
+            <tr><td><code>.pt-text-4xl</code></td><td>2.25rem (36px)</td><td>2.5rem (40px)</td></tr>
+            <tr><td><code>.pt-text-5xl</code></td><td>3rem (48px)</td><td>1</td></tr>
+            <tr><td><code>.pt-text-6xl</code></td><td>3.75rem (60px)</td><td>1</td></tr>
+            <tr><td><code>.pt-text-7xl</code></td><td>4.5rem (72px)</td><td>1</td></tr>
+            <tr><td><code>.pt-text-8xl</code></td><td>6rem (96px)</td><td>1</td></tr>
+            <tr><td><code>.pt-text-9xl</code></td><td>8rem (128px)</td><td>1</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Комбинации с line-height</h3>
+      <p>Управляйте межстрочным интервалом с помощью <code>pt-leading-*</code>:</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-leading-3</code></td><td>0.75rem</td></tr>
+            <tr><td><code>.pt-leading-4</code></td><td>1rem</td></tr>
+            <tr><td><code>.pt-leading-5</code></td><td>1.25rem</td></tr>
+            <tr><td><code>.pt-leading-6</code></td><td>1.5rem</td></tr>
+            <tr><td><code>.pt-leading-7</code></td><td>1.75rem</td></tr>
+            <tr><td><code>.pt-leading-8</code></td><td>2rem</td></tr>
+            <tr><td><code>.pt-leading-9</code></td><td>2.25rem</td></tr>
+            <tr><td><code>.pt-leading-10</code></td><td>2.5rem</td></tr>
+            <tr><td><code>.pt-leading-none</code></td><td>1</td></tr>
+            <tr><td><code>.pt-leading-tight</code></td><td>1.25</td></tr>
+            <tr><td><code>.pt-leading-snug</code></td><td>1.375</td></tr>
+            <tr><td><code>.pt-leading-normal</code></td><td>1.5</td></tr>
+            <tr><td><code>.pt-leading-relaxed</code></td><td>1.625</td></tr>
+            <tr><td><code>.pt-leading-loose</code></td><td>2</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box demo-box--column">
+        <p class="pt-text-xs pt-leading-none">pt-text-xs pt-leading-none — компактно</p>
+        <p class="pt-text-sm pt-leading-tight">pt-text-sm pt-leading-tight — заголовочный</p>
+        <p class="pt-text-base pt-leading-normal">pt-text-base pt-leading-normal — основной текст</p>
+        <p class="pt-text-lg pt-leading-relaxed">pt-text-lg pt-leading-relaxed — расслабленный</p>
+        <p class="pt-text-xl pt-leading-loose">pt-text-xl pt-leading-loose — свободный</p>
+      </div>
+
+      <h2>Font-feature-settings</h2>
+      <p>Управление OpenType-возможностями шрифта: лигатуры, кернинг, интервалы цифр. Photon предоставляет классы <code>pt-font-feature-*</code>.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Свойства</th><th>Описание</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-font-feature-ligatures</code></td><td><code>liga</code>, <code>clig</code></td><td>Стандартные и контекстные лигатуры</td></tr>
+            <tr><td><code>.pt-font-feature-kern</code></td><td><code>kern</code></td><td>Кернинг пар символов</td></tr>
+            <tr><td><code>.pt-font-feature-tnum</code></td><td><code>tnum</code></td><td>Табличные цифры (одинаковая ширина)</td></tr>
+            <tr><td><code>.pt-font-feature-pnum</code></td><td><code>pnum</code></td><td>Пропорциональные цифры</td></tr>
+            <tr><td><code>.pt-font-feature-ss01</code></td><td><code>ss01</code></td><td>Стилистический набор 1</td></tr>
+            <tr><td><code>.pt-font-feature-ss02</code></td><td><code>ss02</code></td><td>Стилистический набор 2</td></tr>
+            <tr><td><code>.pt-font-feature-frac</code></td><td><code>frac</code></td><td>Дроби</td></tr>
+            <tr><td><code>.pt-font-feature-zero</code></td><td><code>zero</code></td><td>Перечёркнутый ноль</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;p class="pt-font-feature-ligatures"&gt;ffi fl fl fi — лигатуры&lt;/p&gt;
+&lt;p class="pt-font-feature-tnum"&gt;1234567890 — табличные цифры&lt;/p&gt;
+&lt;p class="pt-font-feature-kern"&gt;AV Wa To — кернинг&lt;/p&gt;</code></pre>
+      </div>
+
+      <h2>Vertical rhythm</h2>
+      <p>Вертикальный ритм — последовательное использование отступов и межстрочных интервалов для создания равномерной сетки текста. Photon упрощает это с помощью утилит <code>pt-mb-*</code> и <code>pt-leading-*</code>.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;article class="pt-max-w-prose"&gt;
+  &lt;h1 class="pt-text-3xl pt-leading-9 pt-mb-4"&gt;Заголовок&lt;/h1&gt;
+  &lt;p class="pt-text-base pt-leading-7 pt-mb-4"&gt;Основной текст с правильным ритмом.&lt;/p&gt;
+  &lt;p class="pt-text-base pt-leading-7 pt-mb-4"&gt;Каждый абзац имеет одинаковый нижний отступ.&lt;/p&gt;
+  &lt;h2 class="pt-text-xl pt-leading-7 pt-mb-3 pt-mt-8"&gt;Подзаголовок&lt;/h2&gt;
+  &lt;p class="pt-text-base pt-leading-7 pt-mb-4"&gt;Текст под подзаголовком.&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+      </div>
+
+      <h3>Рекомендации по вертикальному ритму</h3>
+      <ul>
+        <li>Используйте <code>pt-leading-7</code> (1.75rem) для основного текста — это базовый ритм</li>
+        <li>Заголовки: <code>pt-leading-9</code> или <code>pt-leading-10</code> для 3xl+</li>
+        <li>Нижние отступы: <code>pt-mb-4</code> для параграфов, <code>pt-mb-2</code> для мелких элементов</li>
+        <li>Верхние отступы заголовков: <code>pt-mt-8</code> или <code>pt-mt-10</code></li>
+        <li>Общий контейнер: <code>pt-max-w-prose</code> (65ch) для читаемости</li>
+      </ul>
+
+      <h2>Адаптивная типографика</h2>
+      <p>Photоn поддерживает адаптивные префиксы для всех текстовых утилит. Изменяйте размер шрифта в зависимости от ширины экрана:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Базовый размер sm, на md — base, на lg — lg --&gt;
+&lt;p class="pt-text-sm pt-md:text-base pt-lg:text-lg"&gt;
+  Текст адаптируется под экран
+&lt;/p&gt;
+
+&lt;!-- Заголовок: 2xl на мобильных, 4xl на десктопе --&gt;
+&lt;h1 class="pt-text-2xl pt-md:text-3xl pt-lg:text-4xl"&gt;
+  Адаптивный заголовок
+&lt;/h1&gt;</code></pre>
+      </div>
+
+      <div class="demo-box demo-box--column">
+        <p class="pt-text-sm pt-md:text-base pt-lg:text-lg" style="transition:font-size 0.2s;">Адаптивный текст — измените размер окна</p>
+        <p class="pt-text-xs pt-md:text-sm pt-lg:text-base pt-leading-relaxed" style="transition:font-size 0.2s;">Ещё один пример с разными брейкпоинтами</p>
+      </div>
+
+      <h2>Тёмная тема для текста</h2>
+      <p>Используйте префикс <code>pt-dark:</code> для стилизации текста в тёмной теме. Это позволяет создавать универсальные компоненты.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;p class="pt-text-gray-900 pt-dark:pt-text-gray-100"&gt;
+  Тёмный текст на светлом фоне, светлый — на тёмном
+&lt;/p&gt;
+
+&lt;h2 class="pt-text-gray-800 pt-dark:pt-text-white"&gt;
+  Заголовок для обеих тем
+&lt;/h2&gt;
+
+&lt;blockquote class="pt-text-gray-600 pt-dark:pt-text-gray-300 pt-border-gray-200 pt-dark:pt-border-gray-700"&gt;
+  Цитата, адаптирующаяся к теме
+&lt;/blockquote&gt;</code></pre>
+      </div>
+
+      <div class="demo-box demo-box--column">
+        <p class="pt-text-gray-900 pt-dark:pt-text-gray-100" style="padding:0.5rem;border-radius:4px;">Текст, адаптирующийся к тёмной теме</p>
+        <p class="pt-text-gray-600 pt-dark:pt-text-gray-400" style="padding:0.5rem;border-radius:4px;">Второстепенный текст для обеих тем</p>
+      </div>
+
+      <h2>Работа с длинными текстами</h2>
+      <p>Для длинных текстов (статьи, блоги, документация) используйте ограничение ширины и правильные отступы.</p>
+
+      <h3>Ширина чтения</h3>
+      <p>Оптимальная ширина строки — 60-80 символов. Используйте <code>pt-max-w-prose</code> (65ch):</p>
+
+      <div class="code-block">
+        <pre><code>&lt;article class="pt-max-w-prose pt-mx-auto"&gt;
+  &lt;h1 class="pt-text-3xl pt-font-bold pt-mb-4"&gt;Длинная статья&lt;/h1&gt;
+  &lt;p class="pt-text-base pt-leading-7 pt-mb-4"&gt;
+    Текст с оптимальной длиной строки для чтения.
+    Строка не будет слишком длинной или короткой.
+  &lt;/p&gt;
+  &lt;!-- больше контента --&gt;
+&lt;/article&gt;</code></pre>
+      </div>
+
+      <h3>Типографические классы для текста</h3>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>Назначение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-max-w-prose</code></td><td>Максимальная ширина 65ch для читаемости</td></tr>
+            <tr><td><code>.pt-text-balance</code></td><td>Балансировка переноса строк в заголовках</td></tr>
+            <tr><td><code>.pt-text-pretty</code></td><td>Улучшенный перенос текста</td></tr>
+            <tr><td><code>.pt-break-words</code></td><td>Перенос длинных слов</td></tr>
+            <tr><td><code>.pt-truncate</code></td><td>Обрезка текста с многоточием в одну строку</td></tr>
+            <tr><td><code>.pt-line-clamp-*</code></td><td>Обрезка текста на N строках</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Стилизация цитат и ссылок</h2>
+
+      <h3>Цитаты (blockquote)</h3>
+      <p>Стилизуйте цитаты с помощью утилит Photon для создания выразительных блоков:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;blockquote class="pt-border-l-4 pt-border-primary pt-pl-4 pt-ml-0 pt-my-6 pt-text-lg pt-leading-relaxed pt-text-gray-700 pt-dark:pt-text-gray-300"&gt;
+  &lt;p&gt;Дизайн — это не просто то, как вещь выглядит и ощущается. Дизайн — это то, как она работает.&lt;/p&gt;
+  &lt;cite class="pt-text-sm pt-text-gray-500 pt-dark:pt-text-gray-400 pt-not-italic"&gt;— Стив Джобс&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+      </div>
+
+      <h3>Ссылки</h3>
+      <p>Кастомизируйте ссылки с помощью утилит для улучшения читаемости:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;a href="#" class="pt-text-primary pt-no-underline pt-border-b pt-border-primary pt-border-dashed pt-dark:pt-border-primary-300 pt-hover:pt-text-primary-dark pt-transition pt-duration-200"&gt;
+  Ссылка с подчёркиванием
+&lt;/a&gt;
+
+&lt;a href="#" class="pt-inline-flex pt-items-center pt-gap-1 pt-text-primary pt-font-medium pt-hover:pt-underline"&gt;
+  &lt;svg&gt;...&lt;/svg&gt; Ссылка с иконкой
+&lt;/a&gt;</code></pre>
+      </div>
+
+      <div class="demo-box">
+        <a href="#" class="pt-text-primary pt-no-underline pt-border-b pt-border-primary pt-border-dashed pt-dark:pt-border-primary-300 pt-hover:pt-text-primary-dark pt-transition pt-duration-200 pt-pb-0.5">Ссылка с пунктиром</a>
+        <a href="#" class="pt-inline-flex pt-items-center pt-gap-1 pt-text-primary pt-font-medium pt-hover:pt-underline">Ссылка с подчёркиванием на hover</a>
+        <a href="#" class="pt-text-gray-500 pt-hover:pt-text-primary pt-transition pt-duration-200 pt-text-sm">Ссылка с изменением цвета</a>
+      </div>
+
+      <h2>Примеры</h2>
+
+      <h3>Пример 1: Страница статьи</h3>
+
+      <div class="code-block">
+        <pre><code>&lt;article class="pt-max-w-prose pt-mx-auto pt-p-6"&gt;
+  &lt;!-- Мета-информация --&gt;
+  &lt;div class="pt-flex pt-items-center pt-gap-3 pt-mb-6 pt-text-sm pt-text-gray-500 pt-dark:pt-text-gray-400"&gt;
+    &lt;time datetime="2026-06-30"&gt;30 июня 2026&lt;/time&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;span&gt;5 мин чтения&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Заголовок --&gt;
+  &lt;h1 class="pt-text-3xl pt-md:text-4xl pt-lg:text-5xl pt-font-bold pt-leading-tight pt-mb-6 pt-text-balance"&gt;
+    Полное руководство по типографике в вебе
+  &lt;/h1&gt;
+
+  &lt;!-- Логлайн --&gt;
+  &lt;p class="pt-text-lg pt-leading-relaxed pt-text-gray-600 pt-dark:pt-text-gray-300 pt-mb-8"&gt;
+    Как правильно выбирать шрифты, настраивать интервалы и создавать
+    читаемые тексты для любых устройств.
+  &lt;/p&gt;
+
+  &lt;!-- Контент --&gt;
+  &lt;h2 class="pt-text-2xl pt-font-semibold pt-mt-10 pt-mb-4"&gt;Введение&lt;/h2&gt;
+  &lt;p class="pt-text-base pt-leading-7 pt-mb-4"&gt;
+    Типографика — это искусство организации текста. Хорошая типографика
+    делает текст не просто читаемым, но и приятным для глаз.
+  &lt;/p&gt;
+  &lt;p class="pt-text-base pt-leading-7 pt-mb-4"&gt;
+    В этой статье мы рассмотрим продвинутые техники работы с типографикой
+    в Photon Framework.
+  &lt;/p&gt;
+
+  &lt;!-- Цитата --&gt;
+  &lt;blockquote class="pt-border-l-4 pt-border-primary pt-pl-4 pt-ml-0 pt-my-8 pt-text-lg pt-leading-relaxed pt-text-gray-600 pt-dark:pt-text-gray-300"&gt;
+    &lt;p&gt;Типографика — это голос текста. Сделайте его ясным и красивым.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/article&gt;</code></pre>
+      </div>
+
+      <h3>Пример 2: Блог-пост с адаптивными заголовками</h3>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-max-w-prose pt-mx-auto"&gt;
+  &lt;h1 class="pt-text-2xl pt-sm:text-3xl pt-md:text-4xl pt-lg:text-5xl pt-font-extrabold pt-leading-tight pt-mb-4 pt-text-balance"&gt;
+    5 советов по улучшению читаемости текста
+  &lt;/h1&gt;
+
+  &lt;div class="pt-flex pt-flex-wrap pt-gap-2 pt-mb-6"&gt;
+    &lt;span class="pt-text-xs pt-bg-primary-100 pt-dark:pt-bg-primary-900 pt-text-primary-700 pt-dark:pt-text-primary-300 pt-px-2 pt-py-1 pt-rounded"&gt;типографика&lt;/span&gt;
+    &lt;span class="pt-text-xs pt-bg-gray-100 pt-dark:pt-bg-gray-800 pt-text-gray-600 pt-dark:pt-text-gray-400 pt-px-2 pt-py-1 pt-rounded"&gt;веб-дизайн&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;p class="pt-text-base pt-leading-7 pt-mb-4"&gt;
+    Первый совет: используйте ограничение ширины строки.
+    Слишком длинные строки утомляют глаза.
+  &lt;/p&gt;
+
+  &lt;h2 class="pt-text-xl pt-sm:text-2xl pt-font-semibold pt-mt-8 pt-mb-3"&gt;
+    1. Контролируйте длину строки
+  &lt;/h2&gt;
+  &lt;p class="pt-text-base pt-leading-7 pt-mb-4"&gt;
+    Оптимальная длина строки — 60-80 символов. Используйте
+    &lt;code class="pt-text-xs"&gt;pt-max-w-prose&lt;/code&gt; для автоматического ограничения.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 3: Типографический постер</h3>
+
+      <div class="demo-box demo-box--column">
+        <div style="width:100%;padding:2rem;background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:12px;text-align:center;">
+          <p class="pt-text-xs pt-tracking-widest pt-uppercase pt-mb-2" style="color:rgba(255,255,255,0.5);">Typography</p>
+          <p class="pt-text-5xl pt-md:text-7xl pt-font-black pt-leading-none pt-mb-2" style="color:#e94560;">PHOTON</p>
+          <p class="pt-text-2xl pt-md:text-3xl pt-font-light pt-tracking-wide pt-mb-4" style="color:rgba(255,255,255,0.8);">Design System</p>
+          <p class="pt-text-sm pt-leading-relaxed pt-max-w-md pt-mx-auto" style="color:rgba(255,255,255,0.5);">Гибкая система типографики для современных веб-интерфейсов</p>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div style="background:linear-gradient(135deg,#1a1a2e,#16213e);padding:2rem;text-align:center;border-radius:12px;"&gt;
+  &lt;p class="pt-text-xs pt-tracking-widest pt-uppercase pt-mb-2" style="color:rgba(255,255,255,0.5);"&gt;Typography&lt;/p&gt;
+  &lt;p class="pt-text-5xl pt-md:text-7xl pt-font-black pt-leading-none pt-mb-2" style="color:#e94560;"&gt;PHOTON&lt;/p&gt;
+  &lt;p class="pt-text-2xl pt-md:text-3xl pt-font-light pt-tracking-wide pt-mb-4" style="color:rgba(255,255,255,0.8);"&gt;Design System&lt;/p&gt;
+  &lt;p class="pt-text-sm pt-leading-relaxed pt-max-w-md pt-mx-auto" style="color:rgba(255,255,255,0.5);"&gt;
+    Гибкая система типографики для современных веб-интерфейсов
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

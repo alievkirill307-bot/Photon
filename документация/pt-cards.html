@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Карточки на pt-* утилитах Photon Framework. Базовая карточка, карточка с изображением, аватаркой, размеры, тени, скругление, сетка, тёмная тема и полный справочник классов." />
+  <meta name="keywords" content="photon, css framework, photon-tw, utility classes, cards, карточки, pt-cards, pt-shadow, pt-rounded, pt-grid" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Карточки [pt] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link active">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+      <h1>Карточки [pt]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Все карточки на этой странице собраны исключительно из <code>pt-*</code> классов Photon-tw — без единой кастомной CSS-строки. Фон, скругление, тени, отступы, сетка и адаптивность управляются через утилитарные классы. Это позволяет создавать согласованные интерфейсы, не отвлекаясь на написание повторяющихся стилей.</p>
+
+      <h2>Базовая карточка</h2>
+      <p>Простейшая карточка с заголовком, текстом и кнопкой. Основные классы: <code>pt-bg-surface</code> (фон), <code>pt-rounded-xl</code> (скругление), <code>pt-shadow-md</code> (тень), <code>pt-p-6</code> (внутренний отступ) и <code>pt-max-w-sm</code> (максимальная ширина).</p>
+
+      <div class="pt-demo">
+        <div class="pt-bg-surface pt-rounded-xl pt-shadow-md pt-p-6 pt-max-w-sm" style="background:var(--pk-surface);">
+          <h3 class="pt-text-lg pt-font-bold pt-mb-2">Заголовок карточки</h3>
+          <p class="pt-text-gray-500 pt-text-sm pt-mb-4">Это пример базовой карточки. Весь внешний вид определяется через утилитарные классы Photon-tw.</p>
+          <button class="pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded pt-hover:bg-primary-600 pt-transition">Подробнее</button>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-md pt-p-6 pt-max-w-sm"&gt;
+  &lt;h3 class="pt-text-lg pt-font-bold pt-mb-2"&gt;Заголовок карточки&lt;/h3&gt;
+  &lt;p class="pt-text-gray-500 pt-text-sm pt-mb-4"&gt;Это пример базовой карточки.&lt;/p&gt;
+  &lt;button class="pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded pt-hover:bg-primary-600 pt-transition"&gt;Подробнее&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <p>Разбор классов базовой карточки:</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>Назначение</th>
+            <th>CSS-эквивалент</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-bg-surface</code></td><td>Фон карточки (цвет поверхности)</td><td><code>background: var(--pk-surface)</code></td></tr>
+          <tr><td><code>pt-rounded-xl</code></td><td>Скругление углов</td><td><code>border-radius: 12px</code></td></tr>
+          <tr><td><code>pt-shadow-md</code></td><td>Средняя тень</td><td><code>box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1)</code></td></tr>
+          <tr><td><code>pt-p-6</code></td><td>Внутренний отступ 24px</td><td><code>padding: 1.5rem</code></td></tr>
+          <tr><td><code>pt-max-w-sm</code></td><td>Максимальная ширина 384px</td><td><code>max-width: 24rem</code></td></tr>
+          <tr><td><code>pt-text-lg</code></td><td>Размер шрифта заголовка</td><td><code>font-size: 1.125rem</code></td></tr>
+          <tr><td><code>pt-font-bold</code></td><td>Полужирное начертание</td><td><code>font-weight: 700</code></td></tr>
+          <tr><td><code>pt-mb-2</code></td><td>Нижний отступ 8px</td><td><code>margin-bottom: 0.5rem</code></td></tr>
+          <tr><td><code>pt-text-gray-500</code></td><td>Цвет текста (серый)</td><td><code>color: #6b7280</code></td></tr>
+          <tr><td><code>pt-text-sm</code></td><td>Мелкий шрифт 14px</td><td><code>font-size: 0.875rem</code></td></tr>
+          <tr><td><code>pt-mb-4</code></td><td>Нижний отступ 16px</td><td><code>margin-bottom: 1rem</code></td></tr>
+          <tr><td><code>pt-bg-primary</code></td><td>Фон кнопки (акцентный цвет)</td><td><code>background: var(--pk-primary)</code></td></tr>
+          <tr><td><code>pt-text-white</code></td><td>Белый текст</td><td><code>color: #fff</code></td></tr>
+          <tr><td><code>pt-px-4</code></td><td>Горизонтальный паддинг 16px</td><td><code>padding-left: 1rem; padding-right: 1rem</code></td></tr>
+          <tr><td><code>pt-py-2</code></td><td>Вертикальный паддинг 8px</td><td><code>padding-top: 0.5rem; padding-bottom: 0.5rem</code></td></tr>
+          <tr><td><code>pt-rounded</code></td><td>Скругление кнопки 4px</td><td><code>border-radius: 0.25rem</code></td></tr>
+          <tr><td><code>pt-hover:bg-primary-600</code></td><td>Тёмный фон при наведении</td><td><code>hover:background: ...</code></td></tr>
+          <tr><td><code>pt-transition</code></td><td>Плавный переход</td><td><code>transition: all 0.2s</code></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Карточка с изображением</h2>
+      <p>Карточка с градиентной «шапкой» сверху и контентом под ней. Градиент создаётся через <code>pt-bg-gradient-to-r pt-from-primary pt-to-purple-600</code>. Высота шапки — <code>pt-h-40</code> (160px). Нижняя часть использует <code>pt-p-5</code> (20px). Весь блок обёрнут в <code>pt-overflow-hidden</code>, чтобы скругление применялось и к шапке.</p>
+
+      <div class="pt-demo">
+        <div class="pt-bg-surface pt-rounded-xl pt-shadow-md pt-overflow-hidden pt-max-w-sm" style="background:var(--pk-surface);">
+          <div class="pt-bg-gradient-to-r pt-from-primary pt-to-purple-600 pt-h-40 pt-flex pt-items-center pt-justify-center pt-text-white pt-text-4xl pt-font-bold">Image</div>
+          <div class="pt-p-5">
+            <h3 class="pt-text-lg pt-font-bold pt-mb-1">Премьера сезона</h3>
+            <p class="pt-text-gray-500 pt-text-sm pt-mb-3">Новая коллекция уже в продаже. Успейте заказать с бесплатной доставкой.</p>
+            <div class="pt-flex pt-justify-between pt-items-center">
+              <span class="pt-text-primary pt-font-semibold pt-text-xl">$19.99</span>
+              <button class="pt-bg-primary pt-text-white pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-hover:bg-primary-600 pt-transition">Купить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-md pt-overflow-hidden pt-max-w-sm"&gt;
+  &lt;div class="pt-bg-gradient-to-r pt-from-primary pt-to-purple-600 pt-h-40 pt-flex pt-items-center pt-justify-center pt-text-white pt-text-4xl pt-font-bold"&gt;Image&lt;/div&gt;
+  &lt;div class="pt-p-5"&gt;
+    &lt;h3 class="pt-text-lg pt-font-bold pt-mb-1"&gt;Премьера сезона&lt;/h3&gt;
+    &lt;p class="pt-text-gray-500 pt-text-sm pt-mb-3"&gt;Новая коллекция уже в продаже.&lt;/p&gt;
+    &lt;div class="pt-flex pt-justify-between pt-items-center"&gt;
+      &lt;span class="pt-text-primary pt-font-semibold pt-text-xl"&gt;$19.99&lt;/span&gt;
+      &lt;button class="pt-bg-primary pt-text-white pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-hover:bg-primary-600 pt-transition"&gt;Купить&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <p>Дополнительные классы для этой карточки:</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>Назначение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-overflow-hidden</code></td><td>Скрывает выступающие части (нужно, чтобы градиент не вылезал за скругление)</td></tr>
+          <tr><td><code>pt-bg-gradient-to-r</code></td><td>Линейный градиент слева направо</td></tr>
+          <tr><td><code>pt-from-primary</code></td><td>Начальный цвет градиента (primary)</td></tr>
+          <tr><td><code>pt-to-purple-600</code></td><td>Конечный цвет градиента (purple-600)</td></tr>
+          <tr><td><code>pt-h-40</code></td><td>Высота шапки 160px (<code>10rem</code>)</td></tr>
+          <tr><td><code>pt-flex</code></td><td>Flexbox-контейнер для центрирования текста</td></tr>
+          <tr><td><code>pt-items-center</code></td><td>Выравнивание по вертикали</td></tr>
+          <tr><td><code>pt-justify-center</code></td><td>Выравнивание по горизонтали</td></tr>
+          <tr><td><code>pt-text-4xl</code></td><td>Крупный шрифт 36px</td></tr>
+          <tr><td><code>pt-p-5</code></td><td>Внутренний отступ 20px (<code>1.25rem</code>)</td></tr>
+          <tr><td><code>pt-justify-between</code></td><td>Распределение элементов по краям</td></tr>
+          <tr><td><code>pt-font-semibold</code></td><td>Полужирное начертание (weight 600)</td></tr>
+          <tr><td><code>pt-text-xl</code></td><td>Шрифт 20px для цены</td></tr>
+          <tr><td><code>pt-px-3</code></td><td>Горизонтальный паддинг 12px</td></tr>
+          <tr><td><code>pt-py-1</code></td><td>Вертикальный паддинг 4px</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Карточка с аватаркой</h2>
+      <p>Горизонтальная карточка-профиль. Используется <code>pt-flex pt-gap-4 pt-items-center</code> для создания строки с аватаркой, текстом и кнопкой. Аватар — круг через <code>pt-rounded-full</code>, размер <code>pt-w-14 pt-h-14</code> (56px).</p>
+
+      <div class="pt-demo">
+        <div class="pt-bg-surface pt-rounded-xl pt-shadow-md pt-p-5 pt-max-w-sm pt-flex pt-gap-4 pt-items-center" style="background:var(--pk-surface);">
+          <div class="pt-w-14 pt-h-14 pt-bg-primary pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-font-bold pt-text-xl">A</div>
+          <div class="pt-flex-1">
+            <div class="pt-font-bold pt-text-base">Анна Иванова</div>
+            <div class="pt-text-gray-500 pt-text-sm">Ведущий дизайнер</div>
+          </div>
+          <button class="pt-bg-primary pt-text-white pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-hover:bg-primary-600 pt-transition">Написать</button>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-md pt-p-5 pt-max-w-sm pt-flex pt-gap-4 pt-items-center"&gt;
+  &lt;div class="pt-w-14 pt-h-14 pt-bg-primary pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-font-bold pt-text-xl"&gt;A&lt;/div&gt;
+  &lt;div class="pt-flex-1"&gt;
+    &lt;div class="pt-font-bold pt-text-base"&gt;Анна Иванова&lt;/div&gt;
+    &lt;div class="pt-text-gray-500 pt-text-sm"&gt;Ведущий дизайнер&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="pt-bg-primary pt-text-white pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-hover:bg-primary-600 pt-transition"&gt;Написать&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <p>Классы для горизонтальной раскладки:</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>Назначение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-flex</code></td><td>Включает Flexbox</td></tr>
+          <tr><td><code>pt-gap-4</code></td><td>Отступ между элементами 16px</td></tr>
+          <tr><td><code>pt-items-center</code></td><td>Выравнивание по вертикали по центру</td></tr>
+          <tr><td><code>pt-w-14</code></td><td>Ширина аватара 56px (<code>3.5rem</code>)</td></tr>
+          <tr><td><code>pt-h-14</code></td><td>Высота аватара 56px (<code>3.5rem</code>)</td></tr>
+          <tr><td><code>pt-rounded-full</code></td><td>Скругление 9999px (круг)</td></tr>
+          <tr><td><code>pt-flex-1</code></td><td>Растяжение блока на всё свободное место</td></tr>
+          <tr><td><code>pt-text-base</code></td><td>Обычный размер шрифта 16px</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Размеры карточек</h2>
+      <p>Ширина карточки управляется через <code>pt-max-w-*</code>. Ниже — сравнение четырёх размеров: <code>pt-max-w-xs</code> (320px), <code>pt-max-w-sm</code> (384px), <code>pt-max-w-md</code> (448px) и <code>pt-max-w-lg</code> (512px).</p>
+
+      <div class="pt-demo pt-demo--col pt-demo--gap-lg">
+        <div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-max-w-xs" style="background:var(--pk-surface);">
+          <div class="pt-text-xs pt-text-gray-500 pt-mb-1">max-w-xs (320px)</div>
+          <div class="pt-font-bold pt-text-sm">xs</div>
+        </div>
+        <div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-max-w-sm" style="background:var(--pk-surface);">
+          <div class="pt-text-xs pt-text-gray-500 pt-mb-1">max-w-sm (384px)</div>
+          <div class="pt-font-bold pt-text-sm">sm</div>
+        </div>
+        <div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-max-w-md" style="background:var(--pk-surface);">
+          <div class="pt-text-xs pt-text-gray-500 pt-mb-1">max-w-md (448px)</div>
+          <div class="pt-font-bold pt-text-sm">md</div>
+        </div>
+        <div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-max-w-lg" style="background:var(--pk-surface);">
+          <div class="pt-text-xs pt-text-gray-500 pt-mb-1">max-w-lg (512px)</div>
+          <div class="pt-font-bold pt-text-sm">lg</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-max-w-xs"&gt;xs (320px)&lt;/div&gt;
+&lt;div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-max-w-sm"&gt;sm (384px)&lt;/div&gt;
+&lt;div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-max-w-md"&gt;md (448px)&lt;/div&gt;
+&lt;div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-max-w-lg"&gt;lg (512px)&lt;/div&gt;</code></pre>
+      </div>
+
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>max-width</th>
+            <th>Подходит для</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-max-w-xs</code></td><td>320px (20rem)</td><td>Компактные карточки, сайдбар</td></tr>
+          <tr><td><code>pt-max-w-sm</code></td><td>384px (24rem)</td><td>Стандартные карточки товаров</td></tr>
+          <tr><td><code>pt-max-w-md</code></td><td>448px (28rem)</td><td>Карточки с расширенным контентом</td></tr>
+          <tr><td><code>pt-max-w-lg</code></td><td>512px (32rem)</td><td>Крупные карточки, профили</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Тени карточек</h2>
+      <p>Photon-tw предлагает пять уровней тени: <code>pt-shadow-sm</code>, <code>pt-shadow</code>, <code>pt-shadow-md</code>, <code>pt-shadow-lg</code>, <code>pt-shadow-xl</code>. Ниже — одинаковые карточки с разными тенями.</p>
+
+      <div class="pt-demo pt-demo--gap-lg">
+        <div class="pt-bg-surface pt-rounded-lg pt-shadow-sm pt-p-4 pt-max-w-48" style="background:var(--pk-surface);">
+          <div class="pt-font-bold pt-text-sm">shadow-sm</div>
+        </div>
+        <div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-max-w-48" style="background:var(--pk-surface);">
+          <div class="pt-font-bold pt-text-sm">shadow</div>
+        </div>
+        <div class="pt-bg-surface pt-rounded-lg pt-shadow-md pt-p-4 pt-max-w-48" style="background:var(--pk-surface);">
+          <div class="pt-font-bold pt-text-sm">shadow-md</div>
+        </div>
+        <div class="pt-bg-surface pt-rounded-lg pt-shadow-lg pt-p-4 pt-max-w-48" style="background:var(--pk-surface);">
+          <div class="pt-font-bold pt-text-sm">shadow-lg</div>
+        </div>
+        <div class="pt-bg-surface pt-rounded-lg pt-shadow-xl pt-p-4 pt-max-w-48" style="background:var(--pk-surface);">
+          <div class="pt-font-bold pt-text-sm">shadow-xl</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-lg pt-shadow-sm pt-p-4"&gt;shadow-sm&lt;/div&gt;
+&lt;div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4"&gt;shadow&lt;/div&gt;
+&lt;div class="pt-bg-surface pt-rounded-lg pt-shadow-md pt-p-4"&gt;shadow-md&lt;/div&gt;
+&lt;div class="pt-bg-surface pt-rounded-lg pt-shadow-lg pt-p-4"&gt;shadow-lg&lt;/div&gt;
+&lt;div class="pt-bg-surface pt-rounded-lg pt-shadow-xl pt-p-4"&gt;shadow-xl&lt;/div&gt;</code></pre>
+      </div>
+
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>box-shadow</th>
+            <th>Интенсивность</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-shadow-sm</code></td><td><code>0 1px 2px 0 rgb(0 0 0 / 0.05)</code></td><td>Лёгкая, едва заметная</td></tr>
+          <tr><td><code>pt-shadow</code></td><td><code>0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)</code></td><td>Базовая</td></tr>
+          <tr><td><code>pt-shadow-md</code></td><td><code>0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)</code></td><td>Средняя, стандарт для карточек</td></tr>
+          <tr><td><code>pt-shadow-lg</code></td><td><code>0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)</code></td><td>Сильная, для модалок</td></tr>
+          <tr><td><code>pt-shadow-xl</code></td><td><code>0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)</code></td><td>Максимальная, для выделенных блоков</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Скругление</h2>
+      <p>Управляйте формой углов карточки через <code>pt-rounded-*</code>. Основные варианты: <code>pt-rounded-lg</code> (8px), <code>pt-rounded-xl</code> (12px), <code>pt-rounded-2xl</code> (16px).</p>
+
+      <div class="pt-demo pt-demo--gap-lg">
+        <div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-5 pt-max-w-48 pt-text-center" style="background:var(--pk-surface);">
+          <div class="pt-font-bold pt-text-sm">rounded-lg</div>
+          <div class="pt-text-xs pt-text-gray-500">8px</div>
+        </div>
+        <div class="pt-bg-surface pt-rounded-xl pt-shadow pt-p-5 pt-max-w-48 pt-text-center" style="background:var(--pk-surface);">
+          <div class="pt-font-bold pt-text-sm">rounded-xl</div>
+          <div class="pt-text-xs pt-text-gray-500">12px</div>
+        </div>
+        <div class="pt-bg-surface pt-rounded-2xl pt-shadow pt-p-5 pt-max-w-48 pt-text-center" style="background:var(--pk-surface);">
+          <div class="pt-font-bold pt-text-sm">rounded-2xl</div>
+          <div class="pt-text-xs pt-text-gray-500">16px</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-5"&gt;rounded-lg (8px)&lt;/div&gt;
+&lt;div class="pt-bg-surface pt-rounded-xl pt-shadow pt-p-5"&gt;rounded-xl (12px)&lt;/div&gt;
+&lt;div class="pt-bg-surface pt-rounded-2xl pt-shadow pt-p-5"&gt;rounded-2xl (16px)&lt;/div&gt;</code></pre>
+      </div>
+
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>border-radius</th>
+            <th>Применение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-rounded-lg</code></td><td>8px (0.5rem)</td><td>Стандартные карточки</td></tr>
+          <tr><td><code>pt-rounded-xl</code></td><td>12px (0.75rem)</td><td>Карточки с мягкими углами</td></tr>
+          <tr><td><code>pt-rounded-2xl</code></td><td>16px (1rem)</td><td>Крупные карточки, модальные окна</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Сетка карточек</h2>
+      <p>Для раскладки нескольких карточек используйте <code>pt-grid pt-grid-cols-3 pt-gap-4</code>. Сетка автоматически распределяет карточки по колонкам с заданным отступом. Каждая карточка внутри сетки имеет одинаковую высоту благодаря свойствам грида.</p>
+
+      <div class="pt-demo pt-demo--col">
+        <div class="pt-grid pt-grid-cols-3 pt-gap-4 pt-w-full">
+          <div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-text-center" style="background:var(--pk-surface);">
+            <div class="pt-text-3xl pt-mb-2">📊</div>
+            <div class="pt-font-semibold pt-text-sm">Аналитика</div>
+            <div class="pt-text-xs pt-text-gray-500 pt-mt-1">Отчёты и метрики</div>
+          </div>
+          <div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-text-center" style="background:var(--pk-surface);">
+            <div class="pt-text-3xl pt-mb-2">⚙️</div>
+            <div class="pt-font-semibold pt-text-sm">Настройки</div>
+            <div class="pt-text-xs pt-text-gray-500 pt-mt-1">Управление системой</div>
+          </div>
+          <div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-text-center" style="background:var(--pk-surface);">
+            <div class="pt-text-3xl pt-mb-2">📁</div>
+            <div class="pt-font-semibold pt-text-sm">Файлы</div>
+            <div class="pt-text-xs pt-text-gray-500 pt-mt-1">Документы и медиа</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-grid pt-grid-cols-3 pt-gap-4"&gt;
+  &lt;div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-text-center"&gt;
+    &lt;div class="pt-text-3xl pt-mb-2"&gt;📊&lt;/div&gt;
+    &lt;div class="pt-font-semibold pt-text-sm"&gt;Аналитика&lt;/div&gt;
+    &lt;div class="pt-text-xs pt-text-gray-500 pt-mt-1"&gt;Отчёты и метрики&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-text-center"&gt;
+    &lt;div class="pt-text-3xl pt-mb-2"&gt;⚙️&lt;/div&gt;
+    &lt;div class="pt-font-semibold pt-text-sm"&gt;Настройки&lt;/div&gt;
+    &lt;div class="pt-text-xs pt-text-gray-500 pt-mt-1"&gt;Управление системой&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pt-bg-surface pt-rounded-lg pt-shadow pt-p-4 pt-text-center"&gt;
+    &lt;div class="pt-text-3xl pt-mb-2"&gt;📁&lt;/div&gt;
+    &lt;div class="pt-font-semibold pt-text-sm"&gt;Файлы&lt;/div&gt;
+    &lt;div class="pt-text-xs pt-text-gray-500 pt-mt-1"&gt;Документы и медиа&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <p>Сеточные классы:</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>Назначение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-grid</code></td><td>Включает CSS Grid</td></tr>
+          <tr><td><code>pt-grid-cols-3</code></td><td>Три равные колонки</td></tr>
+          <tr><td><code>pt-gap-4</code></td><td>Отступ между ячейками 16px</td></tr>
+          <tr><td><code>pt-text-3xl</code></td><td>Крупный шрифт 30px для иконки</td></tr>
+          <tr><td><code>pt-mt-1</code></td><td>Верхний отступ 4px</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Тёмная тема</h2>
+      <p>Photon-tw поддерживает тёмную тему через модификатор <code>pt-dark:*</code>. Добавьте <code>pt-dark:bg-gray-800</code> для фона и <code>pt-dark:text-white</code> для текста — стили применятся автоматически, когда у <code>&lt;body&gt;</code> или родителя есть класс <code>theme-dark</code>.</p>
+
+      <div class="pt-demo pt-demo--gap-lg">
+        <div class="pt-bg-surface pt-dark:bg-gray-800 pt-rounded-xl pt-shadow-md pt-p-5 pt-max-w-sm" style="background:var(--pk-surface);">
+          <h3 class="pt-text-lg pt-font-bold pt-mb-2 pt-dark:text-white">Светлая тема</h3>
+          <p class="pt-text-gray-500 pt-dark:text-gray-300 pt-text-sm pt-mb-3">Этот текст виден на светлом фоне, но адаптируется к тёмной теме.</p>
+          <button class="pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded pt-hover:bg-primary-600 pt-transition">Действие</button>
+        </div>
+        <div class="pt-bg-gray-800 pt-rounded-xl pt-shadow-md pt-p-5 pt-max-w-sm">
+          <h3 class="pt-text-lg pt-font-bold pt-mb-2 pt-text-white">Тёмная тема</h3>
+          <p class="pt-text-gray-300 pt-text-sm pt-mb-3">Пример карточки, оформленной в тёмной теме вручную — для наглядного сравнения.</p>
+          <button class="pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded pt-hover:bg-primary-600 pt-transition">Действие</button>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Карточка с поддержкой тёмной темы --&gt;
+&lt;div class="pt-bg-surface pt-dark:bg-gray-800 pt-rounded-xl pt-shadow-md pt-p-5 pt-max-w-sm"&gt;
+  &lt;h3 class="pt-text-lg pt-font-bold pt-dark:text-white"&gt;Светлая тема&lt;/h3&gt;
+  &lt;p class="pt-text-gray-500 pt-dark:text-gray-300 pt-text-sm"&gt;Адаптируется к тёмной теме.&lt;/p&gt;
+  &lt;button class="pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded"&gt;Действие&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <p>Модификаторы тёмной темы:</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Модификатор</th>
+            <th>Базовый класс</th>
+            <th>Эффект в тёмной теме</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-dark:bg-gray-800</code></td><td><code>pt-bg-surface</code></td><td>Заменяет светлый фон на тёмно-серый (#1f2937)</td></tr>
+          <tr><td><code>pt-dark:text-white</code></td><td><code>pt-text-gray-900</code></td><td>Заменяет тёмный текст на белый</td></tr>
+          <tr><td><code>pt-dark:text-gray-300</code></td><td><code>pt-text-gray-500</code></td><td>Осветляет второстепенный текст</td></tr>
+          <tr><td><code>pt-dark:border-gray-700</code></td><td><code>pt-border-gray-200</code></td><td>Адаптирует цвет границы</td></tr>
+          <tr><td><code>pt-dark:shadow-dark-md</code></td><td><code>pt-shadow-md</code></td><td>Корректирует тень для тёмного фона</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Полная таблица классов</h2>
+      <p>Сводная таблица всех <code>pt-*</code> классов, использованных на этой странице, с описанием и CSS-значением.</p>
+
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Категория</th>
+            <th>Класс</th>
+            <th>CSS-значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td rowspan="2">Фон</td><td><code>pt-bg-surface</code></td><td><code>background: var(--pk-surface)</code></td></tr>
+          <tr><td><code>pt-bg-primary</code></td><td><code>background: var(--pk-primary)</code></td></tr>
+          <tr><td rowspan="5">Скругление</td><td><code>pt-rounded</code></td><td><code>border-radius: 0.25rem</code></td></tr>
+          <tr><td><code>pt-rounded-lg</code></td><td><code>border-radius: 0.5rem</code></td></tr>
+          <tr><td><code>pt-rounded-xl</code></td><td><code>border-radius: 0.75rem</code></td></tr>
+          <tr><td><code>pt-rounded-2xl</code></td><td><code>border-radius: 1rem</code></td></tr>
+          <tr><td><code>pt-rounded-full</code></td><td><code>border-radius: 9999px</code></td></tr>
+          <tr><td rowspan="5">Тень</td><td><code>pt-shadow-sm</code></td><td>Лёгкая тень (см. таблицу теней)</td></tr>
+          <tr><td><code>pt-shadow</code></td><td>Базовая тень</td></tr>
+          <tr><td><code>pt-shadow-md</code></td><td>Средняя тень</td></tr>
+          <tr><td><code>pt-shadow-lg</code></td><td>Сильная тень</td></tr>
+          <tr><td><code>pt-shadow-xl</code></td><td>Максимальная тень</td></tr>
+          <tr><td rowspan="2">Отступы</td><td><code>pt-p-4</code></td><td><code>padding: 1rem</code></td></tr>
+          <tr><td><code>pt-p-5</code></td><td><code>padding: 1.25rem</code></td></tr>
+          <tr><td><code>pt-p-6</code></td><td><code>padding: 1.5rem</code></td></tr>
+          <tr><td rowspan="2">Ширина</td><td><code>pt-max-w-sm</code></td><td><code>max-width: 24rem</code></td></tr>
+          <tr><td><code>pt-max-w-md</code></td><td><code>max-width: 28rem</code></td></tr>
+          <tr><td rowspan="2">Flexbox</td><td><code>pt-flex</code></td><td><code>display: flex</code></td></tr>
+          <tr><td><code>pt-flex-1</code></td><td><code>flex: 1 1 0%</code></td></tr>
+          <tr><td rowspan="3">Grid</td><td><code>pt-grid</code></td><td><code>display: grid</code></td></tr>
+          <tr><td><code>pt-grid-cols-3</code></td><td><code>grid-template-columns: repeat(3, minmax(0, 1fr))</code></td></tr>
+          <tr><td><code>pt-gap-4</code></td><td><code>gap: 1rem</code></td></tr>
+          <tr><td rowspan="2">Тёмная тема</td><td><code>pt-dark:bg-gray-800</code></td><td>Фон в тёмной теме</td></tr>
+          <tr><td><code>pt-dark:text-white</code></td><td>Текст в тёмной теме</td></tr>
+        </tbody>
+      </table>
+
+    </main>
+  </div>
+
+  <script src="../photon-kit/photon-kit.js"></script>
+  <script src="js/doc.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

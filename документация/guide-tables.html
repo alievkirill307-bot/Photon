@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Полное руководство по созданию таблиц в Photon Framework: структура, оформление, адаптивность, сортировка, действия." />
+  <meta name="keywords" content="photon, tables, таблицы, data table, pricing table, responsive table, sortable table, striped rows" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Таблицы [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link active">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Таблицы [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Таблицы используются для отображения структурированных данных. Photon предоставляет утилиты для создания семантически правильных, адаптивных и стилизованных таблиц с поддержкой сортировки и действий.</p>
+
+      <h2>Структура таблицы</h2>
+      <p>Семантически правильная таблица состоит из <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code> (заголовок), <code>&lt;tbody&gt;</code> (тело), <code>&lt;tr&gt;</code> (строка), <code>&lt;th&gt;</code> (ячейка заголовка) и <code>&lt;td&gt;</code> (ячейка данных).</p>
+
+      <div class="code-block">
+        <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Имя&lt;/th&gt;
+      &lt;th&gt;Возраст&lt;/th&gt;
+      &lt;th&gt;Город&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Анна&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;Москва&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+      </div>
+
+      <h2>Базовая таблица</h2>
+      <p>Используйте <code>pt-table-auto</code> (или <code>pt-table-fixed</code>), <code>pt-w-full</code>, <code>pt-text-sm</code> и <code>pt-border</code> для базового стиля. Добавьте <code>pt-border-collapse</code> для схлопывания границ.</p>
+
+      <div class="demo-box">
+        <table class="pt-table-auto pt-w-full pt-text-sm pt-border-collapse">
+          <thead>
+            <tr class="pt-border-b pt-border-default">
+              <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Имя</th>
+              <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Должность</th>
+              <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Email</th>
+              <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Статус</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+              <td class="pt-py-3 pt-px-4">Анна Смирнова</td>
+              <td class="pt-py-3 pt-px-4">Дизайнер</td>
+              <td class="pt-py-3 pt-px-4 pt-text-gray-400">anna@example.com</td>
+              <td class="pt-py-3 pt-px-4"><span class="pt-inline-block pt-px-2 pt-py-0.5 pt-rounded-full pt-text-xs pt-bg-success pt-bg-opacity-20 pt-text-success">Активен</span></td>
+            </tr>
+            <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+              <td class="pt-py-3 pt-px-4">Иван Петров</td>
+              <td class="pt-py-3 pt-px-4">Разработчик</td>
+              <td class="pt-py-3 pt-px-4 pt-text-gray-400">ivan@example.com</td>
+              <td class="pt-py-3 pt-px-4"><span class="pt-inline-block pt-px-2 pt-py-0.5 pt-rounded-full pt-text-xs pt-bg-warning pt-bg-opacity-20 pt-text-warning">В ожидании</span></td>
+            </tr>
+            <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+              <td class="pt-py-3 pt-px-4">Мария Иванова</td>
+              <td class="pt-py-3 pt-px-4">Менеджер</td>
+              <td class="pt-py-3 pt-px-4 pt-text-gray-400">maria@example.com</td>
+              <td class="pt-py-3 pt-px-4"><span class="pt-inline-block pt-px-2 pt-py-0.5 pt-rounded-full pt-text-xs pt-bg-error pt-bg-opacity-20 pt-text-error">Неактивен</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;table class="pt-table-auto pt-w-full pt-text-sm pt-border-collapse"&gt;
+  &lt;thead&gt;
+    &lt;tr class="pt-border-b pt-border-default"&gt;
+      &lt;th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300"&gt;Имя&lt;/th&gt;
+      &lt;th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300"&gt;Должность&lt;/th&gt;
+      &lt;th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300"&gt;Email&lt;/th&gt;
+      &lt;th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300"&gt;Статус&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition"&gt;
+      &lt;td class="pt-py-3 pt-px-4"&gt;Анна Смирнова&lt;/td&gt;
+      &lt;td class="pt-py-3 pt-px-4"&gt;Дизайнер&lt;/td&gt;
+      &lt;td class="pt-py-3 pt-px-4 pt-text-gray-400"&gt;anna@example.com&lt;/td&gt;
+      &lt;td class="pt-py-3 pt-px-4"&gt;
+        &lt;span class="pt-inline-block pt-px-2 pt-py-0.5 pt-rounded-full pt-text-xs pt-bg-success pt-bg-opacity-20 pt-text-success"&gt;
+          Активен
+        &lt;/span&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+      </div>
+
+      <h2>Оформление строк</h2>
+      <p>Два основных варианта оформления: <strong>striped rows</strong> (чередование фона) и <strong>hover rows</strong> (подсветка при наведении).</p>
+
+      <div class="demo-box">
+        <p class="pt-text-xs pt-text-gray-500 pt-mb-2">Striped rows (чередование):</p>
+        <table class="pt-table-auto pt-w-full pt-text-sm pt-border-collapse">
+          <thead>
+            <tr class="pt-border-b pt-border-default">
+              <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Продукт</th>
+              <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Цена</th>
+              <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Количество</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pt-border-b pt-border-default pt-bg-surface-hover">
+              <td class="pt-py-3 pt-px-4">Ноутбук</td>
+              <td class="pt-py-3 pt-px-4">75 000 руб.</td>
+              <td class="pt-py-3 pt-px-4">2</td>
+            </tr>
+            <tr class="pt-border-b pt-border-default">
+              <td class="pt-py-3 pt-px-4">Монитор</td>
+              <td class="pt-py-3 pt-px-4">25 000 руб.</td>
+              <td class="pt-py-3 pt-px-4">1</td>
+            </tr>
+            <tr class="pt-border-b pt-border-default pt-bg-surface-hover">
+              <td class="pt-py-3 pt-px-4">Клавиатура</td>
+              <td class="pt-py-3 pt-px-4">5 000 руб.</td>
+              <td class="pt-py-3 pt-px-4">3</td>
+            </tr>
+            <tr class="pt-border-b pt-border-default">
+              <td class="pt-py-3 pt-px-4">Мышь</td>
+              <td class="pt-py-3 pt-px-4">3 000 руб.</td>
+              <td class="pt-py-3 pt-px-4">5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Оформление колонок</h2>
+      <p>Выравнивайте текст в колонках с помощью <code>pt-text-left</code>, <code>pt-text-center</code>, <code>pt-text-right</code>. Ограничивайте ширину с помощью <code>pt-w-*</code> или <code>pt-max-w-*</code>.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS</th><th>Действие</th></tr></thead>
+          <tbody>
+            <tr><td><code>pt-text-left</code></td><td><code>text-align: left</code></td><td>Выравнивание по левому краю (текст, имена)</td></tr>
+            <tr><td><code>pt-text-center</code></td><td><code>text-align: center</code></td><td>Выравнивание по центру (статус, чекбоксы)</td></tr>
+            <tr><td><code>pt-text-right</code></td><td><code>text-align: right</code></td><td>Выравнивание по правому краю (цены, числа)</td></tr>
+            <tr><td><code>pt-w-1/4</code></td><td><code>width: 25%</code></td><td>Фиксированная ширина колонки</td></tr>
+            <tr><td><code>pt-whitespace-nowrap</code></td><td><code>white-space: nowrap</code></td><td>Запрет переноса текста</td></tr>
+            <tr><td><code>pt-align-top</code></td><td><code>vertical-align: top</code></td><td>Выравнивание по верху ячейки</td></tr>
+            <tr><td><code>pt-align-middle</code></td><td><code>vertical-align: middle</code></td><td>Выравнивание по центру ячейки</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <table class="pt-table-auto pt-w-full pt-text-sm pt-border-collapse">
+          <thead>
+            <tr class="pt-border-b pt-border-default">
+              <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Левый (имя)</th>
+              <th class="pt-text-center pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Центр (статус)</th>
+              <th class="pt-text-right pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Правый (цена)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+              <td class="pt-py-3 pt-px-4">Анна Смирнова</td>
+              <td class="pt-py-3 pt-px-4 pt-text-center"><span class="pt-px-2 pt-py-0.5 pt-rounded-full pt-text-xs pt-bg-success pt-bg-opacity-20 pt-text-success">Активен</span></td>
+              <td class="pt-py-3 pt-px-4 pt-text-right pt-font-medium">120 000 руб.</td>
+            </tr>
+            <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+              <td class="pt-py-3 pt-px-4">Иван Петров</td>
+              <td class="pt-py-3 pt-px-4 pt-text-center"><span class="pt-px-2 pt-py-0.5 pt-rounded-full pt-text-xs pt-bg-warning pt-bg-opacity-20 pt-text-warning">В ожидании</span></td>
+              <td class="pt-py-3 pt-px-4 pt-text-right pt-font-medium">95 000 руб.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Адаптивные таблицы</h2>
+      <p>Для адаптивности используйте контейнер с <code>overflow-x-auto</code>. На мобильных можно превратить таблицу в карточки с помощью медиа-запросов. Это особенно удобно для таблиц с большим количеством колонок.</p>
+
+      <div class="code-block">
+        <pre><code>/* CSS для карточного layout на мобильных */
+@media (max-width: 640px) {
+  .responsive-table table,
+  .responsive-table thead,
+  .responsive-table tbody,
+  .responsive-table th,
+  .responsive-table td,
+  .responsive-table tr {
+    display: block;
+  }
+  .responsive-table thead {
+    display: none; /* Прячем заголовки */
+  }
+  .responsive-table tr {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--pk-border);
+    border-radius: 8px;
+  }
+  .responsive-table td {
+    padding: 0.25rem 0;
+    text-align: right;
+    border: none;
+  }
+  .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    color: var(--pk-muted);
+  }
+}</code></pre>
+      </div>
+
+      <div class="demo-box">
+        <div style="overflow-x:auto;">
+          <table class="pt-table-auto pt-w-full pt-text-sm pt-border-collapse">
+            <thead>
+              <tr class="pt-border-b pt-border-default">
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300 pt-whitespace-nowrap">ID</th>
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300 pt-whitespace-nowrap">Название</th>
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300 pt-whitespace-nowrap">Категория</th>
+                <th class="pt-text-right pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300 pt-whitespace-nowrap">Цена</th>
+                <th class="pt-text-center pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300 pt-whitespace-nowrap">Рейтинг</th>
+                <th class="pt-text-center pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300 pt-whitespace-nowrap">Действия</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+                <td class="pt-py-3 pt-px-4">#101</td>
+                <td class="pt-py-3 pt-px-4">Флагманский смартфон</td>
+                <td class="pt-py-3 pt-px-4">Электроника</td>
+                <td class="pt-py-3 pt-px-4 pt-text-right pt-font-medium">89 990 руб.</td>
+                <td class="pt-py-3 pt-px-4 pt-text-center">4.8</td>
+                <td class="pt-py-3 pt-px-4 pt-text-center pt-whitespace-nowrap">
+                  <button class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-bg-surface-hover pt-hover:bg-primary pt-hover:text-white pt-border-none pt-cursor-pointer pt-transition">Ред.</button>
+                </td>
+              </tr>
+              <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+                <td class="pt-py-3 pt-px-4">#102</td>
+                <td class="pt-py-3 pt-px-4">Беспроводные наушники</td>
+                <td class="pt-py-3 pt-px-4">Аксессуары</td>
+                <td class="pt-py-3 pt-px-4 pt-text-right pt-font-medium">14 990 руб.</td>
+                <td class="pt-py-3 pt-px-4 pt-text-center">4.5</td>
+                <td class="pt-py-3 pt-px-4 pt-text-center pt-whitespace-nowrap">
+                  <button class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-bg-surface-hover pt-hover:bg-primary pt-hover:text-white pt-border-none pt-cursor-pointer pt-transition">Ред.</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2>Сортировка</h2>
+      <p>Добавьте кликабельные заголовки с индикаторами сортировки. Используйте SVG-иконки для показа направления сортировки (по возрастанию/убыванию).</p>
+
+      <div class="demo-box">
+        <table class="pt-table-auto pt-w-full pt-text-sm pt-border-collapse">
+          <thead>
+            <tr class="pt-border-b pt-border-default">
+              <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300 pt-cursor-pointer pt-hover:text-white pt-select-none">
+                <span class="pt-flex pt-items-center pt-gap-1">
+                  Имя
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                </span>
+              </th>
+              <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300 pt-cursor-pointer pt-hover:text-white pt-select-none">
+                <span class="pt-flex pt-items-center pt-gap-1">
+                  Должность
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12h8"/></svg>
+                </span>
+              </th>
+              <th class="pt-text-right pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300 pt-cursor-pointer pt-hover:text-white pt-select-none">
+                <span class="pt-flex pt-items-center pt-gap-1 pt-justify-end">
+                  Зарплата
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+              <td class="pt-py-3 pt-px-4">Анна Смирнова</td>
+              <td class="pt-py-3 pt-px-4">Дизайнер</td>
+              <td class="pt-py-3 pt-px-4 pt-text-right pt-font-medium">120 000 руб.</td>
+            </tr>
+            <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+              <td class="pt-py-3 pt-px-4">Иван Петров</td>
+              <td class="pt-py-3 pt-px-4">Разработчик</td>
+              <td class="pt-py-3 pt-px-4 pt-text-right pt-font-medium">150 000 руб.</td>
+            </tr>
+            <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+              <td class="pt-py-3 pt-px-4">Мария Иванова</td>
+              <td class="pt-py-3 pt-px-4">Менеджер</td>
+              <td class="pt-py-3 pt-px-4 pt-text-right pt-font-medium">130 000 руб.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Header без сортировки --&gt;
+&lt;th class="pt-cursor-pointer pt-hover:text-white pt-select-none"&gt;
+  &lt;span class="pt-flex pt-items-center pt-gap-1"&gt;
+    Имя
+    &lt;svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+      &lt;path d="M8 12h8"/&gt;
+      &lt;path d="M12 8v8"/&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+&lt;/th&gt;
+
+&lt;!-- Header сортировка по возрастанию --&gt;
+&lt;th class="pt-cursor-pointer pt-hover:text-white pt-select-none"&gt;
+  &lt;span class="pt-flex pt-items-center pt-gap-1 pt-justify-end"&gt;
+    Зарплата
+    &lt;svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+      &lt;path d="M12 5v14"/&gt;
+      &lt;path d="M19 12l-7 7-7-7"/&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+&lt;/th&gt;
+
+&lt;!-- Header сортировка по убыванию --&gt;
+&lt;th class="pt-cursor-pointer pt-hover:text-white pt-select-none"&gt;
+  &lt;span class="pt-flex pt-items-center pt-gap-1"&gt;
+    Дата
+    &lt;svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+      &lt;path d="M12 5v14"/&gt;
+      &lt;path d="M5 12l7-7 7 7"/&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+&lt;/th&gt;</code></pre>
+      </div>
+
+      <h2>Таблица с действиями</h2>
+      <p>Добавьте колонку с кнопками действий (редактировать, удалить, просмотреть). Используйте <code>pt-whitespace-nowrap</code> для предотвращения переноса кнопок.</p>
+
+      <div class="demo-box">
+        <table class="pt-table-auto pt-w-full pt-text-sm pt-border-collapse">
+          <thead>
+            <tr class="pt-border-b pt-border-default">
+              <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Пользователь</th>
+              <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Роль</th>
+              <th class="pt-text-center pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Действия</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+              <td class="pt-py-3 pt-px-4">
+                <div class="pt-flex pt-items-center pt-gap-3">
+                  <div class="pt-w-8 pt-h-8 pt-rounded-full pt-bg-primary pt-flex pt-items-center pt-justify-center pt-text-xs pt-font-bold pt-text-white">AC</div>
+                  <div>
+                    <div class="pt-font-medium">Анна Смирнова</div>
+                    <div class="pt-text-xs pt-text-gray-500">anna@example.com</div>
+                  </div>
+                </div>
+              </td>
+              <td class="pt-py-3 pt-px-4">Администратор</td>
+              <td class="pt-py-3 pt-px-4 pt-text-center pt-whitespace-nowrap">
+                <button class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-bg-surface-hover pt-hover:bg-primary pt-hover:text-white pt-border-none pt-cursor-pointer pt-transition pt-mr-1">Просмотр</button>
+                <button class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-bg-surface-hover pt-hover:bg-warning pt-hover:text-black pt-border-none pt-cursor-pointer pt-transition pt-mr-1">Ред.</button>
+                <button class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-bg-surface-hover pt-hover:bg-error pt-hover:text-white pt-border-none pt-cursor-pointer pt-transition">Удал.</button>
+              </td>
+            </tr>
+            <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+              <td class="pt-py-3 pt-px-4">
+                <div class="pt-flex pt-items-center pt-gap-3">
+                  <div class="pt-w-8 pt-h-8 pt-rounded-full pt-bg-success pt-flex pt-items-center pt-justify-center pt-text-xs pt-font-bold pt-text-white">ИП</div>
+                  <div>
+                    <div class="pt-font-medium">Иван Петров</div>
+                    <div class="pt-text-xs pt-text-gray-500">ivan@example.com</div>
+                  </div>
+                </div>
+              </td>
+              <td class="pt-py-3 pt-px-4">Разработчик</td>
+              <td class="pt-py-3 pt-px-4 pt-text-center pt-whitespace-nowrap">
+                <button class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-bg-surface-hover pt-hover:bg-primary pt-hover:text-white pt-border-none pt-cursor-pointer pt-transition pt-mr-1">Просмотр</button>
+                <button class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-bg-surface-hover pt-hover:bg-warning pt-hover:text-black pt-border-none pt-cursor-pointer pt-transition pt-mr-1">Ред.</button>
+                <button class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-bg-surface-hover pt-hover:bg-error pt-hover:text-white pt-border-none pt-cursor-pointer pt-transition">Удал.</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;td class="pt-py-3 pt-px-4 pt-text-center pt-whitespace-nowrap"&gt;
+  &lt;button class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-bg-surface-hover pt-hover:bg-primary pt-hover:text-white pt-border-none pt-cursor-pointer pt-transition pt-mr-1"&gt;
+    Просмотр
+  &lt;/button&gt;
+  &lt;button class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-bg-surface-hover pt-hover:bg-warning pt-hover:text-black pt-border-none pt-cursor-pointer pt-transition pt-mr-1"&gt;
+    Ред.
+  &lt;/button&gt;
+  &lt;button class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-bg-surface-hover pt-hover:bg-error pt-hover:text-white pt-border-none pt-cursor-pointer pt-transition"&gt;
+    Удал.
+  &lt;/button&gt;
+&lt;/td&gt;</code></pre>
+      </div>
+
+      <h2>Примеры</h2>
+
+      <h3>Пример 1: Data table (таблица данных)</h3>
+
+      <div class="demo-box" style="background:var(--pk-surface);padding:16px;border-radius:12px;border:1px solid var(--pk-border);">
+        <div class="pt-flex pt-items-center pt-justify-between pt-mb-4">
+          <h3 class="pt-text-base pt-font-bold pt-m-0">Сотрудники</h3>
+          <button class="btn btn--primary btn--sm">+ Добавить</button>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="pt-table-auto pt-w-full pt-text-sm pt-border-collapse">
+            <thead>
+              <tr class="pt-border-b pt-border-default">
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Сотрудник</th>
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Отдел</th>
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Дата приёма</th>
+                <th class="pt-text-right pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Оклад</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+                <td class="pt-py-3 pt-px-4">Анна Смирнова</td>
+                <td class="pt-py-3 pt-px-4">Дизайн</td>
+                <td class="pt-py-3 pt-px-4 pt-text-gray-400">01.03.2024</td>
+                <td class="pt-py-3 pt-px-4 pt-text-right">120 000 руб.</td>
+              </tr>
+              <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+                <td class="pt-py-3 pt-px-4">Иван Петров</td>
+                <td class="pt-py-3 pt-px-4">Разработка</td>
+                <td class="pt-py-3 pt-px-4 pt-text-gray-400">15.06.2023</td>
+                <td class="pt-py-3 pt-px-4 pt-text-right">150 000 руб.</td>
+              </tr>
+              <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+                <td class="pt-py-3 pt-px-4">Мария Иванова</td>
+                <td class="pt-py-3 pt-px-4">Маркетинг</td>
+                <td class="pt-py-3 pt-px-4 pt-text-gray-400">10.09.2024</td>
+                <td class="pt-py-3 pt-px-4 pt-text-right">110 000 руб.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>Пример 2: Pricing table (таблица цен)</h3>
+
+      <div class="demo-box">
+        <div class="pt-grid pt-grid-cols-1 pt-md:grid-cols-3 pt-gap-4">
+          <div class="pt-p-6 pt-rounded-xl pt-bg-surface pt-border pt-border-default pt-text-center">
+            <h3 class="pt-text-lg pt-font-bold pt-m-0 pt-mb-2">Базовый</h3>
+            <p class="pt-text-3xl pt-font-bold pt-text-primary pt-m-0 pt-mb-1">990 руб.</p>
+            <p class="pt-text-xs pt-text-gray-500 pt-mb-4">в месяц</p>
+            <button class="btn pt-w-full">Выбрать</button>
+          </div>
+          <div class="pt-p-6 pt-rounded-xl pt-bg-surface pt-border-2 pt-border-primary pt-text-center pt-relative">
+            <span class="pt-absolute pt-top-0 pt-left-1/2 pt--translate-x-1/2 pt--translate-y-1/2 pt-px-3 pt-py-0.5 pt-rounded-full pt-text-xs pt-bg-primary pt-text-white pt-whitespace-nowrap">Популярный</span>
+            <h3 class="pt-text-lg pt-font-bold pt-m-0 pt-mb-2">Профессиональный</h3>
+            <p class="pt-text-3xl pt-font-bold pt-text-primary pt-m-0 pt-mb-1">2 990 руб.</p>
+            <p class="pt-text-xs pt-text-gray-500 pt-mb-4">в месяц</p>
+            <button class="btn btn--primary pt-w-full">Выбрать</button>
+          </div>
+          <div class="pt-p-6 pt-rounded-xl pt-bg-surface pt-border pt-border-default pt-text-center">
+            <h3 class="pt-text-lg pt-font-bold pt-m-0 pt-mb-2">Корпоративный</h3>
+            <p class="pt-text-3xl pt-font-bold pt-text-primary pt-m-0 pt-mb-1">5 990 руб.</p>
+            <p class="pt-text-xs pt-text-gray-500 pt-mb-4">в месяц</p>
+            <button class="btn pt-w-full">Связаться</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Пример 3: Comparison table (таблица сравнения)</h3>
+
+      <div class="demo-box">
+        <div style="overflow-x:auto;">
+          <table class="pt-table-fixed pt-w-full pt-text-sm pt-border-collapse">
+            <thead>
+              <tr class="pt-border-b pt-border-default">
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300 pt-w-1/4">Функция</th>
+                <th class="pt-text-center pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300 pt-w-1/4">Базовый</th>
+                <th class="pt-text-center pt-py-3 pt-px-4 pt-font-semibold pt-text-primary pt-w-1/4">Профессиональный</th>
+                <th class="pt-text-center pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300 pt-w-1/4">Корпоративный</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pt-border-b pt-border-default">
+                <td class="pt-py-3 pt-px-4">Проекты</td>
+                <td class="pt-py-3 pt-px-4 pt-text-center">1</td>
+                <td class="pt-py-3 pt-px-4 pt-text-center pt-text-primary pt-font-semibold">10</td>
+                <td class="pt-py-3 pt-px-4 pt-text-center">∞</td>
+              </tr>
+              <tr class="pt-border-b pt-border-default pt-bg-surface-hover">
+                <td class="pt-py-3 pt-px-4">Хранилище</td>
+                <td class="pt-py-3 pt-px-4 pt-text-center">5 ГБ</td>
+                <td class="pt-py-3 pt-px-4 pt-text-center pt-text-primary pt-font-semibold">50 ГБ</td>
+                <td class="pt-py-3 pt-px-4 pt-text-center">500 ГБ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>Пример 4: Расписание (schedule table)</h3>
+
+      <div class="demo-box">
+        <div style="overflow-x:auto;">
+          <table class="pt-table-auto pt-w-full pt-text-sm pt-border-collapse">
+            <thead>
+              <tr class="pt-border-b pt-border-default">
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Время</th>
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Пн</th>
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Вт</th>
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Ср</th>
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Чт</th>
+                <th class="pt-text-left pt-py-3 pt-px-4 pt-font-semibold pt-text-gray-300">Пт</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+                <td class="pt-py-3 pt-px-4 pt-font-medium">09:00–10:30</td>
+                <td class="pt-py-3 pt-px-4">Встреча</td>
+                <td class="pt-py-3 pt-px-4 pt-text-gray-500">—</td>
+                <td class="pt-py-3 pt-px-4">Разработка</td>
+                <td class="pt-py-3 pt-px-4 pt-text-gray-500">—</td>
+                <td class="pt-py-3 pt-px-4">Дизайн-ревью</td>
+              </tr>
+              <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+                <td class="pt-py-3 pt-px-4 pt-font-medium">10:45–12:15</td>
+                <td class="pt-py-3 pt-px-4 pt-text-gray-500">—</td>
+                <td class="pt-py-3 pt-px-4">Код-ревью</td>
+                <td class="pt-py-3 pt-px-4 pt-text-gray-500">—</td>
+                <td class="pt-py-3 pt-px-4">Спринт-планинг</td>
+                <td class="pt-py-3 pt-px-4 pt-text-gray-500">—</td>
+              </tr>
+              <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+                <td class="pt-py-3 pt-px-4 pt-font-medium">13:00–14:30</td>
+                <td class="pt-py-3 pt-px-4">Обед</td>
+                <td class="pt-py-3 pt-px-4">Обед</td>
+                <td class="pt-py-3 pt-px-4">Обед</td>
+                <td class="pt-py-3 pt-px-4">Обед</td>
+                <td class="pt-py-3 pt-px-4">Обед</td>
+              </tr>
+              <tr class="pt-border-b pt-border-default pt-hover:bg-surface-hover pt-transition">
+                <td class="pt-py-3 pt-px-4 pt-font-medium">14:45–16:15</td>
+                <td class="pt-py-3 pt-px-4">Задачи</td>
+                <td class="pt-py-3 pt-px-4">Задачи</td>
+                <td class="pt-py-3 pt-px-4">Задачи</td>
+                <td class="pt-py-3 pt-px-4">Задачи</td>
+                <td class="pt-py-3 pt-px-4">Ретро</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

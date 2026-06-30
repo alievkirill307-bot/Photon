@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Формы через Photon-tw утилиты. pt-border, pt-rounded, pt-focus, pt-w-full, pt-flex — все pt-* классы для форм." />
+  <meta name="keywords" content="photon, css framework, photon-tw, utility classes, forms, формы, pt-forms, input, select, checkbox, утилитарные формы" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Формы [pt] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link active">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Формы [pt]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+
+      <p>Photon-tw предоставляет полный набор <code>pt-*</code> классов для стилизации форм: от простых текстовых полей до сложных композиций с иконками и валидацией. Все стили применяются через утилитарные классы — никакого кастомного CSS.</p>
+
+      <!-- ================================================================== -->
+      <!-- ТЕКСТОВОЕ ПОЛЕ                                                        -->
+      <!-- ================================================================== -->
+      <h2>Текстовое поле</h2>
+
+      <p>Базовое текстовое поле собирается из комбинации <code>pt-border</code>, <code>pt-rounded-md</code>, отступов <code>pt-px-3 pt-py-2</code> и ширины <code>pt-w-full</code>. Для состояния фокуса используем <code>pt-focus:border-primary</code>.</p>
+
+      <div class="pt-demo">
+        <input class="pt-border pt-border-gray-300 pt-rounded-md pt-px-3 pt-py-2 pt-w-full pt-text-sm pt-focus:border-primary pt-focus:ring-2 pt-focus:ring-primary-200 pt-transition" placeholder="Введите текст..." style="outline:none;">
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;input class="pt-border pt-border-gray-300 pt-rounded-md pt-px-3 pt-py-2 pt-w-full pt-text-sm pt-focus:border-primary pt-focus:ring-2 pt-focus:ring-primary-200 pt-transition" placeholder="Введите текст..." style="outline:none;"&gt;</code></pre>
+      </div>
+
+      <h3>Компоненты текстового поля</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Класс</th>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Назначение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-border</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Добавляет рамку шириной 1px</td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-border-gray-300</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Цвет рамки — серый 300</td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-rounded-md</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Скругление 6px (medium)</td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-px-3</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Горизонтальный padding 12px</td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-py-2</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Вертикальный padding 8px</td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-w-full</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Ширина 100% контейнера</td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-text-sm</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Размер текста 0.875rem</td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-focus:border-primary</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">При фокусе рамка становится primary</td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-focus:ring-2</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">При фокусе добавляется внешнее свечение</td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-focus:ring-primary-200</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Цвет внешнего свечения</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ================================================================== -->
+      <!-- SELECT                                                              -->
+      <!-- ================================================================== -->
+      <h2>Выпадающий список (Select)</h2>
+
+      <p>Select стилизуется теми же классами, что и текстовое поле. Добавляем <code>pt-appearance-none</code> чтобы убрать нативную стрелку, и <code>pt-cursor-pointer</code> для курсора-указателя.</p>
+
+      <div class="pt-demo">
+        <select class="pt-border pt-border-gray-300 pt-rounded-md pt-px-3 pt-py-2 pt-w-full pt-text-sm pt-bg-white pt-appearance-none pt-cursor-pointer" style="outline:none;">
+          <option>Пункт 1</option>
+          <option>Пункт 2</option>
+          <option>Пункт 3</option>
+        </select>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;select class="pt-border pt-border-gray-300 pt-rounded-md pt-px-3 pt-py-2 pt-w-full pt-text-sm pt-bg-white pt-appearance-none pt-cursor-pointer" style="outline:none;"&gt;
+  &lt;option&gt;Пункт 1&lt;/option&gt;
+  &lt;option&gt;Пункт 2&lt;/option&gt;
+  &lt;option&gt;Пункт 3&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+      </div>
+
+      <h3>Дополнительные модификаторы Select</h3>
+      <ul>
+        <li><code>pt-appearance-none</code> — убирает стандартное оформление браузера</li>
+        <li><code>pt-cursor-pointer</code> — меняет курсор на указатель</li>
+        <li><code>pt-bg-transparent</code> — прозрачный фон</li>
+        <li><code>pt-dark:bg-gray-800</code> — тёмный фон для ночной темы</li>
+      </ul>
+
+      <!-- ================================================================== -->
+      <!-- CHECKBOX И RADIO                                                    -->
+      <!-- ================================================================== -->
+      <h2>Чекбокс и Радио-кнопка</h2>
+
+      <p>Для чекбоксов и радио используем <code>pt-w-4 pt-h-4</code> для размера, <code>pt-text-primary</code> для цвета галочки и <code>pt-rounded</code> для скругления (только чекбокс). Оборачиваем в <code>pt-flex pt-items-center pt-gap-2</code> для правильного выравнивания с текстом.</p>
+
+      <div class="pt-demo">
+        <label class="pt-flex pt-items-center pt-gap-2 pt-cursor-pointer">
+          <input type="checkbox" class="pt-w-4 pt-h-4 pt-text-primary pt-border-gray-300 pt-rounded pt-cursor-pointer"> Чекбокс
+        </label>
+        <label class="pt-flex pt-items-center pt-gap-2 pt-cursor-pointer">
+          <input type="radio" name="radio" class="pt-w-4 pt-h-4 pt-text-primary pt-border-gray-300 pt-cursor-pointer"> Радио
+        </label>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;label class="pt-flex pt-items-center pt-gap-2 pt-cursor-pointer"&gt;
+  &lt;input type="checkbox" class="pt-w-4 pt-h-4 pt-text-primary pt-border-gray-300 pt-rounded pt-cursor-pointer"&gt; Чекбокс
+&lt;/label&gt;
+&lt;label class="pt-flex pt-items-center pt-gap-2 pt-cursor-pointer"&gt;
+  &lt;input type="radio" name="radio" class="pt-w-4 pt-h-4 pt-text-primary pt-border-gray-300 pt-cursor-pointer"&gt; Радио
+&lt;/label&gt;</code></pre>
+      </div>
+
+      <h3>Распространённые размеры чекбоксов</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Размер</th>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Классы</th>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Применение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Маленький</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-w-3 pt-h-3</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Таблицы, списки</td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Стандартный</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-w-4 pt-h-4</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Формы (по умолчанию)</td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Большой</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-w-5 pt-h-5</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Touch-интерфейсы</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ================================================================== -->
+      <!-- ПОЛЕ С ИКОНКОЙ                                                     -->
+      <!-- ================================================================== -->
+      <h2>Поле с иконкой</h2>
+
+      <p>Иконка внутри поля реализуется через абсолютное позиционирование. Контейнер получает <code>pt-relative</code>, иконка — <code>pt-absolute</code> с отступом слева <code>pt-left-3</code> и вертикальным центрированием <code>pt-top-1/2 -pt-translate-y-1/2</code>. Само поле получает <code>pt-pl-10</code> чтобы текст не наезжал на иконку.</p>
+
+      <div class="pt-demo">
+        <div class="pt-relative pt-w-full pt-max-w-sm">
+          <span class="pt-absolute pt-left-3 pt-top-1/2 -pt-translate-y-1/2 pt-text-gray-400 pt-text-sm pt-pointer-events-none">🔍</span>
+          <input class="pt-border pt-border-gray-300 pt-rounded-md pt-pl-10 pt-pr-3 pt-py-2 pt-w-full pt-text-sm" placeholder="Поиск..." style="outline:none;">
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-relative pt-w-full pt-max-w-sm"&gt;
+  &lt;span class="pt-absolute pt-left-3 pt-top-1/2 -pt-translate-y-1/2 pt-text-gray-400 pt-text-sm pt-pointer-events-none"&gt;🔍&lt;/span&gt;
+  &lt;input class="pt-border pt-border-gray-300 pt-rounded-md pt-pl-10 pt-pr-3 pt-py-2 pt-w-full pt-text-sm" placeholder="Поиск..." style="outline:none;"&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Варианты позиционирования иконки</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Позиция</th>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Классы</th>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Padding поля</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Слева</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-left-3 pt-top-1/2 -pt-translate-y-1/2</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-pl-10</code></td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Справа</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-right-3 pt-top-1/2 -pt-translate-y-1/2</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-pr-10</code></td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Слева снаружи</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>-pt-left-8 pt-top-1/2 -pt-translate-y-1/2</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">—</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ================================================================== -->
+      <!-- ВЕРТИКАЛЬНАЯ ФОРМА                                                 -->
+      <!-- ================================================================== -->
+      <h2>Вертикальная форма (Login)</h2>
+
+      <p>Полноценная форма логина собранная исключительно из <code>pt-*</code> классов. Каждое поле — это <code>&lt;label&gt;</code> и <code>&lt;input&gt;</code> с отступами <code>pt-mb-*</code>. Кнопка на всю ширину использует <code>pt-w-full</code>.</p>
+
+      <div class="pt-demo--col">
+        <div class="pt-max-w-sm">
+          <label class="pt-text-sm pt-font-medium pt-mb-1 pt-block pt-text-gray-700 pt-dark:text-gray-300">Email</label>
+          <input class="pt-border pt-border-gray-300 pt-dark:border-gray-600 pt-rounded-md pt-px-3 pt-py-2 pt-w-full pt-text-sm pt-mb-3 pt-bg-white pt-dark:bg-gray-800 pt-text-gray-900 pt-dark:text-gray-100 pt-focus:border-primary pt-focus:ring-2 pt-focus:ring-primary-200 pt-transition" placeholder="mail@example.com" style="outline:none;">
+          <label class="pt-text-sm pt-font-medium pt-mb-1 pt-block pt-text-gray-700 pt-dark:text-gray-300">Пароль</label>
+          <input type="password" class="pt-border pt-border-gray-300 pt-dark:border-gray-600 pt-rounded-md pt-px-3 pt-py-2 pt-w-full pt-text-sm pt-mb-4 pt-bg-white pt-dark:bg-gray-800 pt-text-gray-900 pt-dark:text-gray-100 pt-focus:border-primary pt-focus:ring-2 pt-focus:ring-primary-200 pt-transition" placeholder="••••••••" style="outline:none;">
+          <button class="pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded pt-w-full pt-hover:bg-primary-600 pt-transition pt-cursor-pointer pt-font-medium">Войти</button>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-max-w-sm"&gt;
+  &lt;label class="pt-text-sm pt-font-medium pt-mb-1 pt-block"&gt;Email&lt;/label&gt;
+  &lt;input class="pt-border pt-border-gray-300 pt-rounded-md pt-px-3 pt-py-2 pt-w-full pt-text-sm pt-mb-3" placeholder="mail@example.com" style="outline:none;"&gt;
+  &lt;label class="pt-text-sm pt-font-medium pt-mb-1 pt-block"&gt;Пароль&lt;/label&gt;
+  &lt;input type="password" class="pt-border pt-border-gray-300 pt-rounded-md pt-px-3 pt-py-2 pt-w-full pt-text-sm pt-mb-4" placeholder="••••••••" style="outline:none;"&gt;
+  &lt;button class="pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded pt-w-full pt-hover:bg-primary-600 pt-transition"&gt;Войти&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Структура вертикальной формы</h3>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Элемент</th>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Ключевые классы</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Контейнер</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-max-w-sm</code></td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Метка (label)</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-text-sm pt-font-medium pt-mb-1 pt-block</code></td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Поле ввода</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-border pt-rounded-md pt-px-3 pt-py-2 pt-w-full pt-text-sm pt-mb-3</code></td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Кнопка</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded pt-w-full</code></td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Разделитель</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-h-px pt-bg-gray-200 pt-my-4</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ================================================================== -->
+      <!-- ТЁМНАЯ ТЕМА                                                         -->
+      <!-- ================================================================== -->
+      <h2>Адаптация под тёмную тему</h2>
+
+      <p>Для корректного отображения форм в тёмной теме используйте модификатор <code>pt-dark:*</code>. Он автоматически меняет цвета фона, текста, рамок и свечения при активации класса <code>theme-dark</code> на <code>&lt;body&gt;</code>.</p>
+
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Свойство</th>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Светлая тема</th>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Тёмная тема</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Фон поля</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-bg-white</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-dark:bg-gray-800</code></td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Текст поля</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-text-gray-900</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-dark:text-gray-100</code></td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Рамка</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-border-gray-300</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-dark:border-gray-600</code></td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Метка</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-text-gray-700</code></td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-dark:text-gray-300</code></td></tr>
+        </tbody>
+      </table>
+
+      <!-- ================================================================== -->
+      <!-- ВАЛИДАЦИЯ                                                           -->
+      <!-- ================================================================== -->
+      <h2>Состояния валидации</h2>
+
+      <p>Хотя Photon-tw не предоставляет классов валидации, вы можете комбинировать <code>pt-*</code> классы с кастомными состояниями. Например, для ошибки добавляем <code>pt-border-error pt-text-error</code>, для успеха — <code>pt-border-success</code>.</p>
+
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Состояние</th>
+            <th class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-text-left">Дополнительные классы</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Ошибка</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-border-error pt-text-error</code></td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Успех</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-border-success pt-text-success</code></td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Отключено</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>pt-opacity-50 pt-cursor-not-allowed</code></td></tr>
+          <tr><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700">Обязательное</td><td class="pt-p-2 pt-border-b pt-border-gray-200 pt-dark:border-gray-700"><code>after:pt-content-['*'] after:pt-text-error</code></td></tr>
+        </tbody>
+      </table>
+
+    </main>
+  </div>
+
+  <script src="../photon-kit/photon-kit.js"></script>
+  <script src="js/doc.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

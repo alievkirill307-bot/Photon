@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Утилиты Photon-tw для изображений. pt-rounded-*, pt-object-cover, pt-object-contain, pt-shadow-*, аватарки, адаптивные изображения, градиентный оверлей и полный справочник классов." />
+  <meta name="keywords" content="photon, css framework, photon-tw, utility classes, images, изображения, pt-images, rounded, object-fit, shadows, avatars, gradient overlay" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Изображения [pt] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link active">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+      <h1>Изображения [pt]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Утилиты Photon-tw для работы с изображениями: скругление углов, управление масштабированием (<code>object-fit</code>), позиционирование (<code>object-position</code>), тени, аватарки, адаптивная ширина/высота и градиентные оверлеи. Все примеры собраны из <code>pt-*</code> классов без кастомного CSS.</p>
+
+      <h2>Скругление углов</h2>
+      <p>Используйте <code>pt-rounded-*</code> для разных степеней скругления. Размер каждого блока — 120×120 px. От <code>pt-rounded-sm</code> (2px) до <code>pt-rounded-full</code> (полный круг).</p>
+
+      <div class="pt-demo">
+        <div class="pt-flex pt-gap-3 pt-items-center pt-flex-wrap">
+          <div class="pt-w-30 pt-h-30 pt-bg-primary pt-rounded-sm pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;">sm</div>
+          <div class="pt-w-30 pt-h-30 pt-bg-success pt-rounded pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;">base</div>
+          <div class="pt-w-30 pt-h-30 pt-bg-warning pt-rounded-lg pt-flex pt-items-center pt-justify-center pt-text-dark pt-text-xs pt-font-bold" style="width:120px;height:120px;">lg</div>
+          <div class="pt-w-30 pt-h-30 pt-bg-error pt-rounded-xl pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;">xl</div>
+          <div class="pt-w-30 pt-h-30 pt-bg-info pt-rounded-2xl pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;">2xl</div>
+          <div class="pt-w-30 pt-h-30 pt-bg-primary pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;">full</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-gap-3 pt-items-center pt-flex-wrap"&gt;
+  &lt;div class="pt-w-30 pt-h-30 pt-bg-primary pt-rounded-sm pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;"&gt;sm&lt;/div&gt;
+  &lt;div class="pt-w-30 pt-h-30 pt-bg-success pt-rounded pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;"&gt;base&lt;/div&gt;
+  &lt;div class="pt-w-30 pt-h-30 pt-bg-warning pt-rounded-lg pt-flex pt-items-center pt-justify-center pt-text-dark pt-text-xs pt-font-bold" style="width:120px;height:120px;"&gt;lg&lt;/div&gt;
+  &lt;div class="pt-w-30 pt-h-30 pt-bg-error pt-rounded-xl pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;"&gt;xl&lt;/div&gt;
+  &lt;div class="pt-w-30 pt-h-30 pt-bg-info pt-rounded-2xl pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;"&gt;2xl&lt;/div&gt;
+  &lt;div class="pt-w-30 pt-h-30 pt-bg-primary pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;"&gt;full&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>border-radius</th>
+            <th>Визуальный эффект</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-rounded-sm</code></td><td>2px (0.125rem)</td><td>Едва заметное скругление</td></tr>
+          <tr><td><code>pt-rounded</code></td><td>4px (0.25rem)</td><td>Стандартное скругление по умолчанию</td></tr>
+          <tr><td><code>pt-rounded-lg</code></td><td>8px (0.5rem)</td><td>Среднее скругление, популярный выбор</td></tr>
+          <tr><td><code>pt-rounded-xl</code></td><td>12px (0.75rem)</td><td>Сильное скругление, мягкие углы</td></tr>
+          <tr><td><code>pt-rounded-2xl</code></td><td>16px (1rem)</td><td>Максимальное скругление до круга</td></tr>
+          <tr><td><code>pt-rounded-full</code></td><td>9999px</td><td>Полностью круглая форма</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Object-fit</h2>
+      <p>Управление тем, как содержимое заполняет контейнер. Каждый пример — контейнер <code>pt-w-40 pt-h-32</code> (160×128px) с <code>pt-overflow-hidden</code> внутри <code>pt-bg-gray-200</code>. Цветной блок имитирует изображение.</p>
+
+      <div class="pt-demo pt-demo--gap-lg">
+        <div class="pt-flex pt-flex-col pt-items-center pt-gap-1">
+          <div class="pt-w-40 pt-h-32 pt-bg-gray-200 pt-overflow-hidden pt-rounded">
+            <div class="pt-w-full pt-h-full pt-object-cover pt-bg-gradient-to-br pt-from-primary pt-to-purple-600"></div>
+          </div>
+          <span class="pt-text-xs pt-text-gray-500">pt-object-cover</span>
+        </div>
+        <div class="pt-flex pt-flex-col pt-items-center pt-gap-1">
+          <div class="pt-w-40 pt-h-32 pt-bg-gray-200 pt-overflow-hidden pt-rounded">
+            <div class="pt-w-full pt-h-full pt-object-contain pt-bg-gradient-to-br pt-from-primary pt-to-purple-600 pt-border pt-border-gray-400"></div>
+          </div>
+          <span class="pt-text-xs pt-text-gray-500">pt-object-contain</span>
+        </div>
+        <div class="pt-flex pt-flex-col pt-items-center pt-gap-1">
+          <div class="pt-w-40 pt-h-32 pt-bg-gray-200 pt-overflow-hidden pt-rounded">
+            <div class="pt-w-full pt-h-full pt-object-fill pt-bg-gradient-to-br pt-from-primary pt-to-purple-600"></div>
+          </div>
+          <span class="pt-text-xs pt-text-gray-500">pt-object-fill</span>
+        </div>
+        <div class="pt-flex pt-flex-col pt-items-center pt-gap-1">
+          <div class="pt-w-40 pt-h-32 pt-bg-gray-200 pt-overflow-hidden pt-rounded">
+            <div class="pt-w-full pt-h-full pt-object-none pt-bg-gradient-to-br pt-from-primary pt-to-purple-600"></div>
+          </div>
+          <span class="pt-text-xs pt-text-gray-500">pt-object-none</span>
+        </div>
+        <div class="pt-flex pt-flex-col pt-items-center pt-gap-1">
+          <div class="pt-w-40 pt-h-32 pt-bg-gray-200 pt-overflow-hidden pt-rounded">
+            <div class="pt-w-full pt-h-full pt-object-scale-down pt-bg-gradient-to-br pt-from-primary pt-to-purple-600"></div>
+          </div>
+          <span class="pt-text-xs pt-text-gray-500">pt-object-scale-down</span>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- pt-object-cover --&gt;
+&lt;div class="pt-w-40 pt-h-32 pt-bg-gray-200 pt-overflow-hidden pt-rounded"&gt;
+  &lt;div class="pt-w-full pt-h-full pt-object-cover pt-bg-gradient-to-br pt-from-primary pt-to-purple-600"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>object-fit</th>
+            <th>Поведение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-object-cover</code></td><td><code>cover</code></td><td>Заполняет контейнер, обрезая края (сохраняет пропорции)</td></tr>
+          <tr><td><code>pt-object-contain</code></td><td><code>contain</code></td><td>Вмещается целиком, возможно с пустыми полями</td></tr>
+          <tr><td><code>pt-object-fill</code></td><td><code>fill</code></td><td>Растягивается без сохранения пропорций</td></tr>
+          <tr><td><code>pt-object-none</code></td><td><code>none</code></td><td>Оригинальный размер, без масштабирования</td></tr>
+          <tr><td><code>pt-object-scale-down</code></td><td><code>scale-down</code></td><td>Как contain, но не увеличивает (только уменьшает)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Object-position</h2>
+      <p>В сочетании с <code>pt-object-cover</code> классы <code>pt-object-*</code> управляют точкой привязки содержимого. Ниже — контейнер 160×128px с градиентным фоном и <code>pt-object-cover</code>, но с разным позиционированием.</p>
+
+      <div class="pt-demo pt-demo--gap-lg">
+        <div class="pt-flex pt-flex-col pt-items-center pt-gap-1">
+          <div class="pt-w-40 pt-h-32 pt-bg-gray-200 pt-overflow-hidden pt-rounded">
+            <div class="pt-w-full pt-h-full pt-object-cover pt-object-top pt-bg-gradient-to-br pt-from-primary pt-to-purple-600"></div>
+          </div>
+          <span class="pt-text-xs pt-text-gray-500">pt-object-top</span>
+        </div>
+        <div class="pt-flex pt-flex-col pt-items-center pt-gap-1">
+          <div class="pt-w-40 pt-h-32 pt-bg-gray-200 pt-overflow-hidden pt-rounded">
+            <div class="pt-w-full pt-h-full pt-object-cover pt-object-center pt-bg-gradient-to-br pt-from-primary pt-to-purple-600"></div>
+          </div>
+          <span class="pt-text-xs pt-text-gray-500">pt-object-center</span>
+        </div>
+        <div class="pt-flex pt-flex-col pt-items-center pt-gap-1">
+          <div class="pt-w-40 pt-h-32 pt-bg-gray-200 pt-overflow-hidden pt-rounded">
+            <div class="pt-w-full pt-h-full pt-object-cover pt-object-bottom pt-bg-gradient-to-br pt-from-primary pt-to-purple-600"></div>
+          </div>
+          <span class="pt-text-xs pt-text-gray-500">pt-object-bottom</span>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-w-40 pt-h-32 pt-bg-gray-200 pt-overflow-hidden pt-rounded"&gt;
+  &lt;div class="pt-w-full pt-h-full pt-object-cover pt-object-top pt-bg-gradient-to-br pt-from-primary pt-to-purple-600"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="pt-w-40 pt-h-32 pt-bg-gray-200 pt-overflow-hidden pt-rounded"&gt;
+  &lt;div class="pt-w-full pt-h-full pt-object-cover pt-object-center pt-bg-gradient-to-br pt-from-primary pt-to-purple-600"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="pt-w-40 pt-h-32 pt-bg-gray-200 pt-overflow-hidden pt-rounded"&gt;
+  &lt;div class="pt-w-full pt-h-full pt-object-cover pt-object-bottom pt-bg-gradient-to-br pt-from-primary pt-to-purple-600"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>object-position</th>
+            <th>Когда применять</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-object-top</code></td><td><code>top</code></td><td>Фокус на верхней части изображения (лицо человека)</td></tr>
+          <tr><td><code>pt-object-center</code></td><td><code>center</code></td><td>Фокус по центру (универсальное, значение по умолчанию)</td></tr>
+          <tr><td><code>pt-object-bottom</code></td><td><code>bottom</code></td><td>Фокус на нижней части (продукт, обувь)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Тени</h2>
+      <p>Утилиты <code>pt-shadow-*</code> на цветных блоках 120×120px. Тени работают одинаково хорошо как для изображений, так и для любых других элементов.</p>
+
+      <div class="pt-demo">
+        <div class="pt-flex pt-gap-3 pt-items-center pt-flex-wrap">
+          <div class="pt-w-30 pt-h-30 pt-bg-primary pt-shadow-sm pt-rounded pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;">sm</div>
+          <div class="pt-w-30 pt-h-30 pt-bg-success pt-shadow pt-rounded pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;">base</div>
+          <div class="pt-w-30 pt-h-30 pt-bg-warning pt-shadow-md pt-rounded pt-flex pt-items-center pt-justify-center pt-text-dark pt-text-xs pt-font-bold" style="width:120px;height:120px;">md</div>
+          <div class="pt-w-30 pt-h-30 pt-bg-error pt-shadow-lg pt-rounded pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;">lg</div>
+          <div class="pt-w-30 pt-h-30 pt-bg-info pt-shadow-xl pt-rounded pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;">xl</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-w-30 pt-h-30 pt-bg-primary pt-shadow-sm pt-rounded pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;"&gt;sm&lt;/div&gt;
+&lt;div class="pt-w-30 pt-h-30 pt-bg-success pt-shadow pt-rounded pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;"&gt;base&lt;/div&gt;
+&lt;div class="pt-w-30 pt-h-30 pt-bg-warning pt-shadow-md pt-rounded pt-flex pt-items-center pt-justify-center pt-text-dark pt-text-xs pt-font-bold" style="width:120px;height:120px;"&gt;md&lt;/div&gt;
+&lt;div class="pt-w-30 pt-h-30 pt-bg-error pt-shadow-lg pt-rounded pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;"&gt;lg&lt;/div&gt;
+&lt;div class="pt-w-30 pt-h-30 pt-bg-info pt-shadow-xl pt-rounded pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold" style="width:120px;height:120px;"&gt;xl&lt;/div&gt;</code></pre>
+      </div>
+
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>box-shadow</th>
+            <th>Для каких изображений</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-shadow-sm</code></td><td><code>0 1px 2px 0 rgb(0 0 0 / 0.05)</code></td><td>Миниатюры, иконки</td></tr>
+          <tr><td><code>pt-shadow</code></td><td><code>0 1px 3px 0 rgb(0 0 0 / 0.1)</code></td><td>Обычные изображения</td></tr>
+          <tr><td><code>pt-shadow-md</code></td><td><code>0 4px 6px -1px rgb(0 0 0 / 0.1)</code></td><td>Карточки с фото</td></tr>
+          <tr><td><code>pt-shadow-lg</code></td><td><code>0 10px 15px -3px rgb(0 0 0 / 0.1)</code></td><td>Выделенные фото, герои</td></tr>
+          <tr><td><code>pt-shadow-xl</code></td><td><code>0 20px 25px -5px rgb(0 0 0 / 0.1)</code></td><td>Баннеры, крупные изображения</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Аватарки</h2>
+      <p>Круглые аватарки через <code>pt-rounded-full</code> в разных размерах: <code>pt-w-8 pt-h-8</code> (32px), <code>pt-w-10 pt-h-10</code> (40px), <code>pt-w-12 pt-h-12</code> (48px), <code>pt-w-14 pt-h-14</code> (56px), <code>pt-w-16 pt-h-16</code> (64px). Инициалы центрируются через <code>pt-flex pt-items-center pt-justify-center</code>.</p>
+
+      <div class="pt-demo">
+        <div class="pt-flex pt-items-end pt-gap-3">
+          <div class="pt-w-8 pt-h-8 pt-bg-primary pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold">A</div>
+          <div class="pt-w-10 pt-h-10 pt-bg-success pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-text-sm pt-font-bold">B</div>
+          <div class="pt-w-12 pt-h-12 pt-bg-warning pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-dark pt-text-base pt-font-bold">C</div>
+          <div class="pt-w-14 pt-h-14 pt-bg-error pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-text-lg pt-font-bold">D</div>
+          <div class="pt-w-16 pt-h-16 pt-bg-info pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xl pt-font-bold">E</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-end pt-gap-3"&gt;
+  &lt;div class="pt-w-8 pt-h-8 pt-bg-primary pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xs pt-font-bold"&gt;A&lt;/div&gt;
+  &lt;div class="pt-w-10 pt-h-10 pt-bg-success pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-text-sm pt-font-bold"&gt;B&lt;/div&gt;
+  &lt;div class="pt-w-12 pt-h-12 pt-bg-warning pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-dark pt-text-base pt-font-bold"&gt;C&lt;/div&gt;
+  &lt;div class="pt-w-14 pt-h-14 pt-bg-error pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-text-lg pt-font-bold"&gt;D&lt;/div&gt;
+  &lt;div class="pt-w-16 pt-h-16 pt-bg-info pt-rounded-full pt-flex pt-items-center pt-justify-center pt-text-white pt-text-xl pt-font-bold"&gt;E&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Классы</th>
+            <th>Размер</th>
+            <th>Размер шрифта</th>
+            <th>Применение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-w-8 pt-h-8</code></td><td>32px (2rem)</td><td><code>pt-text-xs</code> (12px)</td><td>Микро-аватарки, комментарии</td></tr>
+          <tr><td><code>pt-w-10 pt-h-10</code></td><td>40px (2.5rem)</td><td><code>pt-text-sm</code> (14px)</td><td>Компактные списки пользователей</td></tr>
+          <tr><td><code>pt-w-12 pt-h-12</code></td><td>48px (3rem)</td><td><code>pt-text-base</code> (16px)</td><td>Стандартный размер аватара</td></tr>
+          <tr><td><code>pt-w-14 pt-h-14</code></td><td>56px (3.5rem)</td><td><code>pt-text-lg</code> (18px)</td><td>Профили, карточки пользователя</td></tr>
+          <tr><td><code>pt-w-16 pt-h-16</code></td><td>64px (4rem)</td><td><code>pt-text-xl</code> (20px)</td><td>Крупные аватарки, шапка профиля</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Ширина и высота</h2>
+      <p>Комбинация <code>pt-w-full pt-h-auto pt-object-cover</code> создаёт адаптивное изображение, которое растягивается на всю ширину родителя, сохраняя пропорции. <code>pt-max-w-full</code> предотвращает выход за границы контейнера.</p>
+
+      <div class="pt-demo pt-demo--col">
+        <div class="pt-max-w-md pt-bg-gray-200 pt-rounded pt-overflow-hidden">
+          <div class="pt-w-full pt-h-auto pt-bg-gradient-to-r pt-from-primary pt-to-purple-600 pt-text-white pt-text-center pt-py-16 pt-font-bold pt-text-xl">Адаптивный блок на всю ширину</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-max-w-md pt-bg-gray-200 pt-rounded pt-overflow-hidden"&gt;
+  &lt;div class="pt-w-full pt-h-auto pt-bg-gradient-to-r pt-from-primary pt-to-purple-600 pt-text-white pt-text-center pt-py-16 pt-font-bold pt-text-xl"&gt;Адаптивный блок&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <p>Классы для адаптивных изображений:</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>CSS</th>
+            <th>Назначение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-w-full</code></td><td><code>width: 100%</code></td><td>Растягивает на всю ширину родителя</td></tr>
+          <tr><td><code>pt-h-auto</code></td><td><code>height: auto</code></td><td>Автоматическая высота (сохраняет пропорции)</td></tr>
+          <tr><td><code>pt-max-w-full</code></td><td><code>max-width: 100%</code></td><td>Не даёт выйти за пределы контейнера</td></tr>
+          <tr><td><code>pt-object-cover</code></td><td><code>object-fit: cover</code></td><td>Кроп без искажений</td></tr>
+          <tr><td><code>pt-py-16</code></td><td><code>padding: 4rem 0</code></td><td>Вертикальные отступы для соотношения сторон</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Градиентный оверлей</h2>
+      <p>Наложение градиента поверх изображения для читаемости текста. Используется <code>pt-absolute pt-inset-0</code> для позиционирования, <code>pt-bg-gradient-to-t pt-from-black/70 pt-to-transparent</code> для плавного затемнения снизу вверх, и <code>pt-flex pt-items-end pt-p-4</code> для размещения текста внизу.</p>
+
+      <div class="pt-demo pt-demo--gap-lg">
+        <div class="pt-relative pt-w-64 pt-h-40 pt-bg-gradient-to-br pt-from-primary pt-to-purple-600 pt-rounded-lg pt-overflow-hidden">
+          <div class="pt-bg-gradient-to-t pt-from-black/70 pt-to-transparent pt-absolute pt-inset-0 pt-flex pt-items-end pt-p-4">
+            <span class="pt-text-white pt-font-bold pt-text-lg">Подпись снизу</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-relative pt-w-64 pt-h-40 pt-bg-gradient-to-br pt-from-primary pt-to-purple-600 pt-rounded-lg pt-overflow-hidden"&gt;
+  &lt;div class="pt-bg-gradient-to-t pt-from-black/70 pt-to-transparent pt-absolute pt-inset-0 pt-flex pt-items-end pt-p-4"&gt;
+    &lt;span class="pt-text-white pt-font-bold pt-text-lg"&gt;Подпись снизу&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <p>Классы для градиентного оверлея:</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Класс</th>
+            <th>Назначение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-relative</code></td><td>Точка отсчёта для абсолютного позиционирования</td></tr>
+          <tr><td><code>pt-absolute</code></td><td>Абсолютное позиционирование оверлея</td></tr>
+          <tr><td><code>pt-inset-0</code></td><td>Растягивает на весь родитель (top/right/bottom/left: 0)</td></tr>
+          <tr><td><code>pt-bg-gradient-to-t</code></td><td>Градиент снизу вверх</td></tr>
+          <tr><td><code>pt-from-black/70</code></td><td>Начальный цвет с прозрачностью 70%</td></tr>
+          <tr><td><code>pt-to-transparent</code></td><td>Плавный переход к прозрачности</td></tr>
+          <tr><td><code>pt-items-end</code></td><td>Прижимает текст к нижнему краю</td></tr>
+          <tr><td><code>pt-overflow-hidden</code></td><td>Скрывает выходящие за границы части</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Тёмная тема</h2>
+      <p>Изображения и их контейнеры также адаптируются к тёмной теме через <code>pt-dark:*</code> модификаторы. Добавьте <code>pt-dark:bg-gray-800</code> для фона и <code>pt-dark:border-gray-700</code> для рамок — контейнеры будут корректно отображаться в обоих режимах.</p>
+
+      <div class="pt-demo pt-demo--gap-lg">
+        <div class="pt-flex pt-gap-4 pt-flex-wrap">
+          <div class="pt-w-30 pt-h-30 pt-bg-gray-200 pt-dark:bg-gray-700 pt-rounded-xl pt-flex pt-items-center pt-justify-center pt-text-gray-500 pt-dark:text-gray-300 pt-text-xs pt-font-bold" style="width:120px;height:120px;">Светлая</div>
+          <div class="pt-w-30 pt-h-30 pt-bg-gray-800 pt-rounded-xl pt-flex pt-items-center pt-justify-center pt-text-gray-300 pt-text-xs pt-font-bold" style="width:120px;height:120px;">Тёмная</div>
+          <div class="pt-w-30 pt-h-30 pt-bg-gray-200 pt-dark:bg-gray-700 pt-rounded-xl pt-shadow-md pt-dark:shadow-dark-md pt-flex pt-items-center pt-justify-center pt-text-gray-500 pt-dark:text-gray-300 pt-text-xs pt-font-bold" style="width:120px;height:120px;">С тенью</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Контейнер с поддержкой тёмной темы --&gt;
+&lt;div class="pt-w-30 pt-h-30 pt-bg-gray-200 pt-dark:bg-gray-700 pt-rounded-xl pt-flex pt-items-center pt-justify-center pt-text-gray-500 pt-dark:text-gray-300"&gt;
+  Светлая
+&lt;/div&gt;
+
+&lt;!-- Всегда тёмный (имитация тёмной темы) --&gt;
+&lt;div class="pt-w-30 pt-h-30 pt-bg-gray-800 pt-rounded-xl pt-flex pt-items-center pt-justify-center pt-text-gray-300"&gt;
+  Тёмная
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <p>Модификаторы тёмной темы для изображений:</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Модификатор</th>
+            <th>Базовый класс</th>
+            <th>Эффект в тёмной теме</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>pt-dark:bg-gray-700</code></td><td><code>pt-bg-gray-200</code></td><td>Заменяет светлый фон контейнера на тёмный</td></tr>
+          <tr><td><code>pt-dark:text-gray-300</code></td><td><code>pt-text-gray-500</code></td><td>Осветляет подпись/текст</td></tr>
+          <tr><td><code>pt-dark:border-gray-700</code></td><td><code>pt-border-gray-300</code></td><td>Адаптирует цвет рамки</td></tr>
+          <tr><td><code>pt-dark:shadow-dark-md</code></td><td><code>pt-shadow-md</code></td><td>Корректирует тень для тёмного фона</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Полная таблица классов</h2>
+      <p>Сводная таблица всех <code>pt-*</code> классов, использованных на этой странице.</p>
+
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead>
+          <tr>
+            <th>Категория</th>
+            <th>Класс</th>
+            <th>CSS-значение / Описание</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td rowspan="6">Скругление</td><td><code>pt-rounded-sm</code></td><td><code>border-radius: 0.125rem</code> (2px)</td></tr>
+          <tr><td><code>pt-rounded</code></td><td><code>border-radius: 0.25rem</code> (4px)</td></tr>
+          <tr><td><code>pt-rounded-lg</code></td><td><code>border-radius: 0.5rem</code> (8px)</td></tr>
+          <tr><td><code>pt-rounded-xl</code></td><td><code>border-radius: 0.75rem</code> (12px)</td></tr>
+          <tr><td><code>pt-rounded-2xl</code></td><td><code>border-radius: 1rem</code> (16px)</td></tr>
+          <tr><td><code>pt-rounded-full</code></td><td><code>border-radius: 9999px</code> (круг)</td></tr>
+          <tr><td rowspan="5">Object-fit</td><td><code>pt-object-cover</code></td><td><code>object-fit: cover</code> — кроп с сохранением пропорций</td></tr>
+          <tr><td><code>pt-object-contain</code></td><td><code>object-fit: contain</code> — вмещается целиком</td></tr>
+          <tr><td><code>pt-object-fill</code></td><td><code>object-fit: fill</code> — растягивается</td></tr>
+          <tr><td><code>pt-object-none</code></td><td><code>object-fit: none</code> — оригинальный размер</td></tr>
+          <tr><td><code>pt-object-scale-down</code></td><td><code>object-fit: scale-down</code> — только уменьшение</td></tr>
+          <tr><td rowspan="3">Object-position</td><td><code>pt-object-top</code></td><td><code>object-position: top</code></td></tr>
+          <tr><td><code>pt-object-center</code></td><td><code>object-position: center</code></td></tr>
+          <tr><td><code>pt-object-bottom</code></td><td><code>object-position: bottom</code></td></tr>
+          <tr><td rowspan="5">Тени</td><td><code>pt-shadow-sm</code></td><td>Лёгкая тень</td></tr>
+          <tr><td><code>pt-shadow</code></td><td>Базовая тень</td></tr>
+          <tr><td><code>pt-shadow-md</code></td><td>Средняя тень</td></tr>
+          <tr><td><code>pt-shadow-lg</code></td><td>Сильная тень</td></tr>
+          <tr><td><code>pt-shadow-xl</code></td><td>Максимальная тень</td></tr>
+          <tr><td rowspan="5">Размеры</td><td><code>pt-w-8 / pt-h-8</code></td><td>32px (2rem)</td></tr>
+          <tr><td><code>pt-w-10 / pt-h-10</code></td><td>40px (2.5rem)</td></tr>
+          <tr><td><code>pt-w-12 / pt-h-12</code></td><td>48px (3rem)</td></tr>
+          <tr><td><code>pt-w-14 / pt-h-14</code></td><td>56px (3.5rem)</td></tr>
+          <tr><td><code>pt-w-16 / pt-h-16</code></td><td>64px (4rem)</td></tr>
+          <tr><td rowspan="4">Адаптивность</td><td><code>pt-w-full</code></td><td><code>width: 100%</code></td></tr>
+          <tr><td><code>pt-h-auto</code></td><td><code>height: auto</code></td></tr>
+          <tr><td><code>pt-max-w-full</code></td><td><code>max-width: 100%</code></td></tr>
+          <tr><td><code>pt-max-w-md</code></td><td><code>max-width: 28rem</code></td></tr>
+          <tr><td rowspan="4">Оверлей</td><td><code>pt-relative</code></td><td><code>position: relative</code></td></tr>
+          <tr><td><code>pt-absolute</code></td><td><code>position: absolute</code></td></tr>
+          <tr><td><code>pt-inset-0</code></td><td><code>top: 0; right: 0; bottom: 0; left: 0</code></td></tr>
+          <tr><td><code>pt-bg-gradient-to-t</code></td><td>Градиент снизу вверх</td></tr>
+          <tr><td rowspan="3">Тёмная тема</td><td><code>pt-dark:bg-gray-700</code></td><td>Фон контейнера в тёмной теме</td></tr>
+          <tr><td><code>pt-dark:text-gray-300</code></td><td>Цвет текста в тёмной теме</td></tr>
+          <tr><td><code>pt-dark:border-gray-700</code></td><td>Цвет рамки в тёмной теме</td></tr>
+          <tr><td rowspan="4">Градиент</td><td><code>pt-bg-gradient-to-br</code></td><td>Градиент из верхнего левого в нижний правый угол</td></tr>
+          <tr><td><code>pt-from-primary</code></td><td>Начальный цвет primary</td></tr>
+          <tr><td><code>pt-to-purple-600</code></td><td>Конечный цвет purple-600</td></tr>
+          <tr><td><code>pt-from-black/70</code></td><td>Начальный цвет чёрный с 70% прозрачностью</td></tr>
+          <tr><td rowspan="3">Прочее</td><td><code>pt-flex</code></td><td><code>display: flex</code></td></tr>
+          <tr><td><code>pt-overflow-hidden</code></td><td><code>overflow: hidden</code></td></tr>
+          <tr><td><code>pt-border</code></td><td><code>border: 1px solid</code></td></tr>
+        </tbody>
+      </table>
+
+    </main>
+  </div>
+
+  <script src="../photon-kit/photon-kit.js"></script>
+  <script src="js/doc.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

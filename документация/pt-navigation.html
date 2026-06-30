@@ -1,0 +1,331 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Навигационные компоненты через Photon-tw утилиты. Горизонтальное меню, табы, хлебные крошки, пагинация, вертикальное меню — всё на pt-* классах." />
+  <meta name="keywords" content="photon, css framework, photon-tw, utility classes, navigation, навигация, pt-navigation, утилитарная навигация" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Навигация [pt] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link active">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+      <h1>Навигация [pt]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Компоненты навигации, собранные на <code>pt-*</code> утилитарных классах: меню, табы, хлебные крошки, пагинация, вертикальные и адаптивные навбары — без кастомного CSS.</p>
+
+      <h2>Горизонтальное меню</h2>
+      <p>Flex-контейнер с <code>pt-flex pt-gap-1</code> и скруглёнными пунктами. Активный пункт выделен <code>pt-bg-primary pt-text-white</code>, остальные получают hover-эффект через <code>pt-hover:bg-gray-100</code>.</p>
+      <div class="pt-demo">
+        <nav class="pt-flex pt-gap-1 pt-bg-white pt-dark:bg-gray-800 pt-p-2 pt-rounded-lg pt-shadow-sm">
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-bg-primary pt-text-white">Главная</a>
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition">О нас</a>
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition">Услуги</a>
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition">Контакты</a>
+        </nav>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;nav class="pt-flex pt-gap-1 pt-bg-white pt-dark:bg-gray-800 pt-p-2 pt-rounded-lg pt-shadow-sm"&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-bg-primary pt-text-white"&gt;Главная&lt;/a&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition"&gt;О нас&lt;/a&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition"&gt;Услуги&lt;/a&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition"&gt;Контакты&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h2>Табы</h2>
+      <p>Горизонтальные табы с нижней границей контейнера <code>pt-border-b pt-border-gray-200</code>. Активная вкладка получает <code>pt-border-b-2 pt-border-primary pt-text-primary</code>, остальные — <code>pt-text-gray-500 pt-hover:text-gray-700</code>. Для отключённого пункта используем <code>pt-text-gray-400 pt-cursor-not-allowed</code>.</p>
+      <div class="pt-demo">
+        <div class="pt-flex pt-border-b pt-border-gray-200 pt-dark:border-gray-700">
+          <a href="#" class="pt-px-4 pt-py-2 pt-text-sm pt-font-medium pt-border-b-2 pt-border-primary pt-text-primary">Активный</a>
+          <a href="#" class="pt-px-4 pt-py-2 pt-text-sm pt-text-gray-500 pt-hover:text-gray-700 pt-dark:hover:text-gray-300 pt-transition">Вкладка 2</a>
+          <a href="#" class="pt-px-4 pt-py-2 pt-text-sm pt-text-gray-500 pt-hover:text-gray-700 pt-dark:hover:text-gray-300 pt-transition">Вкладка 3</a>
+          <a href="#" class="pt-px-4 pt-py-2 pt-text-sm pt-text-gray-400 pt-cursor-not-allowed">Disabled</a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-border-b pt-border-gray-200 pt-dark:border-gray-700"&gt;
+  &lt;a href="#" class="pt-px-4 pt-py-2 pt-text-sm pt-font-medium pt-border-b-2 pt-border-primary pt-text-primary"&gt;Активный&lt;/a&gt;
+  &lt;a href="#" class="pt-px-4 pt-py-2 pt-text-sm pt-text-gray-500 pt-hover:text-gray-700 pt-transition"&gt;Вкладка 2&lt;/a&gt;
+  &lt;a href="#" class="pt-px-4 pt-py-2 pt-text-sm pt-text-gray-500 pt-hover:text-gray-700 pt-transition"&gt;Вкладка 3&lt;/a&gt;
+  &lt;a href="#" class="pt-px-4 pt-py-2 pt-text-sm pt-text-gray-400 pt-cursor-not-allowed"&gt;Disabled&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Хлебные крошки</h2>
+      <p>Навигационная цепочка из ссылок, разделённых символом <code>/</code>. Контейнер: <code>pt-flex pt-items-center pt-gap-1 pt-text-sm pt-text-gray-500</code>. Разделитель: <code>pt-text-gray-300</code>. Последний элемент — <code>pt-text-gray-700 pt-font-medium</code>.</p>
+      <div class="pt-demo">
+        <div class="pt-flex pt-items-center pt-gap-1 pt-text-sm pt-text-gray-500">
+          <a href="#" class="pt-text-primary pt-hover:underline">Главная</a>
+          <span class="pt-text-gray-300">/</span>
+          <a href="#" class="pt-text-primary pt-hover:underline">Категория</a>
+          <span class="pt-text-gray-300">/</span>
+          <a href="#" class="pt-text-primary pt-hover:underline">Подкатегория</a>
+          <span class="pt-text-gray-300">/</span>
+          <span class="pt-text-gray-700 pt-font-medium">Текущая</span>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-center pt-gap-1 pt-text-sm pt-text-gray-500"&gt;
+  &lt;a href="#" class="pt-text-primary pt-hover:underline"&gt;Главная&lt;/a&gt;
+  &lt;span class="pt-text-gray-300"&gt;/&lt;/span&gt;
+  &lt;a href="#" class="pt-text-primary pt-hover:underline"&gt;Категория&lt;/a&gt;
+  &lt;span class="pt-text-gray-300"&gt;/&lt;/span&gt;
+  &lt;span class="pt-text-gray-700 pt-font-medium"&gt;Текущая&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+      <p>Альтернативный разделитель — <code>&gt;</code> или любой другой символ, его можно заменить на иконку SVG с <code>pt-w-4 pt-h-4</code>.</p>
+
+      <h2>Пагинация</h2>
+      <p>Номера страниц с активным состоянием и многоточием. Активный: <code>pt-bg-primary pt-text-white</code>. Остальные: <code>pt-text-gray-600 pt-hover:bg-gray-100 pt-transition</code>. Многоточие: <code>pt-px-2 pt-text-gray-400</code>.</p>
+      <div class="pt-demo">
+        <div class="pt-flex pt-items-center pt-gap-1">
+          <span class="pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-bg-primary pt-text-white">1</span>
+          <a href="#" class="pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition">2</a>
+          <a href="#" class="pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition">3</a>
+          <span class="pt-px-2 pt-text-gray-400">...</span>
+          <a href="#" class="pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition">10</a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-center pt-gap-1"&gt;
+  &lt;span class="pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-bg-primary pt-text-white"&gt;1&lt;/span&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-text-gray-600 pt-hover:bg-gray-100 pt-transition"&gt;2&lt;/a&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-text-gray-600 pt-hover:bg-gray-100 pt-transition"&gt;3&lt;/a&gt;
+  &lt;span class="pt-px-2 pt-text-gray-400"&gt;...&lt;/span&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-text-gray-600 pt-hover:bg-gray-100 pt-transition"&gt;10&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+      <p>Стрелки навигации (назад/вперёд) добавляются теми же отступами и <code>pt-font-bold</code> для символов <code>&amp;laquo;</code> и <code>&amp;raquo;</code>:</p>
+      <div class="pt-demo">
+        <div class="pt-flex pt-items-center pt-gap-1">
+          <a href="#" class="pt-px-2 pt-py-1 pt-rounded pt-text-sm pt-text-gray-500 pt-hover:bg-gray-100 pt-transition">&amp;laquo;</a>
+          <span class="pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-bg-primary pt-text-white">1</span>
+          <a href="#" class="pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-text-gray-600 pt-hover:bg-gray-100 pt-transition">2</a>
+          <a href="#" class="pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-text-gray-600 pt-hover:bg-gray-100 pt-transition">3</a>
+          <span class="pt-px-2 pt-text-gray-400">...</span>
+          <a href="#" class="pt-px-3 pt-py-1 pt-rounded pt-text-sm pt-text-gray-600 pt-hover:bg-gray-100 pt-transition">10</a>
+          <a href="#" class="pt-px-2 pt-py-1 pt-rounded pt-text-sm pt-text-gray-500 pt-hover:bg-gray-100 pt-transition">&amp;raquo;</a>
+        </div>
+      </div>
+
+      <h2>Вертикальное меню</h2>
+      <p>Стопка ссылок через <code>pt-flex pt-flex-col pt-gap-1</code>. Ширина меню фиксируется <code>pt-w-48</code>, фон и скругление — <code>pt-bg-white pt-dark:bg-gray-800 pt-p-2 pt-rounded-lg pt-shadow-sm</code>. Активный пункт с <code>pt-bg-primary pt-text-white</code>.</p>
+      <div class="pt-demo">
+        <nav class="pt-flex pt-flex-col pt-gap-1 pt-w-48 pt-bg-white pt-dark:bg-gray-800 pt-p-2 pt-rounded-lg pt-shadow-sm">
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-bg-primary pt-text-white">Главная</a>
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition">Профиль</a>
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition">Настройки</a>
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition">Выйти</a>
+        </nav>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;nav class="pt-flex pt-flex-col pt-gap-1 pt-w-48 pt-bg-white pt-dark:bg-gray-800 pt-p-2 pt-rounded-lg pt-shadow-sm"&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-bg-primary pt-text-white"&gt;Главная&lt;/a&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition"&gt;Профиль&lt;/a&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition"&gt;Настройки&lt;/a&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-dark:hover:bg-gray-700 pt-transition"&gt;Выйти&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+      <p>Для вложенных пунктов добавьте отступ слева через <code>pt-pl-4</code> или <code>pt-pl-6</code>:</p>
+      <div class="pt-demo">
+        <nav class="pt-flex pt-flex-col pt-gap-1 pt-w-56 pt-bg-white pt-dark:bg-gray-800 pt-p-2 pt-rounded-lg pt-shadow-sm">
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-bg-primary pt-text-white">Главная</a>
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-transition">Категории</a>
+          <a href="#" class="pt-pl-8 pt-pr-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-500 pt-hover:bg-gray-100 pt-transition">— Подкатегория 1</a>
+          <a href="#" class="pt-pl-8 pt-pr-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-500 pt-hover:bg-gray-100 pt-transition">— Подкатегория 2</a>
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-600 pt-hover:bg-gray-100 pt-transition">Контакты</a>
+        </nav>
+      </div>
+
+      <h2>Навбар с логотипом</h2>
+      <p>Полноценная панель навигации: логотип слева, ссылки по центру, кнопка справа. Используем <code>pt-flex pt-items-center pt-justify-between pt-p-4</code> с фоном и тенью.</p>
+      <div class="pt-demo">
+        <nav class="pt-flex pt-items-center pt-justify-between pt-px-6 pt-py-3 pt-bg-white pt-dark:bg-gray-800 pt-shadow-sm pt-rounded-lg">
+          <div class="pt-flex pt-items-center pt-gap-2">
+            <span class="pt-w-8 pt-h-8 pt-bg-primary pt-rounded-lg pt-flex pt-items-center pt-justify-center pt-text-white pt-font-bold">P</span>
+            <span class="pt-font-bold pt-text-gray-800 pt-dark:text-white">Photon</span>
+          </div>
+          <div class="pt-flex pt-items-center pt-gap-4">
+            <a href="#" class="pt-text-sm pt-text-gray-600 pt-hover:text-primary pt-transition">Главная</a>
+            <a href="#" class="pt-text-sm pt-text-gray-600 pt-hover:text-primary pt-transition">Документация</a>
+            <a href="#" class="pt-text-sm pt-text-gray-600 pt-hover:text-primary pt-transition">Компоненты</a>
+          </div>
+          <button class="pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded-lg pt-text-sm pt-hover:bg-primary-600 pt-transition">GitHub</button>
+        </nav>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;nav class="pt-flex pt-items-center pt-justify-between pt-px-6 pt-py-3 pt-bg-white pt-dark:bg-gray-800 pt-shadow-sm pt-rounded-lg"&gt;
+  &lt;div class="pt-flex pt-items-center pt-gap-2"&gt;
+    &lt;span class="pt-w-8 pt-h-8 pt-bg-primary pt-rounded-lg pt-flex pt-items-center pt-justify-center pt-text-white pt-font-bold"&gt;P&lt;/span&gt;
+    &lt;span class="pt-font-bold pt-text-gray-800 pt-dark:text-white"&gt;Photon&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="pt-flex pt-items-center pt-gap-4"&gt;
+    &lt;a href="#" class="pt-text-sm pt-text-gray-600 pt-hover:text-primary pt-transition"&gt;Главная&lt;/a&gt;
+    &lt;a href="#" class="pt-text-sm pt-text-gray-600 pt-hover:text-primary pt-transition"&gt;Документация&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;button class="pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded-lg pt-text-sm"&gt;GitHub&lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h2>Адаптивное меню</h2>
+      <p>Скрываем навигационные ссылки на мобильных устройствах через <code>pt-hidden pt-md:flex</code> и показываем иконку бургера только на маленьких экранах через <code>pt-md:hidden</code>.</p>
+      <div class="pt-demo">
+        <nav class="pt-flex pt-items-center pt-justify-between pt-px-4 pt-py-3 pt-bg-white pt-dark:bg-gray-800 pt-shadow-sm pt-rounded-lg">
+          <div class="pt-flex pt-items-center pt-gap-2">
+            <span class="pt-font-bold pt-text-gray-800 pt-dark:text-white">Logo</span>
+          </div>
+          <div class="pt-hidden pt-md:flex pt-items-center pt-gap-4">
+            <a href="#" class="pt-text-sm pt-text-gray-600 pt-hover:text-primary pt-transition">Главная</a>
+            <a href="#" class="pt-text-sm pt-text-gray-600 pt-hover:text-primary pt-transition">О нас</a>
+            <a href="#" class="pt-text-sm pt-text-gray-600 pt-hover:text-primary pt-transition">Контакты</a>
+          </div>
+          <button class="pt-md:hidden pt-p-2 pt-text-gray-500 pt-hover:bg-gray-100 pt-rounded pt-transition" type="button" aria-label="Меню">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </nav>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;nav class="pt-flex pt-items-center pt-justify-between pt-px-4 pt-py-3 pt-bg-white pt-dark:bg-gray-800 pt-shadow-sm pt-rounded-lg"&gt;
+  &lt;div class="pt-font-bold"&gt;Logo&lt;/div&gt;
+  &lt;!-- Показываем только на md и выше --&gt;
+  &lt;div class="pt-hidden pt-md:flex pt-items-center pt-gap-4"&gt;
+    &lt;a href="#" class="pt-text-sm pt-text-gray-600"&gt;Главная&lt;/a&gt;
+    &lt;a href="#" class="pt-text-sm pt-text-gray-600"&gt;О нас&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;!-- Только на мобильных --&gt;
+  &lt;button class="pt-md:hidden pt-p-2"&gt;
+    &lt;!-- иконка бургер --&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+      <p>Для полноценного адаптивного меню добавьте <code>pt-flex-col pt-md:flex-row</code> и скрывайте/показывайте блок через <code>pt-hidden pt-md:flex</code>.</p>
+
+      <h2>Тёмная тема</h2>
+      <p>Модификатор <code>pt-dark:*</code> адаптирует навигационные компоненты под тёмную тему. Основные паттерны:</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Элемент</th>
+            <th class="pt-p-2 pt-text-left">Светлая тема</th>
+            <th class="pt-p-2 pt-text-left">Тёмная тема</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Фон меню</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-white</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-dark:bg-gray-800</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Текст пунктов</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-gray-600</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-dark:text-gray-300</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Hover фон</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-hover:bg-gray-100</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-dark:hover:bg-gray-700</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Границы табов</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-gray-200</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-dark:border-gray-700</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Тень</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shadow-sm</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-dark:shadow-gray-900</code> (если поддерживается)</td></tr>
+        </tbody>
+      </table>
+      <p>Пример тёмной темы на вертикальном меню:</p>
+      <div class="pt-demo">
+        <nav class="pt-flex pt-flex-col pt-gap-1 pt-w-48 pt-bg-gray-800 pt-p-2 pt-rounded-lg pt-shadow-sm">
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-bg-primary pt-text-white">Главная</a>
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-300 pt-hover:bg-gray-700 pt-transition">Профиль</a>
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-300 pt-hover:bg-gray-700 pt-transition">Настройки</a>
+          <a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-300 pt-hover:bg-gray-700 pt-transition">Выйти</a>
+        </nav>
+      </div>
+      <div class="code-block">
+        <pre><code>&lt;nav class="pt-flex pt-flex-col pt-gap-1 pt-w-48 pt-bg-gray-800 pt-p-2 pt-rounded-lg pt-shadow-sm"&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-bg-primary pt-text-white"&gt;Главная&lt;/a&gt;
+  &lt;a href="#" class="pt-px-3 pt-py-2 pt-text-sm pt-rounded pt-text-gray-300 pt-hover:bg-gray-700 pt-transition"&gt;Профиль&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h2>Полная таблица классов</h2>
+      <p>Сводная таблица всех классов, используемых в навигационных компонентах.</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Группа</th>
+            <th class="pt-p-2 pt-text-left">Классы</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Контейнер меню</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex</code>, <code>pt-inline-flex</code>, <code>pt-flex-col</code>, <code>pt-gap-1</code>, <code>pt-gap-4</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Оформление меню</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-white</code>, <code>pt-dark:bg-gray-800</code>, <code>pt-p-2</code>, <code>pt-rounded-lg</code>, <code>pt-shadow-sm</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Пункты меню</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-px-3</code>, <code>pt-py-2</code>, <code>pt-text-sm</code>, <code>pt-rounded</code>, <code>pt-transition</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Активный пункт</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-primary</code>, <code>pt-text-white</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Hover пункт</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-hover:bg-gray-100</code>, <code>pt-hover:text-primary</code>, <code>pt-dark:hover:bg-gray-700</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Табы</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border-b</code>, <code>pt-border-b-2</code>, <code>pt-border-primary</code>, <code>pt-border-gray-200</code>, <code>pt-dark:border-gray-700</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Хлебные крошки</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-items-center</code>, <code>pt-gap-1</code>, <code>pt-text-sm</code>, <code>pt-hover:underline</code>, <code>pt-text-gray-300</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Пагинация</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-px-3</code>, <code>pt-py-1</code>, <code>pt-text-sm</code>, <code>pt-rounded</code>, <code>pt-bg-primary</code>, <code>pt-text-white</code>, <code>pt-text-gray-600</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Навбар</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-items-center</code>, <code>pt-justify-between</code>, <code>pt-px-6</code>, <code>pt-py-3</code>, <code>pt-shadow-sm</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Адаптивность</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-hidden</code>, <code>pt-md:flex</code>, <code>pt-md:hidden</code>, <code>pt-flex-col</code>, <code>pt-md:flex-row</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Тёмная тема</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-dark:bg-gray-800</code>, <code>pt-dark:text-gray-300</code>, <code>pt-dark:hover:bg-gray-700</code>, <code>pt-dark:border-gray-700</code></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Состояния</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-cursor-not-allowed</code>, <code>pt-opacity-50</code>, <code>pt-pointer-events-none</code></td></tr>
+        </tbody>
+      </table>
+      <p class="pt-mt-2 pt-text-sm pt-text-gray-500">Полный справочник всех <code>pt-*</code> классов смотрите на странице <a href="pt-utilities.html">Справочник [pt]</a>.</p>
+
+    </main>
+  </div>
+
+  <script src="../photon-kit/photon-kit.js"></script>
+  <script src="js/doc.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

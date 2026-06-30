@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Photon-tw — утилитарный слой Photon Framework. Быстрая вёрстка через pt-* классы." />
+  <meta name="keywords" content="photon, css framework, photon-tw, utility classes, утилиты, css утилиты" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Photon-tw — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link active">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+    <main class="doc-content">
+      <h1>Photon-tw</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Photon-tw — это встроенный утилитарный слой Photon Framework, который позволяет верстать непосредственно в HTML через атомарные <code>pt-*</code> классы. В отличие от классических компонентов Photon (кнопки, формы, карточки), где стили инкапсулированы в CSS-классы фреймворка, утилитарный подход даёт полный контроль над каждым CSS-свойством.</p>
+
+      <h2>Что такое Photon-tw?</h2>
+      <p>Photon-tw — это JavaScript-движок, встроенный в <code>photon-kit.js</code>. Он сканирует DOM, находит все элементы с классами, начинающимися на <code>pt-</code>, парсит их и генерирует соответствующие CSS-правила прямо в <code>&lt;head&gt;</code> страницы. Вам не нужно писать CSS-файлы — вся стилизация происходит через классы в HTML.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Вместо написания CSS --&gt;
+&lt;div class="card"&gt;
+  &lt;h2 class="card-title"&gt;Заголовок&lt;/h2&gt;
+  &lt;p class="card-text"&gt;Текст&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Вы пишете прямо в HTML: --&gt;
+&lt;div class="pt-bg-white pt-rounded-lg pt-shadow pt-p-6"&gt;
+  &lt;h2 class="pt-text-xl pt-font-bold pt-mb-2"&gt;Заголовок&lt;/h2&gt;
+  &lt;p class="pt-text-gray-600"&gt;Текст&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Как это работает</h2>
+      <ol>
+        <li><strong>Загрузка страницы</strong> — <code>photon-kit.js</code> запускается и вызывает <code>initPT()</code></li>
+        <li><strong>Сканирование DOM</strong> — движок находит все элементы с классами <code>pt-*</code></li>
+        <li><strong>Парсинг</strong> — каждый класс разбивается на префикс, модификаторы (hover, dark, sm, md, lg), категорию, цвет, оттенок и значение</li>
+        <li><strong>Генерация CSS</strong> — создаются CSS-правила и впрыскиваются в <code>&lt;style id="pt-styles"&gt;</code></li>
+        <li><strong>Наблюдение</strong> — MutationObserver отслеживает появление новых <code>pt-*</code> классов в DOM и генерирует для них CSS на лету</li>
+      </ol>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Достаточно подключить photon-kit.js --&gt;
+&lt;script src="photon-kit/photon-kit.js"&gt;&lt;/script&gt;
+&lt;!-- Все pt-* классы работают автоматически --&gt;</code></pre>
+      </div>
+
+      <h2>Преимущества</h2>
+      <ul>
+        <li><strong>Скорость разработки</strong> — не нужно переключаться между HTML и CSS-файлами</li>
+        <li><strong>Предсказуемость</strong> — каждый класс делает ровно одно CSS-свойство</li>
+        <li><strong>Отсутствие конфликтов</strong> — все классы изолированы префиксом <code>pt-</code></li>
+        <li><strong>Тёмная тема из коробки</strong> — модификатор <code>pt-dark:*</code> работает без дополнительных настроек</li>
+        <li><strong>Адаптивность</strong> — <code>pt-sm:*</code>, <code>pt-md:*</code>, <code>pt-lg:*</code> для брейкпоинтов</li>
+        <li><strong>Состояния</strong> — <code>pt-hover:*</code>, <code>pt-focus:*</code>, <code>pt-active:*</code></li>
+        <li><strong>Комбинирование</strong> — модификаторы можно объединять: <code>pt-dark:pt-hover:bg-primary-600</code></li>
+        <li><strong>Низкий порог входа</strong> — достаточно знать CSS-свойства и их значения</li>
+        <li><strong>Никаких сборок</strong> — работает в браузере без Webpack, Vite, PostCSS</li>
+      </ul>
+
+      <h2>Категории классов</h2>
+      <p>Photon-tw покрывает все основные CSS-категории. Ниже — полный список.</p>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Категория</th>
+            <th class="pt-p-2 pt-text-left">Префикс</th>
+            <th class="pt-p-2 pt-text-left">Примеры</th>
+            <th class="pt-p-2 pt-text-left">Страница</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Display</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-block, pt-flex, pt-grid, pt-hidden</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex pt-items-center</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-layout.html">Сетка</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Position</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-relative, pt-absolute, pt-fixed</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-relative pt-top-0 pt-left-0</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-layout.html">Сетка</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Flexbox</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex, pt-items-*, pt-justify-*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-flex pt-justify-between pt-items-center</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-layout.html">Сетка</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Grid</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid, pt-grid-cols-*, pt-col-span-*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-grid pt-grid-cols-3 pt-gap-4</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-layout.html">Сетка</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Padding / Margin</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-*, pt-m-*, pt-px-*, pt-py-*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-p-4 pt-mt-2 pt-mx-auto</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-layout.html">Сетка</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Width / Height</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-*, pt-h-*, pt-max-w-*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-w-full pt-h-64 pt-max-w-md</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-layout.html">Сетка</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Типографика</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-*, pt-font-*, pt-leading-*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-lg pt-font-bold pt-leading-tight</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-typography.html">Типографика</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Цвет текста</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-{color}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-text-primary pt-text-gray-600</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-utilities.html">Справочник</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Фон</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-{color}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-primary pt-bg-gray-100</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-utilities.html">Справочник</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Границы</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border, pt-border-{color}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-border pt-border-primary pt-rounded</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-utilities.html">Справочник</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Border-radius</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-rounded-lg pt-rounded-full</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-utilities.html">Справочник</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Тени</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shadow-*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-shadow pt-shadow-lg</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-utilities.html">Справочник</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Opacity</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-opacity-50 pt-hover:pt-opacity-100</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-utilities.html">Справочник</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Transition</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-transition, pt-duration-*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-transition pt-duration-300</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-utilities.html">Справочник</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Градиенты</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-gradient-to-*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-bg-gradient-to-r pt-from-primary pt-to-blue</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-utilities.html">Справочник</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Кнопки</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-btn, pt-btn-{variant}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-btn pt-btn-primary</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-buttons.html">Кнопки</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Карточки</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-card, pt-card-{part}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-card pt-card-body</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-cards.html">Карточки</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Формы</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-input, pt-label, pt-select</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-input pt-w-full</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-forms.html">Формы</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Навигация</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-nav, pt-nav-link</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-nav pt-nav-link</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-navigation.html">Навигация</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Изображения</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-img, pt-img-{variant}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-img pt-img-rounded</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-images.html">Изображения</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Уведомления</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-alert, pt-alert-{variant}</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-alert pt-alert-success</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-alerts.html">Уведомления</a></td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Тема / модификаторы</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-dark:*, pt-hover:*, pt-sm:*</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><code>pt-dark:bg-gray-800 pt-hover:scale-105</code></td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2"><a href="pt-theme.html">Тема</a></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Сравнение: компонентный vs утилитарный подход</h2>
+      <table class="pt-table-auto pt-w-full pt-text-sm">
+        <thead class="pt-bg-gray-100 pt-dark:bg-gray-800">
+          <tr>
+            <th class="pt-p-2 pt-text-left">Аспект</th>
+            <th class="pt-p-2 pt-text-left">Компонентный (Photon)</th>
+            <th class="pt-p-2 pt-text-left">Утилитарный (Photon-tw)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Стилизация</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Готовая тема в CSS</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Каждое свойство отдельным классом</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Кастомизация</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Через CSS-переменные</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Через комбинацию классов</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Размер HTML</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Меньше классов, больше CSS</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Больше классов, меньше CSS</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Гибкость</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Ограничена вариантами компонента</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Полная — любой CSS без ограничений</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Кривая обучения</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Нужно знать API компонентов</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Нужно знать CSS-свойства</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Тёмная тема</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Автоматически</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Через pt-dark:* модификатор</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Адаптивность</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Встроенная в компоненты</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Через pt-sm:*, pt-md:*, pt-lg:*</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Состояния</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">CSS-классы (is-active и т.д.)</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">pt-hover:*, pt-focus:*, pt-active:*</td></tr>
+          <tr><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Повторное использование</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Один класс = готовый компонент</td><td class="pt-border-b pt-border-gray-200 pt-dark:border-gray-700 pt-p-2">Группа классов = уникальный дизайн</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Пример карточки через Photon-tw</h2>
+      <div class="pt-demo">
+        <div class="pt-bg-white pt-dark:bg-gray-800 pt-rounded-lg pt-shadow-md pt-overflow-hidden pt-max-w-sm">
+          <div class="pt-h-48 pt-bg-gray-200 pt-dark:bg-gray-700 pt-flex pt-items-center pt-justify-center pt-text-gray-400 pt-text-sm">---</div>
+          <div class="pt-p-6">
+            <span class="pt-inline-block pt-bg-primary pt-text-white pt-text-xs pt-px-2 pt-py-1 pt-rounded pt-font-semibold pt-mb-2">Новинка</span>
+            <h3 class="pt-text-xl pt-font-bold pt-text-gray-900 pt-dark:text-white pt-mb-2">Название карточки</h3>
+            <p class="pt-text-gray-600 pt-dark:text-gray-300 pt-text-sm pt-mb-4 pt-leading-relaxed">Описание карточки. Здесь может быть любой текст, описывающий содержимое.</p>
+            <div class="pt-flex pt-justify-between pt-items-center">
+              <span class="pt-text-2xl pt-font-bold pt-text-primary">$49.99</span>
+              <button class="pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded pt-hover:bg-primary-600 pt-transition pt-cursor-pointer pt-font-medium">В корзину</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-white pt-dark:bg-gray-800 pt-rounded-lg pt-shadow-md pt-overflow-hidden pt-max-w-sm"&gt;
+  &lt;div class="pt-h-48 pt-bg-gray-200 pt-dark:bg-gray-700 pt-flex pt-items-center pt-justify-center pt-text-gray-400 pt-text-sm"&gt;---&lt;/div&gt;
+  &lt;div class="pt-p-6"&gt;
+    &lt;span class="pt-inline-block pt-bg-primary pt-text-white pt-text-xs pt-px-2 pt-py-1 pt-rounded pt-font-semibold pt-mb-2"&gt;Новинка&lt;/span&gt;
+    &lt;h3 class="pt-text-xl pt-font-bold pt-text-gray-900 pt-dark:text-white pt-mb-2"&gt;Название карточки&lt;/h3&gt;
+    &lt;p class="pt-text-gray-600 pt-dark:text-gray-300 pt-text-sm pt-mb-4 pt-leading-relaxed"&gt;Описание&lt;/p&gt;
+    &lt;div class="pt-flex pt-justify-between pt-items-center"&gt;
+      &lt;span class="pt-text-2xl pt-font-bold pt-text-primary"&gt;$49.99&lt;/span&gt;
+      &lt;button class="pt-bg-primary pt-text-white pt-px-4 pt-py-2 pt-rounded pt-hover:bg-primary-600 pt-transition pt-cursor-pointer pt-font-medium"&gt;В корзину&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Навигация по разделам</h2>
+      <div class="pt-grid pt-grid-cols-1 pt-sm:grid-cols-2 pt-md:grid-cols-3 pt-gap-4 pt-mt-4">
+        <a href="pt-buttons.html" class="pt-bg-primary pt-text-white pt-p-4 pt-rounded-lg pt-hover:bg-primary-600 pt-transition pt-text-center pt-font-medium pt-no-underline">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="pt-bg-primary pt-text-white pt-p-4 pt-rounded-lg pt-hover:bg-primary-600 pt-transition pt-text-center pt-font-medium pt-no-underline">Карточки [pt]</a>
+        <a href="pt-forms.html" class="pt-bg-primary pt-text-white pt-p-4 pt-rounded-lg pt-hover:bg-primary-600 pt-transition pt-text-center pt-font-medium pt-no-underline">Формы [pt]</a>
+        <a href="pt-layout.html" class="pt-bg-primary pt-text-white pt-p-4 pt-rounded-lg pt-hover:bg-primary-600 pt-transition pt-text-center pt-font-medium pt-no-underline">Сетка [pt]</a>
+        <a href="pt-typography.html" class="pt-bg-primary pt-text-white pt-p-4 pt-rounded-lg pt-hover:bg-primary-600 pt-transition pt-text-center pt-font-medium pt-no-underline">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="pt-bg-primary pt-text-white pt-p-4 pt-rounded-lg pt-hover:bg-primary-600 pt-transition pt-text-center pt-font-medium pt-no-underline">Навигация [pt]</a>
+        <a href="pt-images.html" class="pt-bg-primary pt-text-white pt-p-4 pt-rounded-lg pt-hover:bg-primary-600 pt-transition pt-text-center pt-font-medium pt-no-underline">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="pt-bg-primary pt-text-white pt-p-4 pt-rounded-lg pt-hover:bg-primary-600 pt-transition pt-text-center pt-font-medium pt-no-underline">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="pt-bg-gray-600 pt-text-white pt-p-4 pt-rounded-lg pt-hover:bg-gray-700 pt-transition pt-text-center pt-font-medium pt-no-underline">Справочник [pt]</a>
+        <a href="pt-theme.html" class="pt-bg-gray-600 pt-text-white pt-p-4 pt-rounded-lg pt-hover:bg-gray-700 pt-transition pt-text-center pt-font-medium pt-no-underline">Тема [pt]</a>
+      </div>
+
+      <h2>Быстрый старт</h2>
+      <p>Минимальный шаблон HTML-страницы с Photon-tw:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;title&gt;Моя страница&lt;/title&gt;
+  &lt;link rel="stylesheet" href="photon-kit/photon-kit.css" /&gt;
+&lt;/head&gt;
+&lt;body class="theme-dark"&gt;
+  &lt;div class="pt-flex pt-items-center pt-justify-center pt-min-h-screen"&gt;
+    &lt;div class="pt-text-center pt-bg-white pt-dark:bg-gray-800 pt-p-8 pt-rounded-lg pt-shadow-xl"&gt;
+      &lt;h1 class="pt-text-3xl pt-font-bold pt-text-gray-900 pt-dark:text-white pt-mb-4"&gt;
+        Привет, Photon-tw!
+      &lt;/h1&gt;
+      &lt;p class="pt-text-gray-600 pt-dark:text-gray-300"&gt;
+        Эта страница использует утилитарный движок Photon-tw.
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script src="photon-kit/photon-kit.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <p>Просто подключите <code>photon-kit.css</code> и <code>photon-kit.js</code> — и все <code>pt-*</code> классы начнут работать автоматически.</p>
+    </main>

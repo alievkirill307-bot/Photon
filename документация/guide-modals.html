@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Полное руководство по созданию модальных окон в Photon Framework: структура, анимации, варианты, управление через JS." />
+  <meta name="keywords" content="photon, modal, modal windows, модальные окна, dialog, overlay, css modal, js modal" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Модальные окна [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link active">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Модальные окна [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Модальные окна — это диалоговые окна поверх основного контента. Они блокируют взаимодействие с остальной страницей до закрытия. В этом гайде мы соберём модалки из утилитарных классов Photon.</p>
+
+      <h2>Структура модалки</h2>
+      <p>Базовая модалка состоит из четырёх частей:</p>
+      <ol>
+        <li><strong>Overlay (фон)</strong> — полупрозрачный слой, блокирующий взаимодействие с контентом.</li>
+        <li><strong>Dialog (диалог)</strong> — контейнер с контентом.</li>
+        <li><strong>Content (контент)</strong> — заголовок, тело, действия.</li>
+        <li><strong>Close button (кнопка закрытия)</strong> — крестик для закрытия.</li>
+      </ol>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Overlay --&gt;
+&lt;div style="position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;"&gt;
+  &lt;!-- Dialog --&gt;
+  &lt;div style="background:var(--pk-surface);border-radius:12px;padding:24px;max-width:480px;width:100%;margin:16px;"&gt;
+    &lt;!-- Header --&gt;
+    &lt;div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;"&gt;
+      &lt;h2 style="font-size:1.25rem;font-weight:600;"&gt;Заголовок&lt;/h2&gt;
+      &lt;button style="background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--pk-muted);"&gt;&amp;times;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;!-- Body --&gt;
+    &lt;p&gt;Содержимое модального окна.&lt;/p&gt;
+    &lt;!-- Footer/Actions --&gt;
+    &lt;div style="display:flex;justify-content:flex-end;gap:8px;margin-top:24px;"&gt;
+      &lt;button class="btn"&gt;Отмена&lt;/button&gt;
+      &lt;button class="btn btn--primary"&gt;Подтвердить&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Базовая модалка</h2>
+      <p>Полный пример работающей модалки с pt-классами и встроенным JS-управлением.</p>
+
+      <div class="demo-box">
+        <button class="btn btn--primary" onclick="document.getElementById('modalBasic').style.display='flex'">Открыть модалку</button>
+        <div id="modalBasic" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
+          <div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-6 pt-max-w-md pt-w-full" style="margin:16px;" onclick="event.stopPropagation()">
+            <div class="pt-flex pt-items-center pt-justify-between pt-mb-4">
+              <h2 class="pt-text-xl pt-font-bold">Подтверждение</h2>
+              <button class="pt-bg-transparent pt-border-none pt-text-2xl pt-cursor-pointer pt-leading-none" style="color:var(--pk-muted);" onclick="this.closest('div[style*=\"display\"]').parentElement.style.display='none'">&times;</button>
+            </div>
+            <p class="pt-text-secondary pt-mb-6">Вы уверены, что хотите выполнить это действие?</p>
+            <div class="pt-flex pt-justify-end pt-gap-3">
+              <button class="btn" onclick="document.getElementById('modalBasic').style.display='none'">Отмена</button>
+              <button class="btn btn--error" onclick="document.getElementById('modalBasic').style.display='none'">Удалить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;button class="btn btn--primary" onclick="document.getElementById('modalBasic').style.display='flex'"&gt;
+  Открыть модалку
+&lt;/button&gt;
+
+&lt;div id="modalBasic" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;"
+     onclick="if(event.target===this)this.style.display='none'"&gt;
+  &lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-6 pt-max-w-md pt-w-full"
+       style="margin:16px;" onclick="event.stopPropagation()"&gt;
+    &lt;div class="pt-flex pt-items-center pt-justify-between pt-mb-4"&gt;
+      &lt;h2 class="pt-text-xl pt-font-bold"&gt;Подтверждение&lt;/h2&gt;
+      &lt;button class="pt-bg-transparent pt-border-none pt-text-2xl pt-cursor-pointer"
+              style="color:var(--pk-muted);"
+              onclick="this.closest('div[style*=\"display\"]').parentElement.style.display='none'"&gt;
+        &amp;times;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;p class="pt-text-secondary pt-mb-6"&gt;Вы уверены?&lt;/p&gt;
+    &lt;div class="pt-flex pt-justify-end pt-gap-3"&gt;
+      &lt;button class="btn" onclick="document.getElementById('modalBasic').style.display='none'"&gt;Отмена&lt;/button&gt;
+      &lt;button class="btn btn--error" onclick="document.getElementById('modalBasic').style.display='none'"&gt;Удалить&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Модалка с анимацией</h2>
+      <p>Добавьте плавное появление с помощью <code>pt-opacity</code>, <code>pt-scale</code> и <code>pt-transition</code>.</p>
+
+      <div class="demo-box">
+        <button class="btn btn--success" onclick="const m=document.getElementById('modalAnimated');m.style.display='flex';setTimeout(()=>{m.style.opacity='1';m.querySelector('div[class*=\"pt-bg-surface\"]').style.transform='scale(1)'},10)">Открыть с анимацией</button>
+        <div id="modalAnimated" style="display:none;opacity:0;transition:opacity 0.3s ease;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;" onclick="const m=this;m.style.opacity='0';m.querySelector('div[class*=\"pt-bg-surface\"]').style.transform='scale(0.95)';setTimeout(()=>m.style.display='none',300)">
+          <div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-6 pt-max-w-md pt-w-full pt-transition" style="margin:16px;transform:scale(0.95);" onclick="event.stopPropagation()">
+            <div class="pt-flex pt-items-center pt-justify-between pt-mb-4">
+              <h2 class="pt-text-xl pt-font-bold">Анимированная модалка</h2>
+              <button class="pt-bg-transparent pt-border-none pt-text-2xl pt-cursor-pointer pt-leading-none" style="color:var(--pk-muted);" onclick="const m=this.closest('div[style*=\"display\"]');m.style.opacity='0';this.closest('div[class*=\"pt-bg-surface\"]').style.transform='scale(0.95)';setTimeout(()=>m.style.display='none',300)">&times;</button>
+            </div>
+            <p class="pt-text-secondary pt-mb-6">Эта модалка появляется с эффектом fade-in + scale.</p>
+            <button class="btn btn--primary pt-w-full" onclick="const m=this.closest('div[style*=\"display\"]');m.style.opacity='0';this.closest('div[class*=\"pt-bg-surface\"]').style.transform='scale(0.95)';setTimeout(()=>m.style.display='none',300)">Закрыть</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;button class="btn btn--success"
+  onclick="const m=document.getElementById('modalAnimated');
+           m.style.display='flex';
+           setTimeout(()=>{m.style.opacity='1';m.querySelector('div[class*=\"pt-bg-surface\"]').style.transform='scale(1)'},10)"&gt;
+  Открыть с анимацией
+&lt;/button&gt;
+
+&lt;div id="modalAnimated" style="display:none;opacity:0;transition:opacity 0.3s ease;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;"
+     onclick="const m=this;m.style.opacity='0';m.querySelector('div[class*=\"pt-bg-surface\"]').style.transform='scale(0.95)';setTimeout(()=>m.style.display='none',300)"&gt;
+  &lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-6 pt-max-w-md pt-w-full pt-transition"
+       style="margin:16px;transform:scale(0.95);" onclick="event.stopPropagation()"&gt;
+    &lt;!-- Header --&gt;
+    &lt;div class="pt-flex pt-items-center pt-justify-between pt-mb-4"&gt;
+      &lt;h2 class="pt-text-xl pt-font-bold"&gt;Анимированная модалка&lt;/h2&gt;
+      &lt;button class="pt-bg-transparent pt-border-none pt-text-2xl pt-cursor-pointer"
+              style="color:var(--pk-muted);" onclick="...закрытие..."&gt;&amp;times;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;p class="pt-text-secondary pt-mb-6"&gt;Fade-in + scale.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Варианты модалок</h2>
+
+      <h3>Маленькая модалка</h3>
+
+      <div class="demo-box">
+        <button class="btn" onclick="const m=document.getElementById('modalSmall');m.style.display='flex'">Маленькая</button>
+        <div id="modalSmall" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
+          <div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-4 pt-max-w-xs pt-w-full" style="margin:16px;" onclick="event.stopPropagation()">
+            <p class="pt-text-center pt-mb-3">Короткое сообщение.</p>
+            <button class="btn btn--primary pt-w-full pt-text-sm" onclick="document.getElementById('modalSmall').style.display='none'">OK</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-4 pt-max-w-xs pt-w-full"&gt;
+  &lt;p class="pt-text-center pt-mb-3"&gt;Короткое сообщение.&lt;/p&gt;
+  &lt;button class="btn btn--primary pt-w-full pt-text-sm"&gt;OK&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Большая модалка</h3>
+
+      <div class="demo-box">
+        <button class="btn" onclick="const m=document.getElementById('modalLarge');m.style.display='flex'">Большая</button>
+        <div id="modalLarge" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
+          <div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-6 pt-max-w-2xl pt-w-full" style="margin:16px;" onclick="event.stopPropagation()">
+            <div class="pt-flex pt-items-center pt-justify-between pt-mb-4">
+              <h2 class="pt-text-xl pt-font-bold">Большая модалка</h2>
+              <button class="pt-bg-transparent pt-border-none pt-text-2xl pt-cursor-pointer pt-leading-none" style="color:var(--pk-muted);" onclick="document.getElementById('modalLarge').style.display='none'">&times;</button>
+            </div>
+            <p class="pt-text-secondary pt-mb-4">Подходит для сложного контента: таблиц, форм с множеством полей, изображений.</p>
+            <div style="height:200px;background:var(--pk-surface-hover);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--pk-muted);margin-bottom:16px;">Контейнер для контента</div>
+            <div class="pt-flex pt-justify-end pt-gap-3">
+              <button class="btn" onclick="document.getElementById('modalLarge').style.display='none'">Закрыть</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-6 pt-max-w-2xl pt-w-full"&gt;
+  &lt;!-- Контент большой модалки --&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>По центру экрана</h3>
+      <p>Модалка по умолчанию центрируется с помощью <code>display:flex; align-items:center; justify-content:center</code> на overlay.</p>
+
+      <h3>Fullscreen модалка</h3>
+
+      <div class="demo-box">
+        <button class="btn" onclick="const m=document.getElementById('modalFullscreen');m.style.display='flex'">Fullscreen</button>
+        <div id="modalFullscreen" style="display:none;position:fixed;inset:0;z-index:9999;background:var(--pk-surface);" onclick="if(event.target===this)this.style.display='none'">
+          <div class="pt-p-8 pt-max-w-4xl pt-mx-auto" style="height:100vh;overflow-y:auto;">
+            <div class="pt-flex pt-items-center pt-justify-between pt-mb-6">
+              <h2 class="pt-text-2xl pt-font-bold">Fullscreen модалка</h2>
+              <button class="pt-bg-transparent pt-border-none pt-text-3xl pt-cursor-pointer" style="color:var(--pk-muted);" onclick="document.getElementById('modalFullscreen').style.display='none'">&times;</button>
+            </div>
+            <p class="pt-text-secondary pt-mb-6">Полноэкранная модалка для редакторов, галерей и сложных форм.</p>
+            <div style="height:400px;background:var(--pk-surface-hover);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--pk-muted);">Контент</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div style="display:none;position:fixed;inset:0;z-index:9999;background:var(--pk-surface);"&gt;
+  &lt;div class="pt-p-8 pt-max-w-4xl pt-mx-auto" style="height:100vh;overflow-y:auto;"&gt;
+    &lt;!-- Fullscreen контент --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Управление через JS</h2>
+      <p>Для удобной работы с модалками можно написать простую функцию:</p>
+
+      <div class="code-block">
+        <pre><code>function openModal(id) {
+  const modal = document.getElementById(id);
+  modal.style.display = 'flex';
+  // Анимация появления
+  requestAnimationFrame(() => {
+    modal.style.opacity = '1';
+    const dialog = modal.querySelector('[class*="pt-bg-surface"]');
+    if (dialog) dialog.style.transform = 'scale(1)';
+  });
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  modal.style.opacity = '0';
+  const dialog = modal.querySelector('[class*="pt-bg-surface"]');
+  if (dialog) dialog.style.transform = 'scale(0.95)';
+  setTimeout(() => modal.style.display = 'none', 300);
+}
+
+// Закрытие по Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('div[style*="display: flex"][style*="position: fixed"]').forEach(m => {
+      closeModal(m.id);
+    });
+  }
+});</code></pre>
+      </div>
+
+      <h2>Примеры</h2>
+
+      <h3>Пример 1: Confirmation dialog</h3>
+
+      <div class="demo-box">
+        <button class="btn btn--error" onclick="const m=document.getElementById('modalConfirm');m.style.display='flex'">Удалить запись</button>
+        <div id="modalConfirm" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
+          <div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-6 pt-max-w-sm pt-w-full pt-text-center" style="margin:16px;" onclick="event.stopPropagation()">
+            <div class="pt-w-14 pt-h-14 pt-rounded-full pt-bg-error pt-bg-opacity-10 pt-flex pt-items-center pt-justify-center pt-mx-auto pt-mb-4" style="background:rgba(239,68,68,0.15);">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M12 3l9 18H3l9-18z"/></svg>
+            </div>
+            <h3 class="pt-text-lg pt-font-bold pt-mb-2">Удалить запись?</h3>
+            <p class="pt-text-sm pt-text-muted pt-mb-6">Это действие нельзя отменить.</p>
+            <div class="pt-flex pt-gap-3 pt-justify-center">
+              <button class="btn" onclick="document.getElementById('modalConfirm').style.display='none'">Отмена</button>
+              <button class="btn btn--error" onclick="document.getElementById('modalConfirm').style.display='none'">Удалить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-6 pt-max-w-sm pt-w-full pt-text-center"&gt;
+  &lt;div class="pt-w-14 pt-h-14 pt-rounded-full pt-flex pt-items-center pt-justify-center pt-mx-auto pt-mb-4"
+       style="background:rgba(239,68,68,0.15);"&gt;
+    &lt;svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"&gt;
+      &lt;path d="M12 9v4M12 17h.01"/&gt;
+      &lt;path d="M12 3l9 18H3l9-18z"/&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;h3 class="pt-text-lg pt-font-bold pt-mb-2"&gt;Удалить запись?&lt;/h3&gt;
+  &lt;p class="pt-text-sm pt-text-muted pt-mb-6"&gt;Это действие нельзя отменить.&lt;/p&gt;
+  &lt;div class="pt-flex pt-gap-3 pt-justify-center"&gt;
+    &lt;button class="btn"&gt;Отмена&lt;/button&gt;
+    &lt;button class="btn btn--error"&gt;Удалить&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 2: Форма в модалке</h3>
+
+      <div class="demo-box">
+        <button class="btn btn--primary" onclick="const m=document.getElementById('modalForm');m.style.display='flex'">Создать задачу</button>
+        <div id="modalForm" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
+          <div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-6 pt-max-w-md pt-w-full" style="margin:16px;" onclick="event.stopPropagation()">
+            <div class="pt-flex pt-items-center pt-justify-between pt-mb-4">
+              <h2 class="pt-text-xl pt-font-bold">Новая задача</h2>
+              <button class="pt-bg-transparent pt-border-none pt-text-2xl pt-cursor-pointer pt-leading-none" style="color:var(--pk-muted);" onclick="document.getElementById('modalForm').style.display='none'">&times;</button>
+            </div>
+            <div class="pt-mb-4">
+              <label class="pt-text-sm pt-font-medium pt-mb-1 pt-block">Название</label>
+              <input type="text" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-border pt-border-default pt-bg-transparent" style="color:var(--pk-text);" placeholder="Введите название" />
+            </div>
+            <div class="pt-mb-4">
+              <label class="pt-text-sm pt-font-medium pt-mb-1 pt-block">Описание</label>
+              <textarea rows="3" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-border pt-border-default pt-bg-transparent" style="color:var(--pk-text);" placeholder="Описание задачи"></textarea>
+            </div>
+            <div class="pt-mb-6">
+              <label class="pt-text-sm pt-font-medium pt-mb-1 pt-block">Приоритет</label>
+              <select class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-border pt-border-default pt-bg-transparent" style="color:var(--pk-text);">
+                <option>Низкий</option>
+                <option>Средний</option>
+                <option>Высокий</option>
+              </select>
+            </div>
+            <div class="pt-flex pt-justify-end pt-gap-3">
+              <button class="btn" onclick="document.getElementById('modalForm').style.display='none'">Отмена</button>
+              <button class="btn btn--primary" onclick="document.getElementById('modalForm').style.display='none'">Создать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-bg-surface pt-rounded-xl pt-shadow-xl pt-p-6 pt-max-w-md pt-w-full"&gt;
+  &lt;div class="pt-flex pt-items-center pt-justify-between pt-mb-4"&gt;
+    &lt;h2 class="pt-text-xl pt-font-bold"&gt;Новая задача&lt;/h2&gt;
+    &lt;button class="pt-bg-transparent pt-border-none pt-text-2xl pt-cursor-pointer"
+            style="color:var(--pk-muted);" onclick="closeModal('modalForm')"&gt;&amp;times;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="pt-mb-4"&gt;
+    &lt;label class="pt-text-sm pt-font-medium pt-mb-1 pt-block"&gt;Название&lt;/label&gt;
+    &lt;input type="text" class="pt-w-full pt-px-3 pt-py-2 pt-rounded-lg pt-border pt-border-default pt-bg-transparent" /&gt;
+  &lt;/div&gt;
+  &lt;!-- ... остальные поля ... --&gt;
+  &lt;div class="pt-flex pt-justify-end pt-gap-3"&gt;
+    &lt;button class="btn" onclick="closeModal('modalForm')"&gt;Отмена&lt;/button&gt;
+    &lt;button class="btn btn--primary" onclick="closeModal('modalForm')"&gt;Создать&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 3: Модалка для изображения</h3>
+
+      <div class="demo-box">
+        <button class="btn" onclick="const m=document.getElementById('modalImage');m.style.display='flex'">Показать изображение</button>
+        <div id="modalImage" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
+          <div style="position:relative;max-width:90vw;max-height:90vh;" onclick="event.stopPropagation()">
+            <button class="pt-bg-transparent pt-border-none pt-text-3xl pt-cursor-pointer" style="position:absolute;top:-40px;right:0;color:#fff;" onclick="document.getElementById('modalImage').style.display='none'">&times;</button>
+            <div style="width:400px;height:300px;background:linear-gradient(135deg,var(--pk-primary),var(--pk-info));border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;">Изображение</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;"
+     onclick="if(event.target===this)this.style.display='none'"&gt;
+  &lt;div style="position:relative;max-width:90vw;max-height:90vh;" onclick="event.stopPropagation()"&gt;
+    &lt;button style="position:absolute;top:-40px;right:0;background:none;border:none;font-size:1.5rem;color:#fff;cursor:pointer;"
+            onclick="this.closest('div[style*=\"display\"]').style.display='none'"&gt;&amp;times;&lt;/button&gt;
+    &lt;img src="photo.jpg" alt="Изображение" style="border-radius:8px;max-width:100%;max-height:90vh;" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

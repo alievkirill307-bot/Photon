@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Полное руководство по созданию пагинации в Photon Framework: структура, состояния, размеры, иконки, адаптивность." />
+  <meta name="keywords" content="photon, pagination, пагинация, постраничная навигация, page numbers, prev next, ui компоненты" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Pagination [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link active">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Pagination [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Пагинация (постраничная навигация) используется для разделения большого объёма контента на страницы. Photon предоставляет утилиты для создания гибкой и адаптивной пагинации с поддержкой всех состояний и размеров.</p>
+
+      <h2>Структура пагинации</h2>
+      <p>Семантически правильная пагинация использует <code>&lt;nav&gt;</code> с <code>aria-label="Pagination"</code>, внутри которого располагается <code>&lt;ul&gt;</code> со списком страниц <code>&lt;li&gt;</code>, каждая из которых содержит <code>&lt;a&gt;</code> или <code>&lt;span&gt;</code>.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;nav aria-label="Pagination"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="?page=1"&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="?page=2"&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;3&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="?page=4"&gt;4&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h2>Базовая пагинация</h2>
+      <p>Используйте <code>pt-flex</code>, <code>pt-items-center</code>, <code>pt-gap-1</code>, <code>pt-list-none</code> для контейнера. Каждую ссылку стилизуйте с помощью <code>pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-transition</code>.</p>
+
+      <div class="demo-box">
+        <nav aria-label="Pagination">
+          <ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0">
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">1</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">2</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-white pt-bg-primary pt-no-underline pt-transition">3</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">4</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">5</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav aria-label="Pagination"&gt;
+  &lt;ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0"&gt;
+    &lt;li&gt;&lt;a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition"&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition"&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-white pt-bg-primary pt-no-underline"&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition"&gt;4&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition"&gt;5&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h2>Состояния</h2>
+      <p>Пагинация имеет три ключевых состояния: <strong>активная</strong> (текущая страница), <strong>disabled</strong> (недоступная кнопка) и <strong>hover</strong> (наведение).</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Состояние</th><th>Классы</th><th>Описание</th></tr></thead>
+          <tbody>
+            <tr><td>Обычная ссылка</td><td><code>pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white</code></td><td>Активная, но не текущая страница</td></tr>
+            <tr><td>Активная (текущая)</td><td><code>pt-text-white pt-bg-primary</code></td><td>Страница, на которой находится пользователь</td></tr>
+            <tr><td>Disabled</td><td><code>pt-text-gray-600 pt-cursor-not-allowed pt-opacity-50</code></td><td>Кнопка «Назад» на первой странице и т.п.</td></tr>
+            <tr><td>Hover</td><td><code>pt-hover:bg-surface-hover pt-hover:text-white</code></td><td>Автоматически при наведении</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <nav aria-label="Pagination states">
+          <ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0">
+            <li><span class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-600 pt-cursor-not-allowed pt-opacity-50 pt-select-none">&laquo;</span></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">1</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-white pt-bg-primary pt-no-underline">2</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">3</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">4</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">&raquo;</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Disabled --&gt;
+&lt;li&gt;&lt;span class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-600 pt-cursor-not-allowed pt-opacity-50"&gt;&amp;laquo;&lt;/span&gt;&lt;/li&gt;
+
+&lt;!-- Active --&gt;
+&lt;li&gt;&lt;span class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-white pt-bg-primary"&gt;2&lt;/span&gt;&lt;/li&gt;
+
+&lt;!-- Default --&gt;
+&lt;li&gt;&lt;a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white"&gt;3&lt;/a&gt;&lt;/li&gt;</code></pre>
+      </div>
+
+      <h2>Размеры</h2>
+      <p>Пагинация может быть трёх размеров: маленькая, стандартная и большая. Размеры регулируются через <code>pt-text-*</code> и <code>pt-px-* pt-py-*</code>.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Размер</th><th>Классы</th><th>Применение</th></tr></thead>
+          <tbody>
+            <tr><td>Маленькая (sm)</td><td><code>pt-text-xs pt-px-2 pt-py-1</code></td><td>Компактные интерфейсы, сайдбары</td></tr>
+            <tr><td>Стандартная (md)</td><td><code>pt-text-sm pt-px-3 pt-py-1.5</code></td><td>Основной вариант для большинства страниц</td></tr>
+            <tr><td>Большая (lg)</td><td><code>pt-text-base pt-px-4 pt-py-2</code></td><td>Акцент на навигации, главные страницы</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-mb-3">
+          <p class="pt-text-xs pt-text-gray-500 pt-mb-2">Маленькая:</p>
+          <nav aria-label="Pagination small">
+            <ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0">
+              <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">1</a></li>
+              <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-text-white pt-bg-primary pt-no-underline">2</a></li>
+              <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">3</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="pt-mb-3">
+          <p class="pt-text-xs pt-text-gray-500 pt-mb-2">Стандартная:</p>
+          <nav aria-label="Pagination default">
+            <ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0">
+              <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">1</a></li>
+              <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-white pt-bg-primary pt-no-underline">2</a></li>
+              <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">3</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div>
+          <p class="pt-text-xs pt-text-gray-500 pt-mb-2">Большая:</p>
+          <nav aria-label="Pagination large">
+            <ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0">
+              <li><a href="#" class="pt-px-4 pt-py-2 pt-rounded-xl pt-text-base pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">1</a></li>
+              <li><a href="#" class="pt-px-4 pt-py-2 pt-rounded-xl pt-text-base pt-text-white pt-bg-primary pt-no-underline">2</a></li>
+              <li><a href="#" class="pt-px-4 pt-py-2 pt-rounded-xl pt-text-base pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">3</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Маленькая --&gt;
+&lt;a href="#" class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white"&gt;1&lt;/a&gt;
+
+&lt;!-- Стандартная --&gt;
+&lt;a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white"&gt;1&lt;/a&gt;
+
+&lt;!-- Большая --&gt;
+&lt;a href="#" class="pt-px-4 pt-py-2 pt-rounded-xl pt-text-base pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white"&gt;1&lt;/a&gt;</code></pre>
+      </div>
+
+      <h2>Пагинация с иконками</h2>
+      <p>Добавьте кнопки «Назад» и «Вперёд» с SVG-иконками. Используйте стрелки влево/вправо или двойные стрелки для первой/последней страницы.</p>
+
+      <div class="demo-box">
+        <nav aria-label="Pagination with icons">
+          <ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0">
+            <li>
+              <a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition pt-flex pt-items-center pt-gap-1">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                Назад
+              </a>
+            </li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">1</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-white pt-bg-primary pt-no-underline">2</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">3</a></li>
+            <li>
+              <a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition pt-flex pt-items-center pt-gap-1">
+                Вперёд
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition pt-flex pt-items-center pt-gap-1"&gt;
+  &lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+    &lt;path d="M15 18l-6-6 6-6"/&gt;
+  &lt;/svg&gt;
+  Назад
+&lt;/a&gt;
+
+&lt;a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm ... pt-flex pt-items-center pt-gap-1"&gt;
+  Вперёд
+  &lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+    &lt;path d="M9 18l6-6-6-6"/&gt;
+  &lt;/svg&gt;
+&lt;/a&gt;</code></pre>
+      </div>
+
+      <h2>Пагинация с номерами + многоточие</h2>
+      <p>При большом количестве страниц используйте многоточие для сокращения. Показывайте первую, последнюю и страницы вокруг текущей.</p>
+
+      <div class="demo-box">
+        <nav aria-label="Pagination truncated">
+          <ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0">
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">&laquo;</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-white pt-bg-primary pt-no-underline">1</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">2</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">3</a></li>
+            <li><span class="pt-px-2 pt-py-1.5 pt-text-sm pt-text-gray-500 pt-select-none">...</span></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">9</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">10</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">&raquo;</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;li&gt;&lt;span class="pt-px-2 pt-py-1.5 pt-text-sm pt-text-gray-500 pt-select-none"&gt;...&lt;/span&gt;&lt;/li&gt;
+
+&lt;!-- Алгоритм показа страниц --&gt;
+&lt;!-- Всего: 10 страниц, текущая: 1 --&gt;
+&lt;!-- Показываем: 1 2 3 ... 9 10 --&gt;
+&lt;!-- При текущей 5: 1 ... 4 5 6 ... 10 --&gt;
+&lt;!-- При текущей 9: 1 ... 8 9 10 --&gt;</code></pre>
+      </div>
+
+      <h2>Адаптивная пагинация</h2>
+      <p>На мобильных устройствах показывайте меньше страниц. Используйте <code>pt-hidden pt-sm:inline</code> для скрытия части номеров.</p>
+
+      <div class="demo-box">
+        <nav aria-label="Pagination responsive">
+          <ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0 pt-flex-wrap">
+            <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded-lg pt-text-xs pt-sm:pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">&laquo;</a></li>
+            <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded-lg pt-text-xs pt-sm:pt-text-sm pt-text-white pt-bg-primary pt-no-underline">1</a></li>
+            <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded-lg pt-text-xs pt-sm:pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">2</a></li>
+            <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded-lg pt-text-xs pt-sm:pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition pt-hidden pt-sm:inline">3</a></li>
+            <li><span class="pt-px-1 pt-py-1 pt-text-xs pt-sm:pt-text-sm pt-text-gray-500 pt-hidden pt-sm:inline">...</span></li>
+            <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded-lg pt-text-xs pt-sm:pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition pt-hidden pt-sm:inline">9</a></li>
+            <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded-lg pt-text-xs pt-sm:pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition pt-hidden pt-sm:inline">10</a></li>
+            <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded-lg pt-text-xs pt-sm:pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">&raquo;</a></li>
+          </ul>
+        </nav>
+        <p class="pt-text-xs pt-text-gray-500 pt-mt-2 pt-italic">На мобильных видны только первые 2 страницы и кнопки навигации</p>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Скрыто на мобильных, показано на sm+ --&gt;
+&lt;li class="pt-hidden pt-sm:inline"&gt;
+  &lt;a href="#" class="..."&gt;3&lt;/a&gt;
+&lt;/li&gt;</code></pre>
+      </div>
+
+      <h2>Примеры</h2>
+
+      <h3>Пример 1: Пагинация блога</h3>
+
+      <div class="demo-box" style="background:var(--pk-surface);padding:20px;border-radius:12px;border:1px solid var(--pk-border);">
+        <div class="pt-flex pt-items-center pt-justify-between pt-mb-4">
+          <h3 class="pt-text-base pt-font-bold pt-m-0">Последние статьи</h3>
+          <span class="pt-text-xs pt-text-gray-500">Страница 3 из 15</span>
+        </div>
+        <div class="pt-space-y-2 pt-mb-4">
+          <div class="pt-p-3 pt-rounded-lg pt-bg-surface-hover pt-text-sm">Как использовать Flexbox в 2026 году</div>
+          <div class="pt-p-3 pt-rounded-lg pt-bg-surface-hover pt-text-sm">CSS Grid: полное руководство</div>
+          <div class="pt-p-3 pt-rounded-lg pt-bg-surface-hover pt-text-sm">Анимации с Photon Framework</div>
+        </div>
+        <nav aria-label="Blog pagination">
+          <ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0 pt-justify-center">
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition pt-flex pt-items-center pt-gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">1</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">2</a></li>
+            <li><span class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-white pt-bg-primary">3</span></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">4</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">5</a></li>
+            <li><span class="pt-px-1 pt-py-1.5 pt-text-sm pt-text-gray-500">...</span></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">15</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition pt-flex pt-items-center pt-gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div style="background:var(--pk-surface);padding:20px;border-radius:12px;border:1px solid var(--pk-border);"&gt;
+  &lt;div class="pt-flex pt-items-center pt-justify-between pt-mb-4"&gt;
+    &lt;h3 class="pt-text-base pt-font-bold pt-m-0"&gt;Последние статьи&lt;/h3&gt;
+    &lt;span class="pt-text-xs pt-text-gray-500"&gt;Страница 3 из 15&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;!-- Список статей --&gt;
+  &lt;nav aria-label="Pagination"&gt;
+    &lt;ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0 pt-justify-center"&gt;
+      &lt;!-- Элементы пагинации --&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 2: Пагинация результатов поиска</h3>
+
+      <div class="demo-box">
+        <nav aria-label="Search pagination">
+          <ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0 pt-justify-center">
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition pt-flex pt-items-center pt-gap-1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+              Предыдущая
+            </a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">1</a></li>
+            <li><span class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-white pt-bg-primary">2</span></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">3</a></li>
+            <li><a href="#" class="pt-px-3 pt-py-1.5 pt-rounded-lg pt-text-sm pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition pt-flex pt-items-center pt-gap-1">
+              Следующая
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav aria-label="Search pagination"&gt;
+  &lt;ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0 pt-justify-center"&gt;
+    &lt;li&gt;&lt;a href="#" class="... pt-flex pt-items-center pt-gap-1"&gt;
+      &lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+        &lt;path d="M19 12H5"/&gt;
+        &lt;path d="M12 19l-7-7 7-7"/&gt;
+      &lt;/svg&gt;
+      Предыдущая
+    &lt;/a&gt;&lt;/li&gt;
+    &lt;!-- Номера страниц --&gt;
+    &lt;li&gt;&lt;a href="#" class="... pt-flex pt-items-center pt-gap-1"&gt;
+      Следующая
+      &lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;
+        &lt;path d="M5 12h14"/&gt;
+        &lt;path d="M12 5l7 7-7 7"/&gt;
+      &lt;/svg&gt;
+    &lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h3>Пример 3: Пагинация таблицы (админ-панель)</h3>
+
+      <div class="demo-box" style="background:var(--pk-surface);padding:16px;border-radius:12px;border:1px solid var(--pk-border);">
+        <div class="pt-flex pt-items-center pt-justify-between pt-mb-3">
+          <span class="pt-text-sm pt-text-gray-400">Показано 1–10 из 234 записей</span>
+          <div class="pt-flex pt-items-center pt-gap-2">
+            <span class="pt-text-xs pt-text-gray-500">Строк на странице:</span>
+            <select class="pt-text-xs pt-px-2 pt-py-1 pt-rounded pt-border pt-border-default pt-bg-transparent" style="color:var(--pk-text);">
+              <option>10</option>
+              <option>25</option>
+              <option>50</option>
+            </select>
+          </div>
+        </div>
+        <nav aria-label="Table pagination">
+          <ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0">
+            <li><span class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-text-gray-600 pt-cursor-not-allowed pt-opacity-50">&laquo;</span></li>
+            <li><span class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-text-white pt-bg-primary">1</span></li>
+            <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">2</a></li>
+            <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">3</a></li>
+            <li><span class="pt-px-1 pt-py-1 pt-text-xs pt-text-gray-500">...</span></li>
+            <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">24</a></li>
+            <li><a href="#" class="pt-px-2 pt-py-1 pt-rounded pt-text-xs pt-text-gray-400 pt-hover:bg-surface-hover pt-hover:text-white pt-no-underline pt-transition">&raquo;</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-center pt-justify-between pt-mb-3"&gt;
+  &lt;span class="pt-text-sm pt-text-gray-400"&gt;Показано 1–10 из 234 записей&lt;/span&gt;
+  &lt;div class="pt-flex pt-items-center pt-gap-2"&gt;
+    &lt;span class="pt-text-xs pt-text-gray-500"&gt;Строк на странице:&lt;/span&gt;
+    &lt;select class="pt-text-xs pt-px-2 pt-py-1 pt-rounded pt-border pt-border-default pt-bg-transparent"&gt;
+      &lt;option&gt;10&lt;/option&gt;
+      &lt;option&gt;25&lt;/option&gt;
+      &lt;option&gt;50&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;nav aria-label="Table pagination"&gt;
+  &lt;ul class="pt-flex pt-items-center pt-gap-1 pt-list-none pt-p-0 pt-m-0"&gt;
+    &lt;!-- Элементы пагинации --&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

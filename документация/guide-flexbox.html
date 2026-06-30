@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Полное руководство по Flexbox в Photon Framework: pt-flex, pt-flex-row, pt-flex-col, pt-justify, pt-items, pt-flex-1, order, self." />
+  <meta name="keywords" content="photon, flexbox, css flex, pt-flex, flex-direction, flex-wrap, justify-content, align-items, order, flex-grow, flex-shrink" />
+  <link rel="icon" href="../photo_2026-06-26_12-29-15.jpg" type="image/jpeg" sizes="any" />
+  <title>Flexbox [guide] — Photon Framework</title>
+  <link rel="stylesheet" href="../photon-kit/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar">
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Старт</span><a href="index.html" class="doc-sidebar__link">Введение</a></div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Компоненты</span>
+        <a href="buttons.html" class="doc-sidebar__link">Кнопки</a>
+        <a href="forms.html" class="doc-sidebar__link">Формы</a>
+        <a href="cards.html" class="doc-sidebar__link">Карточки</a>
+        <a href="images.html" class="doc-sidebar__link">Изображения</a>
+        <a href="navigation.html" class="doc-sidebar__link">Навигация</a>
+        <a href="tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="alerts.html" class="doc-sidebar__link">Уведомления</a>
+        <a href="modals.html" class="doc-sidebar__link">Модальные окна</a>
+        <a href="panels.html" class="doc-sidebar__link">Боковая панель</a>
+        <a href="badges.html" class="doc-sidebar__link">Значки и теги</a>
+        <a href="progress.html" class="doc-sidebar__link">Прогресс и спиннеры</a>
+        <a href="tooltips.html" class="doc-sidebar__link">Подсказки и выпадающие списки</a>
+        <a href="avatars.html" class="doc-sidebar__link">Аватарки</a>
+        <a href="accordion.html" class="doc-sidebar__link">Аккордеон и карусель</a>
+        <a href="stopwatch.html" class="doc-sidebar__link">Секундомер</a>
+        <a href="clock.html" class="doc-sidebar__link">Часы</a>
+        <a href="calendar.html" class="doc-sidebar__link">Календарь</a>
+        <a href="footer.html" class="doc-sidebar__link">Футеры</a>
+        <a href="utilities.html" class="doc-sidebar__link">Утилиты</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Photon-tw</span>
+        <a href="photon-tw.html" class="doc-sidebar__link">Обзор</a>
+        <a href="pt-buttons.html" class="doc-sidebar__link">Кнопки [pt]</a>
+        <a href="pt-cards.html" class="doc-sidebar__link">Карточки [pt]</a>
+        <a href="pt-forms.html" class="doc-sidebar__link">Формы [pt]</a>
+        <a href="pt-layout.html" class="doc-sidebar__link">Сетка [pt]</a>
+        <a href="pt-typography.html" class="doc-sidebar__link">Типографика [pt]</a>
+        <a href="pt-navigation.html" class="doc-sidebar__link">Навигация [pt]</a>
+        <a href="pt-images.html" class="doc-sidebar__link">Изображения [pt]</a>
+        <a href="pt-alerts.html" class="doc-sidebar__link">Уведомления [pt]</a>
+        <a href="pt-utilities.html" class="doc-sidebar__link">Справочник [pt]</a>
+        <a href="pt-theme.html" class="doc-sidebar__link">Тема [pt]</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Гайды</span>
+        <a href="guide-animations.html" class="doc-sidebar__link">Анимации</a>
+        <a href="guide-transforms.html" class="doc-sidebar__link">Трансформации</a>
+        <a href="guide-custom-components.html" class="doc-sidebar__link">Кастомные компоненты</a>
+        <a href="guide-modals.html" class="doc-sidebar__link">Модалки</a>
+        <a href="guide-tooltips.html" class="doc-sidebar__link">Тултипы</a>
+        <a href="guide-breadcrumbs.html" class="doc-sidebar__link">Breadcrumbs</a>
+        <a href="guide-pagination.html" class="doc-sidebar__link">Pagination</a>
+        <a href="guide-lists.html" class="doc-sidebar__link">Списки</a>
+        <a href="guide-tables.html" class="doc-sidebar__link">Таблицы</a>
+        <a href="guide-media-queries.html" class="doc-sidebar__link">Медиа-запросы</a>
+        <a href="guide-css-grid.html" class="doc-sidebar__link">CSS Grid</a>
+        <a href="guide-flexbox.html" class="doc-sidebar__link active">Flexbox</a>
+        <a href="guide-shadows.html" class="doc-sidebar__link">Тени</a>
+        <a href="guide-gradients.html" class="doc-sidebar__link">Градиенты</a>
+        <a href="guide-filters.html" class="doc-sidebar__link">Фильтры</a>
+        <a href="guide-blend-modes.html" class="doc-sidebar__link">Blend modes</a>
+      </div>
+      <div class="doc-sidebar__group">
+        <span class="doc-sidebar__title">Настройки</span>
+        <a href="theme.html" class="doc-sidebar__link">Тема оформления</a>
+      </div>
+      <div class="doc-sidebar__group"><span class="doc-sidebar__title">Ресурсы</span><a href="svg-icons.html" class="doc-sidebar__link">SVG иконки</a></div>
+    </aside>
+
+    <main class="doc-content">
+
+      <h1>Flexbox [guide]</h1>
+      <div class="page-logo"><img src="../photo_2026-06-26_12-29-15.jpg" alt="Photon"></div>
+      <p>Flexbox (Flexible Box Layout) — это одномерный метод раскладки, который позволяет гибко распределять пространство между элементами и выравнивать их. Photon предоставляет полный набор утилитарных классов для работы с Flexbox, охватывающий контейнер и все его дочерние элементы.</p>
+
+      <h2>Flex-контейнер</h2>
+      <p>Используйте <code>pt-flex</code> для создания flex-контейнера с <code>display: flex</code> или <code>pt-inline-flex</code> для строчного варианта.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-flex</code></td><td><code>display: flex</code></td></tr>
+            <tr><td><code>.pt-inline-flex</code></td><td><code>display: inline-flex</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-flex" style="gap:8px;padding:12px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">
+          <div style="padding:12px 20px;background:var(--pk-primary);border-radius:6px;">Элемент 1</div>
+          <div style="padding:12px 20px;background:var(--pk-success);border-radius:6px;">Элемент 2</div>
+          <div style="padding:12px 20px;background:var(--pk-warning);border-radius:6px;color:#000;">Элемент 3</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex" style="gap:8px;"&gt;
+  &lt;div&gt;Элемент 1&lt;/div&gt;
+  &lt;div&gt;Элемент 2&lt;/div&gt;
+  &lt;div&gt;Элемент 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Направление (flex-direction)</h2>
+      <p>Управляет направлением главной оси Flexbox. По умолчанию элементы располагаются в строку (row).</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-flex-row</code></td><td><code>flex-direction: row</code></td></tr>
+            <tr><td><code>.pt-flex-row-reverse</code></td><td><code>flex-direction: row-reverse</code></td></tr>
+            <tr><td><code>.pt-flex-col</code></td><td><code>flex-direction: column</code></td></tr>
+            <tr><td><code>.pt-flex-col-reverse</code></td><td><code>flex-direction: column-reverse</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-flex pt-flex-col" style="gap:8px;padding:12px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">
+          <div style="padding:12px 20px;background:var(--pk-primary);border-radius:6px;">Колонка 1</div>
+          <div style="padding:12px 20px;background:var(--pk-success);border-radius:6px;">Колонка 2</div>
+          <div style="padding:12px 20px;background:var(--pk-warning);border-radius:6px;color:#000;">Колонка 3</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-flex-col" style="gap:8px;"&gt;
+  &lt;div&gt;Колонка 1&lt;/div&gt;
+  &lt;div&gt;Колонка 2&lt;/div&gt;
+  &lt;div&gt;Колонка 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Перенос (flex-wrap)</h2>
+      <p>Управляет переносом элементов на новую строку при нехватке места.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-flex-wrap</code></td><td><code>flex-wrap: wrap</code></td></tr>
+            <tr><td><code>.pt-flex-nowrap</code></td><td><code>flex-wrap: nowrap</code></td></tr>
+            <tr><td><code>.pt-flex-wrap-reverse</code></td><td><code>flex-wrap: wrap-reverse</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-flex pt-flex-wrap" style="gap:8px;padding:12px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;max-width:300px;">
+          <div style="padding:12px 24px;background:var(--pk-primary);border-radius:6px;">1</div>
+          <div style="padding:12px 24px;background:var(--pk-success);border-radius:6px;">2</div>
+          <div style="padding:12px 24px;background:var(--pk-warning);border-radius:6px;color:#000;">3</div>
+          <div style="padding:12px 24px;background:var(--pk-info);border-radius:6px;">4</div>
+          <div style="padding:12px 24px;background:var(--pk-error);border-radius:6px;">5</div>
+          <div style="padding:12px 24px;background:var(--pk-primary);border-radius:6px;">6</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-flex-wrap" style="gap:8px;max-width:300px;"&gt;
+  &lt;div&gt;1&lt;/div&gt; &lt;div&gt;2&lt;/div&gt; &lt;div&gt;3&lt;/div&gt;
+  &lt;div&gt;4&lt;/div&gt; &lt;div&gt;5&lt;/div&gt; &lt;div&gt;6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Выравнивание по главной оси</h2>
+      <p>Классы <code>pt-justify-*</code> управляют распределением элементов вдоль главной оси (горизонталь для row, вертикаль для column).</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-justify-start</code></td><td><code>justify-content: flex-start</code></td></tr>
+            <tr><td><code>.pt-justify-end</code></td><td><code>justify-content: flex-end</code></td></tr>
+            <tr><td><code>.pt-justify-center</code></td><td><code>justify-content: center</code></td></tr>
+            <tr><td><code>.pt-justify-between</code></td><td><code>justify-content: space-between</code></td></tr>
+            <tr><td><code>.pt-justify-around</code></td><td><code>justify-content: space-around</code></td></tr>
+            <tr><td><code>.pt-justify-evenly</code></td><td><code>justify-content: space-evenly</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-flex pt-justify-between" style="gap:8px;padding:12px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">
+          <div style="padding:12px 20px;background:var(--pk-primary);border-radius:6px;">Левый</div>
+          <div style="padding:12px 20px;background:var(--pk-success);border-radius:6px;">Центр</div>
+          <div style="padding:12px 20px;background:var(--pk-warning);border-radius:6px;color:#000;">Правый</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-justify-between"&gt;
+  &lt;div&gt;Левый&lt;/div&gt;
+  &lt;div&gt;Центр&lt;/div&gt;
+  &lt;div&gt;Правый&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Выравнивание по поперечной оси</h2>
+      <p>Классы <code>pt-items-*</code> управляют выравниванием элементов вдоль поперечной оси (вертикаль для row).</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-items-start</code></td><td><code>align-items: flex-start</code></td></tr>
+            <tr><td><code>.pt-items-end</code></td><td><code>align-items: flex-end</code></td></tr>
+            <tr><td><code>.pt-items-center</code></td><td><code>align-items: center</code></td></tr>
+            <tr><td><code>.pt-items-baseline</code></td><td><code>align-items: baseline</code></td></tr>
+            <tr><td><code>.pt-items-stretch</code></td><td><code>align-items: stretch</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-flex pt-items-center" style="gap:8px;padding:12px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;min-height:100px;">
+          <div style="padding:12px 20px;background:var(--pk-primary);border-radius:6px;height:40px;">Высота 40</div>
+          <div style="padding:12px 20px;background:var(--pk-success);border-radius:6px;height:60px;">Высота 60</div>
+          <div style="padding:12px 20px;background:var(--pk-warning);border-radius:6px;color:#000;height:30px;">Высота 30</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-center" style="min-height:100px;"&gt;
+  &lt;div style="height:40px;"&gt;Высота 40&lt;/div&gt;
+  &lt;div style="height:60px;"&gt;Высота 60&lt;/div&gt;
+  &lt;div style="height:30px;"&gt;Высота 30&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Выравнивание контента</h2>
+      <p>Классы <code>pt-content-*</code> управляют распределением строк flex-элементов вдоль поперечной оси (работает с flex-wrap).</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-content-start</code></td><td><code>align-content: flex-start</code></td></tr>
+            <tr><td><code>.pt-content-end</code></td><td><code>align-content: flex-end</code></td></tr>
+            <tr><td><code>.pt-content-center</code></td><td><code>align-content: center</code></td></tr>
+            <tr><td><code>.pt-content-between</code></td><td><code>align-content: space-between</code></td></tr>
+            <tr><td><code>.pt-content-around</code></td><td><code>align-content: space-around</code></td></tr>
+            <tr><td><code>.pt-content-stretch</code></td><td><code>align-content: stretch</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Flex-элементы</h2>
+      <p>Классы для управления гибкостью дочерних элементов flex-контейнера.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-flex-1</code></td><td><code>flex: 1 1 0%</code></td></tr>
+            <tr><td><code>.pt-flex-auto</code></td><td><code>flex: 1 1 auto</code></td></tr>
+            <tr><td><code>.pt-flex-initial</code></td><td><code>flex: 0 1 auto</code></td></tr>
+            <tr><td><code>.pt-flex-none</code></td><td><code>flex: none</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-flex" style="gap:8px;padding:12px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">
+          <div class="pt-flex-1" style="padding:12px 20px;background:var(--pk-primary);border-radius:6px;">flex-1</div>
+          <div class="pt-flex-1" style="padding:12px 20px;background:var(--pk-success);border-radius:6px;">flex-1</div>
+          <div class="pt-flex-none" style="padding:12px 20px;background:var(--pk-warning);border-radius:6px;color:#000;">flex-none</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex" style="gap:8px;"&gt;
+  &lt;div class="pt-flex-1"&gt;flex-1 (растянется)&lt;/div&gt;
+  &lt;div class="pt-flex-1"&gt;flex-1 (растянется)&lt;/div&gt;
+  &lt;div class="pt-flex-none"&gt;flex-none (сжиматься не будет)&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Рост и сжатие</h2>
+      <p>Классы <code>pt-flex-grow</code> и <code>pt-flex-shrink</code> управляют способностью элемента увеличиваться или уменьшаться.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-flex-grow</code></td><td><code>flex-grow: 1</code></td></tr>
+            <tr><td><code>.pt-flex-grow-0</code></td><td><code>flex-grow: 0</code></td></tr>
+            <tr><td><code>.pt-flex-shrink</code></td><td><code>flex-shrink: 1</code></td></tr>
+            <tr><td><code>.pt-flex-shrink-0</code></td><td><code>flex-shrink: 0</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-flex" style="gap:8px;padding:12px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">
+          <div class="pt-flex-grow" style="padding:12px 20px;background:var(--pk-primary);border-radius:6px;">grow</div>
+          <div class="pt-flex-grow-0" style="padding:12px 20px;background:var(--pk-success);border-radius:6px;">grow-0</div>
+          <div class="pt-flex-grow" style="padding:12px 20px;background:var(--pk-warning);border-radius:6px;color:#000;">grow</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex"&gt;
+  &lt;div class="pt-flex-grow"&gt;grow (растянется)&lt;/div&gt;
+  &lt;div class="pt-flex-grow-0"&gt;grow-0 (не растянется)&lt;/div&gt;
+  &lt;div class="pt-flex-grow"&gt;grow (растянется)&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Порядок (order)</h2>
+      <p>Классы <code>pt-order-*</code> меняют порядок отображения элементов. По умолчанию order: 0. Значения от 1 до 12, а также first (-9999) и last (9999).</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-order-first</code></td><td><code>order: -9999</code></td></tr>
+            <tr><td><code>.pt-order-1</code></td><td><code>order: 1</code></td></tr>
+            <tr><td><code>.pt-order-2</code></td><td><code>order: 2</code></td></tr>
+            <tr><td><code>.pt-order-3</code></td><td><code>order: 3</code></td></tr>
+            <tr><td><code>.pt-order-4</code></td><td><code>order: 4</code></td></tr>
+            <tr><td><code>.pt-order-5</code></td><td><code>order: 5</code></td></tr>
+            <tr><td><code>.pt-order-6</code></td><td><code>order: 6</code></td></tr>
+            <tr><td><code>.pt-order-7</code></td><td><code>order: 7</code></td></tr>
+            <tr><td><code>.pt-order-8</code></td><td><code>order: 8</code></td></tr>
+            <tr><td><code>.pt-order-9</code></td><td><code>order: 9</code></td></tr>
+            <tr><td><code>.pt-order-10</code></td><td><code>order: 10</code></td></tr>
+            <tr><td><code>.pt-order-11</code></td><td><code>order: 11</code></td></tr>
+            <tr><td><code>.pt-order-12</code></td><td><code>order: 12</code></td></tr>
+            <tr><td><code>.pt-order-last</code></td><td><code>order: 9999</code></td></tr>
+            <tr><td><code>.pt-order-none</code></td><td><code>order: 0</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-flex" style="gap:8px;padding:12px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;">
+          <div class="pt-order-3" style="padding:12px 20px;background:var(--pk-primary);border-radius:6px;">Первый (order 3)</div>
+          <div class="pt-order-1" style="padding:12px 20px;background:var(--pk-success);border-radius:6px;">Второй (order 1)</div>
+          <div class="pt-order-2" style="padding:12px 20px;background:var(--pk-warning);border-radius:6px;color:#000;">Третий (order 2)</div>
+        </div>
+        <p style="margin-top:8px;font-size:0.85rem;color:var(--pk-muted);">Порядок отображения: Второй, Третий, Первый</p>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex"&gt;
+  &lt;div class="pt-order-3"&gt;Первый в DOM (order 3)&lt;/div&gt;
+  &lt;div class="pt-order-1"&gt;Второй в DOM (order 1)&lt;/div&gt;
+  &lt;div class="pt-order-2"&gt;Третий в DOM (order 2)&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Отобразится: Второй, Третий, Первый --&gt;</code></pre>
+      </div>
+
+      <h2>Выравнивание элемента</h2>
+      <p>Классы <code>pt-self-*</code> переопределяют выравнивание для конкретного flex-элемента.</p>
+
+      <div class="code-block">
+        <table class="table">
+          <thead><tr><th>Класс</th><th>CSS значение</th></tr></thead>
+          <tbody>
+            <tr><td><code>.pt-self-auto</code></td><td><code>align-self: auto</code></td></tr>
+            <tr><td><code>.pt-self-start</code></td><td><code>align-self: flex-start</code></td></tr>
+            <tr><td><code>.pt-self-end</code></td><td><code>align-self: flex-end</code></td></tr>
+            <tr><td><code>.pt-self-center</code></td><td><code>align-self: center</code></td></tr>
+            <tr><td><code>.pt-self-stretch</code></td><td><code>align-self: stretch</code></td></tr>
+            <tr><td><code>.pt-self-baseline</code></td><td><code>align-self: baseline</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-box">
+        <div class="pt-flex pt-items-start" style="gap:8px;padding:12px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:8px;min-height:100px;">
+          <div style="padding:12px 20px;background:var(--pk-primary);border-radius:6px;">start</div>
+          <div class="pt-self-center" style="padding:12px 20px;background:var(--pk-success);border-radius:6px;">self-center</div>
+          <div class="pt-self-end" style="padding:12px 20px;background:var(--pk-warning);border-radius:6px;color:#000;">self-end</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-start" style="min-height:100px;"&gt;
+  &lt;div&gt;start&lt;/div&gt;
+  &lt;div class="pt-self-center"&gt;self-center&lt;/div&gt;
+  &lt;div class="pt-self-end"&gt;self-end&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Примеры</h2>
+
+      <h3>Пример 1: Навбар</h3>
+      <p>Типичная навигационная панель с логотипом слева и ссылками справа:</p>
+
+      <div class="demo-box">
+        <div class="pt-flex pt-items-center pt-justify-between" style="padding:12px 20px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:12px;">
+          <div class="pt-flex pt-items-center" style="gap:10px;">
+            <div style="width:32px;height:32px;background:var(--pk-primary);border-radius:8px;"></div>
+            <span style="font-weight:700;font-size:1.1rem;">MyApp</span>
+          </div>
+          <div class="pt-flex" style="gap:16px;">
+            <a href="#" style="color:var(--pk-text);text-decoration:none;">Главная</a>
+            <a href="#" style="color:var(--pk-muted);text-decoration:none;">О нас</a>
+            <a href="#" style="color:var(--pk-muted);text-decoration:none;">Контакты</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;nav class="pt-flex pt-items-center pt-justify-between" style="padding:12px 20px;background:...;border-radius:12px;"&gt;
+  &lt;div class="pt-flex pt-items-center" style="gap:10px;"&gt;
+    &lt;div style="width:32px;height:32px;background:var(--pk-primary);border-radius:8px;"&gt;&lt;/div&gt;
+    &lt;span style="font-weight:700;"&gt;MyApp&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="pt-flex" style="gap:16px;"&gt;
+    &lt;a href="#"&gt;Главная&lt;/a&gt;
+    &lt;a href="#"&gt;О нас&lt;/a&gt;
+    &lt;a href="#"&gt;Контакты&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h3>Пример 2: Ряд карточек</h3>
+      <p>Несколько карточек одинаковой ширины с помощью <code>pt-flex-1</code>:</p>
+
+      <div class="demo-box">
+        <div class="pt-flex" style="gap:12px;">
+          <div class="pt-flex-1" style="padding:16px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:10px;">
+            <div style="width:100%;height:60px;background:var(--pk-primary);border-radius:6px;margin-bottom:8px;"></div>
+            <div style="font-weight:600;">Заголовок 1</div>
+            <div style="font-size:0.85rem;color:var(--pk-muted);">Описание карточки</div>
+          </div>
+          <div class="pt-flex-1" style="padding:16px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:10px;">
+            <div style="width:100%;height:60px;background:var(--pk-success);border-radius:6px;margin-bottom:8px;"></div>
+            <div style="font-weight:600;">Заголовок 2</div>
+            <div style="font-size:0.85rem;color:var(--pk-muted);">Описание карточки</div>
+          </div>
+          <div class="pt-flex-1" style="padding:16px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:10px;">
+            <div style="width:100%;height:60px;background:var(--pk-warning);border-radius:6px;margin-bottom:8px;"></div>
+            <div style="font-weight:600;">Заголовок 3</div>
+            <div style="font-size:0.85rem;color:var(--pk-muted);">Описание карточки</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex" style="gap:12px;"&gt;
+  &lt;div class="pt-flex-1" style="padding:16px;background:...;border-radius:10px;"&gt;
+    &lt;div style="height:60px;background:var(--pk-primary);border-radius:6px;margin-bottom:8px;"&gt;&lt;/div&gt;
+    &lt;div style="font-weight:600;"&gt;Заголовок&lt;/div&gt;
+    &lt;div style="font-size:0.85rem;color:var(--pk-muted);"&gt;Описание&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- Повторите для остальных карточек --&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 3: Центрирование контента</h3>
+      <p>Идеальное центрирование по горизонтали и вертикали:</p>
+
+      <div class="demo-box">
+        <div class="pt-flex pt-items-center pt-justify-center" style="min-height:120px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:12px;">
+          <div style="padding:20px 36px;background:var(--pk-primary);border-radius:10px;font-weight:600;">Центрированный блок</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-items-center pt-justify-center" style="min-height:120px;"&gt;
+  &lt;div style="padding:20px 36px;background:var(--pk-primary);border-radius:10px;"&gt;
+    Центрированный блок
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Пример 4: Sticky Footer</h3>
+      <p>Футер всегда прижат к низу страницы с помощью <code>pt-flex-col</code> и <code>pt-flex-1</code>:</p>
+
+      <div class="demo-box">
+        <div class="pt-flex pt-flex-col" style="min-height:160px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:12px;">
+          <div style="padding:16px;background:var(--pk-primary);border-radius:12px 12px 0 0;">Шапка</div>
+          <div class="pt-flex-1" style="padding:16px;">Основной контент растягивается, чтобы заполнить пространство</div>
+          <div style="padding:12px 16px;background:var(--pk-bg);border-top:1px solid var(--pk-border);border-radius:0 0 12px 12px;font-size:0.85rem;color:var(--pk-muted);">
+            Футер всегда внизу
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;body class="pt-flex pt-flex-col" style="min-height:100vh;"&gt;
+  &lt;header&gt;Шапка&lt;/header&gt;
+  &lt;main class="pt-flex-1"&gt;Основной контент&lt;/main&gt;
+  &lt;footer&gt;Футер&lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+      </div>
+
+      <h3>Пример 5: Holy Grail Layout на Flexbox</h3>
+      <p>Классический "Святой Грааль" на Flexbox:</p>
+
+      <div class="demo-box">
+        <div class="pt-flex pt-flex-col" style="min-height:200px;background:var(--pk-surface);border:1px solid var(--pk-border);border-radius:12px;">
+          <div style="padding:12px;background:var(--pk-primary);border-radius:12px 12px 0 0;text-align:center;font-weight:600;">Header</div>
+          <div class="pt-flex pt-flex-1" style="gap:4px;padding:4px;">
+            <div style="width:80px;padding:8px;background:var(--pk-info);border-radius:6px;display:flex;align-items:center;justify-content:center;">Nav</div>
+            <div class="pt-flex-1" style="padding:16px;background:var(--pk-bg);border:1px solid var(--pk-border);border-radius:6px;display:flex;align-items:center;justify-content:center;">Main Content</div>
+            <div style="width:80px;padding:8px;background:var(--pk-success);border-radius:6px;display:flex;align-items:center;justify-content:center;">Aside</div>
+          </div>
+          <div style="padding:12px;background:var(--pk-warning);border-radius:0 0 12px 12px;text-align:center;font-weight:600;color:#000;">Footer</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pt-flex pt-flex-col" style="min-height:100vh;"&gt;
+  &lt;header&gt;Header&lt;/header&gt;
+  &lt;div class="pt-flex pt-flex-1"&gt;
+    &lt;nav style="width:200px;"&gt;Nav&lt;/nav&gt;
+    &lt;main class="pt-flex-1"&gt;Main&lt;/main&gt;
+    &lt;aside style="width:200px;"&gt;Aside&lt;/aside&gt;
+  &lt;/div&gt;
+  &lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/doc.js"></script>
+  <script src="../photon-kit/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>
