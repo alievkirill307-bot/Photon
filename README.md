@@ -43,11 +43,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://photon.p7z.ru/css/photon-kit.css">
+  <link rel="stylesheet" [href="https:/photon.c6t.ru/css/photon-kit.css](https://photon.c6t.ru/photon-kit/photon-kit.css)">
 </head>
 <body>
   <button class="btn btn--primary">Кнопка</button>
-  <script src="https://photon.p7z.ru/js/photon-kit.js" defer></script>
+  <script src="[https://photon.p7z.ru/js/photon-kit.js](https://photon.c6t.ru/photon-kit/photon-kit.js)" defer></script>
 </body>
 </html>
 ```
@@ -91,7 +91,7 @@ Photon включает:
 **Photon X** — встроенный CSS-движок нового поколения. Позволяет управлять стилями прямо в HTML через классы с префиксом `_`:
 
 ```html
-<script src="https://photon.p7z.ru/js/photon-kit-x.js.js" defer></script>
+<script src="https://photon.c6t.ru/photon-kit/photon-kit-x.js" defer></script>
 
 <div class="_bg--6c5ce7 _flex-center _p-3 _hover:bg--ff7675" style="height:200px;">
   <span class="c--fff _fs-1_25">Наведите курсор</span>
