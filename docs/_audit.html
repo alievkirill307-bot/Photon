@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>audit</title>
+<style>html,body{margin:0;padding:0;background:#222}iframe{border:0;height:900px;display:block;margin:0 auto}</style>
+</head>
+<body>
+<iframe id="f" src="about:blank"></iframe>
+<script>
+var PAGES = ["accordion.html","alerts.html","avatars.html","badges.html","buttons.html","calendar.html","cards.html","clock.html","footer.html","forms.html","git.html","guide-animations.html","guide-blend-modes.html","guide-breadcrumbs.html","guide-css-grid.html","guide-custom-components.html","guide-flexbox.html","guide-forms-deep.html","guide-lists.html","guide-media-queries.html","guide-pagination.html","guide-photon-x.html","guide-shadows.html","guide-tables.html","guide-tooltips.html","guide-transforms.html","guide-typography-deep.html","images.html","index.html","modals.html","navigation.html","panels.html","photon-tw.html","photon-x.html","progress.html","pt-alerts.html","pt-buttons.html","pt-cards.html","pt-forms.html","pt-images.html","pt-layout.html","pt-navigation.html","pt-theme.html","pt-typography.html","pt-utilities.html","px-components.html","stopwatch.html","svg-icons.html","tables.html","theme.html","timer.html","tooltips.html","utilities.html"];
+var WIDTHS = [320, 375, 600, 768, 1024, 1280];
+var f = document.getElementById('f');
+var problems = [];
+var state = { done: false, progress: '', idx: 0, wi: -1 };
+
+function waitReady(cb) {
+  var tries = 0;
+  (function tick() {
+    var d = null;
+    try { d = f.contentDocument; } catch (e) {}
+    if (d && d.body && d.querySelector('.doc-sidebar__link, .guide-toc__list a, .doc-content')) {
+      setTimeout(cb, 350);
+      return;
+    }
+    if (++tries > 60) { setTimeout(cb, 300); return; }
+    setTimeout(tick, 200);
+  })();
+}
+
+function measure(w) {
+  var doc, win;
+  try { doc = f.contentDocument; win = f.contentWindow; } catch (e) { return; }
+  if (!doc || !doc.body) return;
+  var over = [];
+  var all = doc.querySelectorAll('main *, .doc-content *, .guide-body *, header *');
+  for (var i = 0; i < all.length; i++) {
+    var el = all[i];
+    var cs = win.getComputedStyle(el);
+    if (cs.display === 'none' || cs.visibility === 'hidden' || cs.position === 'fixed') continue;
+    if (el.closest('.doc-sidebar, .guide-toc, .sidebar-search__results')) continue;
+    var r = el.getBoundingClientRect();
+    if (r.width === 0 && r.height === 0) continue;
+    if (r.right > w + 1.5 || r.left < -1.5) {
+      over.push({
+        tag: el.tagName,
+        cls: (el.getAttribute('class') || '').slice(0, 50),
+        l: Math.round(r.left),
+        r: Math.round(r.right)
+      });
+      if (over.length >= 4) break;
+    }
+  }
+  if (over.length) problems.push({ page: PAGES[state.idx], w: w, items: over });
+}
+
+function runWidths() {
+  state.wi++;
+  if (state.wi >= WIDTHS.length) {
+    state.wi = -1;
+    state.idx++;
+    if (state.idx >= PAGES.length) { state.done = true; state.progress = 'ГОТОВО ' + PAGES.length; return; }
+    state.progress = 'загрузка ' + PAGES[state.idx];
+    f.src = PAGES[state.idx];
+    setTimeout(function () { waitReady(runWidths); }, 100);
+    return;
+  }
+  var w = WIDTHS[state.wi];
+  state.progress = PAGES[state.idx] + ' @' + w;
+  f.style.width = w + 'px';
+  setTimeout(function () { measure(w); setTimeout(runWidths, 260); }, 320);
+}
+
+state.progress = 'старт';
+f.src = PAGES[0];
+setTimeout(function () { waitReady(runWidths); }, 200);
+
+window.__audit = state;
+window.__problems = problems;
+</script>
+</body>
+</html>

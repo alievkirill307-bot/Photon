@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Photon — CSS фреймворк с адаптивной тёмной темой и эффектом стекла. Более 40 компонентов." />
+  <meta name="keywords" content="photon, css framework, css фреймворк, glass ui, тёмная тема, dark theme, стеклянный дизайн, веб-компоненты" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <title>Изображения — Photon Framework</title>
+  <link rel="stylesheet" href="css/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="img/photon-logo.svg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+    
+      <div class="theme-switch" data-theme-switch style="margin-left:0.75rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <div class="theme-switch__track">
+          <div class="theme-switch__thumb"></div>
+        </div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </div></div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar" data-sidebar></aside>
+
+    <main class="doc-content">
+
+      <h1>Изображения</h1>
+      <div class="page-logo"><img src="img/photon-logo.svg" alt="Photon"></div>
+      <p>Галерея с полноэкранным просмотром (lightbox). Кликните на изображение, чтобы открыть его в увеличенном виде. Используйте класс <code>pk-gallery</code> для контейнера и <code>pk-gallery-item</code> для элементов.</p>
+
+      <h2>Простые изображения</h2>
+      <p>Изображениям можно задавать обтекание, выравнивание и оформление с помощью встроенных утилит.</p>
+
+      <h3>Слева</h3>
+      <div class="demo-box clearfix">
+        <img src="https://picsum.photos/seed/landscape1/280/200" alt="Пейзаж" class="float-left shadow rounded" style="margin:0 1rem 0.5rem 0;">
+        <p style="text-align:left;">Горный пейзаж с обтеканием слева. Класс <code>.float-left</code> прижимает изображение к левому краю, а текст обтекает его справа и снизу. Для отступа добавлен <code>margin</code> справа и снизу. Тень задаётся классом <code>.shadow</code>, скругление — <code>.rounded</code>. Это простой и надёжный способ разместить изображение в текстовом контексте.</p>
+      </div>
+
+      <h3>По центру</h3>
+      <div class="demo-box" style="text-align:center;">
+        <img src="https://picsum.photos/seed/landscape2/360/200" alt="Пейзаж" class="rounded shadow" style="display:block;margin:0 auto 0.75rem;">
+        <p>Центрированное изображение с классом <code>.mx-auto</code> (или <code>margin:0 auto</code>). Тень и скругление заданы теми же классами <code>.shadow</code> и <code>.rounded</code>. Подходит для акцентных иллюстраций между текстовыми блоками.</p>
+      </div>
+
+      <h3>Справа</h3>
+      <div class="demo-box clearfix">
+        <img src="https://picsum.photos/seed/landscape3/280/200" alt="Пейзаж" class="float-right shadow rounded" style="margin:0 0 0.5rem 1rem;">
+        <p style="text-align:left;">Горный пейзаж с обтеканием справа. Класс <code>.float-right</code> прижимает изображение к правому краю, текст обтекает его слева. Для отступа используется <code>margin</code> слева и снизу. Такой вариант удобен для цитат, фактов или дополнительных материалов, которые не должны разрывать основной поток текста.</p>
+      </div>
+
+      <h3>Стили оформления</h3>
+      <div class="demo-box" style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;">
+        <div style="text-align:center;">
+          <img src="https://picsum.photos/seed/styletrees/160/160" alt="trees" class="rounded-circle shadow" style="width:140px;height:140px;object-fit:cover;margin:0 auto 0.5rem;">
+          <div><code>.rounded-circle .shadow</code></div>
+        </div>
+        <div style="text-align:center;">
+          <img src="https://picsum.photos/seed/stylelac/160/160" alt="lac" class="rounded shadow-lg" style="width:140px;height:140px;object-fit:cover;margin:0 auto 0.5rem;">
+          <div><code>.rounded .shadow-lg</code></div>
+        </div>
+        <div style="text-align:center;">
+          <img src="https://picsum.photos/seed/styleriver/160/160" alt="river" class="rounded-0 shadow" style="width:140px;height:140px;object-fit:cover;margin:0 auto 0.5rem;border:2px solid var(--pk-border);">
+          <div><code>.rounded-0 .border</code></div>
+        </div>
+        <div style="text-align:center;">
+          <img src="https://picsum.photos/seed/stylesky/160/160" alt="sky" class="rounded-pill shadow" style="width:140px;height:140px;object-fit:cover;margin:0 auto 0.5rem;">
+          <div><code>.rounded-pill .shadow</code></div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Слева --&gt;
+&lt;div class="clearfix"&gt;
+  &lt;img src="..." alt="..." class="float-left shadow rounded" style="margin:0 1rem 0.5rem 0;"&gt;
+  &lt;p&gt;Текст обтекает изображение справа&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- По центру --&gt;
+&lt;div style="text-align:center;"&gt;
+  &lt;img src="..." alt="..." class="rounded shadow" style="display:block;margin:0 auto 0.75rem;"&gt;
+  &lt;p&gt;Текст под изображением&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Справа --&gt;
+&lt;div class="clearfix"&gt;
+  &lt;img src="..." alt="..." class="float-right shadow rounded" style="margin:0 0 0.5rem 1rem;"&gt;
+  &lt;p&gt;Текст обтекает изображение слева&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Круглая аватарка --&gt;
+&lt;img src="..." alt="..." class="rounded-circle shadow" style="width:140px;height:140px;object-fit:cover;"&gt;
+
+&lt;!-- Прямоугольник с большой тенью --&gt;
+&lt;img src="..." alt="..." class="rounded shadow-lg" style="width:140px;height:140px;object-fit:cover;"&gt;
+
+&lt;!-- Без скругления с рамкой --&gt;
+&lt;img src="..." alt="..." class="rounded-0 shadow" style="width:140px;height:140px;object-fit:cover;border:2px solid var(--pk-border);"&gt;
+
+&lt;!-- Скруглённые торцы (пилюля) --&gt;
+&lt;img src="..." alt="..." class="rounded-pill shadow" style="width:140px;height:140px;object-fit:cover;"&gt;</code></pre>
+      </div>
+
+      <h2>Демо</h2>
+      <p>Нажмите на любое изображение, чтобы открыть lightbox. Навигация стрелками, закрытие по Escape или клику вне изображения.</p>
+
+      <div class="demo-box" style="flex-direction:column;gap:0;">
+        <div class="pk-gallery" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;width:100%;">
+          <div class="pk-gallery-item" style="border-radius:10px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;display:block;transition:var(--pk-transition);" data-src="gory" data-title="Горы" data-desc="Красивый горный пейзаж">
+            <img src="https://picsum.photos/seed/gory/300/300" alt="Горы" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 0.75rem;background:linear-gradient(transparent,rgba(0,0,0,0.6));font-size:0.8rem;font-weight:500;text-align:left;color:#fff;">Горы</div>
+          </div>
+          <div class="pk-gallery-item" style="border-radius:10px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;display:block;transition:var(--pk-transition);" data-src="more" data-title="Море" data-desc="Морское побережье">
+            <img src="https://picsum.photos/seed/more/300/300" alt="Море" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 0.75rem;background:linear-gradient(transparent,rgba(0,0,0,0.6));font-size:0.8rem;font-weight:500;text-align:left;color:#fff;">Море</div>
+          </div>
+          <div class="pk-gallery-item" style="border-radius:10px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;display:block;transition:var(--pk-transition);" data-src="les" data-title="Лес" data-desc="Лесная тропа">
+            <img src="https://picsum.photos/seed/les/300/300" alt="Лес" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 0.75rem;background:linear-gradient(transparent,rgba(0,0,0,0.6));font-size:0.8rem;font-weight:500;text-align:left;color:#fff;">Лес</div>
+          </div>
+          <div class="pk-gallery-item" style="border-radius:10px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;display:block;transition:var(--pk-transition);" data-src="gorod" data-title="Город" data-desc="Ночной город">
+            <img src="https://picsum.photos/seed/gorod/300/300" alt="Город" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 0.75rem;background:linear-gradient(transparent,rgba(0,0,0,0.6));font-size:0.8rem;font-weight:500;text-align:left;color:#fff;">Город</div>
+          </div>
+          <div class="pk-gallery-item" style="border-radius:10px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;display:block;transition:var(--pk-transition);" data-src="zakat" data-title="Закат" data-desc="Красочный закат">
+            <img src="https://picsum.photos/seed/zakat/300/300" alt="Закат" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 0.75rem;background:linear-gradient(transparent,rgba(0,0,0,0.6));font-size:0.8rem;font-weight:500;text-align:left;color:#fff;">Закат</div>
+          </div>
+          <div class="pk-gallery-item" style="border-radius:10px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;display:block;transition:var(--pk-transition);" data-src="zima" data-title="Зима" data-desc="Зимняя сказка">
+            <img src="https://picsum.photos/seed/zima/300/300" alt="Зима" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 0.75rem;background:linear-gradient(transparent,rgba(0,0,0,0.6));font-size:0.8rem;font-weight:500;text-align:left;color:#fff;">Зима</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>HTML-код</h2>
+      <p>Каждый элемент <code>.pk-gallery-item</code> принимает атрибуты <code>data-src</code> (ключ изображения), <code>data-title</code> и <code>data-desc</code>. Изображения подставляются через <code>https://picsum.photos/seed/{key}/{width}/{height}</code>.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="pk-gallery" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;max-width:800px;margin:2rem auto;padding:0 1rem;"&gt;
+  &lt;div class="pk-gallery-item" data-src="gory" data-title="Горы" data-desc="Красивый горный пейзаж" style="border-radius:10px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;display:block;"&gt;
+    &lt;img src="https://picsum.photos/seed/gory/300/300" alt="Горы" style="width:100%;height:100%;object-fit:cover;display:block;"&gt;
+    &lt;div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 0.75rem;background:linear-gradient(transparent,rgba(0,0,0,0.6));font-size:0.8rem;font-weight:500;text-align:left;color:#fff;"&gt;Горы&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pk-gallery-item" data-src="more" data-title="Море" data-desc="Морское побережье" style="border-radius:10px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;display:block;"&gt;
+    &lt;img src="https://picsum.photos/seed/more/300/300" alt="Море" style="width:100%;height:100%;object-fit:cover;display:block;"&gt;
+    &lt;div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 0.75rem;background:linear-gradient(transparent,rgba(0,0,0,0.6));font-size:0.8rem;font-weight:500;text-align:left;color:#fff;"&gt;Море&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pk-gallery-item" data-src="les" data-title="Лес" data-desc="Лесная тропа" style="border-radius:10px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;display:block;"&gt;
+    &lt;img src="https://picsum.photos/seed/les/300/300" alt="Лес" style="width:100%;height:100%;object-fit:cover;display:block;"&gt;
+    &lt;div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 0.75rem;background:linear-gradient(transparent,rgba(0,0,0,0.6));font-size:0.8rem;font-weight:500;text-align:left;color:#fff;"&gt;Лес&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pk-gallery-item" data-src="gorod" data-title="Город" data-desc="Ночной город" style="border-radius:10px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;display:block;"&gt;
+    &lt;img src="https://picsum.photos/seed/gorod/300/300" alt="Город" style="width:100%;height:100%;object-fit:cover;display:block;"&gt;
+    &lt;div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 0.75rem;background:linear-gradient(transparent,rgba(0,0,0,0.6));font-size:0.8rem;font-weight:500;text-align:left;color:#fff;"&gt;Город&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pk-gallery-item" data-src="zakat" data-title="Закат" data-desc="Красочный закат" style="border-radius:10px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;display:block;"&gt;
+    &lt;img src="https://picsum.photos/seed/zakat/300/300" alt="Закат" style="width:100%;height:100%;object-fit:cover;display:block;"&gt;
+    &lt;div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 0.75rem;background:linear-gradient(transparent,rgba(0,0,0,0.6));font-size:0.8rem;font-weight:500;text-align:left;color:#fff;"&gt;Закат&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pk-gallery-item" data-src="zima" data-title="Зима" data-desc="Зимняя сказка" style="border-radius:10px;overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;display:block;"&gt;
+    &lt;img src="https://picsum.photos/seed/zima/300/300" alt="Зима" style="width:100%;height:100%;object-fit:cover;display:block;"&gt;
+    &lt;div style="position:absolute;bottom:0;left:0;right:0;padding:0.5rem 0.75rem;background:linear-gradient(transparent,rgba(0,0,0,0.6));font-size:0.8rem;font-weight:500;text-align:left;color:#fff;"&gt;Зима&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Атрибуты</h2>
+      <table class="table table--striped" style="margin-top:0.5rem;">
+        <thead><tr><th>Атрибут</th><th>Назначение</th></tr></thead>
+        <tbody>
+          <tr><td><code>data-src</code></td><td>Ключ для подстановки изображения (seed для picsum)</td></tr>
+          <tr><td><code>data-title</code></td><td>Заголовок в lightbox</td></tr>
+          <tr><td><code>data-desc</code></td><td>Описание в lightbox</td></tr>
+        </tbody>
+      </table>
+
+    </main>
+  </div>
+
+  <script src="js/photon-kit.js"></script>
+  <script src="js/search-index.js"></script>
+  <script src="js/sidebar-config.js"></script>
+  <script src="js/doc.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>
+

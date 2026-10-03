@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест Bootstrap Carousel с Photon</title>
+  <link rel="stylesheet" href="photon-kit.css">
+</head>
+<body class="theme-dark">
+
+  <div style="max-width:800px;margin:2rem auto;padding:1rem;">
+    <h1 style="color:var(--pk-text);margin-bottom:1rem;">Bootstrap-карусель без bootstrap.bundle.js</h1>
+    <p style="color:var(--pk-text-secondary);margin-bottom:2rem;">
+      Работает через photon-kit.js. Подключён только photon-kit.css и photon-kit.js.
+      Разметка — стандартная Bootstrap 5.
+    </p>
+
+    <!-- ===== Bootstrap 5 разметка ===== -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner" style="border-radius:16px;min-height:400px;background:#2d2d2d;">
+        <div class="carousel-item active" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe);min-height:400px;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:#fff;">
+          <h2 style="font-size:2.5rem;font-weight:800;">Слайд 1 — Photon</h2>
+          <p style="font-size:1.2rem;opacity:0.9;">Bootstrap-карусель работает через photon-kit.js</p>
+        </div>
+        <div class="carousel-item" style="background:linear-gradient(135deg,#00b894,#55efc4);min-height:400px;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:#fff;">
+          <h2 style="font-size:2.5rem;font-weight:800;">Слайд 2 — Успех</h2>
+          <p style="font-size:1.2rem;opacity:0.9;">Без bootstrap.bundle.js, без jQuery</p>
+        </div>
+        <div class="carousel-item" style="background:linear-gradient(135deg,#e17055,#fab1a0);min-height:400px;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:#fff;">
+          <h2 style="font-size:2.5rem;font-weight:800;">Слайд 3 — Надёжно</h2>
+          <p style="font-size:1.2rem;opacity:0.9;">Автопроигрывание, пауза при наведении</p>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div style="margin-top:3rem;padding:1.5rem;background:var(--pk-bg-alt);border-radius:12px;">
+      <h3 style="color:var(--pk-text);margin-top:0;">Как это работает</h3>
+      <pre style="background:#1d1d1f;color:#f5f5f7;padding:1rem;border-radius:8px;overflow-x:auto;font-size:0.82rem;"><code>&lt;link rel="stylesheet" href="photon-kit.css"&gt;
+&lt;!-- bootstrap.bundle.js НЕ подключается --&gt;
+&lt;script src="photon-kit.js"&gt;&lt;/script&gt;
+
+&lt;div id="carouselExample" class="carousel slide" data-bs-ride="carousel"&gt;
+  &lt;div class="carousel-indicators"&gt;
+    &lt;button data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+    &lt;button data-bs-slide-to="1"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;...&lt;/div&gt;
+    &lt;div class="carousel-item"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="carousel-control-prev" data-bs-slide="prev"&gt;
+    &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="carousel-control-next" data-bs-slide="next"&gt;
+    &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <h3 style="color:var(--pk-text);margin-top:2rem;">Fade-вариант</h3>
+    <div id="carouselFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner" style="border-radius:16px;min-height:300px;background:#1e1e1e;">
+        <div class="carousel-item active" style="min-height:300px;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff;background:#6c5ce7;">
+          ★
+        </div>
+        <div class="carousel-item" style="min-height:300px;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff;background:#00b894;">
+          ◆
+        </div>
+        <div class="carousel-item" style="min-height:300px;display:flex;align-items:center;justify-content:center;font-size:3rem;color:#fff;background:#e17055;">
+          ●
+        </div>
+      </div>
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselFade" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselFade" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselFade" data-bs-slide-to="2"></button>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <script src="photon-kit.js"></script>
+</body>
+</html>

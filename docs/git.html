@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Git — полная методичка: 31 раздел, 200+ команд, копирование в один клик. Три состояния файла, ветки, rebase, хуки, plumbing, шпаргалка." />
+  <meta name="keywords" content="git, методичка, git guide, системы контроля версий, rebase, cherry-pick, gitignore, conventional commits, git lfs" />
+  <link rel="icon" href="img/git_logo.png" type="image/svg+xml" />
+  <title>Git — полная методичка · Photon Framework</title>
+  <link rel="stylesheet" href="css/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+  <link rel="stylesheet" href="css/git.css" />
+</head>
+<body class="theme-dark doc-guide">
+
+  <div class="guide-progress" id="guideProgress"></div>
+
+  <!-- Header -->
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand">
+      <span class="doc-header__logo"><img src="img/photon-logo.svg" alt="Photon"></span>
+      Photon
+    </a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg>
+        <span class="doc-header__link-text">GitHub</span>
+      </a>
+      <div class="theme-switch" data-theme-switch style="margin-left:0.25rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <div class="theme-switch__track">
+          <div class="theme-switch__thumb"></div>
+        </div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Layout -->
+  <div class="doc-layout">
+
+    <aside class="doc-sidebar" id="sidebar" data-sidebar></aside>
+
+    <main class="doc-content doc-content--guide">
+
+      <!-- HERO -->
+      <section class="guide-hero">
+        <div class="guide-hero__top">
+          <div class="guide-hero__logo"><img src="img/git_logo.png" alt="Git" width="46" height="46" /></div>
+          <div>
+            <h1>Git — полная методичка</h1>
+            <p class="guide-hero__sub">Всё о системе контроля версий: от <code class="ic">git init</code> до <code class="ic">filter-repo</code>, от статус-кодов файлов до plumbing-команд. Любую команду можно скопировать одним кликом.</p>
+            <div class="guide-hero__meta">
+              <span class="guide-chip">31 раздел</span>
+              <span class="guide-chip">200+ команд</span>
+              <span class="guide-chip">Копирование в 1 клик</span>
+              <span class="guide-chip">Тёмная / светлая тема</span>
+            </div>
+          </div>
+        </div>
+        <div class="guide-hero__actions">
+          <a href="#intro" class="btn btn--primary">Начать читать</a>
+          <a href="#cheatsheet" class="btn btn--outline">Сразу к шпаргалке</a>
+        </div>
+      </section>
+
+      <div class="guide-layout">
+
+        <!-- КОНТЕНТ -->
+        <div class="guide-body">
+
+          <!-- ВВЕДЕНИЕ -->
+          <section class="guide-section" id="intro">
+            <h2><span class="guide-section__icon">🚀</span>Введение</h2>
+
+            <p><strong>Git</strong> — распределённая система контроля версий. Хранит всю историю проекта локально у каждого разработчика, позволяет безопасно экспериментировать и работать в команде.</p>
+
+            <h3>Три состояния файла</h3>
+            <pre data-lang="text"><code>┌──────────────┐   git add    ┌──────────────┐  git commit  ┌──────────────┐
+│   Рабочая    │ ───────────► │    Индекс    │ ───────────► │  Репозиторий │
+│  директория  │              │  (staging)   │              │    (.git)    │
+└──────────────┘ ◄─────────── └──────────────┘ ◄─────────── └──────────────┘
+                  git restore                   git reset</code></pre>
+
+            <div class="guide-cards">
+              <div class="guide-card">
+                <h4>📂 Working Tree</h4>
+                <p>Файлы, которые вы редактируете. Изменения здесь ещё не зафиксированы.</p>
+              </div>
+              <div class="guide-card">
+                <h4>📥 Staging Area</h4>
+                <p>«Черновик» будущего коммита. Сюда добавляете то, что войдёт в фиксацию.</p>
+              </div>
+              <div class="guide-card">
+                <h4>🗄️ Repository</h4>
+                <p>Папка <code class="ic">.git</code> — вся история коммитов, ветки и теги.</p>
+              </div>
+            </div>
+
+            <div class="guide-callout">
+              <span class="guide-callout__icon">💡</span>
+              <p><strong>Главное правило:</strong> Git почти ничего не удаляет навсегда. Почти любое действие отменяется через <code class="ic">git reflog</code> — журнал перемещений указателя <code class="ic">HEAD</code>.</p>
+            </div>
+          </section>
+
+          <!-- УСТАНОВКА -->
+          <section class="guide-section" id="install">
+            <h2><span class="guide-section__icon">⚙️</span>Установка и настройка</h2>
+
+            <h3>Установка</h3>
+            <pre data-lang="bash"><code># Windows — скачать установщик с https://git-scm.com/download/win
+# macOS (Homebrew)
+brew install git
+
+# Debian / Ubuntu
+sudo apt update &amp;&amp; sudo apt install git
+
+# Проверка версии
+git --version</code></pre>
+
+            <h3>Первичная настройка (обязательно)</h3>
+            <pre data-lang="bash"><code># Представиться — данные попадут в каждый коммит
+git config --global user.name "Иван Иванов"
+git config --global user.email "ivan@example.com"
+
+# Основная ветка по умолчанию
+git config --global init.defaultBranch main
+
+# Редактор для сообщений
+git config --global core.editor "code --wait"   # VS Code
+git config --global core.editor "nano"          # nano
+
+# Прочее
+git config --global color.ui auto
+git config --global core.autocrlf input   # macOS / Linux
+git config --global core.autocrlf true    # Windows
+git config --global pull.rebase true      # pull через rebase
+git config --global push.autoSetupRemote true  # авто-u при push
+
+# Посмотреть настройки
+git config --list
+git config --global --list
+git config --global --edit</code></pre>
+
+            <h3>SSH-ключ для GitHub / GitLab</h3>
+            <pre data-lang="bash"><code># Сгенерировать ключ (Enter на все вопросы)
+ssh-keygen -t ed25519 -C "ivan@example.com"
+
+# Скопировать публичный ключ
+cat ~/.ssh/id_ed25519.pub
+
+# Вставить на GitHub: Settings → SSH and GPG keys → New SSH key
+
+# Проверить соединение
+ssh -T git@github.com</code></pre>
+
+            <h3>Подпись коммитов GPG</h3>
+            <pre data-lang="bash"><code># Сгенерировать GPG-ключ
+gpg --full-generate-key
+
+# Узнать ID ключа
+gpg --list-secret-keys --keyid-format=long
+
+# Настроить Git
+git config --global user.signingkey ВАШ_KEY_ID
+git config --global commit.gpgsign true
+git config --global tag.gpgsign true
+
+# Подписать коммит разово
+git commit -S -m "подписанный коммит"
+
+# Проверить
+git log --show-signature</code></pre>
+
+            <div class="guide-callout guide-callout--tip">
+              <span class="guide-callout__icon">✅</span>
+              <p>Проверить настройки: <code class="ic">git config --global user.name</code> и <code class="ic">git config --global user.email</code> — должны вернуть ваши данные.</p>
+            </div>
+          </section>
+
+          <!-- СОЗДАНИЕ РЕПОЗИТОРИЯ -->
+          <section class="guide-section" id="create">
+            <h2><span class="guide-section__icon">📁</span>Создание репозитория</h2>
+
+            <h3>Новый проект с нуля</h3>
+            <pre data-lang="bash"><code># Инициализировать репозиторий в текущей папке
+git init
+
+# Создать папку и сразу инициализировать
+git init my-project
+
+# Голый репозиторий (для собственного сервера, без рабочей директории)
+git init --bare project.git
+
+# Что Git создал
+ls -la .git</code></pre>
+
+            <h3>Клонирование существующего</h3>
+            <pre data-lang="bash"><code># Клонировать в папку с именем репозитория
+git clone https://github.com/user/repo.git
+
+# В свою папку
+git clone https://github.com/user/repo.git my-folder
+
+# Конкретную ветку
+git clone -b develop https://github.com/user/repo.git
+
+# Поверхностный клон — только последний коммит
+git clone --depth 1 https://github.com/user/repo.git
+
+# С подмодулями
+git clone --recurse-submodules https://github.com/user/repo.git
+
+# Зеркало (все ссылки, для миграции)
+git clone --mirror https://github.com/user/repo.git</code></pre>
+
+            <h3>Отвязка от origin</h3>
+            <pre data-lang="bash"><code># После клона шаблона — начать свою историю
+git remote remove origin
+git branch -M main</code></pre>
+          </section>
+
+          <!-- ОСНОВЫ РАБОТЫ -->
+          <section class="guide-section" id="basics">
+            <h2><span class="guide-section__icon">📝</span>Основы работы</h2>
+
+            <h3>Индексация</h3>
+            <pre data-lang="bash"><code># Добавить в индекс
+git add file.txt
+git add src/                # папку
+git add .                   # всё в текущей папке
+git add -A                  # всё, включая удаления
+git add *.js                # по маске
+
+# Интерактивно выбирать куски файла (очень полезно!)
+git add -p
+git add --patch
+
+# Убрать файл из индекса (изменения сохранятся)
+git restore --staged file.txt
+git reset HEAD file.txt     # старый способ</code></pre>
+
+            <h3>Коммиты</h3>
+            <pre data-lang="bash"><code># Зафиксировать проиндексированное
+git commit -m "feat: добавил авторизацию"
+
+# Добавить отслеживаемые и сразу закоммитить
+git commit -am "fix: исправил опечатку"
+
+# Коммит с подробным описанием (откроет редактор)
+git commit
+git commit -v                # + показать diff
+
+# Изменить последний коммит
+git add forgotten.txt
+git commit --amend -m "новое сообщение"
+git commit --amend --no-edit  # не менять сообщение
+
+# Пустой коммит (для CI)
+git commit --allow-empty -m "trigger build"
+
+# Указать конкретного автора
+git commit --author="Иван &lt;i@e.com&gt;" -m "msg"
+
+# Подписать GPG
+git commit -S -m "signed"</code></pre>
+
+            <h3>История и диффы</h3>
+            <pre data-lang="bash"><code># Краткая история
+git log
+git log --oneline
+git log --oneline --graph --all --decorate   # ★ самая полезная
+git log -5                                   # последние 5
+git log -p                                   # с диффами
+git log --stat                               # со статистикой
+
+# Фильтры
+git log --author="Иван"
+git log --since="2 weeks ago" --until="yesterday"
+git log --grep="fix"                         # поиск по сообщению
+git log -- path/to/file.txt                  # история файла
+git log -S "functionName"                    # когда появилась строка
+git log -G "regexp"                          # по регулярке
+git log --merges                             # только merge-коммиты
+git log --no-merges                          # без merge
+git log --first-parent                       # только по main-линии
+
+# Диффы
+git diff                     # рабочая копия vs индекс
+git diff --staged            # индекс vs HEAD
+git diff HEAD                # рабочая копия vs HEAD
+git diff main..feature       # между ветками
+git diff HEAD~1 HEAD         # между двумя коммитами
+git diff --stat              # только статистика
+git diff --name-only         # только имена файлов
+
+# Показать коммит
+git show a1b2c3d
+git show HEAD~1:file.txt     # версия файла в коммите</code></pre>
+
+            <div class="guide-callout guide-callout--tip">
+              <span class="guide-callout__icon">✅</span>
+              <p>Хорошее сообщение коммита = <strong>тип: что сделано</strong>. Например: <code class="ic">feat: добавил корзину</code>, <code class="ic">fix: падение при пустом логине</code>, <code class="ic">docs: обновил README</code>.</p>
+            </div>
+          </section>
+
+          <!-- СТАТУС-КОДЫ -->
+          <section class="guide-section" id="statuses">
+            <h2><span class="guide-section__icon">📊</span>Статус-коды файлов</h2>
+
+            <p>Вывод <code class="ic">git status -s</code> — две колонки: первая — индекс (staged), вторая — рабочая копия (unstaged).</p>
+
+            <pre data-lang="text"><code>XY  путь/к/файлу
+ │
+ │└── состояние рабочей копии (unstaged)
+ └─── состояние индекса (staged)</code></pre>
+
+            <div class="guide-table-wrap">
+              <table>
+                <thead><tr><th>Код</th><th>Значение</th><th>Что делать</th></tr></thead>
+                <tbody>
+                  <tr><td><code class="ic">??</code></td><td>Неотслеживаемый файл</td><td><code class="ic">git add file</code></td></tr>
+                  <tr><td><code class="ic">A</code></td><td>Добавлен в индекс</td><td>Готов к коммиту</td></tr>
+                  <tr><td><code class="ic">M</code></td><td>Изменён</td><td><code class="ic">git add</code> чтобы застейджить</td></tr>
+                  <tr><td><code class="ic">D</code></td><td>Удалён</td><td><code class="ic">git add</code> или <code class="ic">git restore</code></td></tr>
+                  <tr><td><code class="ic">R</code></td><td>Переименован</td><td>Git определил автоматически</td></tr>
+                  <tr><td><code class="ic">C</code></td><td>Скопирован</td><td>Обнаруживается при <code class="ic">-C</code></td></tr>
+                  <tr><td><code class="ic">U</code></td><td>Конфликт слияния</td><td>Разрешить вручную</td></tr>
+                  <tr><td><code class="ic">AM</code></td><td>Добавлен, но снова изменён</td><td><code class="ic">git add</code> ещё раз</td></tr>
+                  <tr><td><code class="ic">MM</code></td><td>Изменён в индексе и в WC</td><td><code class="ic">git add</code> ещё раз</td></tr>
+                  <tr><td><code class="ic">AD</code></td><td>Добавлен, потом удалён с диска</td><td><code class="ic">git add</code></td></tr>
+                  <tr><td><code class="ic">!!</code></td><td>Игнорируется (с <code class="ic">--ignored</code>)</td><td>—</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Полезные флаги status</h3>
+            <pre data-lang="bash"><code>git status -s              # короткий формат XY
+git status -sb             # + ветка и upstream
+git status --ignored       # показать игнорируемые
+git status -uno            # не показывать untracked
+git status -uall           # показать каждый файл в папке
+git status --porcelain     # стабильный формат для скриптов</code></pre>
+          </section>
+
+          <!-- НАВИГАЦИЯ ПО КОММИТАМ -->
+          <section class="guide-section" id="navigation">
+            <h2><span class="guide-section__icon">🧭</span>Навигация по коммитам</h2>
+
+            <p>Git позволяет ссылаться на коммиты относительно <code class="ic">HEAD</code> — «ревизионные выражения».</p>
+
+            <div class="guide-table-wrap">
+              <table>
+                <thead><tr><th>Синтаксис</th><th>Значение</th></tr></thead>
+                <tbody>
+                  <tr><td><code class="ic">HEAD</code></td><td>Текущий коммит</td></tr>
+                  <tr><td><code class="ic">HEAD~1</code></td><td>1-й родитель (предыдущий коммит)</td></tr>
+                  <tr><td><code class="ic">HEAD~3</code></td><td>3 коммита назад по первой линии</td></tr>
+                  <tr><td><code class="ic">HEAD^1</code></td><td>то же, что HEAD~1 — первый родитель</td></tr>
+                  <tr><td><code class="ic">HEAD^2</code></td><td>ВТОРОЙ родитель (для merge-коммитов)</td></tr>
+                  <tr><td><code class="ic">HEAD^2~2</code></td><td>2 назад от второго родителя</td></tr>
+                  <tr><td><code class="ic">HEAD@{2}</code></td><td>Где HEAD был 2 «шага» назад (reflog)</td></tr>
+                  <tr><td><code class="ic">main@{yesterday}</code></td><td>Где ветка была вчера</td></tr>
+                  <tr><td><code class="ic">@{-1}</code></td><td>Предыдущая ветка (<code class="ic">git switch -</code>)</td></tr>
+                  <tr><td><code class="ic">v1.0.0</code></td><td>Тег</td></tr>
+                  <tr><td><code class="ic">a1b2c3d</code></td><td>SHA-1 коммита (можно первые 7 символов)</td></tr>
+                  <tr><td><code class="ic">main..feature</code></td><td>Коммиты в feature, которых нет в main</td></tr>
+                  <tr><td><code class="ic">main...feature</code></td><td>Симметричная разница</td></tr>
+                  <tr><td><code class="ic">^main feature</code></td><td>В feature, но не в main</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Разница ~ и ^</h3>
+            <pre data-lang="text"><code>        A --- B --- C  (main)
+               \
+                D --- E  (feature)
+                     \
+                      M  (merge = C + E)
+
+M~1 = C (первый родитель)
+M^1 = C
+M^2 = E (второй родитель)
+M^2~1 = D</code></pre>
+
+            <pre data-lang="bash"><code># Показать разницу между ветками
+git log main..feature        # что есть в feature, но нет в main
+git log main...feature       # симметричная разница
+git log --left-right main...feature   # с указанием стороны
+git rev-list --count main..feature    # сколько коммитов
+
+# Разрешить ревизию в SHA-1
+git rev-parse HEAD
+git rev-parse --short HEAD
+git rev-parse --abbrev-ref HEAD       # имя текущей ветки
+git rev-parse --verify main           # проверить существование</code></pre>
+          </section>
+
+          <!-- ВЕТКИ И СЛИЯНИЕ -->
+          <section class="guide-section" id="branch">
+            <h2><span class="guide-section__icon">🌿</span>Ветки и слияние</h2>
+
+            <h3>Просмотр и создание</h3>
+            <pre data-lang="bash"><code># Список веток
+git branch                 # локальные
+git branch -a              # + удалённые
+git branch -v              # с последним коммитом
+git branch -vv             # + upstream
+git branch --merged        # уже слитые в текущую
+git branch --no-merged     # не слитые
+
+# Создать ветку
+git branch feature/login
+
+# Переключиться (современный способ)
+git switch feature/login
+
+# Создать и переключиться
+git switch -c feature/login
+git checkout -b feature/login      # старый способ
+
+# Переключиться на предыдущую
+git switch -
+git checkout -</code></pre>
+
+            <h3>Переименование и удаление</h3>
+            <pre data-lang="bash"><code>git branch -m new-name             # переименовать текущую
+git branch -m old-name new-name    # переименовать любую
+
+git branch -d feature/login        # безопасно (неслитую не удалит)
+git branch -D feature/login        # принудительно
+
+git push origin --delete feature/login    # удалить на сервере</code></pre>
+
+            <h3>Слияние</h3>
+            <pre data-lang="bash"><code>git switch main
+git merge feature/login
+
+# Всегда создавать коммит слияния (сохраняет историю ветки)
+git merge --no-ff feature/login
+
+# Только fast-forward (иначе отказ)
+git merge --ff-only feature/login
+
+# Отменить merge при конфликтах
+git merge --abort
+
+# Octopus merge (несколько веток сразу)
+git merge branch1 branch2 branch3
+
+# Squash merge — все коммиты одной кучей
+git merge --squash feature
+git commit
+
+# Стратегии: "наша" или "их" сторона побеждает
+git merge -X ours feature
+git merge -X theirs feature
+git merge -X ignore-all-space feature</code></pre>
+
+            <div class="guide-callout guide-callout--warn">
+              <span class="guide-callout__icon">⚠️</span>
+              <p>Никогда не делайте <code class="ic">git push --force</code> в общие ветки (<code class="ic">main</code>, <code class="ic">develop</code>). Для своих веток используйте <code class="ic">--force-with-lease</code>.</p>
+            </div>
+          </section>
+
+          <!-- КОНФЛИКТЫ -->
+          <section class="guide-section" id="conflicts">
+            <h2><span class="guide-section__icon">⚔️</span>Конфликты глубоко</h2>
+
+            <p>Конфликты возникают, когда Git не может сам решить, чью версию оставить. Это нормально.</p>
+
+            <h3>Типы конфликтов</h3>
+            <div class="guide-cards">
+              <div class="guide-card"><h4>🔀 Merge</h4><p>Обе ветки меняли одни строки. Решается вручную.</p></div>
+              <div class="guide-card"><h4>📁 Add/Add</h4><p>Обе ветки создали файл с одним именем.</p></div>
+              <div class="guide-card"><h4>🗑️ Modify/Delete</h4><p>Одна изменила файл, другая удалила.</p></div>
+              <div class="guide-card"><h4>📛 Rename</h4><p>Файл переименован по-разному в двух ветках.</p></div>
+            </div>
+
+            <h3>Маркеры конфликта</h3>
+            <pre data-lang="text"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+console.log("ваш вариант");
+=======
+console.error("их вариант");
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/login</code></pre>
+
+            <h3>Разрешение</h3>
+            <pre data-lang="bash"><code># Взять свою версию целиком
+git checkout --ours file.txt
+git restore --ours file.txt
+
+# Взять их версию целиком
+git checkout --theirs file.txt
+git restore --theirs file.txt
+
+# Открыть mergetool (настраивается)
+git mergetool
+
+# Настроить VS Code как mergetool
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd 'code --wait $MERGED'
+
+# Список конфликтующих файлов
+git diff --name-only --diff-filter=U
+git status --short | grep '^UU'
+
+# Отметить разрешённым
+git add resolved.txt
+git commit           # Git подставит готовое сообщение
+
+# Отменить операцию
+git merge --abort
+git rebase --abort
+git cherry-pick --abort</code></pre>
+          </section>
+
+          <!-- УДАЛЁННЫЕ РЕПОЗИТОРИИ -->
+          <section class="guide-section" id="remote">
+            <h2><span class="guide-section__icon">☁️</span>Удалённые репозитории</h2>
+
+            <h3>Управление remote</h3>
+            <pre data-lang="bash"><code>git remote -v                       # список с URL
+git remote add origin URL           # добавить
+git remote set-url origin NEW_URL   # изменить URL
+git remote rename origin upstream   # переименовать
+git remote remove origin            # удалить
+git remote show origin              # подробно</code></pre>
+
+            <h3>Отправка</h3>
+            <pre data-lang="bash"><code># Первая отправка ветки (запоминает связь)
+git push -u origin main
+git push -u origin HEAD             # для текущей ветки
+
+# Дальше — просто
+git push
+
+# Конкретную ветку
+git push origin feature/login
+
+# Все ветки / теги
+git push --all
+git push --tags
+git push origin v1.0.0
+
+# Безопасная перезапись своей ветки
+git push --force-with-lease origin feature/login
+
+# Удалить ветку на сервере
+git push origin --delete feature/login
+
+# Зеркальная отправка (все ссылки)
+git push --mirror</code></pre>
+
+            <h3>Получение</h3>
+            <pre data-lang="bash"><code># Скачать и слить (fetch + merge)
+git pull
+
+# Скачать и перебазировать
+git pull --rebase
+
+# Только скачать, без слияния — безопасно
+git fetch
+git fetch origin
+git fetch --all
+
+# Удалить ссылки на исчезнувшие ветки
+git fetch --prune
+
+# Посмотреть, что скачалось
+git log HEAD..origin/main --oneline</code></pre>
+
+            <h3>Upstream (форк-модель)</h3>
+            <pre data-lang="bash"><code># Добавить оригинал как upstream
+git remote add upstream https://github.com/ORIGINAL/repo.git
+
+# Синхронизироваться с оригиналом
+git fetch upstream
+git switch main
+git rebase upstream/main
+git push origin main
+
+# Подтянуть ветку коллеги
+git checkout -b their-work origin/their-branch</code></pre>
+
+            <div class="guide-callout">
+              <span class="guide-callout__icon">ℹ️</span>
+              <p><strong>fetch vs pull:</strong> <code class="ic">fetch</code> только скачивает. <code class="ic">pull</code> = <code class="ic">fetch</code> + <code class="ic">merge</code>/<code class="ic">rebase</code>. Профессионалы чаще используют <code class="ic">fetch</code>, чтобы сначала посмотреть.</p>
+            </div>
+          </section>
+
+          <!-- ОТМЕНА ИЗМЕНЕНИЙ -->
+          <section class="guide-section" id="undo">
+            <h2><span class="guide-section__icon">↩️</span>Отмена изменений</h2>
+
+            <h3>Файлы</h3>
+            <pre data-lang="bash"><code># Вернуть файл к HEAD (ИЗМЕНЕНИЯ ПОТЕРЯЮТСЯ)
+git restore file.txt
+
+# Убрать из индекса, изменения оставить
+git restore --staged file.txt
+
+# Из конкретного коммита
+git restore --source=HEAD~2 file.txt
+git restore --source=main file.txt
+
+# Всё локальное
+git restore .</code></pre>
+
+            <h3>Коммиты</h3>
+            <pre data-lang="bash"><code># RESET — переписывает историю (опасно для запушенных)
+git reset --soft HEAD~1    # отменить коммит, изменения в индексе
+git reset --mixed HEAD~1   # (по умолчанию) изменения в рабочей копии
+git reset --hard HEAD~1    # УНИЧТОЖИТЬ коммит и изменения  ⚠️
+
+git reset --hard origin/main   # сбросить ветку к серверу
+
+# REVERT — создаёт новый коммит-отмену (безопасно!)
+git revert a1b2c3d
+git revert HEAD
+git revert --no-commit HEAD~3..HEAD   # пачкой одним коммитом
+git revert -m 1 &lt;merge-sha&gt;           # отменить merge-коммит</code></pre>
+
+            <h3>Удаление неотслеживаемых</h3>
+            <pre data-lang="bash"><code>git clean -n                # посмотреть, что удалится (безопасно)
+git clean -f                # удалить файлы
+git clean -fd               # + папки
+git clean -fdx              # + игнорируемые (например, node_modules)</code></pre>
+
+            <div class="guide-callout guide-callout--danger">
+              <span class="guide-callout__icon">🚨</span>
+              <p><code class="ic">git reset --hard</code> и <code class="ic">git clean -fd</code> <strong>безвозвратно удаляют</strong> незакоммиченные изменения. Всегда делайте <code class="ic">git stash</code> или <code class="ic">git status</code> перед ними.</p>
+            </div>
+
+            <div class="guide-cards">
+              <div class="guide-card"><h4>🧨 reset</h4><p>Двигает ветку назад, «стирая» коммиты. Только для локальных.</p></div>
+              <div class="guide-card"><h4>🛡️ revert</h4><p>Создаёт коммит-отмену. Безопасен для запушенных.</p></div>
+            </div>
+          </section>
+
+          <!-- STASH -->
+          <section class="guide-section" id="stash">
+            <h2><span class="guide-section__icon">📦</span>Stash — временное хранилище</h2>
+
+            <p>Позволяет «спрятать» незакоммиченные изменения, чтобы быстро переключиться на другую задачу, а потом вернуть их обратно.</p>
+
+            <pre data-lang="bash"><code># Спрятать текущие изменения
+git stash
+git stash push -m "работа над формой логина"
+git stash -u                        # включая новые (untracked) файлы
+git stash -a                        # включая игнорируемые
+git stash push -m "msg" file.txt    # только конкретный файл
+
+# Посмотреть
+git stash list
+git stash show
+git stash show -p stash@{0}         # с диффом
+
+# Вернуть
+git stash pop                       # применить и удалить из стека
+git stash apply                     # применить и оставить
+git stash apply stash@{2}           # конкретный
+
+# Удалить
+git stash drop stash@{0}
+git stash clear                     # все
+
+# Создать ветку из stash
+git stash branch new-feature stash@{0}</code></pre>
+
+            <div class="guide-callout guide-callout--tip">
+              <span class="guide-callout__icon">✅</span>
+              <p>Сценарий: правите файл, нужно срочно переключиться. <code class="ic">git stash</code> → switch → работа → возврат → <code class="ic">git stash pop</code>.</p>
+            </div>
+          </section>
+
+          <!-- REBASE И CHERRY-PICK -->
+          <section class="guide-section" id="rebase">
+            <h2><span class="guide-section__icon">🔀</span>Rebase и cherry-pick</h2>
+
+            <h3>Rebase</h3>
+            <p>«Пересаживает» ваши коммиты на верхушку другой ветки, создавая линейную историю.</p>
+
+            <pre data-lang="bash"><code>git switch feature/login
+git rebase main
+
+# После разрешения конфликтов
+git add resolved.txt
+git rebase --continue
+
+# Пропустить проблемный коммит
+git rebase --skip
+
+# Отменить rebase
+git rebase --abort
+
+# Интерактивный rebase — последние 3 коммита
+git rebase -i HEAD~3
+
+# Перебазировать диапазон на другую базу
+git rebase --onto main feature~2 feature
+
+# Перебазировать всю ветку
+git rebase --onto main develop feature</code></pre>
+
+            <h3>Интерактивный rebase: команды</h3>
+            <pre data-lang="text"><code>pick   a1b2c3d  feat: добавил кнопку
+squash d4e5f6g  fix: опечатка          # объединить с предыдущим
+reword h7i8j9k  docs: правка README    # изменить только сообщение
+edit   l0m1n2o  wip: временный         # остановиться и изменить
+drop   p3q4r5s  мусор                  # удалить коммит
+fixup  q6r7s8t  мелкая правка          # squash без сообщения
+exec   make test                        # выполнить команду
+# можно менять строки местами — изменится порядок</code></pre>
+
+            <h3>Cherry-pick</h3>
+            <pre data-lang="bash"><code># Применить конкретный коммит из другой ветки
+git cherry-pick a1b2c3d
+
+# Несколько
+git cherry-pick a1b2c3d d4e5f6g
+
+# Диапазон
+git cherry-pick a1b2c3d..h7i8j9k
+
+# Без создания коммита
+git cherry-pick -n a1b2c3d
+
+# Отменить
+git cherry-pick --abort
+git cherry-pick --continue
+git cherry-pick --skip</code></pre>
+
+            <div class="guide-callout guide-callout--warn">
+              <span class="guide-callout__icon">⚠️</span>
+              <p><strong>Золотое правило rebase:</strong> никогда не перебазируйте ветки, которые уже кто-то скачал. Rebase переписывает хеши коммитов.</p>
+            </div>
+          </section>
+
+          <!-- ПРОДВИНУТЫЙ REBASE -->
+          <section class="guide-section" id="adv-rebase">
+            <h2><span class="guide-section__icon">🎯</span>Продвинутый rebase</h2>
+
+            <h3>Fixup + autosquash</h3>
+            <p>Идеальный способ поддерживать чистую историю: правки «приклеиваются» к нужному коммиту.</p>
+            <pre data-lang="bash"><code># Нашли опечатку в старом коммите
+git add .
+git commit --fixup a1b2c3d
+
+# Или для последнего коммита
+git commit --fixup HEAD
+
+# Перебазировать и склеить
+git rebase -i --autosquash HEAD~5
+
+# Включить автоматически
+git config --global rebase.autosquash true</code></pre>
+
+            <h3>Разделить коммит</h3>
+            <pre data-lang="bash"><code>git rebase -i HEAD~3
+# Заменить pick на edit у нужного коммита
+
+# Git остановится. Теперь:
+git reset HEAD^                 # вернуть изменения в WC
+git add part1.txt
+git commit -m "feat: часть 1"
+git add part2.txt
+git commit -m "feat: часть 2"
+git rebase --continue</code></pre>
+
+            <h3>Объединить коммиты (squash)</h3>
+            <pre data-lang="bash"><code># Последние 3 в один
+git reset --soft HEAD~3
+git commit -m "feat: всё вместе"
+
+# Или через interactive
+git rebase -i HEAD~3
+# заменить "pick" на "squash" у 2-го и 3-го</code></pre>
+
+            <h3>Автоматический rebase при pull</h3>
+            <pre data-lang="bash"><code>git config --global pull.rebase true
+git config --global pull.ff only       # запретить merge при pull</code></pre>
+
+            <h3>Rebase vs Merge</h3>
+            <div class="guide-table-wrap">
+              <table>
+                <thead><tr><th></th><th>Rebase</th><th>Merge</th></tr></thead>
+                <tbody>
+                  <tr><td>История</td><td>Линейная, чистая</td><td>Ветвистая, полная</td></tr>
+                  <tr><td>Хеши</td><td>Меняются</td><td>Сохраняются</td></tr>
+                  <tr><td>Конфликты</td><td>По одному коммиту</td><td>Все сразу</td></tr>
+                  <tr><td>Когда</td><td>Своя локальная ветка</td><td>Публичные ветки</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- ТЕГИ -->
+          <section class="guide-section" id="tag">
+            <h2><span class="guide-section__icon">🏷️</span>Теги</h2>
+
+            <pre data-lang="bash"><code># Список
+git tag
+git tag -l "v1.*"
+
+# Лёгкий тег (просто указатель)
+git tag v1.0.0
+
+# Аннотированный (с автором, датой, описанием) — рекомендуется
+git tag -a v1.0.0 -m "Релиз версии 1.0.0"
+
+# На конкретный коммит
+git tag -a v0.9.0 a1b2c3d -m "Бета"
+
+# Информация
+git show v1.0.0
+
+# Переключиться на тег (detached HEAD)
+git checkout v1.0.0
+
+# Удалить
+git tag -d v1.0.0
+
+# Отправить
+git push origin v1.0.0
+git push origin --tags
+
+# Удалить на сервере
+git push origin --delete v1.0.0
+
+# Подписать GPG
+git tag -s v1.0.0 -m "signed release"</code></pre>
+          </section>
+
+          <!-- ВНУТРЕННЕЕ УСТРОЙСТВО -->
+          <section class="guide-section" id="internals">
+            <h2><span class="guide-section__icon">🔬</span>Внутреннее устройство Git</h2>
+
+            <h3>Четыре типа объектов</h3>
+            <div class="guide-cards">
+              <div class="guide-card"><h4>📄 blob</h4><p>Содержимое файла (без имени). Один контент = один blob.</p></div>
+              <div class="guide-card"><h4>🌲 tree</h4><p>Директория: имена файлов и ссылки на blob/tree.</p></div>
+              <div class="guide-card"><h4>📌 commit</h4><p>Ссылка на tree, автор, дата, сообщение, родители.</p></div>
+              <div class="guide-card"><h4>🏷️ tag</h4><p>Аннотированный тег — объект со ссылкой на коммит.</p></div>
+            </div>
+
+            <h3>Структура .git</h3>
+            <pre data-lang="text"><code>.git/
+├── HEAD              # куда указывает HEAD (ref: refs/heads/main)
+├── config            # настройки репозитория
+├── description       # для gitweb
+├── hooks/            # хуки (примеры .sample)
+├── info/
+│   └── exclude       # локальный .gitignore (не коммитится)
+├── objects/          # все объекты (blobs, trees, commits)
+│   ├── pack/         # упакованные объекты
+│   └── ab/cdef...    # распакованные (по 2 символа SHA)
+├── refs/
+│   ├── heads/        # локальные ветки
+│   ├── tags/         # теги
+│   └── remotes/      # удалённые ветки
+├── logs/             # reflog
+├── index             # staging area (бинарный)
+├── ORIG_HEAD         # состояние до последней опасной операции
+└── MERGE_HEAD        # при незавершённом merge</code></pre>
+
+            <h3>Работа с объектами</h3>
+            <pre data-lang="bash"><code># Посмотреть тип объекта
+git cat-file -t HEAD
+git cat-file -t a1b2c3d
+
+# Посмотреть содержимое
+git cat-file -p HEAD
+git cat-file -p HEAD^{tree}
+git cat-file -s a1b2c3d        # размер в байтах
+
+# Дерево
+git ls-tree HEAD
+git ls-tree -r HEAD             # рекурсивно
+
+# Создать объекты вручную (plumbing)
+git hash-object -w file.txt
+echo "hello" | git hash-object --stdin
+git mktree
+git commit-tree &lt;tree&gt; -m "message"
+git update-ref refs/heads/main &lt;commit&gt;</code></pre>
+
+            <h3>Pack-файлы и обслуживание</h3>
+            <pre data-lang="bash"><code>git count-objects -vH
+git gc
+git gc --aggressive --prune=now
+git repack -ad
+git fsck --full
+git fsck --lost-found           # найти «потерянные» объекты
+ls .git/objects/pack/
+git verify-pack -v .git/objects/pack/pack-*.idx</code></pre>
+
+            <div class="guide-callout">
+              <span class="guide-callout__icon">ℹ️</span>
+              <p>Git сжимает историю через <strong>pack-файлы</strong>: похожие объекты хранятся как дельты. Поэтому репозитории маленькие даже с тысячами коммитов.</p>
+            </div>
+          </section>
+
+          <!-- ХУКИ -->
+          <section class="guide-section" id="hooks">
+            <h2><span class="guide-section__icon">🪝</span>Хуки (hooks)</h2>
+
+            <p>Хуки — скрипты, которые Git запускает автоматически до/после событий. Лежат в <code class="ic">.git/hooks/</code>.</p>
+
+            <div class="guide-table-wrap">
+              <table>
+                <thead><tr><th>Хук</th><th>Когда срабатывает</th></tr></thead>
+                <tbody>
+                  <tr><td><code class="ic">pre-commit</code></td><td>Перед созданием коммита (lint, тесты)</td></tr>
+                  <tr><td><code class="ic">prepare-commit-msg</code></td><td>Перед открытием редактора</td></tr>
+                  <tr><td><code class="ic">commit-msg</code></td><td>Проверка формата сообщения</td></tr>
+                  <tr><td><code class="ic">post-commit</code></td><td>После коммита</td></tr>
+                  <tr><td><code class="ic">pre-rebase</code></td><td>Перед rebase (можно запретить)</td></tr>
+                  <tr><td><code class="ic">post-checkout</code></td><td>После checkout/switch</td></tr>
+                  <tr><td><code class="ic">post-merge</code></td><td>После merge</td></tr>
+                  <tr><td><code class="ic">pre-push</code></td><td>Перед push (запуск тестов)</td></tr>
+                  <tr><td><code class="ic">pre-receive</code></td><td>(сервер) перед приёмом push</td></tr>
+                  <tr><td><code class="ic">update</code></td><td>(сервер) на каждую ветку</td></tr>
+                  <tr><td><code class="ic">post-receive</code></td><td>(сервер) после приёма (CI/CD)</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Пример pre-commit</h3>
+            <pre data-lang="bash"><code># .git/hooks/pre-commit
+#!/bin/sh
+if git diff --cached --name-only | xargs grep -l "console\.log" 2&gt;/dev/null; then
+  echo "❌ Найден console.log — уберите перед коммитом"
+  exit 1
+fi
+exit 0</code></pre>
+
+            <pre data-lang="bash"><code>chmod +x .git/hooks/pre-commit
+ls .git/hooks/*.sample           # примеры</code></pre>
+
+            <h3>Хуки в команде</h3>
+            <pre data-lang="bash"><code># Node.js — Husky
+npx husky-init &amp;&amp; npm install
+npx husky add .husky/pre-commit "npm test"
+npx husky add .husky/commit-msg 'npx commitlint --edit "$1"'
+
+# Python — pre-commit framework
+pip install pre-commit
+pre-commit install
+pre-commit run --all-files
+
+# Свой hooksPath (хранить хуки в репозитории)
+git config core.hooksPath .githooks
+mkdir .githooks</code></pre>
+          </section>
+
+          <!-- RERERE -->
+          <section class="guide-section" id="rerere">
+            <h2><span class="guide-section__icon">🔁</span>Rerere — запоминание разрешений</h2>
+
+            <p><strong>Re</strong>use <strong>Re</strong>corded <strong>Re</strong>solution. Git запоминает, как вы разрешили конфликт, и автоматически применяет то же решение.</p>
+
+            <pre data-lang="bash"><code>git config --global rerere.enabled true
+
+git rerere status           # что запомнил
+git rerere diff
+git rerere                  # вручную применить/записать
+git rerere forget file.txt
+git rerere gc</code></pre>
+
+            <div class="guide-callout guide-callout--tip">
+              <span class="guide-callout__icon">✅</span>
+              <p>Включите один раз — и забудете про повторяющиеся конфликты при rebase.</p>
+            </div>
+          </section>
+
+          <!-- WORKFLOWS -->
+          <section class="guide-section" id="workflows">
+            <h2><span class="guide-section__icon">🌊</span>Workflows</h2>
+
+            <h3>Git Flow</h3>
+            <pre data-lang="text"><code>main        ●────────────●──────────●  (только релизы)
+             \          / \        /
+release       ●───●────●   ●───●──●
+           /              \
+develop  ●──●────●────●───────●───●──●
+        \    /  \  /
+feature    ●──●    ●●</code></pre>
+            <ul>
+              <li><code class="ic">main</code> — релизы.</li>
+              <li><code class="ic">develop</code> — разработка.</li>
+              <li><code class="ic">feature/*</code> — от develop.</li>
+              <li><code class="ic">release/*</code> — подготовка релиза.</li>
+              <li><code class="ic">hotfix/*</code> — срочные фиксы от main.</li>
+            </ul>
+
+            <h3>GitHub Flow</h3>
+            <pre data-lang="text"><code>main   ●────●────●────●────●
+      \  /      \  /
+PR       ●●        ●●</code></pre>
+            <ul>
+              <li>От main создаём <code class="ic">feature/xxx</code>.</li>
+              <li>Коммитим, пушим, открываем Pull Request.</li>
+              <li>После ревью — merge в main, деплой.</li>
+            </ul>
+
+            <h3>Trunk-Based Development</h3>
+            <p>Все коммитят в <code class="ic">main</code> маленькими порциями. Feature-флаги вместо долгих веток.</p>
+
+            <h3>Fork workflow (open source)</h3>
+            <pre data-lang="bash"><code># Форкнуть репозиторий на GitHub
+git clone git@github.com:ВАШ_НИК/repo.git
+cd repo
+
+git remote add upstream https://github.com/ОРИГИНАЛ/repo.git
+
+git switch -c fix/typo
+git add . &amp;&amp; git commit -m "fix: опечатка"
+git push -u origin fix/typo
+
+# Открыть PR на GitHub
+
+# Синхронизировать
+git switch main
+git fetch upstream
+git rebase upstream/main
+git push origin main</code></pre>
+
+            <div class="guide-callout">
+              <span class="guide-callout__icon">ℹ️</span>
+              <p>Для большинства команд: <strong>GitHub Flow</strong>. Git Flow — релизы по расписанию. Trunk-based — зрелый CI/CD.</p>
+            </div>
+          </section>
+
+          <!-- CONVENTIONAL COMMITS -->
+          <section class="guide-section" id="conventional">
+            <h2><span class="guide-section__icon">📝</span>Conventional Commits</h2>
+
+            <h3>Формат</h3>
+            <pre data-lang="text"><code>&lt;тип&gt;[необязательный scope]: &lt;описание&gt;
+
+[тело]
+
+[футер]</code></pre>
+
+            <div class="guide-table-wrap">
+              <table>
+                <thead><tr><th>Тип</th><th>Значение</th></tr></thead>
+                <tbody>
+                  <tr><td><code class="ic">feat</code></td><td>Новая функциональность</td></tr>
+                  <tr><td><code class="ic">fix</code></td><td>Исправление бага</td></tr>
+                  <tr><td><code class="ic">docs</code></td><td>Документация</td></tr>
+                  <tr><td><code class="ic">style</code></td><td>Форматирование</td></tr>
+                  <tr><td><code class="ic">refactor</code></td><td>Рефакторинг</td></tr>
+                  <tr><td><code class="ic">perf</code></td><td>Производительность</td></tr>
+                  <tr><td><code class="ic">test</code></td><td>Тесты</td></tr>
+                  <tr><td><code class="ic">build</code></td><td>Сборка, зависимости</td></tr>
+                  <tr><td><code class="ic">ci</code></td><td>CI-конфиги</td></tr>
+                  <tr><td><code class="ic">chore</code></td><td>Рутина</td></tr>
+                  <tr><td><code class="ic">revert</code></td><td>Откат коммита</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <pre data-lang="text"><code>feat: добавил авторизацию через Google
+fix(auth): падение при пустом пароле
+docs(readme): обновил инструкцию
+refactor(api): вынес валидацию
+
+BREAKING CHANGE: изменил формат ответа /api/v2/users</code></pre>
+
+            <pre data-lang="bash"><code># commitlint
+npm i -D @commitlint/cli @commitlint/config-conventional
+echo "module.exports = {extends: ['@commitlint/config-conventional']};" &gt; commitlint.config.js
+
+# semantic-release — автоверсии и changelog
+npx semantic-release
+
+# standard-version — проще
+npx standard-version</code></pre>
+          </section>
+
+          <!-- ОЧИСТКА ИСТОРИИ -->
+          <section class="guide-section" id="history-clean">
+            <h2><span class="guide-section__icon">🧹</span>Очистка истории</h2>
+
+            <p>Иногда нужно удалить файл из всей истории (секрет, большой бинарник). Обычный <code class="ic">git rm</code> не поможет.</p>
+
+            <h3>git filter-repo (современный способ)</h3>
+            <pre data-lang="bash"><code># Установить
+pip install git-filter-repo
+# или: brew install git-filter-repo
+
+# Удалить файл из всей истории
+git filter-repo --path secrets.env --invert-paths
+
+# Удалить папку
+git filter-repo --path node_modules/ --invert-paths
+
+# По маске
+git filter-repo --path-glob '*.pem' --invert-paths
+
+# Заменить текст во всех коммитах
+git filter-repo --replace-text replacements.txt
+# где replacements.txt: literal:OLD_SECRET==&gt;***REMOVED***
+
+# Переименовать автора
+git filter-repo --mailmap mailmap.txt</code></pre>
+
+            <div class="guide-callout guide-callout--danger">
+              <span class="guide-callout__icon">🚨</span>
+              <p><strong>filter-repo удаляет origin</strong> (защита от случайного push). Добавьте обратно: <code class="ic">git remote add origin URL</code>. И предупредите команду — им придётся переклонировать.</p>
+            </div>
+
+            <h3>BFG Repo-Cleaner</h3>
+            <pre data-lang="bash"><code># Скачать bfg.jar с https://rtyley.github.io/bfg-repo-cleaner/
+java -jar bfg.jar --delete-files secrets.env
+java -jar bfg.jar --delete-folders node_modules
+java -jar bfg.jar --replace-text passwords.txt
+git reflog expire --expire=now --all &amp;&amp; git gc --prune=now</code></pre>
+
+            <h3>Старый способ: filter-branch</h3>
+            <pre data-lang="bash"><code>git filter-branch --force --index-filter \
+  "git rm --cached --ignore-unmatch secrets.env" \
+  --prune-empty --tag-name-filter cat -- --all
+
+rm -rf .git/refs/original/
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive</code></pre>
+          </section>
+
+          <!-- GIT LFS -->
+          <section class="guide-section" id="lfs">
+            <h2><span class="guide-section__icon">📦</span>Git LFS</h2>
+
+            <p>Для больших бинарников (видео, модели, PSD). Файлы хранятся на отдельном сервере, в репозитории — указатели.</p>
+
+            <pre data-lang="bash"><code># Установить
+brew install git-lfs
+# или: sudo apt install git-lfs
+
+# Инициализировать (один раз)
+git lfs install
+
+# Отслеживать тип файлов
+git lfs track "*.psd"
+git lfs track "*.zip"
+git lfs track "assets/**/*.mp4"
+
+# Закоммитить .gitattributes
+git add .gitattributes
+git commit -m "chore: настроил LFS"
+
+# Дальше как обычно
+git add big.psd
+git commit -m "feat: добавил макет"
+git push
+
+# Посмотреть
+git lfs track
+git lfs ls-files
+git lfs status
+git lfs env
+
+# Скачать
+git lfs pull
+git lfs fetch --all
+
+# Мигрировать существующие
+git lfs migrate import --include="*.psd" --everything</code></pre>
+
+            <div class="guide-callout guide-callout--warn">
+              <span class="guide-callout__icon">⚠️</span>
+              <p>GitHub: 1 GB бесплатно. GitLab: обычно 10 GB. Проверяйте лимиты.</p>
+            </div>
+          </section>
+
+          <!-- ПРОДВИНУТЫЕ КОМАНДЫ -->
+          <section class="guide-section" id="advanced">
+            <h2><span class="guide-section__icon">🕵️</span>Продвинутые команды</h2>
+
+            <h3>reflog — спасатель</h3>
+            <pre data-lang="bash"><code>git reflog                       # журнал перемещений HEAD
+git reflog show main
+git reflog --date=iso
+
+git reset --hard HEAD@{3}        # вернуться к состоянию
+git branch rescue a1b2c3d        # создать ветку из старого коммита</code></pre>
+
+            <h3>Поиск проблем</h3>
+            <pre data-lang="bash"><code># Кто менял строку
+git blame file.txt
+git blame -L 10,25 file.txt
+git blame -w file.txt            # игнорируя пробелы
+
+# Бинарный поиск бага
+git bisect start
+git bisect bad                   # текущий плохой
+git bisect good v1.0.0           # этот был хороший
+# Git переключает коммиты — проверяете:
+git bisect good     # или  git bisect bad
+git bisect reset
+
+# Автоматический bisect
+git bisect start HEAD v1.0.0
+git bisect run ./test.sh
+
+# Поиск по содержимому
+git grep "TODO"
+git grep -n "console.log"
+git grep "function" -- "*.js"</code></pre>
+
+            <h3>Обслуживание</h3>
+            <pre data-lang="bash"><code># Статистика
+git shortlog -sn
+git shortlog -sn --no-merges
+
+# Размер репозитория
+git count-objects -vH
+
+# Сжать базу объектов
+git gc
+git gc --aggressive --prune=now
+
+# Проверить целостность
+git fsck
+
+# Архив проекта
+git archive --format=zip HEAD -o project.zip
+git archive --format=tar.gz -o project.tar.gz HEAD
+
+# Несколько рабочих директорий
+git worktree add ../hotfix main
+git worktree list
+git worktree remove ../hotfix
+
+# Подмодули
+git submodule add https://github.com/user/lib.git libs/lib
+git submodule update --init --recursive
+git submodule foreach 'git pull origin main'
+
+# Кто «владеет» файлом
+git log --format="%an" -- path/to/file | sort -u</code></pre>
+
+            <h3>Патчи и email</h3>
+            <pre data-lang="bash"><code>git format-patch -1 HEAD
+git format-patch main..feature
+
+git apply patch.diff
+git am 0001-fix.patch          # с сохранением авторства
+
+git diff main..feature &gt; changes.diff
+
+git send-email *.patch
+git request-pull main origin feature</code></pre>
+          </section>
+
+          <!-- PLUMBING -->
+          <section class="guide-section" id="plumbing">
+            <h2><span class="guide-section__icon">🔧</span>Plumbing команды</h2>
+
+            <p>Porcelain — для людей (<code class="ic">git status</code>). Plumbing — низкоуровневые, для скриптов.</p>
+
+            <h3>Объекты</h3>
+            <pre data-lang="bash"><code>git cat-file -t &lt;obj&gt;       # тип
+git cat-file -p &lt;obj&gt;       # содержимое
+git cat-file -s &lt;obj&gt;       # размер
+git hash-object -w file     # создать blob
+git hash-object --stdin     # хеш из stdin
+git mktree                  # создать tree из stdin
+git ls-tree &lt;tree&gt;          # список
+git ls-tree -r HEAD         # рекурсивно
+git read-tree               # прочитать tree в индекс
+git write-tree              # записать индекс в tree
+git commit-tree             # создать commit
+git mktag                   # создать tag</code></pre>
+
+            <h3>Ссылки</h3>
+            <pre data-lang="bash"><code>git update-ref refs/heads/main &lt;sha&gt;
+git symbolic-ref HEAD
+git symbolic-ref HEAD refs/heads/main
+git show-ref
+git for-each-ref
+git for-each-ref --format='%(refname) %(objectname)' refs/heads/
+git check-ref-format refs/heads/feat/x
+git rev-parse HEAD
+git rev-parse --abbrev-ref HEAD
+git merge-base main feature      # общий предок</code></pre>
+
+            <h3>Index</h3>
+            <pre data-lang="bash"><code>git ls-files                # файлы в индексе
+git ls-files -s             # с режимом и SHA
+git ls-files --others        # untracked
+git ls-files --ignored --exclude-standard
+git update-index --add file
+git update-index --assume-unchanged file   # «забыть» про файл
+git update-index --no-assume-unchanged file
+git update-index --skip-worktree file      # игнорировать правки</code></pre>
+
+            <h3>Диагностика</h3>
+            <pre data-lang="bash"><code>git fsck
+git fsck --lost-found
+git count-objects -vH
+git verify-pack -v pack.idx
+git check-ignore -v file        # какое правило .gitignore
+git check-attr -a file
+git var -l
+git version
+git help -a
+git help -g</code></pre>
+          </section>
+
+          <!-- .GITIGNORE -->
+          <section class="guide-section" id="ignore">
+            <h2><span class="guide-section__icon">🙈</span>.gitignore</h2>
+
+            <p>Файл <code class="ic">.gitignore</code> в корне репозитория перечисляет, что Git должен игнорировать.</p>
+
+            <pre data-lang="gitignore"><code># ===== Зависимости =====
+node_modules/
+vendor/
+.venv/
+__pycache__/
+
+# ===== Сборка =====
+dist/
+build/
+out/
+*.exe
+*.dll
+*.class
+
+# ===== Логи и кеш =====
+*.log
+npm-debug.log*
+.cache/
+.temp/
+
+# ===== Секреты =====
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ===== Редакторы =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*.iml
+
+# ===== ОС =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== Исключения (! = НЕ игнорировать) =====
+!important.log
+!.env.example
+dist/keep-this-file.txt</code></pre>
+
+            <h3>Синтаксис</h3>
+            <div class="guide-table-wrap">
+              <table>
+                <thead><tr><th>Шаблон</th><th>Значение</th></tr></thead>
+                <tbody>
+                  <tr><td><code class="ic">*.log</code></td><td>Все файлы .log</td></tr>
+                  <tr><td><code class="ic">/build</code></td><td>Только в корне</td></tr>
+                  <tr><td><code class="ic">build/</code></td><td>Только папки с таким именем</td></tr>
+                  <tr><td><code class="ic">**/temp</code></td><td>На любой глубине</td></tr>
+                  <tr><td><code class="ic">!keep.txt</code></td><td>Исключение</td></tr>
+                  <tr><td><code class="ic"># текст</code></td><td>Комментарий</td></tr>
+                  <tr><td><code class="ic">\#file</code></td><td>Экранирование #</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="guide-callout guide-callout--warn">
+              <span class="guide-callout__icon">⚠️</span>
+              <p><code class="ic">.gitignore</code> не действует на уже отслеживаемые файлы. Нужно убрать из индекса:</p>
+            </div>
+
+            <pre data-lang="bash"><code>git rm -r --cached node_modules
+git rm --cached secrets.env
+git commit -m "chore: обновил .gitignore"</code></pre>
+
+            <h3>Глобальный .gitignore</h3>
+            <pre data-lang="bash"><code># Настроить
+git config --global core.excludesfile ~/.gitignore_global
+echo ".DS_Store" &gt;&gt; ~/.gitignore_global
+
+# Локальный (только для вас, не коммитится)
+# .git/info/exclude</code></pre>
+          </section>
+
+          <!-- .GITATTRIBUTES -->
+          <section class="guide-section" id="attributes">
+            <h2><span class="guide-section__icon">📎</span>.gitattributes</h2>
+
+            <p>Настраивает поведение Git для конкретных файлов: переносы строк, diff-драйверы, merge-стратегии, LFS.</p>
+
+            <pre data-lang="gitattributes"><code># Автоопределение текстовых файлов
+* text=auto
+
+# Принудительно LF для скриптов
+*.sh text eol=lf
+*.bash text eol=lf
+
+# CRLF для Windows-файлов
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Бинарные (не пытаться сливать)
+*.png binary
+*.jpg binary
+*.pdf binary
+*.zip binary
+
+# Не показывать в diff
+package-lock.json -diff
+yarn.lock -diff
+
+# Не экспортировать в архив
+.github export-ignore
+tests/ export-ignore
+
+# LFS
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+
+# Своя merge-стратегия
+database.yml merge=ours</code></pre>
+
+            <h3>Проверка</h3>
+            <pre data-lang="bash"><code>git check-attr -a file.txt
+git check-attr text eol file.txt
+
+# Перечитать атрибуты после правки
+git add --renormalize .</code></pre>
+          </section>
+
+          <!-- АЛИАСЫ -->
+          <section class="guide-section" id="aliases">
+            <h2><span class="guide-section__icon">⚡</span>Алиасы</h2>
+
+            <pre data-lang="bash"><code>git config --global alias.st  "status -sb"
+git config --global alias.co  "checkout"
+git config --global alias.sw  "switch"
+git config --global alias.br  "branch"
+git config --global alias.ci  "commit"
+git config --global alias.unstage "restore --staged"
+git config --global alias.undo "restore"
+git config --global alias.last "log -1 HEAD --stat"
+git config --global alias.aliases "config --get-regexp ^alias\."
+
+# Красивый лог
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"
+
+# Только ветки с неслитыми коммитами
+git config --global alias.unmerged "branch --no-merged"
+
+# Файлы, изменённые в коммите
+git config --global alias.changed "show --name-only --oneline"
+
+# Применить
+git st
+git lg
+git last</code></pre>
+
+            <div class="guide-callout guide-callout--tip">
+              <span class="guide-callout__icon">✅</span>
+              <p>Файл глобальных настроек: <code class="ic">~/.gitconfig</code>. Редактировать: <code class="ic">git config --global --edit</code>.</p>
+            </div>
+          </section>
+
+          <!-- БЭКАП И ПЕРЕНОС -->
+          <section class="guide-section" id="backup">
+            <h2><span class="guide-section__icon">💾</span>Бэкап и перенос</h2>
+
+            <h3>git bundle — один файл со всей историей</h3>
+            <pre data-lang="bash"><code># Создать bundle всего репозитория
+git bundle create backup.bundle --all
+
+# Только ветка
+git bundle create main.bundle main
+
+# Проверить
+git bundle verify backup.bundle
+
+# Клонировать из bundle
+git clone backup.bundle my-clone
+
+# Или подтянуть
+git fetch backup.bundle main:backup-main</code></pre>
+
+            <h3>Архив без .git</h3>
+            <pre data-lang="bash"><code>git archive --format=zip HEAD -o project.zip
+git archive --format=tar.gz HEAD -o project.tar.gz
+git archive HEAD path/to/dir -o dir.zip
+git archive --prefix=project-1.0/ HEAD -o project.zip</code></pre>
+
+            <h3>Зеркало репозитория</h3>
+            <pre data-lang="bash"><code>git clone --mirror https://github.com/user/repo.git
+cd repo.git
+git remote update
+git push --mirror
+
+# Перенести на другой сервер
+git remote set-url origin git@newserver:user/repo.git
+git push --mirror</code></pre>
+          </section>
+
+          <!-- ВОССТАНОВЛЕНИЕ -->
+          <section class="guide-section" id="recovery">
+            <h2><span class="guide-section__icon">🚨</span>Восстановление утерянного</h2>
+
+            <h3>reflog</h3>
+            <pre data-lang="bash"><code>git reflog
+git reflog show main
+git reflog --date=iso
+
+# После reset --hard
+git reflog
+git reset --hard HEAD@{5}
+
+# Восстановить удалённую ветку
+git reflog
+git branch recovered a1b2c3d
+# или
+git branch recovered HEAD@{10}
+
+# После rebase
+git reset --hard ORIG_HEAD</code></pre>
+
+            <h3>ORIG_HEAD</h3>
+            <pre data-lang="bash"><code>cat .git/ORIG_HEAD
+git reset --hard ORIG_HEAD       # откатить последний rebase/merge</code></pre>
+
+            <h3>Поиск потерянных коммитов</h3>
+            <pre data-lang="bash"><code>git fsck --lost-found
+git fsck --unreachable | grep commit
+
+git show a1b2c3d
+git branch rescue a1b2c3d
+git reset --hard a1b2c3d</code></pre>
+
+            <h3>Восстановить один файл</h3>
+            <pre data-lang="bash"><code>git restore --source=a1b2c3d file.txt
+git checkout a1b2c3d -- file.txt
+git restore --source=HEAD~1 file.txt
+git restore --source=main file.txt
+
+# Найти, где файл был удалён
+git log --diff-filter=D -- path/to/file
+git restore --source=&lt;sha&gt;^ path/to/file</code></pre>
+
+            <div class="guide-callout guide-callout--tip">
+              <span class="guide-callout__icon">🆘</span>
+              <p><strong>Правило спасения:</strong> сначала <code class="ic">git reflog</code>. 99% «катастроф» решаются за 10 секунд.</p>
+            </div>
+          </section>
+
+          <!-- ИНСТРУМЕНТЫ -->
+          <section class="guide-section" id="tools">
+            <h2><span class="guide-section__icon">🛠️</span>Инструменты и GUI</h2>
+
+            <h3>Встроенные в Git</h3>
+            <pre data-lang="bash"><code>gitk                    # визуализация истории
+gitk --all
+git gui                 # простой GUI
+git instaweb            # веб-интерфейс
+git web--browse README  # открыть в браузере</code></pre>
+
+            <div class="guide-table-wrap">
+              <table>
+                <thead><tr><th>Инструмент</th><th>Платформа</th><th>Особенность</th></tr></thead>
+                <tbody>
+                  <tr><td>GitKraken</td><td>Win/Mac/Linux</td><td>Красивый, платный для команд</td></tr>
+                  <tr><td>Fork</td><td>Win/Mac</td><td>Быстрый, бесплатный</td></tr>
+                  <tr><td>Sourcetree</td><td>Win/Mac</td><td>От Atlassian</td></tr>
+                  <tr><td>Tower</td><td>Win/Mac</td><td>Профессиональный</td></tr>
+                  <tr><td>GitHub Desktop</td><td>Win/Mac</td><td>Прост, для GitHub</td></tr>
+                  <tr><td>VS Code</td><td>Все</td><td>Встроенный Git + расширения</td></tr>
+                  <tr><td>JetBrains IDE</td><td>Все</td><td>Отличная интеграция</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Терминальные TUI</h3>
+            <pre data-lang="bash"><code># lazygit — самый удобный
+brew install lazygit
+lazygit
+
+# tig
+brew install tig
+tig
+tig status
+tig blame file.txt
+
+# gitui
+brew install gitui
+gitui
+
+# delta — красивый diff
+brew install git-delta
+git config --global core.pager delta
+git config --global interactive.diffFilter "delta --color-only"</code></pre>
+
+            <h3>CLI для платформ</h3>
+            <pre data-lang="bash"><code># GitHub CLI
+brew install gh
+gh auth login
+gh repo clone user/repo
+gh pr create
+gh pr list
+gh pr checkout 123
+gh issue list
+gh release create v1.0.0
+
+# GitLab CLI
+brew install glab
+glab auth login
+glab mr create
+glab mr list</code></pre>
+
+            <h3>Полезные настройки</h3>
+            <pre data-lang="bash"><code>git config --global diff.algorithm histogram
+git config --global diff.colorMoved zebra
+git config --global help.autocorrect 20
+git config --global status.submoduleSummary true
+git config --global status.branch true
+git config --global advice.diverging false</code></pre>
+          </section>
+
+          <!-- ШПАРГАЛКА -->
+          <section class="guide-section" id="cheatsheet">
+            <h2><span class="guide-section__icon">📋</span>Шпаргалка</h2>
+
+            <p>Самое нужное. <strong>Кликните на команду</strong> — она скопируется.</p>
+
+            <h3>Настройка</h3>
+            <div class="guide-table-wrap">
+              <table>
+                <thead><tr><th>Команда</th><th>Что делает</th></tr></thead>
+                <tbody>
+                  <tr><td><code class="ic">git config --global user.name "Имя"</code></td><td>Имя автора</td></tr>
+                  <tr><td><code class="ic">git config --global user.email "mail"</code></td><td>Email</td></tr>
+                  <tr><td><code class="ic">git config --list</code></td><td>Все настройки</td></tr>
+                  <tr><td><code class="ic">git init</code></td><td>Создать репозиторий</td></tr>
+                  <tr><td><code class="ic">git clone URL</code></td><td>Склонировать</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Ежедневно</h3>
+            <div class="guide-table-wrap">
+              <table>
+                <thead><tr><th>Команда</th><th>Что делает</th></tr></thead>
+                <tbody>
+                  <tr><td><code class="ic">git status</code></td><td>Состояние</td></tr>
+                  <tr><td><code class="ic">git add .</code></td><td>Всё в индекс</td></tr>
+                  <tr><td><code class="ic">git add -p</code></td><td>По частям</td></tr>
+                  <tr><td><code class="ic">git commit -m "msg"</code></td><td>Коммит</td></tr>
+                  <tr><td><code class="ic">git commit --amend</code></td><td>Изменить последний</td></tr>
+                  <tr><td><code class="ic">git log --oneline --graph --all</code></td><td>История</td></tr>
+                  <tr><td><code class="ic">git diff</code></td><td>Незакоммиченные</td></tr>
+                  <tr><td><code class="ic">git diff --staged</code></td><td>В индексе</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Ветки</h3>
+            <div class="guide-table-wrap">
+              <table>
+                <thead><tr><th>Команда</th><th>Что делает</th></tr></thead>
+                <tbody>
+                  <tr><td><code class="ic">git branch</code></td><td>Список</td></tr>
+                  <tr><td><code class="ic">git switch -c new</code></td><td>Создать и переключиться</td></tr>
+                  <tr><td><code class="ic">git switch main</code></td><td>Переключиться</td></tr>
+                  <tr><td><code class="ic">git merge feature</code></td><td>Слить</td></tr>
+                  <tr><td><code class="ic">git branch -d feature</code></td><td>Удалить</td></tr>
+                  <tr><td><code class="ic">git rebase main</code></td><td>Перебазировать</td></tr>
+                  <tr><td><code class="ic">git cherry-pick HASH</code></td><td>Один коммит</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Remote</h3>
+            <div class="guide-table-wrap">
+              <table>
+                <thead><tr><th>Команда</th><th>Что делает</th></tr></thead>
+                <tbody>
+                  <tr><td><code class="ic">git remote -v</code></td><td>Список</td></tr>
+                  <tr><td><code class="ic">git remote add origin URL</code></td><td>Добавить</td></tr>
+                  <tr><td><code class="ic">git push -u origin main</code></td><td>Первая отправка</td></tr>
+                  <tr><td><code class="ic">git push</code></td><td>Отправить</td></tr>
+                  <tr><td><code class="ic">git pull --rebase</code></td><td>Забрать</td></tr>
+                  <tr><td><code class="ic">git fetch --prune</code></td><td>Скачать</td></tr>
+                  <tr><td><code class="ic">git push --force-with-lease</code></td><td>Перезапись</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Отмена</h3>
+            <div class="guide-table-wrap">
+              <table>
+                <thead><tr><th>Команда</th><th>Что делает</th></tr></thead>
+                <tbody>
+                  <tr><td><code class="ic">git restore file.txt</code></td><td>Отменить правки</td></tr>
+                  <tr><td><code class="ic">git restore --staged file.txt</code></td><td>Убрать из индекса</td></tr>
+                  <tr><td><code class="ic">git reset --soft HEAD~1</code></td><td>Отменить коммит</td></tr>
+                  <tr><td><code class="ic">git reset --hard HEAD~1</code></td><td>Уничтожить ⚠️</td></tr>
+                  <tr><td><code class="ic">git revert HASH</code></td><td>Безопасно отменить</td></tr>
+                  <tr><td><code class="ic">git stash</code></td><td>Спрятать</td></tr>
+                  <tr><td><code class="ic">git stash pop</code></td><td>Вернуть</td></tr>
+                  <tr><td><code class="ic">git reflog</code></td><td>Спасение</td></tr>
+                  <tr><td><code class="ic">git clean -fd</code></td><td>Удалить untracked ⚠️</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Типичный workflow</h3>
+            <pre data-lang="bash"><code># 1. Обновить main
+git switch main
+git pull --rebase
+
+# 2. Ветка под задачу
+git switch -c feature/login-form
+
+# 3. Работа и коммиты
+git add .
+git commit -m "feat: форма логина"
+
+# 4. Отправить
+git push -u origin feature/login-form
+
+# 5. Pull Request на GitHub/GitLab
+
+# 6. После слияния
+git switch main
+git pull --rebase
+git branch -d feature/login-form</code></pre>
+
+            <div class="guide-callout guide-callout--tip">
+              <span class="guide-callout__icon">🎉</span>
+              <p>Готово! Теперь у вас полная шпаргалка под рукой. Все команды копируются в один клик.</p>
+            </div>
+          </section>
+
+          <!-- ВСЕ КОМАНДЫ A-Z -->
+          <section class="guide-section" id="all-commands">
+            <h2><span class="guide-section__icon">📖</span>Все команды A-Z</h2>
+
+            <h3>Создание репозитория</h3>
+            <div class="guide-table-wrap"><table>
+              <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
+              <tbody>
+                <tr><td><code class="ic">git init</code></td><td>Создать пустой репозиторий</td></tr>
+                <tr><td><code class="ic">git clone</code></td><td>Клонировать репозиторий</td></tr>
+                <tr><td><code class="ic">git init --bare</code></td><td>Голый репозиторий</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Основная работа</h3>
+            <div class="guide-table-wrap"><table>
+              <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
+              <tbody>
+                <tr><td><code class="ic">git add</code></td><td>Добавить в индекс</td></tr>
+                <tr><td><code class="ic">git status</code></td><td>Состояние файлов</td></tr>
+                <tr><td><code class="ic">git diff</code></td><td>Разница</td></tr>
+                <tr><td><code class="ic">git commit</code></td><td>Создать коммит</td></tr>
+                <tr><td><code class="ic">git notes</code></td><td>Заметки к коммитам</td></tr>
+                <tr><td><code class="ic">git restore</code></td><td>Восстановить файлы</td></tr>
+                <tr><td><code class="ic">git reset</code></td><td>Сбросить индекс/HEAD</td></tr>
+                <tr><td><code class="ic">git rm</code></td><td>Удалить файл</td></tr>
+                <tr><td><code class="ic">git mv</code></td><td>Переименовать файл</td></tr>
+                <tr><td><code class="ic">git stash</code></td><td>Спрятать изменения</td></tr>
+                <tr><td><code class="ic">git clean</code></td><td>Удалить untracked</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Ветки и история</h3>
+            <div class="guide-table-wrap"><table>
+              <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
+              <tbody>
+                <tr><td><code class="ic">git branch</code></td><td>Управление ветками</td></tr>
+                <tr><td><code class="ic">git checkout</code></td><td>Переключение (устаревает)</td></tr>
+                <tr><td><code class="ic">git switch</code></td><td>Переключение веток</td></tr>
+                <tr><td><code class="ic">git merge</code></td><td>Слияние</td></tr>
+                <tr><td><code class="ic">git mergetool</code></td><td>GUI для конфликтов</td></tr>
+                <tr><td><code class="ic">git rebase</code></td><td>Перебазирование</td></tr>
+                <tr><td><code class="ic">git cherry-pick</code></td><td>Применить коммит</td></tr>
+                <tr><td><code class="ic">git log</code></td><td>История</td></tr>
+                <tr><td><code class="ic">git shortlog</code></td><td>История по авторам</td></tr>
+                <tr><td><code class="ic">git describe</code></td><td>Описание по тегам</td></tr>
+                <tr><td><code class="ic">git bisect</code></td><td>Поиск бага</td></tr>
+                <tr><td><code class="ic">git blame</code></td><td>Кто менял строку</td></tr>
+                <tr><td><code class="ic">git grep</code></td><td>Поиск по файлам</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Remote и обмен</h3>
+            <div class="guide-table-wrap"><table>
+              <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
+              <tbody>
+                <tr><td><code class="ic">git remote</code></td><td>Управление remote</td></tr>
+                <tr><td><code class="ic">git fetch</code></td><td>Скачать</td></tr>
+                <tr><td><code class="ic">git pull</code></td><td>Fetch + merge/rebase</td></tr>
+                <tr><td><code class="ic">git push</code></td><td>Отправить</td></tr>
+                <tr><td><code class="ic">git submodule</code></td><td>Подмодули</td></tr>
+                <tr><td><code class="ic">git archive</code></td><td>Архив</td></tr>
+                <tr><td><code class="ic">git bundle</code></td><td>Один файл с историей</td></tr>
+                <tr><td><code class="ic">git daemon</code></td><td>Git-сервер</td></tr>
+                <tr><td><code class="ic">git instaweb</code></td><td>Веб-интерфейс</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Теги</h3>
+            <div class="guide-table-wrap"><table>
+              <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
+              <tbody>
+                <tr><td><code class="ic">git tag</code></td><td>Управление тегами</td></tr>
+                <tr><td><code class="ic">git verify-tag</code></td><td>Проверить подпись</td></tr>
+                <tr><td><code class="ic">git verify-commit</code></td><td>Проверить коммит</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Отладка и восстановление</h3>
+            <div class="guide-table-wrap"><table>
+              <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
+              <tbody>
+                <tr><td><code class="ic">git reflog</code></td><td>Журнал перемещений</td></tr>
+                <tr><td><code class="ic">git fsck</code></td><td>Проверка целостности</td></tr>
+                <tr><td><code class="ic">git gc</code></td><td>Сборка мусора</td></tr>
+                <tr><td><code class="ic">git repack</code></td><td>Перепаковать</td></tr>
+                <tr><td><code class="ic">git prune</code></td><td>Удалить недостижимые</td></tr>
+                <tr><td><code class="ic">git maintenance</code></td><td>Автообслуживание</td></tr>
+                <tr><td><code class="ic">git count-objects</code></td><td>Размер</td></tr>
+                <tr><td><code class="ic">git verify-pack</code></td><td>Проверить pack</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Внутренние (plumbing)</h3>
+            <div class="guide-table-wrap"><table>
+              <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
+              <tbody>
+                <tr><td><code class="ic">git cat-file</code></td><td>Показать объект</td></tr>
+                <tr><td><code class="ic">git hash-object</code></td><td>Хешировать</td></tr>
+                <tr><td><code class="ic">git ls-tree</code></td><td>Содержимое tree</td></tr>
+                <tr><td><code class="ic">git mktree</code></td><td>Создать tree</td></tr>
+                <tr><td><code class="ic">git commit-tree</code></td><td>Создать коммит-объект</td></tr>
+                <tr><td><code class="ic">git update-ref</code></td><td>Обновить ссылку</td></tr>
+                <tr><td><code class="ic">git symbolic-ref</code></td><td>Символическая ссылка</td></tr>
+                <tr><td><code class="ic">git show-ref</code></td><td>Все ссылки</td></tr>
+                <tr><td><code class="ic">git for-each-ref</code></td><td>Итерация</td></tr>
+                <tr><td><code class="ic">git rev-parse</code></td><td>Разрешить ревизию</td></tr>
+                <tr><td><code class="ic">git rev-list</code></td><td>Список коммитов</td></tr>
+                <tr><td><code class="ic">git update-index</code></td><td>Обновить индекс</td></tr>
+                <tr><td><code class="ic">git read-tree</code></td><td>Прочитать tree</td></tr>
+                <tr><td><code class="ic">git write-tree</code></td><td>Записать tree</td></tr>
+                <tr><td><code class="ic">git ls-files</code></td><td>Файлы в индексе</td></tr>
+                <tr><td><code class="ic">git check-ignore</code></td><td>Проверить игнор</td></tr>
+                <tr><td><code class="ic">git check-attr</code></td><td>Атрибуты файла</td></tr>
+                <tr><td><code class="ic">git check-ref-format</code></td><td>Валидность имени</td></tr>
+                <tr><td><code class="ic">git merge-base</code></td><td>Общий предок</td></tr>
+                <tr><td><code class="ic">git merge-file</code></td><td>Слияние файлов</td></tr>
+                <tr><td><code class="ic">git merge-tree</code></td><td>Дерево слияния</td></tr>
+                <tr><td><code class="ic">git var</code></td><td>Переменные Git</td></tr>
+                <tr><td><code class="ic">git version</code></td><td>Версия</td></tr>
+                <tr><td><code class="ic">git help</code></td><td>Справка</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Обслуживание и миграция</h3>
+            <div class="guide-table-wrap"><table>
+              <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
+              <tbody>
+                <tr><td><code class="ic">git filter-repo</code></td><td>Очистка истории (внешняя)</td></tr>
+                <tr><td><code class="ic">git filter-branch</code></td><td>Старая очистка (deprecated)</td></tr>
+                <tr><td><code class="ic">git replace</code></td><td>Заменить объект</td></tr>
+                <tr><td><code class="ic">git worktree</code></td><td>Несколько рабочих директорий</td></tr>
+                <tr><td><code class="ic">git sparse-checkout</code></td><td>Частичный checkout</td></tr>
+                <tr><td><code class="ic">git lfs</code></td><td>Large File Storage</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Патчи и email</h3>
+            <div class="guide-table-wrap"><table>
+              <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
+              <tbody>
+                <tr><td><code class="ic">git format-patch</code></td><td>Создать патч</td></tr>
+                <tr><td><code class="ic">git am</code></td><td>Применить патч с авторством</td></tr>
+                <tr><td><code class="ic">git apply</code></td><td>Применить патч</td></tr>
+                <tr><td><code class="ic">git send-email</code></td><td>Отправить по email</td></tr>
+                <tr><td><code class="ic">git request-pull</code></td><td>Запрос на pull</td></tr>
+                <tr><td><code class="ic">git imap-send</code></td><td>В IMAP-папку</td></tr>
+              </tbody>
+            </table></div>
+
+            <h3>Сеть и сервер</h3>
+            <div class="guide-table-wrap"><table>
+              <thead><tr><th>Команда</th><th>Описание</th></tr></thead>
+              <tbody>
+                <tr><td><code class="ic">git http-backend</code></td><td>HTTP-бэкенд (CGI)</td></tr>
+                <tr><td><code class="ic">git send-pack</code></td><td>Отправка объектов</td></tr>
+                <tr><td><code class="ic">git fetch-pack</code></td><td>Приём объектов</td></tr>
+                <tr><td><code class="ic">git receive-pack</code></td><td>Приём push</td></tr>
+                <tr><td><code class="ic">git upload-pack</code></td><td>Отдача объектов</td></tr>
+                <tr><td><code class="ic">git upload-archive</code></td><td>Отдача архива</td></tr>
+              </tbody>
+            </table></div>
+          </section>
+
+        </div><!-- /guide-body -->
+
+        <!-- ОГЛАВЛЕНИЕ -->
+        <nav class="guide-toc" id="guideToc" aria-label="Содержание методички">
+          <div class="guide-toc__head">
+            <div class="guide-toc__title">
+              <span>На этой странице</span>
+              <button type="button" id="guideTocToggle">Показать все</button>
+            </div>
+            <input type="search" class="guide-toc__filter" id="guideTocFilter" autocomplete="off" aria-label="Фильтр разделов" />
+          </div>
+          <ul class="guide-toc__list" id="guideTocList"></ul>
+          <div class="guide-toc__foot">
+            <span id="guideTocCount"></span>
+          </div>
+        </nav>
+
+      </div><!-- /guide-layout -->
+
+      <div class="guide-footer">
+        <span>Методичка Git · часть документации Photon Framework</span>
+        <span><a href="index.html">← Ко всем компонентам</a></span>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="js/search-index.js"></script>
+  <script src="js/sidebar-config.js"></script>
+  <script src="js/doc.js"></script>
+  <script src="js/photon-kit.js"></script>
+  <script src="js/git.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+
+  <!-- ===== Движок ClassStyleEngine v3 ===== -->
+
+
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Движок v3 — Идеальный CSS без CSS</title>
+</head>
+<body class="_bg--f8f9fa _dark:bg--1e1e2f _minh--100vh _flex-center _fd--column _g--2rem _p--2rem">
+
+  <h1 class="_fs--2rem _c--2d3436 _dark:c--f0f0f0 _ta--center">
+    Кнопки, адаптив, тёмная тема — без единого CSS-файла
+  </h1>
+
+  <div class="_flex _g--1rem _fw--wrap _jc--center">
+    <!-- Кнопка 1: hover, active, transition -->
+    <button class="
+      _bg--6c5ce7 _c--white _b--none _br--12px _p--1rem_2rem _fs--1.1rem _fw--bold
+      _trs--all_0.2s_ease _bs--0_4px_15px_rgba(108,92,231,0.4)
+      _hover:bg--7c6c_hover:tr--translateY(-3px)_scale(1.03) _hover:bs--0_8px_25px_rgba(108,92,231,0.6)
+      _active:tr--translateY(1px)_scale(0.97) _active:bs--0_2px_8px_rgba(108,92,231,0.3)
+    ">
+      Эффектная кнопка
+    </button>
+
+    <!-- Кнопка 2: иконка, hover на сердечке, адаптив -->
+    <button class="
+      _bg--dfe6e9 _c--2d3436 _b--2px_solid_b2bec3 _br--24px _p--0.8rem_1.8rem
+      _flex _ai--center _g--0.5rem _fs--1rem _fw--600
+      _trs--all_0.3s_ease
+      _hover:bg--ff7675 _hover:c--white _hover:b--ff7675
+      _md:fs--1.2rem _dark:bg--444 _dark:c--ddd _dark:b--666
+    ">
+      <span class="_trs--transform_0.4s_ease _hover:tr--rotate(360deg)_scale(1.2)">❤️</span>
+      <span>Нравится</span>
+    </button>
+
+    <!-- Кнопка 3: градиент, сложная анимация, тень -->
+    <button class="
+      _bg--linear-gradient(135deg,_#f093fb_0%,_#f5576c_100%)
+      _c--white _b--none _br--12px _p--1rem_2.5rem _fs--1.2rem _fw--800 _tt--uppercase
+      _trs--all_0.3s_ease _bs--0_8px_25px_rgba(245,87,108,0.5)
+      _hover:bg--linear-gradient(135deg,_#a29bfe_0%,_#6c5ce7_100%)
+      _hover:tr--translateY(-4px)_scale(1.05) _hover:bs--0_12px_30px_rgba(108,92,231,0.7)
+      _active:tr--translateY(2px)_scale(0.95)
+    ">
+      Стиль
+    </button>
+  </div>
+
+  <!-- Адаптивная сетка с карточками -->
+  <div class="_w--100% _maxw--1200px _grid _gtc--repeat(auto-fit,_minmax(250px,_1fr)) _g--1.5rem _mt--2rem">
+    <div class="_bg--white _dark:bg--2d2d2d _br--16px _p--1.5rem _bs--0_4px_12px_rgba(0,0,0,0.1) _trs--transform_0.2s _hover:tr--translateY(-5px)">
+      <h3 class="_c--333 _dark:c--eee">Карточка 1</h3>
+      <p class="_c--666 _dark:c--aaa">Адаптивная и тёмная тема работают из коробки.</p>
+    </div>
+    <div class="_bg--white _dark:bg--2d2d2d _br--16px _p--1.5rem _bs--0_4px_12px_rgba(0,0,0,0.1) _trs--transform_0.2s _hover:tr--translateY(-5px)">
+      <h3 class="_c--333 _dark:c--eee">Карточка 2</h3>
+      <p class="_c--666 _dark:c--aaa">Всё описано классами, без единого файла .css.</p>
+    </div>
+  </div>
+
+      <script src="photon-kit-x.js">
+
+
+  </script>
+</body>
+</html>

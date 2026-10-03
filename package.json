@@ -1,0 +1,33 @@
+{
+  "name": "photon-kit",
+  "version": "2.0.0",
+  "description": "CSS Framework with adaptive dark theme and glassmorphism design. Over 40 components.",
+  "main": "photon-kit/photon-kit.css",
+  "style": "photon-kit/photon-kit.css",
+  "scripts": {
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "dark-theme",
+    "glassmorphism",
+    "ui-components",
+    "responsive"
+  ],
+  "license": "MIT",
+  "author": "Photon Framework",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alievkirill307-bot/Photon"
+  },
+  "bugs": {
+    "url": "https://github.com/alievkirill307-bot/Photon/issues"
+  },
+  "homepage": "https://github.com/alievkirill307-bot/Photon",
+  "files": [
+    "photon-kit/",
+    "README.md",
+    "LICENSE"
+  ]
+}

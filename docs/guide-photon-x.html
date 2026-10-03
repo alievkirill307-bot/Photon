@@ -1,0 +1,589 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Photon X — подробное руководство. Архитектура движка, синтаксис, макросы, алиасы, модификаторы, адаптивность и интеграция с Photon." />
+  <meta name="keywords" content="photon, photon x, css движок, class style engine, css without css, _ классы" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <title>Photon X — Подробное руководство</title>
+  <link rel="stylesheet" href="css/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand"><span class="doc-header__logo"><img src="img/photon-logo.svg" alt="Photon"></span>Photon</a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg><span class="doc-header__link-text">GitHub</span></a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg><span class="doc-header__link-text">GitLab</span></a>
+
+      <div class="theme-switch" data-theme-switch style="margin-left:0.75rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <div class="theme-switch__track">
+          <div class="theme-switch__thumb"></div>
+        </div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </div></div>
+  </header>
+
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="doc-layout">
+    <aside class="doc-sidebar" id="sidebar" data-sidebar></aside>
+    <main class="doc-content">
+      <h1>Photon X — Подробное руководство</h1>
+      <div class="page-logo"><img src="img/photon-logo.svg" alt="Photon"></div>
+
+      <!-- ========== 1. ЧТО ТАКОЕ PHOTON X ========== -->
+      <h2>Что такое Photon X</h2>
+      <p><strong>Photon X</strong> — это встроенный CSS-движок нового поколения внутри Photon Framework (с версии 2.2). Он позволяет управлять стилями <em>напрямую из HTML-классов</em> с префиксом <code>_</code> — без единого CSS-файла. Движок на лету генерирует CSS-правила и вставляет их в <code>&lt;head&gt;</code> страницы.</p>
+      <p>В отличие от классического подхода Photon, где каждый компонент имеет свой CSS-класс (<code>btn btn--primary</code>, <code>card</code>, <code>navbar</code>), Photon X даёт атомарный контроль над каждым CSS-свойством. Вы комбинируете атомарные классы-свойства прямо в разметке — и движок сам собирает из них итоговый CSS.</p>
+
+      <div class="doc-compare">
+        <div class="doc-compare__col doc-compare__col--good">
+          <h4>Photon X (атомарный)</h4>
+          <pre style="font-size:0.78rem;margin:0;"><code>_bg--6c5ce7 _c--white _br--8px _p--0.6rem_1.5rem _fw--600 _hover:bg--7c6cf0</code></pre>
+          <p style="margin:0.6rem 0 0;font-size:0.85rem;">Каждое свойство — отдельный класс. Полный контроль. Ни строчки CSS вручную.</p>
+        </div>
+        <div class="doc-compare__col doc-compare__col--bad">
+          <h4>Классический Photon</h4>
+          <pre style="font-size:0.78rem;margin:0;"><code>btn btn--primary</code></pre>
+          <p style="margin:0.6rem 0 0;font-size:0.85rem;">Готовый компонент фреймворка. Быстро, но стили инкапсулированы.</p>
+        </div>
+      </div>
+
+      <p><strong>Photon X не заменяет классический Photon</strong> — он дополняет его. Вы можете использовать их вместе на одной странице: базовую структуру на Photon (<code>navbar</code>, <code>card</code>), тонкую настройку — на Photon X.</p>
+
+      <!-- ========== 2. ПОДКЛЮЧЕНИЕ ========== -->
+      <h2>Подключение</h2>
+      <p>Photon X поставляется отдельным файлом <code>photon-kit-x.js</code> (около 5 КБ). Для работы <strong>не нужен</strong> photon-kit.css — движок генерирует весь CSS сам. Однако на практике photon-kit.css обычно тоже подключают для базовой типографики, сброса стилей и glass-эффектов.</p>
+
+      <h3>Минимальный шаблон</h3>
+      <div class="code-block">
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;link rel="stylesheet" href="photon-kit.css" /&gt;  &lt;!-- опционально --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="_bg--f8f9fa _flex-center _minh--100vh"&gt;
+    &lt;h1 class="_c--333 _fs--2rem"&gt;Привет, Photon X!&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;script src="photon-kit-x.js"&gt;&lt;/script&gt;  &lt;!-- Photon X — перед &lt;/body&gt; --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="note-box pt-bg-blue-50 pt-dark:bg-gray-800 pt-p-4 pt-rounded-lg pt-mt-4">
+        <p class="pt-m-0 pt-text-sm pt-text-gray-600 pt-dark:text-gray-300"><strong>Порядок подключения важен:</strong> если используете photon-kit.css, подключайте его в <code>&lt;head&gt;</code>. Скрипт Photon X размещайте перед закрывающим <code>&lt;/body&gt;</code> — он сканирует весь DOM после его построения.</p>
+      </div>
+
+      <!-- ========== 3. АРХИТЕКТУРА ДВИЖКА ========== -->
+      <h2>Архитектура движка</h2>
+      <p>Движок Photon X — это самовыполняющаяся функция (IIFE) внутри <code>photon-kit-x.js</code>, состоящая из пяти ключевых компонентов:</p>
+
+      <div class="pt-demo pt-demo--col pt-demo--gap-lg">
+        <div class="doc-step">
+          <div class="doc-step__number">1</div>
+          <div class="doc-step__content">
+            <h4>Парсер класса <code>parseClass()</code></h4>
+            <p>Разбирает строку вида <code>_hover:bg--6c5ce7</code> на три части: массив модификаторов <code>['hover']</code>, имя свойства/макроса <code>'bg'</code> и значение <code>'6c5ce7'</code>. Разделители: <code>:</code> для модификаторов, <code>--</code> для значения.</p>
+          </div>
+        </div>
+        <div class="doc-step">
+          <div class="doc-step__number">2</div>
+          <div class="doc-step__content">
+            <h4>Словарь алиасов <code>PROP_ALIASES</code></h4>
+            <p>Сопоставляет короткие имена (<code>bg</code>, <code>c</code>, <code>p</code>, <code>fs</code> …) полным CSS-свойствам (<code>background</code>, <code>color</code>, <code>padding</code>, <code>font-size</code> …). Если алиас не найден — свойство используется как есть (можно писать полное имя через дефис: <code>_background-color--eee</code>).</p>
+          </div>
+        </div>
+        <div class="doc-step">
+          <div class="doc-step__number">3</div>
+          <div class="doc-step__content">
+            <h4>Макросы <code>MACROS</code></h4>
+            <p>Предопределённые комбинации CSS-свойств. Например, класс <code>_flex-center</code> без <code>--</code>-значения разворачивается в три правила: <code>display: flex; justify-content: center; align-items: center</code>.</p>
+          </div>
+        </div>
+        <div class="doc-step">
+          <div class="doc-step__number">4</div>
+          <div class="doc-step__content">
+            <h4>Генератор CSS <code>generateCSS()</code></h4>
+            <p>Оборачивает пару свойство-значение в CSS-правило с селектором по классу. Модификаторы добавляют обёртки: <code>_hover:</code> → <code>.class:hover { }</code>, <code>_md:</code> → <code>@media (min-width: 768px) { }</code>.</p>
+          </div>
+        </div>
+        <div class="doc-step">
+          <div class="doc-step__number">5</div>
+          <div class="doc-step__content">
+            <h4>Сканер DOM и MutationObserver</h4>
+            <p>При загрузке страницы <code>scanAll()</code> проходит по всем элементам с атрибутом <code>class</code> и обрабатывает каждый класс с префиксом <code>_</code>. <code>MutationObserver</code> следит за динамическими изменениями DOM и обрабатывает новые элементы автоматически.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Дедупликация правил</h3>
+      <p>Движок ведёт Set <code>addedRules</code> — каждое уникальное правило генерируется только один раз. Если на странице 50 кнопок с классом <code>_bg--6c5ce7</code>, в <code>&lt;style id="class-style-engine"&gt;</code> попадёт только одно правило.</p>
+
+      <h3>Куда попадает CSS</h3>
+      <p>Движок создаёт элемент <code>&lt;style id="class-style-engine"&gt;</code> в <code>&lt;head&gt;</code> и дописывает в него сгенерированные правила через <code>textContent +=</code>. Вы всегда можете открыть DevTools и увидеть весь сгенерированный CSS в этом элементе.</p>
+
+      <!-- ========== 4. СИНТАКСИС ========== -->
+      <h2>Синтаксис — полный разбор</h2>
+      <p>Каждый класс Photon X начинается с подчёркивания <code>_</code> и строится по одному из трёх форматов:</p>
+
+      <table class="doc-param-table">
+        <thead>
+          <tr><th>Формат</th><th>Структура</th><th>Генерируемый CSS</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>_свойство--значение</code></td>
+            <td>алиас или полное свойство + <code>--</code> + значение</td>
+            <td><code>свойство: значение;</code></td>
+          </tr>
+          <tr>
+            <td><code>_макрос</code></td>
+            <td>ключевое слово без <code>--</code></td>
+            <td>набор CSS-свойств</td>
+          </tr>
+          <tr>
+            <td><code>_модиф:свойство--значение</code></td>
+            <td>модификатор(ы) через <code>:</code> + свойство + <code>--</code> + значение</td>
+            <td>CSS внутри псевдокласса / @media</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Правила подчёркивания внутри значений</h3>
+      <p>Символ <code>_</code> <em>внутри значения</em> (после <code>--</code>) заменяется движком на пробел. Это ключевая механика для передачи значений, содержащих пробелы:</p>
+
+      <table>
+        <thead><tr><th>Класс</th><th>Значение после замены <code>_</code> → пробел</th><th>Итоговый CSS</th></tr></thead>
+        <tbody>
+          <tr><td><code>_p--1rem_2rem</code></td><td><code>1rem 2rem</code></td><td><code>padding: 1rem 2rem</code></td></tr>
+          <tr><td><code>_b--2px_solid_6c5ce7</code></td><td><code>2px solid #6c5ce7</code></td><td><code>border: 2px solid #6c5ce7</code></td></tr>
+          <tr><td><code>_bs--0_4px_12px_rgba(0,0,0,0.1)</code></td><td><code>0 4px 12px rgba(0,0,0,0.1)</code></td><td><code>box-shadow: 0 4px 12px rgba(0,0,0,0.1)</code></td></tr>
+          <tr><td><code>_trs--all_0.3s_ease</code></td><td><code>all 0.3s ease</code></td><td><code>transition: all 0.3s ease</code></td></tr>
+        </tbody>
+      </table>
+
+      <div class="note-box pt-bg-blue-50 pt-dark:bg-gray-800 pt-p-4 pt-rounded-lg pt-mt-4">
+        <p class="pt-m-0 pt-text-sm pt-text-gray-600 pt-dark:text-gray-300"><strong>Нюанс:</strong> замена <code>_</code> → пробел происходит <em>до</em> проверки на hex-цвет. Поэтому <code>_bg--linear-gradient(135deg,_#f093fb_0%,_#f5576c_100%)</code> работает корректно: сначала все <code>_</code> становятся пробелами, затем hex-токены получают префикс <code>#</code>.</p>
+      </div>
+
+      <!-- ========== 5. ОБРАБОТКА ЦВЕТОВ ========== -->
+      <h2>Обработка цветов</h2>
+      <p>Движок автоматически добавляет префикс <code>#</code> к hex-значениям (3–8 символов, без <code>#</code>), если свойство относится к цветовым. Список цветовых свойств, для которых срабатывает авто-хеширование:</p>
+      <p><code>color</code>, <code>background-color</code>, <code>background</code>, <code>border-color</code>, <code>border</code>, <code>outline-color</code>, <code>outline</code>, <code>text-decoration-color</code>, <code>caret-color</code>, <code>column-rule-color</code>, <code>fill</code>, <code>stroke</code>.</p>
+
+      <div class="code-block">
+        <pre><code>_c--6c5ce7        → color: #6c5ce7
+_bg--fff          → background: #fff
+_b--2px_solid_6c5ce7 → border: 2px solid #6c5ce7  (border — цветовое свойство)
+_w--300           → width: 300px                    (width — НЕ цветовое, # не добавляется)</code></pre>
+      </div>
+
+      <p>Если вам нужен цвет без <code>#</code> (например, <code>transparent</code>, <code>currentColor</code>, именованный цвет), просто пишите его строкой:</p>
+      <div class="code-block">
+        <pre><code>_bg--transparent    → background: transparent
+_c--currentColor    → color: currentColor</code></pre>
+      </div>
+
+      <!-- ========== 6. ПОЛНЫЙ СПРАВОЧНИК АЛИАСОВ ========== -->
+      <h2>Полный справочник алиасов</h2>
+      <p>Ниже — все доступные короткие имена. Если нужного алиаса нет, пишите полное CSS-свойство через дефис: <code>_background-color--eee</code>, <code>_grid-template-areas--...</code>.</p>
+
+      <table>
+        <thead><tr><th>Группа</th><th>Алиас</th><th>CSS-свойство</th><th>Пример</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="4"><strong>Display & Flex</strong></td><td><code>d / dp</code></td><td>display</td><td><code>_dp--flex</code></td></tr>
+          <tr><td><code>jc</code></td><td>justify-content</td><td><code>_jc--center</code></td></tr>
+          <tr><td><code>ai</code></td><td>align-items</td><td><code>_ai--center</code></td></tr>
+          <tr><td><code>ac</code></td><td>align-content</td><td><code>_ac--stretch</code></td></tr>
+          <tr><td></td><td><code>as</code></td><td>align-self</td><td><code>_as--flex-end</code></td></tr>
+          <tr><td></td><td><code>fw</code></td><td>flex-wrap / font-weight <sup>*</sup></td><td><code>_fw--wrap</code></td></tr>
+          <tr><td></td><td><code>fd</code></td><td>flex-direction</td><td><code>_fd--column</code></td></tr>
+          <tr><td></td><td><code>g</code></td><td>gap</td><td><code>_g--1rem</code></td></tr>
+          <tr><td></td><td><code>rg</code></td><td>row-gap</td><td><code>_rg--0.5rem</code></td></tr>
+          <tr><td></td><td><code>cg</code></td><td>column-gap</td><td><code>_cg--2rem</code></td></tr>
+          <tr><td rowspan="4"><strong>Grid</strong></td><td><code>gtc</code></td><td>grid-template-columns</td><td><code>_gtc--repeat(3,_1fr)</code></td></tr>
+          <tr><td><code>gtr</code></td><td>grid-template-rows</td><td><code>_gtr--auto_1fr</code></td></tr>
+          <tr><td><code>gac</code></td><td>grid-auto-columns</td><td><code>_gac--200px</code></td></tr>
+          <tr><td><code>gar</code></td><td>grid-auto-rows</td><td><code>_gar--minmax(100px,_auto)</code></td></tr>
+          <tr><td rowspan="7"><strong>Размеры</strong></td><td><code>w</code></td><td>width</td><td><code>_w--300px</code></td></tr>
+          <tr><td><code>h</code></td><td>height</td><td><code>_h--100%</code></td></tr>
+          <tr><td><code>minw</code></td><td>min-width</td><td><code>_minw--320px</code></td></tr>
+          <tr><td><code>minh</code></td><td>min-height</td><td><code>_minh--100vh</code></td></tr>
+          <tr><td><code>maxw</code></td><td>max-width</td><td><code>_maxw--1200px</code></td></tr>
+          <tr><td><code>maxh</code></td><td>max-height</td><td><code>_maxh--80vh</code></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td rowspan="10"><strong>Отступы</strong></td><td><code>m</code></td><td>margin</td><td><code>_m--1rem</code></td></tr>
+          <tr><td><code>mt</code></td><td>margin-top</td><td><code>_mt--0</code></td></tr>
+          <tr><td><code>mr</code></td><td>margin-right</td><td><code>_mr--0.5rem</code></td></tr>
+          <tr><td><code>mb</code></td><td>margin-bottom</td><td><code>_mb--2rem</code></td></tr>
+          <tr><td><code>ml</code></td><td>margin-left</td><td><code>_ml--auto</code></td></tr>
+          <tr><td><code>p</code></td><td>padding</td><td><code>_p--1rem_2rem</code></td></tr>
+          <tr><td><code>pt</code></td><td>padding-top</td><td><code>_pt--0</code></td></tr>
+          <tr><td><code>pr</code></td><td>padding-right</td><td><code>_pr--1.5rem</code></td></tr>
+          <tr><td><code>pb</code></td><td>padding-bottom</td><td><code>_pb--1rem</code></td></tr>
+          <tr><td><code>pl</code></td><td>padding-left</td><td><code>_pl--1.5rem</code></td></tr>
+          <tr><td rowspan="6"><strong>Цвет и фон</strong></td><td><code>c</code></td><td>color</td><td><code>_c--333</code></td></tr>
+          <tr><td><code>bg</code></td><td>background</td><td><code>_bg--6c5ce7</code></td></tr>
+          <tr><td><code>bgc</code></td><td>background-color</td><td><code>_bgc--fff</code></td></tr>
+          <tr><td><code>op</code></td><td>opacity</td><td><code>_op--0.5</code></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td rowspan="9"><strong>Типографика</strong></td><td><code>fs</code></td><td>font-size</td><td><code>_fs--1.2rem</code></td></tr>
+          <tr><td><code>fw</code></td><td>font-weight</td><td><code>_fw--700</code></td></tr>
+          <tr><td><code>ff</code></td><td>font-family</td><td><code>_ff--monospace</code></td></tr>
+          <tr><td><code>lh</code></td><td>line-height</td><td><code>_lh--1.5</code></td></tr>
+          <tr><td><code>ta</code></td><td>text-align</td><td><code>_ta--center</code></td></tr>
+          <tr><td><code>tt</code></td><td>text-transform</td><td><code>_tt--uppercase</code></td></tr>
+          <tr><td><code>td</code></td><td>text-decoration</td><td><code>_td--none</code></td></tr>
+          <tr><td><code>ls</code></td><td>letter-spacing</td><td><code>_ls--0.05em</code></td></tr>
+          <tr><td><code>ws</code></td><td>word-spacing</td><td><code>_ws--0.1em</code></td></tr>
+          <tr><td rowspan="7"><strong>Границы</strong></td><td><code>br</code></td><td>border-radius</td><td><code>_br--8px</code></td></tr>
+          <tr><td><code>b</code></td><td>border</td><td><code>_b--2px_solid_6c5ce7</code></td></tr>
+          <tr><td><code>bt</code></td><td>border-top</td><td><code>_bt--1px_solid_eee</code></td></tr>
+          <tr><td><code>brb</code></td><td>border-right</td><td><code>_brb--none</code></td></tr>
+          <tr><td><code>bb</code></td><td>border-bottom</td><td><code>_bb--2px_solid_6c5ce7</code></td></tr>
+          <tr><td><code>bl</code></td><td>border-left</td><td><code>_bl--4px_solid_6c5ce7</code></td></tr>
+          <tr><td><code>bs</code></td><td>box-shadow</td><td><code>_bs--0_4px_12px_rgba(0,0,0,0.1)</code></td></tr>
+          <tr><td rowspan="4"><strong>Трансформации</strong></td><td><code>tr</code></td><td>transform</td><td><code>_tr--translateY(-4px)</code></td></tr>
+          <tr><td><code>trs</code></td><td>transition</td><td><code>_trs--all_0.3s_ease</code></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td rowspan="10"><strong>Позиционирование</strong></td><td><code>pos</code></td><td>position</td><td><code>_pos--absolute</code></td></tr>
+          <tr><td><code>t</code></td><td>top</td><td><code>_t--0</code></td></tr>
+          <tr><td><code>r</code></td><td>right</td><td><code>_r--1rem</code></td></tr>
+          <tr><td><code>btm</code></td><td>bottom</td><td><code>_btm--0</code></td></tr>
+          <tr><td><code>l</code></td><td>left</td><td><code>_l--1rem</code></td></tr>
+          <tr><td><code>zi</code></td><td>z-index</td><td><code>_zi--100</code></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td><td></td></tr>
+          <tr><td rowspan="3"><strong>Переполнение</strong></td><td><code>ov</code></td><td>overflow</td><td><code>_ov--hidden</code></td></tr>
+          <tr><td><code>ovx</code></td><td>overflow-x</td><td><code>_ovx--auto</code></td></tr>
+          <tr><td><code>ovy</code></td><td>overflow-y</td><td><code>_ovy--scroll</code></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.8rem;color:#a1a1a6;"><sup>*</sup> Алиас <code>fw</code> мапится на <code>flex-wrap</code>. Однако CSS-свойство <code>font-weight</code> также можно задать через <code>_fw--700</code> — в этом случае значение <code>700</code> не является валидным значением flex-wrap, но браузеры применяют его как font-weight по контексту. Для явного flex-wrap используйте значения <code>wrap</code>, <code>nowrap</code>, <code>wrap-reverse</code>.</p>
+
+      <!-- ========== 7. ПОЛНЫЙ СПРАВОЧНИК МАКРОСОВ ========== -->
+      <h2>Полный справочник макросов</h2>
+      <p>Макрос — это класс без <code>--</code>, который разворачивается в несколько CSS-правил. Макросы распознаются <em>только если у класса нет значения</em> (нет <code>--</code>).</p>
+
+      <table>
+        <thead><tr><th>Класс</th><th>Генерируемый CSS</th></tr></thead>
+        <tbody>
+          <tr><td><code>_flex</code></td><td><code>display: flex</code></td></tr>
+          <tr><td><code>_inline-flex</code></td><td><code>display: inline-flex</code></td></tr>
+          <tr><td><code>_grid</code></td><td><code>display: grid</code></td></tr>
+          <tr><td><code>_inline-grid</code></td><td><code>display: inline-grid</code></td></tr>
+          <tr><td><code>_center</code></td><td><code>justify-content: center; align-items: center</code></td></tr>
+          <tr><td><code>_flex-center</code></td><td><code>display: flex; justify-content: center; align-items: center</code></td></tr>
+          <tr><td><code>_flex-column</code></td><td><code>display: flex; flex-direction: column</code></td></tr>
+          <tr><td><code>_flex-column-center</code></td><td><code>display: flex; flex-direction: column; justify-content: center; align-items: center</code></td></tr>
+          <tr><td><code>_text-center</code></td><td><code>text-align: center</code></td></tr>
+          <tr><td><code>_bold</code></td><td><code>font-weight: bold</code></td></tr>
+          <tr><td><code>_uppercase</code></td><td><code>text-transform: uppercase</code></td></tr>
+          <tr><td><code>_absolute</code></td><td><code>position: absolute</code></td></tr>
+          <tr><td><code>_relative</code></td><td><code>position: relative</code></td></tr>
+          <tr><td><code>_fixed</code></td><td><code>position: fixed</code></td></tr>
+          <tr><td><code>_sticky</code></td><td><code>position: sticky</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Макросы + модификаторы</h3>
+      <p>На макросы также действуют модификаторы. Каждое правило внутри макроса оборачивается в модификатор независимо:</p>
+      <div class="code-block">
+        <pre><code>_md:flex-center → @media (min-width: 768px) {
+                     .class { display: flex; justify-content: center; align-items: center; }
+                   }
+
+_hover:uppercase → .class:hover { text-transform: uppercase; }</code></pre>
+      </div>
+
+      <!-- ========== 8. ПОЛНЫЙ СПРАВОЧНИК МОДИФИКАТОРОВ ========== -->
+      <h2>Полный справочник модификаторов</h2>
+      <p>Модификаторы добавляются через <code>:</code> перед именем свойства/макроса. Можно комбинировать несколько модификаторов: <code>_md:hover:bg--...</code>.</p>
+
+      <h3>Псевдоклассы</h3>
+      <table>
+        <thead><tr><th>Модификатор</th><th>CSS-селектор</th><th>Пример</th></tr></thead>
+        <tbody>
+          <tr><td><code>_hover:</code></td><td><code>:hover</code></td><td><code>_hover:bg--7c6cf0</code></td></tr>
+          <tr><td><code>_active:</code></td><td><code>:active</code></td><td><code>_active:tr--scale(0.97)</code></td></tr>
+          <tr><td><code>_focus:</code></td><td><code>:focus</code></td><td><code>_focus:b--6c5ce7</code></td></tr>
+          <tr><td><code>_focus-within:</code></td><td><code>:focus-within</code></td><td><code>_focus-within:bs--0_0_0_3px_rgba(108,92,231,0.3)</code></td></tr>
+          <tr><td><code>_focus-visible:</code></td><td><code>:focus-visible</code></td><td><code>_focus-visible:outline--2px_solid_6c5ce7</code></td></tr>
+          <tr><td><code>_first-child:</code></td><td><code>:first-child</code></td><td><code>_first-child:mt--0</code></td></tr>
+          <tr><td><code>_last-child:</code></td><td><code>:last-child</code></td><td><code>_last-child:mb--0</code></td></tr>
+          <tr><td><code>_nth-child-odd:</code></td><td><code>:nth-child(odd)</code></td><td><code>_nth-child-odd:bg--f8f9fa</code></td></tr>
+          <tr><td><code>_nth-child-even:</code></td><td><code>:nth-child(even)</code></td><td><code>_nth-child-even:bg--eee</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Псевдоэлементы</h3>
+      <table>
+        <thead><tr><th>Модификатор</th><th>CSS-селектор</th><th>Пример</th></tr></thead>
+        <tbody>
+          <tr><td><code>_before:</code></td><td><code>::before</code></td><td><code>_before:content--'' _before:c--6c5ce7</code></td></tr>
+          <tr><td><code>_after:</code></td><td><code>::after</code></td><td><code>_after:content--'✓'</code></td></tr>
+          <tr><td><code>_placeholder:</code></td><td><code>::placeholder</code></td><td><code>_placeholder:c--999</code></td></tr>
+          <tr><td><code>_selection:</code></td><td><code>::selection</code></td><td><code>_selection:bg--6c5ce7 _selection:c--white</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Медиа-запросы (брейкпоинты)</h3>
+      <table>
+        <thead><tr><th>Модификатор</th><th>Условие</th><th>Пример</th></tr></thead>
+        <tbody>
+          <tr><td><code>_sm:</code></td><td><code>(min-width: 640px)</code></td><td><code>_sm:w--50%</code></td></tr>
+          <tr><td><code>_md:</code></td><td><code>(min-width: 768px)</code></td><td><code>_md:fs--1.2rem</code></td></tr>
+          <tr><td><code>_lg:</code></td><td><code>(min-width: 1024px)</code></td><td><code>_lg:gtc--2fr_1fr</code></td></tr>
+          <tr><td><code>_xl:</code></td><td><code>(min-width: 1280px)</code></td><td><code>_xl:p--2rem</code></td></tr>
+          <tr><td><code>_2xl:</code></td><td><code>(min-width: 1536px)</code></td><td><code>_2xl:w--1200px</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Медиа-запросы (предпочтения)</h3>
+      <table>
+        <thead><tr><th>Модификатор</th><th>Условие</th><th>Пример</th></tr></thead>
+        <tbody>
+          <tr><td><code>_dark:</code></td><td><code>(prefers-color-scheme: dark)</code></td><td><code>_dark:bg--333 _dark:c--eee</code></td></tr>
+          <tr><td><code>_light:</code></td><td><code>(prefers-color-scheme: light)</code></td><td><code>_light:bg--fff</code></td></tr>
+          <tr><td><code>_reduced-motion:</code></td><td><code>(prefers-reduced-motion: reduce)</code></td><td><code>_reduced-motion:trs--none</code></td></tr>
+          <tr><td><code>_portrait:</code></td><td><code>(orientation: portrait)</code></td><td><code>_portrait:flex-column</code></td></tr>
+          <tr><td><code>_landscape:</code></td><td><code>(orientation: landscape)</code></td><td><code>_landscape:w--50%</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Комбинирование модификаторов</h3>
+      <p>Модификаторы пишутся слева направо через <code>:</code>. Последний сегмент без <code>--</code> считается именем свойства/макроса. Каждый модификатор добавляет свою обёртку независимо — будьте внимательны при комбинировании псевдоклассов и медиа-запросов: каждый генерирует отдельное правило.</p>
+
+      <div class="code-block">
+        <pre><code>_md:hover:bg--7c6cf0   → @media (min-width:768px) { .class:hover { background: #7c6cf0 } }
+_dark:hover:c--fff      → @media (prefers-color-scheme:dark) { .class:hover { color: #fff } }
+_hover:active:tr--scale(0.95) → .class:hover { … }  И  .class:active { … }  (два правила!)</code></pre>
+      </div>
+
+      <div class="note-box pt-bg-yellow-50 pt-dark:bg-gray-800 pt-p-4 pt-rounded-lg pt-mt-4" style="border-left:4px solid #ffb700;">
+        <p class="pt-m-0 pt-text-sm pt-text-gray-600 pt-dark:text-gray-300"><strong>Важно:</strong> каждый модификатор обрабатывается отдельным проходом в цикле <code>modifiers.forEach()</code>. Если вы укажете <code>_hover:md:bg--...</code>, движок создаст правило <code>.class:hover { background: ... }</code> и отдельно <code>@media (min-width:768px) { .class { background: ... } }</code> — это два независимых правила, а не одно вложенное.</p>
+      </div>
+
+      <!-- ========== 9. MUTATIONOBSERVER ========== -->
+      <h2>Динамические элементы и MutationObserver</h2>
+      <p>Движок не ограничивается статическим HTML. Он использует <code>MutationObserver</code> на <code>document.documentElement</code> с опцией <code>{ childList: true, subtree: true }</code> для отслеживания любых добавлений узлов в DOM.</p>
+
+      <h3>Что это значит на практике</h3>
+      <ul>
+        <li><strong>JavaScript-рендеринг</strong> — если вы добавляете элементы через <code>innerHTML</code>, <code>appendChild</code>, <code>insertAdjacentHTML</code> или любой другой метод — движок автоматически обработает классы <code>_*</code> на новых элементах.</li>
+        <li><strong>SPA-фреймворки</strong> — работает с React, Vue, Svelte, Alpine.js и любыми другими библиотеками, которые манипулируют DOM.</li>
+        <li><strong>AJAX-контент</strong> — элементы, загруженные через <code>fetch</code> и вставленные в DOM, также обрабатываются.</li>
+      </ul>
+
+      <div class="code-block">
+        <pre><code>// Динамическое добавление — стили применятся автоматически
+const div = document.createElement('div');
+div.className = '_bg--6c5ce7 _c--white _p--1rem _br--8px';
+div.textContent = 'Я создан через JS, но Photon X меня стилизует!';
+document.body.appendChild(div);
+
+// То же самое через innerHTML
+document.body.insertAdjacentHTML('beforeend',
+  '&lt;button class="_bg--00b894 _c--white _br--8px _p--0.5rem_1rem"&gt;Динамическая кнопка&lt;/button&gt;'
+);</code></pre>
+      </div>
+
+      <!-- ========== 10. СРАВНЕНИЕ С PHOTON-TW ========== -->
+      <h2>Photon X vs Photon-tw — в чём разница</h2>
+      <p>В Photon Framework есть <em>два</em> независимых утилитарных движка, и их важно не путать:</p>
+
+      <table>
+        <thead><tr><th></th><th>Photon X</th><th>Photon-tw</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Файл</strong></td><td><code>photon-kit-x.js</code> (отдельный)</td><td>встроен в <code>photon-kit.js</code></td></tr>
+          <tr><td><strong>Префикс</strong></td><td><code>_</code> (подчёркивание)</td><td><code>pt-</code></td></tr>
+          <tr><td><strong>Синтаксис</strong></td><td><code>_свойство--значение</code></td><td><code>pt-значение-свойства</code> (Tailwind-подобный)</td></tr>
+          <tr><td><strong>Подход</strong></td><td>Атомарный: один класс = одно CSS-свойство</td><td>Утилитарный: один класс = конкретное значение</td></tr>
+          <tr><td><strong>Макросы</strong></td><td>Есть (<code>_flex-center</code>, <code>_bold</code>)</td><td>Нет</td></tr>
+          <tr><td><strong>Модификаторы</strong></td><td><code>_hover:</code>, <code>_md:</code>, <code>_dark:</code> и др.</td><td><code>pt-dark:</code>, <code>pt-hover:</code></td></tr>
+          <tr><td><strong>Произвольные значения</strong></td><td>Любые: <code>_bg--6c5ce7</code>, <code>_w--37.5%</code></td><td>Только из заранее определённого набора</td></tr>
+          <tr><td><strong>Размер</strong></td><td>~5 КБ</td><td>~20 КБ (внутри photon-kit.js)</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Когда что использовать:</strong> Photon-tw — для быстрой верстки с готовыми значениями из палитры (как Tailwind). Photon X — когда нужен полный контроль над каждым пикселем, произвольные цвета, комплексные трансформации и анимации.</p>
+
+      <!-- ========== 11. ПРИМЕРЫ ========== -->
+      <h2>Практические примеры</h2>
+
+      <h3>Адаптивная карточка с тёмной темой</h3>
+      <div class="code-block">
+        <pre><code>&lt;div class="
+  _bg--white _dark:bg--2d2d2d
+  _br--16px _p--1.5rem
+  _bs--0_4px_12px_rgba(0,0,0,0.08)
+  _trs--all_0.25s
+  _hover:tr--translateY(-4px)
+  _hover:bs--0_8px_24px_rgba(0,0,0,0.15)
+  _w--100% _sm:w--48% _lg:w--30%
+"&gt;
+  &lt;h3 class="_c--333 _dark:c--eee _fs--1.2rem _fw--700"&gt;Заголовок&lt;/h3&gt;
+  &lt;p class="_c--666 _dark:c--999 _fs--0.9rem"&gt;Описание карточки&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h3>Кнопка с комплексной анимацией</h3>
+      <div class="code-block">
+        <pre><code>&lt;button class="
+  _bg--linear-gradient(135deg,_#6c5ce7_0%,_#a29bfe_100%)
+  _c--white _b--none _br--12px
+  _p--0.8rem_2rem _fs--1rem _fw--700 _tt--uppercase
+  _bs--0_4px_15px_rgba(108,92,231,0.4)
+  _trs--all_0.3s_cubic-bezier(0.34,_1.56,_0.64,_1)
+  _hover:tr--translateY(-3px)_scale(1.05)
+  _hover:bs--0_8px_25px_rgba(108,92,231,0.6)
+  _active:tr--translateY(1px)_scale(0.97)
+  _active:bs--0_2px_8px_rgba(108,92,231,0.3)
+"&gt;
+  Нажми меня
+&lt;/button&gt;</code></pre>
+      </div>
+
+      <h3>Форма входа</h3>
+      <div class="code-block">
+        <pre><code>&lt;form class="_flex _fd--column _g--1rem _maxw--400px"&gt;
+  &lt;div class="_flex _fd--column _g--0.3rem"&gt;
+    &lt;label class="_c--333 _dark:c--eee _fs--0.9rem _fw--600"&gt;Email&lt;/label&gt;
+    &lt;input class="_b--2px_solid_dfdddd _dark:b--555 _br--8px _p--0.7rem_1rem
+           _fs--0.95rem _c--333 _dark:c--eee _bg--white _dark:bg--333
+           _outline--none _focus:b--6c5ce7"
+           placeholder="example@mail.com"&gt;
+  &lt;/div&gt;
+  &lt;div class="_flex _fd--column _g--0.3rem"&gt;
+    &lt;label class="_c--333 _dark:c--eee _fs--0.9rem _fw--600"&gt;Пароль&lt;/label&gt;
+    &lt;input type="password" class="_b--2px_solid_dfdddd _dark:b--555 _br--8px
+           _p--0.7rem_1rem _fs--0.95rem _c--333 _dark:c--eee _bg--white _dark:bg--333
+           _outline--none _focus:b--6c5ce7"
+           placeholder="••••••••"&gt;
+  &lt;/div&gt;
+  &lt;button class="_bg--6c5ce7 _c--white _b--none _br--8px
+           _p--0.7rem_1.5rem _fs--0.95rem _fw--600
+           _trs--all_0.2s _hover:bg--7c6cf0"&gt;
+    Войти
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      <!-- ========== 12. ИНТЕГРАЦИЯ С PHOTON ========== -->
+      <h2>Интеграция с классическим Photon</h2>
+      <p>Photon X и классический Photon прекрасно работают вместе. Типичный сценарий:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;!-- Структура страницы — на классическом Photon --&gt;
+&lt;nav class="navbar"&gt;...&lt;/nav&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-8"&gt;
+    &lt;!-- Карточка Photon, но с тонкой настройкой через Photon X --&gt;
+    &lt;div class="card _br--16px _bs--0_4px_20px_rgba(0,0,0,0.08) _hover:tr--translateY(-4px)"&gt;
+      &lt;div class="card-body"&gt;
+        &lt;h2 class="card-title _fs--1.5rem _fw--800"&gt;Заголовок&lt;/h2&gt;
+        &lt;p class="_c--666 _lh--1.6"&gt;Текст с улучшенной типографикой.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col-4"&gt;
+    &lt;!-- Сайдбар полностью на Photon X --&gt;
+    &lt;aside class="_bg--f8f9fa _dark:bg--2d2d2d _br--12px _p--1.5rem _bs--0_2px_8px_rgba(0,0,0,0.06)"&gt;
+      &lt;h3 class="_c--333 _dark:c--eee _fs--1rem _fw--700 _mb--1rem"&gt;Фильтры&lt;/h3&gt;
+      ...
+    &lt;/aside&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <p>Таким образом, Photon даёт готовую структуру (сетку, navbar, базовые компоненты), а Photon X — точную настройку (тени, скругления, анимации, адаптивные цвета) без необходимости переопределять CSS.</p>
+
+      <!-- ========== 13. ОГРАНИЧЕНИЯ ========== -->
+      <h2>Ограничения и важные замечания</h2>
+
+      <div class="doc-callout">
+        <span class="doc-callout__icon">&#9888;</span>
+        <div>
+          <strong>Каскад и специфичность.</strong> Все правила генерируются с селектором по одному классу (<code>.class { }</code>), специфичность <code>(0,1,0)</code>. Если у вас есть CSS-правило с более высокой специфичностью (например, <code>#id .class</code>), оно переопределит стили Photon X.
+        </div>
+      </div>
+
+      <div class="doc-callout">
+        <span class="doc-callout__icon">&#9888;</span>
+        <div>
+          <strong>Порядок правил.</strong> Правила добавляются в порядке обнаружения классов в DOM. Если два класса конфликтуют (<code>_c--red _c--blue</code>), побеждает то правило, которое было добавлено в <code>&lt;style&gt;</code> позже (т.е. встретилось позже при обходе DOM).
+        </div>
+      </div>
+
+      <div class="doc-callout">
+        <span class="doc-callout__icon">&#9888;</span>
+        <div>
+          <strong>Динамическое изменение классов.</strong> Если вы меняете классы у элемента через <code>classList.add/remove/toggle</code> — MutationObserver <em>не</em> отслеживает изменения атрибутов (только <code>childList</code>). В таких случаях нужно либо пересоздать элемент, либо вызвать обработку вручную.
+        </div>
+      </div>
+
+      <div class="doc-callout">
+        <span class="doc-callout__icon">&#9888;</span>
+        <div>
+          <strong>Производительность.</strong> При очень большом количестве уникальных классов (тысячи) текстовое дописывание в <code>style.textContent</code> может вызывать перерасчёт стилей. Для большинства страниц это не проблема, но для огромных SPA-приложений стоит профилировать.
+        </div>
+      </div>
+
+      <div class="note-box pt-bg-gray-50 pt-dark:bg-gray-800 pt-p-4 pt-rounded-lg pt-mt-4" style="border-left:4px solid #6c5ce7;">
+        <p class="pt-m-0 pt-text-sm pt-text-gray-600 pt-dark:text-gray-300"><strong>Совет:</strong> все сгенерированные правила можно увидеть в DevTools в элементе <code>&lt;style id="class-style-engine"&gt;</code> внутри <code>&lt;head&gt;</code>. Это лучший способ отладить неожиданное поведение стилей.</p>
+      </div>
+
+      <!-- ========== 14. BEST PRACTICES ========== -->
+      <h2>Рекомендации по использованию</h2>
+      <ol>
+        <li><strong>Группируйте классы логически.</strong> Отступы → размеры → цвет → границы → анимации. Это делает разметку читаемой.</li>
+        <li><strong>Используйте макросы для типовых комбинаций.</strong> <code>_flex-center</code> вместо <code>_flex _jc--center _ai--center</code>.</li>
+        <li><strong>Тёмную тему делайте через <code>_dark:</code>.</strong> Класс <code>theme-dark</code> на <code>&lt;body&gt;</code> управляет компонентами Photon, а <code>_dark:</code> — стилями Photon X.</li>
+        <li><strong>Не дублируйте Photon и Photon X без необходимости.</strong> Если кнопка уже оформлена через <code>btn btn--primary</code>, не добавляйте <code>_bg--5755d9</code> — вы дублируете стили.</li>
+        <li><strong>Выносите повторяющиеся комбинации в макросы.</strong> Если вы часто пишете <code>_bg--white _dark:bg--2d2d2d _br--12px _bs--0_2px_8px_rgba(0,0,0,0.06)</code>, создайте класс в своём CSS — Photon X для уникальных стилей, а не для замены CSS-классов.</li>
+        <li><strong>Проверяйте сгенерированный CSS.</strong> При отладке всегда заглядывайте в <code>&lt;style id="class-style-engine"&gt;</code> — все правила перед глазами.</li>
+      </ol>
+
+      <!-- ========== 15. ФАЙЛЫ И СТРУКТУРА ========== -->
+      <h2>Файлы и структура</h2>
+      <table>
+        <thead><tr><th>Файл</th><th>Назначение</th></tr></thead>
+        <tbody>
+          <tr><td><code>photon-kit/photon-kit-x.js</code></td><td>Исходный файл движка. Подключайте его в своих проектах.</td></tr>
+          <tr><td><code>docs/js/photon-kit-x.js</code></td><td>Копия движка для сайта документации. Идентична исходному файлу.</td></tr>
+          <tr><td><code>photon-kit/photon-kit-x-test.html</code></td><td>Тестовая страница с примерами всех возможностей движка.</td></tr>
+          <tr><td><code>docs/photon-x.html</code></td><td>Страница «Введение» в документации.</td></tr>
+          <tr><td><code>docs/px-components.html</code></td><td>Страница «Компоненты» с живыми примерами.</td></tr>
+          <tr><td><code>docs/guide-photon-x.html</code></td><td>Эта страница — подробное руководство.</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Связанные страницы</h2>
+      <div class="doc-nav-grid">
+        <a href="photon-x.html"><span class="nav-icon">&#8594;</span> Photon X — Введение</a>
+        <a href="px-components.html"><span class="nav-icon">&#8594;</span> Photon X — Компоненты</a>
+        <a href="photon-tw.html"><span class="nav-icon">&#8594;</span> Photon-tw — Обзор</a>
+      </div>
+
+    </main>
+    <script src="js/search-index.js"></script>
+    <script src="js/sidebar-config.js"></script>
+    <script src="js/doc.js"></script>
+    <script src="js/photon-kit.js"></script>
+    <script src="js/photon-kit-x.js"></script>
+  </div>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>

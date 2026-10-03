@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Photon — CSS фреймворк с адаптивной тёмной темой и эффектом стекла. Более 40 компонентов." />
+  <meta name="keywords" content="photon, css framework, css фреймворк, glass ui, тёмная тема, dark theme, стеклянный дизайн, веб-компоненты" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+  <title>Photon — CSS фреймворк</title>
+  <link rel="stylesheet" href="css/photon-kit.css" />
+  <link rel="stylesheet" href="css/doc.css" />
+</head>
+<body class="theme-dark">
+
+  <!-- Header -->
+  <header class="doc-header">
+    <a href="index.html" class="doc-header__brand">
+      <span class="doc-header__logo"><img src="img/photon-logo.svg" alt="Photon"></span>
+      Photon
+    </a>
+    <div class="doc-header__links">
+      <a href="https://github.com/alievkirill307-bot/Photon" class="doc-header__link" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12 24 5.37 18.63 0 12 0z"/></svg>
+        <span class="doc-header__link-text">GitHub</span>
+      </a>
+      <a href="https://gitlab.com/photon-kit/photon-kit" class="doc-header__link" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.6 9.6l-.3-.8L20.4.9c-.2-.5-.7-.9-1.2-.9s-1 .4-1.2.9l-2.7 8.3H8.7L6 .9C5.8.4 5.3 0 4.8 0s-1 .4-1.2.9L.7 8.8l-.3.8C-1 12.7.5 16.2 3.5 18l.1.1.1.1 8.3 6 8.3-6 .1-.1.1-.1c3-1.8 4.5-5.3 3.1-8.5z"/></svg>
+        <span class="doc-header__link-text">GitLab</span>
+      </a>
+    
+      <div class="theme-switch" data-theme-switch style="margin-left:0.75rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <div class="theme-switch__track">
+          <div class="theme-switch__thumb"></div>
+        </div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </div></div>
+  </header>
+
+  <!-- Sidebar Toggle (mobile) -->
+  <button class="doc-sidebar-toggle" id="sidebarToggle" type="button" aria-label="Меню"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <div class="doc-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Layout -->
+  <div class="doc-layout">
+
+    <!-- Sidebar -->
+    <aside class="doc-sidebar" id="sidebar" data-sidebar></aside>
+
+    <!-- Content -->
+    <main class="doc-content">
+
+      <h1>Photon</h1>
+      <p style="font-size: 1.2rem; color: var(--pk-text-secondary); margin-bottom: 2rem;">Адаптивная тёмная тема. Более 40 компонентов. Чистый CSS + JS.</p>
+
+      <div class="demo-box demo-box--column" style="background: linear-gradient(135deg, rgba(87,85,217,0.08), rgba(75,158,255,0.08)); border-color: rgba(87,85,217,0.15);">
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="https://github.com/alievkirill307-bot/Photon/archive/refs/heads/master.zip" class="btn btn--primary">Скачать Photon</a>
+          <a href="buttons.html" class="btn btn--outline">Компоненты</a>
+          <a href="https://github.com/alievkirill307-bot/Photon" class="btn btn--glass" target="_blank">GitHub</a>
+        </div>
+        <p style="font-size: 0.85rem; margin: 0; color: var(--pk-text-secondary);">Photon v2.2 — MIT License</p>
+      </div>
+
+      <h2>Возможности</h2>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Стеклянный дизайн</h3>
+          <p>Эффект стекла с размытием (backdrop-filter). Элегантный матовый фон для карточек и панелей.</p>
+        </div>
+        <div class="feature-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px;vertical-align:middle;margin-right:6px;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Тёмная тема</h3>
+          <p>Переключение между светлой и тёмной темой через класс theme-dark.</p>
+        </div>
+        <div class="feature-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px;vertical-align:middle;margin-right:6px;"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg> Полностью адаптивный</h3>
+          <p>12-колоночная сетка, резиновая типографика, адаптивные компоненты для всех экранов.</p>
+        </div>
+        <div class="feature-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px;vertical-align:middle;margin-right:6px;"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> 40+ компонентов</h3>
+          <p>Кнопки, формы, карточки, модальные окна, карусели, аккордеоны, уведомления и многое другое.</p>
+        </div>
+        <div class="feature-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px;vertical-align:middle;margin-right:6px;"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-1 0-.83.67-1.5 1.5-1.5H16c3.31 0 6-2.69 6-6 0-5.5-4.5-10-10-10z"/></svg> CSS-переменные</h3>
+          <p>Простая кастомизация через CSS custom properties. Измените палитру в одном месте.</p>
+        </div>
+        <div class="feature-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px;vertical-align:middle;margin-right:6px;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Чистый CSS + JS</h3>
+          <p>Никаких зависимостей. Один CSS и один JS файл. Всего ~12 KB в сжатом виде.</p>
+        </div>
+      </div>
+
+      <h2>Быстрый старт</h2>
+
+      <p>Подключите Photon к вашему проекту:</p>
+
+      <div class="code-block">
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;title&gt;Мой проект&lt;/title&gt;
+  &lt;link rel="stylesheet" href="https://photon.p7z.ru/css/photon-kit.css" /&gt;
+  &lt;script src="https://photon.p7z.ru/js/photon-kit.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Привет, Photon!&lt;/h1&gt;
+  &lt;button class="btn btn--primary"&gt;Нажми меня&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <h2>Типографика</h2>
+
+      <p>Photon использует системные шрифты Apple. Заголовки от h1 до h6, параграфы, списки и инлайн-элементы.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;h1&gt;Заголовок 1&lt;/h1&gt;
+&lt;h2&gt;Заголовок 2&lt;/h2&gt;
+&lt;h3&gt;Заголовок 3&lt;/h3&gt;
+&lt;p&gt;Обычный текст с &lt;strong&gt;жирным&lt;/strong&gt; и &lt;em&gt;курсивом&lt;/em&gt;.&lt;/p&gt;
+&lt;p class="text-secondary"&gt;Второстепенный текст.&lt;/p&gt;
+&lt;p class="text-muted"&gt;Приглушённый текст.&lt;/p&gt;
+&lt;code&gt;Инлайн-код&lt;/code&gt;</code></pre>
+      </div>
+
+      <h2>Сетка</h2>
+
+      <p>12-колоночная адаптивная сетка с классами <code>row</code> и <code>col</code>.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="row"&gt;
+  &lt;div class="col-4"&gt;25% ширины&lt;/div&gt;
+  &lt;div class="col-4"&gt;25% ширины&lt;/div&gt;
+  &lt;div class="col-4"&gt;25% ширины&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-6"&gt;50% ширины&lt;/div&gt;
+  &lt;div class="col-6"&gt;50% ширины&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;div class="col-12 col-md-6 col-lg-4"&gt;Адаптивная колонка&lt;/div&gt;
+  &lt;div class="col-12 col-md-6 col-lg-4"&gt;Адаптивная колонка&lt;/div&gt;
+  &lt;div class="col-12 col-md-6 col-lg-4"&gt;Адаптивная колонка&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>Glass-утилиты</h2>
+
+      <p>Эффект матового стекла — ключевая особенность Photon. Используйте классы <code>glass</code>, <code>glass--light</code> и <code>glass--heavy</code>.</p>
+
+      <div class="code-block">
+        <pre><code>&lt;div class="glass" style="padding: 1.5rem; border-radius: 12px;"&gt;
+  &lt;p style="margin: 0;"&gt;Обычное стекло — полупрозрачный фон с размытием.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="glass--heavy" style="padding: 1.5rem; border-radius: 12px; margin-top: 0.75rem;"&gt;
+  &lt;p style="margin: 0;"&gt;Плотное стекло — более непрозрачный фон.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h2>CSS-переменные</h2>
+
+      <p>Все ключевые стили доступны через CSS custom properties для лёгкой кастомизации:</p>
+
+      <div class="code-block">
+        <pre><code>:root {
+  --pk-primary: #5755d9;
+  --pk-success: #32b643;
+  --pk-warning: #ffb700;
+  --pk-error: #e85600;
+  --pk-info: #4b9eff;
+  --pk-bg: #ffffff;
+  --pk-text: #1d1d1f;
+  --pk-radius: 12px;
+  --pk-blur: blur(20px);
+  --pk-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}</code></pre>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="js/search-index.js"></script>
+  <script src="js/sidebar-config.js"></script>
+  <script src="js/doc.js"></script>
+  <script src="js/photon-kit.js"></script>
+  <button class="back-to-top" data-show-at="300" type="button">&uarr;</button>
+</body>
+</html>
